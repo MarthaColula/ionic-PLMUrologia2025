@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-toolbar color="urologia-primary" mode="ios">
+
+    <img class="logoPlmHead" src="/assets/images/logoHeader.svg" alt=""> 
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  
+  <h1 class="subtituloSeccion"><b>Registro</b></h1>
+  
+  <ion-card mode="ios" color="urologia-primary">
+
+    <p class="text-center ion-padding-bottom">Los campos marcados con <ion-text color="danger">*</ion-text> son obligatorios</p>
+
+    <form>
+
+      <ion-list class="bckgrList ion-margin ion-no-padding">
+        <ion-item color="urologia-primary" mode="ios">
+          <ion-label class="labelFormReg" mode="ios" position="floating">Correo electrónico:<ion-text color="danger">*
+            </ion-text>
+          </ion-label>
+          <ion-input type="email" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-text-center ion-margin-vertical">
+        <ion-button size="small" class="w-auto" color="urologia-secondary" routerLink="/perfil">
+          Registrar
+        </ion-button>
+      </div>
+    </form>
+  </ion-card>
+
+</ion-content>
+<app-footer></app-footer>

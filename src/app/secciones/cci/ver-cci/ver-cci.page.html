@@ -1,0 +1,177 @@
+<app-header></app-header>
+<app-navigation-header titulo="Casos clínicos interactivos"></app-navigation-header>
+
+<ion-content class="ion-padding">
+
+  <h1 class="copyTitulo">Tratamiento del sangrado menstrual abundante</h1>
+ 
+
+  <ion-accordion-group class="ion-padding-vertical" value="first">
+    <ion-accordion value="first" mode="ios">
+
+
+
+      <ion-item slot="header" color="urologia-primary">
+        <ion-label>
+          <h2>Presentación del caso y motivo de consulta</h2>
+        </ion-label>
+      </ion-item>
+
+
+      <div class="ion-padding" slot="content">
+        <p class="textAccordion">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sed eligendi non deserunt culpa esse officia
+          doloribus consequuntur ad obcaecati est dolore, saepe deleniti facere nulla ullam voluptate, maxime amet!
+        </p>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="second">
+      <ion-item slot="header" color="urologia-primary">
+        
+        <ion-label>
+          <h2>Exploración física</h2>
+        </ion-label>
+      </ion-item>
+
+      <div class="ion-padding" slot="content">
+        <p class="textAccordion">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus dolores veniam sapiente qui error, incidunt
+          ipsam mollitia? Assumenda mollitia rem tenetur, ut, delectus accusantium corporis quibusdam non quasi totam
+          similique.
+        </p>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="third">
+      <ion-item slot="header" color="urologia-primary">
+        
+        <ion-label>
+          <h2>Estudios complementarios</h2>
+        </ion-label>
+      </ion-item>
+
+      <div class="ion-padding" slot="content">
+        <p class="textAccordion">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio eligendi saepe aut? Voluptatum harum, totam
+          possimus eius deserunt, aspernatur at architecto, facilis nobis corrupti numquam molestias aut ipsam nihil
+          consequatur?
+        </p>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  
+
+  <ion-card mode="md">
+    <ion-card-header>
+      <ion-card-title><b>Pregunta</b></ion-card-title>
+      <ion-card-subtitle>¿Cuál de las siguientes opciones NO es correcta?</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item color="urologia-primary">
+          <ion-checkbox color="urologia-secondary" labelPlacement="start">
+            <p class="wrap">A. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+              tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+          </ion-checkbox>
+        </ion-item>
+
+        <ion-item color="urologia-primary">
+          <ion-checkbox color="urologia-secondary" labelPlacement="start">
+            <p class="wrap">B. Ut wisi enim ad minim veniam.</p>
+          </ion-checkbox>
+        </ion-item>
+
+        <ion-item color="urologia-primary">
+          <ion-checkbox color="urologia-secondary" labelPlacement="start">
+            <p class="wrap">C. Officia sequi fugit id fugiat at pariatur, ex, minus eum laboriosam architecto esse
+              eligendi fuga quidem voluptatem a.</p>
+          </ion-checkbox>
+        </ion-item>
+
+        <ion-item color="urologia-primary">
+          <ion-checkbox color="urologia-secondary" labelPlacement="start">
+            <p class="wrap">D. Dolore odit ratione, nihil quam adipisci distinctio nulla labore asperiores iste. Labore,
+              explicabo?</p>
+          </ion-checkbox>
+        </ion-item>
+
+      </ion-list>
+
+      <div class="contentBtnOpcion" justify="space-between">
+        <ion-button id="open-modal" size="small" mode="md" class="w-auto" color="urologia-secondary">
+          Mira cómo otros eligieron
+        </ion-button>
+        <ion-button size="small" mode="md" class="w-auto" color="urologia-secondary" (click)="presentAlert()" >
+          Enviar
+        </ion-button>
+        <ion-button size="small" mode="md" class="w-auto" color="urologia-secondary" routerLink="/respuesta-correcta">
+          CORRECTA
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-modal mode="ios" trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <div class="block">
+        
+        <ion-card mode="md">
+          <ion-card-header>
+            <ion-card-title>Pregunta</ion-card-title>
+            <ion-card-subtitle>¿Cuál de las siguientes opciones NO es correcta?</ion-card-subtitle>
+          </ion-card-header>
+      
+          <ion-card-content>
+
+            <ion-list>
+              <ion-item color="urologia-primary">
+                <ion-label>
+                  <h2 class="opcionPreguntas">
+                   A. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                    tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                  </h2>
+                </ion-label>
+                <ion-badge class="color1">47.7%</ion-badge>
+              </ion-item>
+              <ion-item color="urologia-primary">
+                <ion-label>
+                  <h2 class="opcionPreguntas">
+                   B. Ut wisi enim ad minim veniam.
+                  </h2>
+                </ion-label>
+                <ion-badge class="color2">47.7%</ion-badge>
+              </ion-item>
+              <ion-item color="urologia-primary">
+                <ion-label>
+                  <h2 class="opcionPreguntas">
+                   C. Officia sequi fugit id fugiat at pariatur, ex, minus eum laboriosam architecto esse
+                    eligendi fuga quidem voluptatem a.
+                  </h2>
+                </ion-label>
+                <ion-badge class="color3">47.7%</ion-badge>
+              </ion-item>
+              <ion-item color="urologia-primary">
+                <ion-label>
+                  <h2 class="opcionPreguntas">
+                   D. Dolore odit ratione, nihil quam adipisci distinctio nulla labore asperiores iste. Labore,
+                    explicabo?
+                  </h2>
+                </ion-label>
+                <ion-badge class="color4">47.7%</ion-badge>
+              </ion-item>
+            </ion-list>
+      
+      
+          </ion-card-content>
+        </ion-card>
+
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+<app-footer></app-footer>

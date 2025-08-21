@@ -1,0 +1,208 @@
+:host {
+  background-image: url('/assets/images/backgroundHome.jpg') !important;
+  background-position: bottom center;
+  background-repeat: no-repeat !important;
+  background-size: auto 100%;
+}
+
+ion-content {
+  --background: none !important;
+}
+
+ion-grid {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ion-row.contReproductor {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.podcastTitulo {
+  width: 100%;
+  height: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.podcastDescripcion h1 {
+  width: 100%;
+  height: auto !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+.podcastDescripcion h2 {
+  color: #4d4d4d;
+  text-align: left;
+  margin: 1.2rem;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  color: #0062C3;
+  font-size: 1rem !important;
+  font-weight: bold;
+  padding: '0';
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contRange {
+  width: 100%;
+  padding: 1rem;
+  height: auto;
+}
+
+ion-row.contReproductor.hydrated ion-col.hydrated {
+  margin-top: -5rem;
+}
+
+.indicadorTiempo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+.indicadorTiempo ion-label {
+  color: rgb(255, 255, 255);
+}
+
+ion-range {
+  --bar-background: rgba(0, 98, 195, 0.5);
+  --bar-background-active: #732aa7;
+  --bar-height: 5px;
+  --bar-border-radius: 5px;
+  --knob-background: #0062C3;
+  --knob-box-shadow: 0px 0px 10px#0062C3;
+  --knob-size: 25px;
+  --pin-background: #9c9c9c;
+  --pin-color: #0062C3;
+  // --pin-color: rgb(0, 98, 195);
+}
+
+.contControls {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.controls {
+  border: 1px solid rgba(0, 98, 195, 0.75);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 50em;
+  height: 42px;
+}
+
+ion-icon {
+  color: #0062C3;
+}
+
+ion-icon.iconPlayPause {
+  color: #0062C3;
+}
+
+.btnPlayPause {
+  --background: #ffffff;
+  --ion-color-base: #ffffff !important;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  --border-radius: 50%;
+  --box-shadow: 0 3px 1px rgba(0, 98, 195, 0.25), 0 4px 8px rgba(0, 98, 195, 0.25), 0 0 0 1px rgba(0, 98, 195, 0.2);
+  --transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 15ms linear, color 15ms linear;
+}
+
+/* -->  RESPONSIVE  <-- */
+
+/* Mobile Portrait */
+@media (max-width: 767px) and (min-width: 300px) {}
+
+/* iPhone 5/SE Landscape */
+@media (max-width: 568px) and (min-width: 560px) {}
+
+/* iPhone 6/7/8 Landscape */
+@media (max-width: 667px) and (min-width: 569px) and (orientation: landscape) {}
+
+/* iPhone 6/7/8 Plus Landscape */
+@media (max-width: 736px) and (min-width: 415px) and (orientation: landscape) {}
+
+/* iPhone X Landscape */
+@media only screen and (min-width: 812px) and (orientation: landscape) {}
+
+/* iPhone X/XS Landscape */
+@media (max-width: 890px) and (min-width: 769px) and (orientation: landscape) {}
+
+@media screen and (min-width: 360px) and (orientation: portrait) {}
+
+/* iPhone 12 Pro Max Landscape */
+@media only screen and (min-width: 926px) and (orientation: landscape) and (orientation: landscape) {}
+
+
+/* iPhone 12 Pro Max Portrait */
+@media only screen and (min-width: 428px) and (orientation: portrait) {}
+
+/* iPad portrait */
+@media (min-width: 768px) and (orientation: portrait) {
+  :host {
+    background-image: url('/assets/images/backgroundH.jpg') !important;
+    background-position: bottom center;
+    background-repeat: no-repeat !important;
+    background-size: auto 100%;
+  }
+
+  ion-content {
+    --background: none !important;
+    --padding-bottom: 1rem;
+    --padding-end: 1rem;
+    --padding-start: 1rem;
+    --padding-top: 1rem;
+  }
+}
+
+/* iPad Landscape */
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  :host {
+    background-image: url('/assets/images/backgroundH.jpg') !important;
+    background-position: bottom center;
+    background-repeat: no-repeat !important;
+    background-size: auto 100%;
+  }
+
+  ion-content {
+    --background: none !important;
+    --padding-bottom: 1rem;
+    --padding-end: 1rem;
+    --padding-start: 1rem;
+    --padding-top: 1rem;
+  }
+
+}
+
+/* iPad Pro portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
+
+@media only screen and (min-device-width: 938px) and (max-device-width: 938px) and (orientation: landscape) {}
+
+@media only screen and (min-device-width: 602px) and (max-device-width: 602px) and (orientation: portrait) {}
+
+
+/* Tab's Landscape */
+@media (max-width: 1366px) and (min-width: 992px) {}

@@ -1,0 +1,313 @@
+
+<ion-header no-border>
+
+  <ion-toolbar color="urologia-primary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="start" src="/assets/images/interactions/icono-ver-interaccion.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-label class="ion-text-wrap">
+      <ion-text style="text-align: center;">
+        <h2>Interacciones Medicamentosas</h2>
+      </ion-text>
+    </ion-label>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="end" name="close-circle" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-toolbar color="urologia-secondary">
+    <div class="ion-text-center">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="light">
+          <h3>interactionDetail.Brand</h3>
+        </ion-text>
+        <ion-text color="light">
+          <p>interactionDetail.PharmaForm</p>
+        </ion-text>
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-segment value="laboratorio"  mode="ios">
+
+    <ion-segment-button style="margin-right:5px;" layout="icon-start" value="laboratorio"
+      class="ion-segment-interactions ion-segment-btn" mode="ios">
+      <ion-label class="ion-text-wrap ion-text-left">
+        Basadas en laboratorio
+      </ion-label>
+      <ion-icon class="iconBtnSegmento" name="log-out" mode="ios"></ion-icon>
+    </ion-segment-button>
+
+    <ion-segment-button style="margin-left:5px;" layout="icon-start" value="evidencia"
+      class="ion-segment-interactions ion-segment-btn" mode="ios">
+      <ion-label class="ion-text-wrap ion-text-left">
+        Basadas en evidencia
+      </ion-label>
+      <ion-icon class="iconBtnSegmento" name="log-out" mode="ios"></ion-icon>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+  <br>
+  <div>
+    <ion-grid>
+
+
+      <ion-segment class="segmentSize">
+        <ion-segment-button value="ippa" class="ion-segment-interactions">
+          <ion-button color="urologia-secondary" class="ipp-detail-button">
+            IPPA
+            <ion-icon class="btnInteracciones"  name="document-text"></ion-icon>
+          </ion-button>
+
+        </ion-segment-button>
+      </ion-segment>
+
+
+      <ion-grid class="interactions-result-grid">
+        <br>
+        <ion-label class="ion-text-wrap">
+          <ion-text color="urologia-primary" style="text-align: center;">
+            <h2>Sustancias de interacción</h2>
+          </ion-text>
+        </ion-label>
+        <br>
+        <ion-row class="interactions-result-row-titles">
+          <ion-col class="ion-align-self-start" size="6" size-lg>
+            <div class="ion-text-center">
+              <ion-label>
+                Sustancia Activa
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center" size="6" size-lg>
+            <div class="ion-text-center">
+              <ion-label>
+                Sustancia de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row 
+          class="interactions-result-row-items">
+          <ion-col col-3>
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>substance.ActiveSubstance</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col col-3>
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p> substance.SubstanceInteraction</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <ion-grid class="interactions-result-grid">
+        <br>
+        <ion-label class="ion-text-wrap">
+          <ion-text style="text-align: center;">
+            <h2>Grupos interacción</h2>
+          </ion-text>
+        </ion-label>
+        <br>
+        <ion-row class="interactions-result-row-titles" color="urologia-tertiary">
+          <ion-col class="ion-align-self-start">
+            <div class="ion-text-center">
+              <ion-label>
+                Grupo de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label>
+                Medicamento de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label>
+                Sustancia de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p>pharmacologicalGroup.GroupName</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p> pharmacologicalGroup.IBrand</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p> pharmacologicalGroup.IActiveSubstance</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    </ion-grid>
+
+
+    <ion-grid>
+
+      <ion-grid class="interactions-result-grid">
+
+        <br>
+        <ion-row class="interactions-result-row-titles" color="urologia-tertiary">
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label>
+                item.IBrand
+              </ion-label>
+            </div>
+            <div class="ion-text-center">
+              <ion-label>
+                item.IPharmaForm
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>Sustancia Activa</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p> item.ActiveSubstance</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>Sustancia de Interacción</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p> item.IActiveSubstance</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>Severidad</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <div class="interaction-severity-semaphore">
+                </div>
+                item.Severities[0].IMDDISeverityLevel
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+
+        <br>
+
+        <ion-row class="interactions-result-row-titles" color="urologia-primary">
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label>
+                Referencias
+              </ion-label>
+            </div>
+          </ion-col>
+
+
+          <ion-row class="interactions-result-row-items">
+            <ion-col class="ion-align-self-center">
+              <ion-label class="ion-text-wrap">
+                <ion-text color="dark">
+                  reference.ClinicalReference.replace(reference.ReferenceSource, '')
+
+                  <ion-chip>
+                    <ion-icon name="reader"></ion-icon>
+                    <ion-label>Referencia</ion-label>
+                  </ion-chip>
+                </ion-text>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+
+        </ion-row>
+
+      </ion-grid>
+
+    </ion-grid>
+
+
+    <ion-grid>
+
+      <ion-grid class="interactions-result-grid">
+
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+
+            <div class="ippa-content"></div>
+
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+
+    </ion-grid>
+
+  </div>
+
+
+</ion-content>
+<app-footer></app-footer>

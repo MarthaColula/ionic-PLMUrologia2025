@@ -1,0 +1,254 @@
+:host {
+  background-image: url('/assets/images/backgroundHome.jpg') !important;
+  background-position: bottom center;
+  background-repeat: no-repeat !important;
+  background-size: auto 100%;
+}
+
+ion-content {
+  --background: none !important;
+}
+
+ion-thumbnail {
+    width: 70px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+
+p.textDiscusion {
+    font-size: 0.8rem !important;
+    font-family: 'Graphik';
+    color: #707070;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.thumbnailCorrecto {
+    margin-bottom: 1.5rem;
+}
+
+ion-card {
+    border-radius: 10px;
+}
+
+ion-label {
+    margin: 0 !important;
+}
+
+ion-label p {
+    font-size: 1rem;
+    font-family: 'Graphik';
+    font-weight: bold;
+}
+
+// ion-label p.buenTrabajo {
+//     font-size: 1rem;
+//     font-family: 'Graphik';
+//     font-weight: bold;
+//     color: #707070;
+// }
+
+ion-label h2 {
+    font-size: 1.2rem;
+    font-family: 'Graphik';
+}
+
+ion-grid.cardInfoDoctor {
+    background-color: #ffffff;
+    margin: 1rem;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+ion-grid.cardInfoDoctor ion-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+ion-row .contetnFoto {
+    width: 100px;
+    height: 100px;
+
+    margin-right: 20px;
+}
+
+.contetnFoto img {
+    border-radius: 50em;
+}
+
+ion-row .NombreDoctor {
+    width: calc(100% - 120px);
+}
+
+.NombreDoctor p {
+    font-size: 0.8rem;
+    font-family: 'Graphik';
+    margin-bottom: 0.5rem;
+    color: #707070;
+    margin-left: 0;
+}
+
+.NombreDoctor h2 {
+    font-size: 1rem;
+    font-family: 'Graphik';
+    color: #1678CA;
+    margin: 0;
+}
+
+.biografiaDoc {
+    font-size: 0.8rem;
+    font-family: 'Graphik';
+    color: #707070;
+}
+
+.textReferencias {
+    font-size: 1rem;
+    font-family: 'Graphik';
+    color: #1678CA;
+    margin-left: 1.5rem;
+}
+
+ul li {
+    font-size: 0.8rem;
+    font-family: 'Graphik';
+    color: #707070;
+    margin: 0 1rem 1rem 0rem;
+}
+
+ion-card {
+    --background: rgba(255, 255, 255, 1) !important;
+    --ion-color-base: rgba(255, 255, 255, 1) !important;
+}
+
+ div.ion-padding {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+ion-accordion .ion-padding p {
+    font-size: 0.9rem;
+}
+
+ion-chip ion-label {
+    min-height: 1rem !important;
+}
+
+p.textAccordion {
+    font-size: 0.8rem !important;
+    font-family: 'Graphik';
+    color: #1678CA;
+}
+
+h2.textNormal {
+    font-family: 'Graphik';
+    font-weight: normal;
+    color: #4d4d4d;
+}
+
+p.textNormal {
+    font-family: 'Graphik';
+    font-weight: normal;
+    color: #1678CA !important;
+}
+
+ion-card-title {
+    color: #1678CA !important;
+    font-family: 'Graphik';
+    font-size: 1rem;
+    text-align: center;
+}
+
+ion-card-subtitle {
+    color: #1678CA;
+    font-family: 'Graphik';
+    font-weight: normal;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+ion-checkbox {
+    --border-width: 1px !important;
+    --border-color: #B80D05 !important;
+}
+
+
+/* -->  RESPONSIVE  <-- */
+
+/* Mobile Portrait */
+@media (max-width: 767px) and (min-width: 300px) {}
+
+/* iPhone 5/SE Landscape */
+@media (max-width: 568px) and (min-width: 560px) {}
+
+/* iPhone 6/7/8 Landscape */
+@media (max-width: 667px) and (min-width: 569px) and (orientation: landscape) {}
+
+/* iPhone 6/7/8 Plus Landscape */
+@media (max-width: 736px) and (min-width: 415px) and (orientation: landscape) {}
+
+/* iPhone X Landscape */
+@media only screen and (min-width: 812px) and (orientation: landscape) {}
+
+/* iPhone X/XS Landscape */
+@media (max-width: 890px) and (min-width: 769px) and (orientation: landscape) {}
+
+@media screen and (min-width: 360px) and (orientation: portrait) {}
+
+/* iPhone 12 Pro Max Landscape */
+@media only screen and (min-width: 926px) and (orientation: landscape) and (orientation: landscape) {}
+
+
+/* iPhone 12 Pro Max Portrait */
+@media only screen and (min-width: 428px) and (orientation: portrait) {}
+
+/* iPad portrait */
+@media (min-width: 768px) and (orientation: portrait) {
+  :host {
+    background-image: url('/assets/images/backgroundH.jpg') !important;
+    background-position: bottom center;
+    background-repeat: no-repeat !important;
+    background-size: auto 100%;
+  }
+
+  ion-content {
+    --background: none !important;
+    --padding-bottom: 1rem;
+    --padding-end: 1rem;
+    --padding-start: 1rem;
+    --padding-top: 1rem;
+  }
+}
+
+/* iPad Landscape */
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  :host {
+    background-image: url('/assets/images/backgroundH.jpg') !important;
+    background-position: bottom center;
+    background-repeat: no-repeat !important;
+    background-size: auto 100%;
+  }
+
+  ion-content {
+    --background: none !important;
+    --padding-bottom: 1rem;
+    --padding-end: 1rem;
+    --padding-start: 1rem;
+    --padding-top: 1rem;
+  }
+
+}
+
+/* iPad Pro portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
+
+@media only screen and (min-device-width: 938px) and (max-device-width: 938px) and (orientation: landscape) {}
+
+@media only screen and (min-device-width: 602px) and (max-device-width: 602px) and (orientation: portrait) {}
+
+
+/* Tab's Landscape */
+@media (max-width: 1366px) and (min-width: 992px) {}

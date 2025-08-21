@@ -1,0 +1,73 @@
+<app-header></app-header>
+<app-navigation-header titulo=""></app-navigation-header>
+
+<ion-content class="ion-padding-horizontal">
+
+
+  <ion-row class="contentTituloSeccion">
+    <ion-col size="12" class="text-center">
+      <img class="iconoSeccion" src="assets/images/cenefaCci.svg" alt="">
+    </ion-col>
+  </ion-row>
+
+  <br>
+
+  <ion-accordion-group mode="ios" class="ion-padding-top">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="urologia-primary">
+        <img src="./assets/images/iconoAccCci.svg" class="iconoAccordeon" alt="" slot="start">
+        <ion-label>
+          Salud Hormonal Masculina</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item color="urologia-primary" detail routerLink="">
+          <ion-label>
+            <h2 class="textNormal">Indicaciones actuales para la terapia de reemplazo con testosterona</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item color="urologia-primary" detail routerLink="">
+          <ion-label>
+            <h2 class="textNormal">Terapia de reemplazo con testosterona y riesgo cardiovascular</h2>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+
+    <ion-accordion value="second">
+      <ion-item slot="header" color="urologia-primary">
+        <img src="./assets/images/iconoAccCci.svg" class="iconoAccordeon" alt="" slot="start">
+        <ion-label>Salud Urogenital Masculina </ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item color="urologia-primary" detail routerLink="">
+          <ion-label>
+            <h2 class="textNormal">Optimización terapéutica en paciente con incontinencia urinaria de urgencia refractaria a tratamiento conservador </h2>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="third">
+      <ion-item slot="header" color="urologia-primary">
+        <img src="./assets/images/iconoAccCci.svg" class="iconoAccordeon" alt="" slot="start">
+        <ion-label>Salud Urogenital Femenina</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item color="urologia-primary" detail routerLink="">
+          <ion-label>
+            <h2 class="textNormal">Frotis cervical anormal en paciente postmenopáusica</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item color="urologia-primary" detail routerLink="">
+          <ion-label>
+            <h2 class="textNormal">Manejo de la atrofia vulvovaginal severa en mujer postmenopáusica</h2>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+
+  </ion-accordion-group>
+
+</ion-content>
+<app-footer></app-footer>

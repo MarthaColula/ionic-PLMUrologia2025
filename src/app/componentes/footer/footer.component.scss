@@ -1,0 +1,21 @@
+.footer-ios ion-toolbar:first-of-type {
+    --border-width: 0 0 0 !important;
+}
+
+ion-toolbar{
+    display: flex !important;
+    justify-content: center !important;
+    border: none !important;
+    align-items: center !important;
+}
+
+h1{
+    text-align: center;
+    margin: 0px;
+}
+
+.logos{
+    text-align: center;
+    max-width: 250px;
+    height: 30px;
+}

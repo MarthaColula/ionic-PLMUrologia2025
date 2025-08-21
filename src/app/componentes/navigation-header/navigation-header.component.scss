@@ -1,0 +1,12 @@
+ion-toolbar{
+    --ion-background-color: #ffffff;
+    --ion-color-base: #ffffff !important;
+    display: flex;
+    align-items: center;
+    max-height: 44px;
+}
+
+ion-back-button{
+    color: #f4000c;
+    padding-left: 0 !important;
+}

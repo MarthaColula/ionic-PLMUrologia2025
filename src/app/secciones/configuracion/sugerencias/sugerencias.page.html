@@ -1,0 +1,54 @@
+<app-header></app-header>
+<app-navigation-header titulo="Sugerencias"></app-navigation-header>
+
+<ion-content class="ion-padding">
+  <p class="formaFarma textNormal">Elija una sugerencia y agregue un comentario con respecto a su sugerencia</p>
+  <ion-card mode="ios" color="urologia-primary">
+
+    <ion-list class="bckgrList">
+
+      <ion-item color="urologia-primary" multiple="false">
+        <ion-label><p>Dudas sobre servicios, contacto y atención especializada.</p></ion-label>
+        <ion-checkbox color="urologia-secondary" slot="start" value="servicios"></ion-checkbox>
+      </ion-item>
+
+      <ion-item color="urologia-primary" multiple="false">
+        <ion-label><p>Dudas sobre el catálogo de productos publicados.</p></ion-label>
+        <ion-checkbox color="urologia-secondary" slot="start" value="catalogo"></ion-checkbox>
+      </ion-item>
+
+      <ion-item color="urologia-primary" multiple="false">
+        <ion-label><p>Orientación sobre la infromación médica publicada.</p></ion-label>
+        <ion-checkbox color="urologia-secondary" slot="start" value="informacion"></ion-checkbox>
+      </ion-item>
+
+      <ion-item color="urologia-primary" multiple="false">
+        <ion-label><p>Orientación respecto al funcionamiento de la aplicación.</p></ion-label>
+        <ion-checkbox color="urologia-secondary" slot="start" value="funcionamiento"></ion-checkbox>
+      </ion-item>
+
+      <ion-item color="urologia-primary" multiple="false">
+        <ion-label><p>Dudas sobre la falta de algún medicamento en la publicación.</p></ion-label>
+        <ion-checkbox color="urologia-secondary" slot="start" value="medicamento"></ion-checkbox>
+      </ion-item>
+
+      <ion-item color="urologia-primary" multiple="false">
+        <ion-label><p>Solicitar visita de representante médico</p></ion-label>
+        <ion-checkbox color="urologia-secondary" slot="start" value="medicamento"></ion-checkbox>
+      </ion-item>
+
+      <ion-item color="urologia-primary">
+        <ion-textarea placeholder="Ingrese aquí su comentario..."></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+  
+  <div class="ion-text-center ion-padding">
+    <ion-button size="small" class="w-auto" color="urologia-secondary">
+      Enviar
+    </ion-button>
+  </div>
+    
+</ion-content>
+<app-footer></app-footer>

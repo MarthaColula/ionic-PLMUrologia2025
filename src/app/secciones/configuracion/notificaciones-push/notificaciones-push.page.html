@@ -1,0 +1,52 @@
+<app-header></app-header>
+<app-navigation-header titulo="Notificaciones Push"></app-navigation-header>
+
+<ion-content class="ion-padding">
+  <ng-container>
+
+    <div class="row">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-sm="12">
+
+            <ng-container>
+              <ion-card color="urologia-primary">
+                <ion-fab>
+                  <ion-fab-button color="urologia-secondary">
+                    <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon name="globe-outline"></ion-icon>
+                  </ion-fab-button>
+                </ion-fab>
+
+                <ng-template #SponsorIcon>
+                  <ion-fab>
+                    <ion-fab-button color="urologia-primary">
+                        <img style="width: 36px">
+                    </ion-fab-button>
+                  </ion-fab>
+                </ng-template>
+
+                <ion-card-header>
+                  <ion-card-subtitle class="sinRevisar">Notificación nueva</ion-card-subtitle>
+                  <ion-card-title>PushName </ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content color="urologia-primary">
+                    CampaignDescription
+                </ion-card-content>
+              </ion-card>
+            </ng-container>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+  </ng-container>
+
+  <ng-template #Empty>
+    <h1 class="subtituloSeccion">Aquí verás las notificaciones Push de appName. Puede modificar esta opción en la sección Configuración.</h1>
+  </ng-template>
+
+</ion-content>
+<app-footer></app-footer>

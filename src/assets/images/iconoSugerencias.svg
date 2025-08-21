@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_132);
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre_112);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="600" height="600"/>
+    </clipPath>
+    <linearGradient id="Degradado_sin_nombre_132" data-name="Degradado sin nombre 132" x1="209.5" y1="205.73" x2="550" y2="205.73" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f4000c"/>
+      <stop offset="1" stop-color="#cc262d"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_112" data-name="Degradado sin nombre 112" x1="50" y1="389.62" x2="390.49" y2="389.62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#abb8c3"/>
+      <stop offset="1" stop-color="#e8e8e8"/>
+    </linearGradient>
+  </defs>
+  <g id="Capa_3" data-name="Capa 3">
+    <g class="cls-5">
+      <g>
+        <g>
+          <path class="cls-3" d="M522.57,77.24H236.94c-15.15,0-27.43,12.28-27.43,27.43v135.15c0,15.15,12.28,27.43,27.43,27.43h180.69l56.16,64.57c4.18,4.8,12.08,1.85,12.08-4.52v-60.05h36.7c15.15,0,27.43-12.28,27.43-27.43V104.68c0-15.15-12.28-27.43-27.43-27.43Z"/>
+          <g>
+            <rect class="cls-2" x="259.2" y="113.54" width="241.11" height="18.28" rx="9.14" ry="9.14"/>
+            <rect class="cls-2" x="259.2" y="157.12" width="241.11" height="18.28" rx="9.14" ry="9.14"/>
+            <rect class="cls-2" x="259.2" y="200.7" width="147.62" height="18.28" rx="9.14" ry="9.14"/>
+          </g>
+        </g>
+        <g>
+          <path class="cls-4" d="M86.5,256.48h267.49c20.16,0,36.5,16.34,36.5,36.5v117.01c0,20.16-16.34,36.5-36.5,36.5h-171.62l-65.94,75.8c-.8.91-2.3.35-2.3-.86v-74.94h-27.63c-20.16,0-36.5-16.34-36.5-36.5v-117.01c0-20.16,16.34-36.5,36.5-36.5Z"/>
+          <g>
+            <circle class="cls-2" cx="160.22" cy="340.36" r="16.08"/>
+            <circle class="cls-2" cx="220.25" cy="340.36" r="16.08"/>
+            <circle class="cls-2" cx="280.27" cy="340.36" r="16.08"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,394 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+
+ion-accordion.accordion-animated>[slot="header"] .ion-accordion-toggle-icon {
+    color: #f4000c !important;
+}
+
+:host(.ion-color) .toolbar-background {
+
+    border: none !important;
+}
+
+p {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 1.2rem !important;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem !important;
+    text-align: left;
+}
+
+.textNormal {
+    font-family: 'Graphik';
+    font-weight: normal;
+    color: #4d4d4d;
+}
+
+.headerAcordeon {
+    font-family: 'Graphik';
+    font-weight: 500;
+    font-size: 20px !important;
+}
+
+.textBold {
+    font-weight: bold;
+}
+
+ion-item ion-label {
+    white-space: normal !important;
+}
+
+ion-item ion-checkbox {
+    white-space: normal !important;
+}
+
+ion-img.imgIcono {
+    max-width: 280px !important;
+    height: auto;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.md .tituloSeccion {
+    text-align: left;
+    margin-left: -1rem;
+    font-weight: normal;
+    color: #1678CA;
+    font-size: 1rem;
+}
+
+ion-accordion {
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.iconoAccordeon {
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px 10px 0px;
+}
+
+.copyTitulo {
+    font-size: 1rem;
+    color: #0062C3;
+}
+
+
+// INICIO SEARCHBAR
+.sc-ion-searchbar-md-h {
+    --box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 1px -2px rgba(0, 0, 0, 0.10), 0 1px 5px 0 rgba(0, 0, 0, 0.10);
+}
+
+.searchbar-search-icon.sc-ion-searchbar-md.md.hydrated {
+    padding: 10px;
+    margin-left: -15px;
+    margin-top: -9.5px;
+    border-radius: 30px;
+}
+
+.ion-color.sc-ion-searchbar-md-h .searchbar-input.sc-ion-searchbar-md {
+    border-radius: 30px !important;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    color: #1678CA;
+}
+
+.ion-color.sc-ion-searchbar-md-h .searchbar-input.sc-ion-searchbar-md::placeholder {
+    color: #a7a7a7;
+    font-family: 'Graphik' !important;
+    font-size: 0.85rem;
+    font-weight: normal;
+}
+
+ion-icon.searchbar-search-icon.sc-ion-searchbar-md.md.hydrated {
+    color: #1678CA;
+}
+
+.searchbar-input.sc-ion-searchbar-md {
+    padding-left: 2.5rem;
+    padding-right: 2rem;
+}
+
+.searchbar-clear-icon.sc-ion-searchbar-md.md.hydrated {
+    color: #1678CA !important;
+}
+
+// FIN SEARCHBAR
+
+
+
+
+
+// INICIO Cards - iconos
+ion-card-content.contentCardBtnSec {
+    padding: 0;
+    margin: 0;
+}
+
+.contentBtnSec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100% !important;
+    max-width: 100%;
+}
+
+.row.cardBtnSec {
+    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.BtnSec {
+    text-align: center !important;
+    border-radius: 18px;
+    margin: 0;
+    height: auto !important;
+    padding: 0 0 8px 0;
+    width: calc(45% - 0.5rem);
+    margin: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+
+ion-card-content.contentCardBtnSec p {
+    font-size: 0.75rem;
+}
+
+.subTitTextBusc {
+    text-align: center;
+    font-size: 0.81rem;
+    font-family: 'Graphik';
+    font-weight: normal;
+    color: #4d4d4d;
+    margin-top: 0.5rem;
+
+    span {
+        color: #4d4d43;
+        font-weight: bold;
+    }
+}
+
+.imgCardIcon {
+    width: 85%;
+    max-height: auto;
+    // width: auto;
+}
+
+.imgCard {
+    width: 80%;
+    max-width: 220px;
+    height: 220px;
+}
+
+
+ion-card-content p.resultadoBusqueda {
+    font-size: 1rem;
+    color: #4d4d4d;
+    font-family: 'Graphik' !important;
+    font-weight: normal;
+}
+
+ion-card-content p {
+    font-size: 1rem;
+    color: #4d4d4d;
+    // font-family: 'Graphik';
+    font-weight: normal;
+}
+
+ion-card-content p.nombreSeccion b {
+    font-size: 1rem;
+    font-family: 'Graphik';
+    font-weight: normal;
+    color: #0062C3;
+    line-height: 14px;
+    text-align: center !important;
+}
+
+// FIN Cards - icons
+
+
+
+// INICIO IPPA contenido
+
+ion-img.imgLogoProductShot {
+    width: 75%;
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 0 0 1rem 0;
+    padding-top: 1rem;
+}
+
+button.btnRubro {
+    color: #1678CA;
+    font-weight: bold;
+    white-space: normal;
+}
+
+h1.nombreProducto {
+    font-size: 1rem;
+    color: #1678CA;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1.subtituloSeccion {
+    font-size: 1rem;
+    color: #1678CA;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+p.formaFarma {
+    color: #4d4d4d;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.titSustancia {
+    font-size: 1rem;
+    color: #1678CA;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem;
+}
+
+
+// FIN IPPA contenido
+
+
+// -- inicio -- POP-MENU (menu hamburguesa)
+ion-popover {
+    --background: rgb(255, 255, 255)#ffffff;
+    --background: #ffffff;
+    --backdrop-opacity: 0.35;
+    --box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+    --color: white;
+    --width: 300px;
+}
+
+ion-popover ion-content {
+    --background: rgba(0, 0, 0, 0.8);
+}
+
+ion-popover::part(backdrop) {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+// -- fin -- POP-MENU (menu hamburguesa)
+
+// -- inicio -- ALERTAS (Modal)
+.ios .sc-ion-alert-ios {
+    font-size: 1rem;
+    color: #4d4d4d;
+    text-align: left;
+    font-weight: normal;
+}
+
+
+.sc-ion-alert-md {
+    font-weight: normal !important;
+    font-size: 0.9rem;
+    color: #4d4d4d;
+}
+
+.ios .alert-title {
+    font-size: 0.9rem !important;
+    color: #f4000c;
+    text-align: left;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.md .alert-title {
+    font-size: 1.5rem !important;
+    color: #f4000c;
+    text-shadow: none;
+    font-weight: 500;
+}
+
+.ios .alert-button-inner {
+    color: #f4000c;
+    font-weight: normal;
+}
+
+.md .alert-button-inner {
+    text-transform: none;
+}
+
+[aria-checked=true].sc-ion-alert-ios .alert-checkbox-icon.sc-ion-alert-ios {
+    border-color: var(--ion-color-dark, #4d4d4d) !important;
+    background-color: var(--ion-color-dark, #4d4d4d) !important;
+}
+
+[aria-checked=true].sc-ion-alert-ios .alert-radio-label.sc-ion-alert-ios {
+    color: #4d4d4d !important;
+    font-weight: normal;
+    font-family: 'Josefin Sans' !important;
+}
+
+[aria-checked=true].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md {
+    border-color: var(--ion-color-dark, #4d4d4d) !important;
+}
+
+.alert-radio-inner.sc-ion-alert-md {
+    background-color: var(--ion-color-dark, #4d4d4d) !important;
+}
+
+[aria-checked=true].sc-ion-alert-ios .alert-radio-inner.sc-ion-alert-ios {
+    border-color: var(--ion-color-dark, #4d4d4d) !important;
+}
+
+// -- fin -- ALERTAS (Modal)

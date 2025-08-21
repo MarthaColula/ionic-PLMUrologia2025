@@ -1,0 +1,78 @@
+<app-header></app-header>
+<app-navigation-header titulo=""></app-navigation-header>
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row class="contReproductor">
+
+      <div class="podcastTitulo">
+        <h1>Efectos dermatológicos de la clormadinona: Más allá de la anticoncepción</h1>
+      </div>
+      <div class="podcastDescripcion">
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla consequuntur illum voluptates accusamus nobis eum dolores vero tenetur, temporibus nesciunt explicabo facilis. Sequi numquam doloribus?</h2>
+      </div>
+
+      <div class="contRange">
+        <ion-range class="ion-padding-horizontal" max="100" color="urologia-secondary" mode="ios"></ion-range>
+
+        <div class="indicadorTiempo">
+          <ion-label color="medium" slot="start">
+            00:00
+          </ion-label>
+          
+          <ion-label color="medium" slot="end">
+            00:00
+          </ion-label>
+        </div>
+      </div>
+
+
+      
+    </ion-row>
+    
+    <ion-row>
+      <div class="contControls">
+        <div class="controls">
+          <div>
+            <ion-button fill="clear" color="mujer-tertiary">
+              <ion-icon name="heart-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+          <div>
+            <ion-button fill="clear" color="mujer-tertiary">
+              <ion-icon name="play-back-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+          <div>
+            <ion-button class="btnPlayPause" color="mujer-tertiary">
+              <ion-icon class="iconPlayPause" name="play"></ion-icon>
+            </ion-button>
+
+            <ion-button class="btnPlayPause" color="mujer-tertiary"  *ngIf="">
+              <ion-icon class="iconPlayPause" name="pause"></ion-icon>
+            </ion-button>
+          </div>
+
+          <div>
+            <ion-button fill="clear" color="mujer-tertiary">
+              <ion-icon name="play-forward-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+          <div>
+            <ion-button fill="clear" color="mujer-tertiary">
+              <ion-icon name="share-social-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+        </div>
+      </div>
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>
+<app-footer></app-footer>

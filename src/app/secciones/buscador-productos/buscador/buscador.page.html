@@ -1,0 +1,57 @@
+<app-header></app-header>
+<app-navigation-header titulo=""></app-navigation-header>
+
+<ion-content class="ion-padding-horizontal">
+
+
+  <ion-row class="contentTituloSeccion">
+    <ion-col size="12" class="text-center">
+      <img class="iconoSeccion" src="assets/images/cenefaBuscador.svg" alt="">
+    </ion-col>
+  </ion-row>
+
+  <br>
+  
+  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11" color="urologia-primary"
+    mode="md"></ion-searchbar>
+  <h2 class="subTitTextBusc"><span>Texto de búsqueda: </span> <em>Carb</em></h2>
+
+
+<div class="contentBtnSec">
+
+    <div class="row cardBtnSec">
+      <div class="BtnSec" routerLink="/lista-productos">
+       <img class="imgCardIcon" src="/assets/images/iconoBuscMedicamento.svg" />
+        <ion-card-content class="contentCardBtnSec">
+          <p class="resultadoBusqueda">47</p>
+          <p class="nombreSeccion"><b>Medicamentos</b></p>
+        </ion-card-content>
+      </div>
+      <div class="BtnSec" routerLink="/lista-sustancias">
+        <img class="imgCardIcon" src="/assets/images/iconoBuscSustancia.svg" />
+        <ion-card-content class="contentCardBtnSec">
+          <p class="resultadoBusqueda">20</p>
+          <p class="nombreSeccion"><b>Sustancias</b></p>
+        </ion-card-content>
+      </div>
+      <div class="BtnSec" routerLink="/lista-cie">
+        <img class="imgCardIcon" src="/assets/images/iconoBuscCIE.svg" />
+        <ion-card-content class="contentCardBtnSec">
+          <p class="resultadoBusqueda">99</p>
+          <p class="nombreSeccion"><b>CIE-11</b></p>
+        </ion-card-content>
+      </div>
+      <div class="BtnSec" routerLink="/lista-laboratorios">
+        <img class="imgCardIcon" src="/assets/images/iconoBuscLaboratorio.svg" />
+        <ion-card-content class="contentCardBtnSec">
+          <p class="resultadoBusqueda">88</p>
+          <p class="nombreSeccion"><b>Laboratorios</b></p>
+        </ion-card-content>
+      </div>
+    </div>
+
+  </div>
+
+
+</ion-content>
+<app-footer></app-footer>

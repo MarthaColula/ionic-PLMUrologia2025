@@ -1,0 +1,93 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+:root {
+
+	/** urologia-primary **/
+	--ion-color-urologia-primary: #ffffff;
+	--ion-color-urologia-primary-rgb: 255, 255, 255;
+	--ion-color-urologia-primary-contrast: #1678CA;
+	--ion-color-urologia-primary-contrast-rgb: 22, 120, 202;
+	--ion-color-urologia-primary-shade: #ffcacb;
+	--ion-color-urologia-primary-tint: #ffffff;
+
+	/** urologia-secondary **/
+	--ion-color-urologia-secondary: #1678CA;
+	--ion-color-urologia-secondary-rgb: 22, 120, 202;
+	--ion-color-urologia-secondary-contrast: #ffffff;
+	--ion-color-urologia-secondary-contrast-rgb: 255, 255, 255;
+	--ion-color-urologia-secondary-shade: #136ab2;
+	--ion-color-urologia-secondary-tint: #2d86cf;
+
+	/** urologia-tertiary **/
+	--ion-color-urologia-tertiary: #f4000c;
+	--ion-color-urologia-tertiary-rgb: 244, 0, 12;
+	--ion-color-urologia-tertiary-contrast: #000000;
+	--ion-color-urologia-tertiary-contrast-rgb: 0, 0, 0;
+	--ion-color-urologia-tertiary-shade: #d7000b;
+	--ion-color-urologia-tertiary-tint: #f51a24;
+
+
+
+	/** success **/
+	--ion-color-success: #2dd36f;
+	--ion-color-success-rgb: 45, 211, 111;
+	--ion-color-success-contrast: #ffffff;
+	--ion-color-success-contrast-rgb: 255, 255, 255;
+	--ion-color-success-shade: #28ba62;
+	--ion-color-success-tint: #42d77d;
+
+	/** warning **/
+	--ion-color-warning: #ffc409;
+	--ion-color-warning-rgb: 255, 196, 9;
+	--ion-color-warning-contrast: #000000;
+	--ion-color-warning-contrast-rgb: 0, 0, 0;
+	--ion-color-warning-shade: #e0ac08;
+	--ion-color-warning-tint: #ffca22;
+
+	/** Font -- Name Font **/
+	--ion-font-family: 'Graphik';
+}
+
+.ion-color-urologia-primary {
+	--ion-color-base: var(--ion-color-urologia-primary);
+	--ion-color-base-rgb: var(--ion-color-urologia-primary-rgb);
+	--ion-color-contrast: var(--ion-color-urologia-primary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-urologia-primary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-urologia-primary-shade);
+	--ion-color-tint: var(--ion-color-urologia-primary-tint);
+}
+
+.ion-color-urologia-secondary {
+	--ion-color-base: var(--ion-color-urologia-secondary);
+	--ion-color-base-rgb: var(--ion-color-urologia-secondary-rgb);
+	--ion-color-contrast: var(--ion-color-urologia-secondary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-urologia-secondary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-urologia-secondary-shade);
+	--ion-color-tint: var(--ion-color-urologia-secondary-tint);
+}
+
+.ion-color-urologia-tertiary {
+	--ion-color-base: var(--ion-color-urologia-tertiary);
+	--ion-color-base-rgb: var(--ion-color-urologia-tertiary-rgb);
+	--ion-color-contrast: var(--ion-color-urologia-tertiary-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-urologia-tertiary-contrast-rgb);
+	--ion-color-shade: var(--ion-color-urologia-tertiary-shade);
+	--ion-color-tint: var(--ion-color-urologia-tertiary-tint);
+}
+
+@font-face {
+	font-family: 'Graphik';
+	src: url('../assets/fonts/Graphik-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Graphik';
+	src: url('../assets/fonts/Graphik-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

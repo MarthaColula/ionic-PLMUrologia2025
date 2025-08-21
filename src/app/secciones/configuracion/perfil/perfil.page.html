@@ -1,0 +1,170 @@
+<app-header></app-header>
+<app-navigation-header titulo="Perfil"></app-navigation-header>
+
+<ion-content class="">
+
+
+  <p class="text-center">Los campos marcados con <ion-text color="danger">*</ion-text> son obligatorios</p>
+  <form>
+
+
+    <ion-list class="bckgrList ion-padding-horizontal ion-padding-vertical">
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Nombre: <ion-text color="danger">*
+          </ion-text>
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Apellido paterno: <ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Apellido materno: <ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Correo electrónico: <ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="Profesión:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">profession.ProfessionName</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="Tipo de profesional:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">professionsbyparent.ProfessionName</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="Especialidad:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">speciality.SpecialityName</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Cédula profesional: <ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="Subespecialidad:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">subspeciality.SubspecialityName</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Cédula de la subespecialidad:
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text">
+        </ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="País:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">country.CountryName</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="Estado / Departamento / Provincia:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">state.StateName</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select label="Delegación / Municipio:" label-placement="floating" fill="solid">
+          <ion-select-option value="nameProfession">location.LocationName</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating">Teléfono: countryLada phoneLada
+        </ion-label>
+        <ion-input type="tel"></ion-input>
+      </ion-item>
+
+      <div>
+        <ion-item mode="ios" color="urologia-primary">
+          <ion-checkbox justify="space-between" color="urologia-secondary">Ver Términos y Condiciones</ion-checkbox>
+        </ion-item>
+        <h1>Ver Términos y Condiciones</h1>
+
+        <ion-item mode="ios" color="urologia-primary">
+          <ion-checkbox justify="space-between" color="urologia-secondary">Acepto Aviso de Privacidad</ion-checkbox>
+        </ion-item>
+        <h1>Ver Aviso de Privacidad</h1>
+      </div>
+
+      <div class="ion-text-center">
+        <ion-button size="small" class="w-auto" color="urologia-secondary">
+          Registrar
+        </ion-button>
+        <ion-button size="small" class="w-auto" color="urologia-secondary">
+          Actualizar
+        </ion-button>
+      </div>
+
+
+    </ion-list>
+
+    <ion-list class="bckgrList" lines="none">
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">Nombre no puede tener caracteres especiales</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">Apellido paterno no puede tener caracteres especiales </h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">Apellido materno no puede tener caracteres especiales </h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">Ingrese un email valido</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">La profesión es un dato requerido</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">La cedula profesional es un dato requerido</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">El país es un dato requerido</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">El teléfono debe tener 8 dígitos</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">Debe aceptar los términos y condiciones para continuar</h1>
+      </ion-item>
+      <ion-item color="urologia-primary">
+        <h1 class="alert" color="danger">Debe aceptar las políticas de privacidad para continuar</h1>
+      </ion-item>
+    </ion-list>
+
+
+
+  </form>
+
+
+</ion-content>
+
+<app-footer></app-footer>

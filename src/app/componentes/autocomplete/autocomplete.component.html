@@ -1,0 +1,38 @@
+<ion-list class="bckgrList">
+  <ng-container *ngIf="products.length > 0">
+    <ion-item color="purple" style="background: #7908d5;  color: white;"  lines="none" >Medicamentos</ion-item>
+    <ion-item color="mujer-secondary" class="word-prediction" *ngFor="let item of products" (click)="searchEngineEmiter(item)">
+      <ion-label class="ion-text-wrap">{{item.label}}</ion-label>
+    </ion-item>
+  </ng-container>
+
+  <ng-container *ngIf="substances.length > 0">
+    <ion-item color="purple" style="background: #7908d5;  color: white;"  lines="none">Sustancias</ion-item>
+    <ion-item color="mujer-secondary" class="word-prediction" *ngFor="let item of substances" (click)="searchEngineEmiter(item)">
+      <ion-label class="ion-text-wrap">{{item.label}}</ion-label>
+    </ion-item>
+  </ng-container>
+
+  <ng-container *ngIf="icds.length > 0">
+    <ion-item color="purple" style="background: #7908d5;  color: white;"  lines="none">ICD11</ion-item>
+    <ion-item color="mujer-secondary" class="word-prediction" *ngFor="let item of icds" (click)="searchEngineEmiter(item)">
+      <ion-label class="ion-text-wrap">{{item.label}}</ion-label>
+    </ion-item>
+  </ng-container>
+
+  <ng-container *ngIf="labs.length > 0">
+    <ion-item color="purple" style="background: #7908d5;  color: white;"  lines="none">Laboratorios</ion-item>
+    <ion-item color="mujer-secondary" class="word-prediction" *ngFor="let item of labs" (click)="searchEngineEmiter(item)">
+      <ion-label class="ion-text-wrap">{{item.label}}</ion-label>
+    </ion-item>
+  </ng-container>
+
+  <!-- PudMed Section -->
+  <ng-container *ngIf="pubMed.length > 0">
+    <ion-item color="purple" style="background: #7908d5;  color: white;"  lines="none">Sustancias</ion-item>
+    <ion-item color="mujer-secondary" class="word-prediction" *ngFor="let item of pubMed" (click)="searchEnginePubMedEmiter(item)">
+      <ion-label class="ion-text-wrap">{{ item.SubstanceName }}</ion-label>
+    </ion-item>
+  </ng-container>
+
+</ion-list>

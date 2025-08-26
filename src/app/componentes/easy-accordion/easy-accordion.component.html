@@ -1,0 +1,8 @@
+<h2 (click)="toggleAccordion(objeto)">
+   <span [ngClass]="this.isMenuOpen ? 'title-active' : 'title-inactive'" *ngIf="isMenuOpen">&#8722;</span>
+   <span [ngClass]="this.isMenuOpen ? 'title-active' : 'title-inactive'" *ngIf="!isMenuOpen">&#43;</span>
+   <ion-label [ngClass]="this.isMenuOpen ? 'title-active' : 'title-inactive'" >{{ title }}</ion-label>
+</h2>
+<div #myDiv [ngClass]="this.isMenuOpen ? 'active' : 'inactive'">
+   <p [innerHTML]="content" class="global-body-ippa"></p>
+</div>

@@ -1,0 +1,21 @@
+
+.banner-close {
+    position: absolute;
+    top: -22px;
+    right: 1px;
+    z-index: 10;
+    float: right;
+  }
+
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+   //top: 18px;
+  }
+  
+  .swiper-slide {
+    pointer-events: auto; 
+    display: inline-block;
+  }
+  

@@ -1,23 +1,21 @@
 <app-header></app-header>
-
 <app-navigation-header titulo="Créditos"></app-navigation-header>
 
 <ion-content>
-    <div class="ion-margin-horizontal">
-        <p class="textNormal text-center"><b>PLM Urología</b></p>
-        <p class="textNormal text-center"><em>Versión 0.0.0.</em></p>
-        <ion-img class="imgIcono" src="./assets/images/iconoApp.png"></ion-img>
-        <p class="textNormal text-center"><b>© 2024 PLM MÉXICO S.A DE C.V.</b></p> 
-        <P class="textNormal text-center"><b>Todos los Derechos Reservados.</b></P>
-    </div>
-  
+  <div class="ion-margin-horizontal">
+    <p class="textNormal text-center"><b>{{ applicationName }}</b></p>
+    <p class="textNormal text-center"><em>Versión {{ version }}</em></p>
+    <ion-img class="imgIcono" src="./assets/images/iconoApp.png"></ion-img>
+    <p class="textNormal text-center"><b>© {{ year }}  PLM MÉXICO S.A DE C.V.</b></p>
+    <P class="textNormal text-center"><b>Todos los Derechos Reservados.</b></P>
+  </div>
 
-    <div class="ion-text-center">
-      <ion-button size="small" class="w-auto" color="urologia-secondary">
-        Créditos
-      </ion-button>
-    </div>
+  <div class="ion-text-center">
+    <ion-button size="small" class="w-auto" color="urologia-secondary" (click)="openResource('credits.html')">
+      Créditos
+    </ion-button>
+  </div>
 
-    
 </ion-content>
+
 <app-footer></app-footer>

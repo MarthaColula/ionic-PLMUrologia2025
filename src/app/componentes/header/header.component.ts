@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { PopmenuComponent } from '../popmenu/popmenu.component';
 import { IonIcon, IonHeader, IonButtons } from "@ionic/angular/standalone";
+import { PushNotificationsService } from 'src/app/services/push-notifications.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,12 @@ import { IonIcon, IonHeader, IonButtons } from "@ionic/angular/standalone";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private popoverCtrl: PopoverController) { }
+  @Input() changePrefix = false;
+
+    constructor( 
+    private popoverCtrl: PopoverController,
+    protected pushNotificationsService: PushNotificationsService
+  ) { }
 
   ngOnInit() {}
   

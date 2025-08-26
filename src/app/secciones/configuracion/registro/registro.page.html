@@ -15,19 +15,19 @@
 
     <p class="text-center ion-padding-bottom">Los campos marcados con <ion-text color="danger">*</ion-text> son obligatorios</p>
 
-    <form>
+    <form [formGroup]="registerForm" >
 
       <ion-list class="bckgrList ion-margin ion-no-padding">
         <ion-item color="urologia-primary" mode="ios">
           <ion-label class="labelFormReg" mode="ios" position="floating">Correo electrónico:<ion-text color="danger">*
             </ion-text>
           </ion-label>
-          <ion-input type="email" required></ion-input>
+          <ion-input type="email" formControlName="mail" required></ion-input>
         </ion-item>
       </ion-list>
 
       <div class="ion-text-center ion-margin-vertical">
-        <ion-button size="small" class="w-auto" color="urologia-secondary" routerLink="/perfil">
+        <ion-button size="small" class="w-auto" color="urologia-secondary" [disabled]="!registerForm.valid" (click)="register()">
           Registrar
         </ion-button>
       </div>

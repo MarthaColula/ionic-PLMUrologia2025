@@ -1,0 +1,85 @@
+[
+  {
+    "AtlasList": [
+      {
+        "subSectionName": "Salud reproductiva femenina",
+        "atlas": [
+          {
+            "Title": "Dismenorrea primaria",
+            "Description": "Atlas - Dismenorrea primaria",
+            "FileName": "dismenorrea_primaria.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/dismenorrea_primaria.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/dismenorrea_primaria.jpg"
+          },
+          {
+            "Title": "Clasificación de los métodos anticonceptivos ",
+            "Description": "Atlas - Clasificación de los métodos anticonceptivos ",
+            "FileName": "metodos_anticonceptivos.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/metodos_anticonceptivos.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/metodos_anticonceptivos.jpg"
+          },
+          {
+            "Title": "Ciclo ovárico",
+            "Description": "Atlas - Ciclo ovárico",
+            "FileName": "ciclo_ovarico.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/ciclo_ovarico.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/ciclo_ovarico.jpg"
+          }
+        ]
+      },
+      {
+        "subSectionName": "Salud ósea y metabolismo mineral",
+        "atlas": [
+          {
+            "Title": "Osteoporosis",
+            "Description": "Atlas - Osteoporosis",
+            "FileName": "osteoporosis.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/osteoporosis.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/osteoporosis.jpg"
+          },
+          {
+            "Title": "Fractura por fragilidad y su relación con vitamina D",
+            "Description": "Atlas - Fractura por fragilidad y su relación con vitamina D",
+            "FileName": "fractura_vitaminaD.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/fractura_vitaminaD.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/fractura_vitaminaD.jpg"
+          }
+        ]
+      },
+      {
+        "subSectionName": "Infecciones ginecológicas",
+        "atlas": [
+         {
+            "Title": "Vaginosis bacteriana",
+            "Description": "Atlas - Vaginosis bacteriana",
+            "FileName": "vaginosis_bacteriana.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/vaginosis_bacteriana.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/vaginosis_bacteriana.jpg"
+          },
+         {
+            "Title": "Enfermedad pélvica inflamatoria",
+            "Description": "Atlas - Enfermedad pélvica inflamatoria ",
+            "FileName": "enf_pelvica_inflamatoria.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/enf_pelvica_inflamatoria.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/enf_pelvica_inflamatoria.jpg"
+          },
+          {
+            "Title": "Candidiasis vulvovaginal",
+            "Description": "Atlas - Candidiasis vulvovaginal",
+            "FileName": "candidiasis_vulvovaginal.jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/candidiasis_vulvovaginal.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/candidiasis_vulvovaginal.jpg"
+          }
+        ]
+      }
+    ]
+  }
+]

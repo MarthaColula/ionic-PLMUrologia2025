@@ -1,0 +1,6 @@
+<ion-content>
+  <img *ngIf="plt.isPortrait()" class="static-banner"
+  src="{{this.staticBannerURL +'static_banner_portrait.jpg'+ this.time}}" (error)="errorLoadImage()">
+<img *ngIf="plt.isLandscape()" class="static-banner"
+  src="{{this.staticBannerURL +'static_banner_landscape.jpg'+ this.time}}" (error)="errorLoadImage()">
+</ion-content>

@@ -1,13 +1,291 @@
-<app-header></app-header>
-<app-navigation-header titulo="Perfil"></app-navigation-header>
+<app-header [changePrefix]="newPrefix" ></app-header>
+<app-navigation-header [changePrefix]="newUser" titulo="Perfil"></app-navigation-header>
 
 <ion-content class="">
-
-
   <p class="text-center">Los campos marcados con <ion-text color="danger">*</ion-text> son obligatorios</p>
-  <form>
+
+  <form [formGroup]="profileForm">
+
+    <ion-list class="bckgrList ion-padding-horizontal ion-padding-vertical">
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Nombre: </b><ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="FirstName"></ion-input>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.name ">
+          <div class="error-message" *ngIf="!profileForm.controls['FirstName'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Su nombre {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Apellido paterno: </b><ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="LastName"></ion-input>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.name ">
+          <div class="error-message" *ngIf="!profileForm.controls['LastName'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Su apellido paterno {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
 
 
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Apellido materno: </b><ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="SecondLastName"></ion-input>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.name ">
+          <div class="error-message" *ngIf="!profileForm.controls['SecondLastName'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Su apellido materno {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Correo electrónico: </b><ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="email" formControlName="Email"></ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select #C cancelText="Cancelar" okText="Ok" label="Profesión:" label-placement="floating" fill="solid"
+          formControlName="Profession" (ionChange)="getSpecialities(C.value)">
+          <ion-select-option *ngFor="let profession of professions" [value]="profession.ProfessionId">
+            {{profession.ProfessionName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['Profession'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            La profesión {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showTipoProfesional" mode="ios" color="urologia-primary">
+        <ion-select #C cancelText="Cancelar" okText="Ok" label="Tipo de profesional:" label-placement="floating"
+          fill="solid" formControlName="ProfessionType" (ionChange)="onChangeProfessionbyParent(C.value)">
+          <ion-select-option *ngFor="let professionsbyparent of professionsbyparents"
+            [value]="professionsbyparent.ProfessionId">
+            {{professionsbyparent.ProfessionName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="showTipoProfesional" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['ProfessionType'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Tipo de profesional {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showProfessionalLicence" mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Cédula profesional: </b><ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="ProfessionalLicense">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.professionalLicense">
+          <div class="error-message" *ngIf="!profileForm.controls['ProfessionalLicense'].valid ">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Su cédula profesional {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showSpeciality" mode="ios" color="urologia-primary">
+        <ion-select #D cancelText="Cancelar" okText="Ok" label="Especialidad:" label-placement="floating" fill="solid"
+          formControlName="Speciality" (ionChange)="getSubspecialities(D.value)">
+          <ion-select-option *ngFor="let speciality of specialities" [value]="speciality.SpecialityId">
+            {{speciality.SpecialityName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="showSpeciality" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['Speciality'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            La Especialidad {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="this.showSpecialityLicense" mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Cédula de la especialidad: </b><ion-text
+            color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="SpecialityProfessionalLicense">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="this.showSpecialityLicense" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.professionalLicense">
+          <div class="error-message" *ngIf="!profileForm.controls['SpecialityProfessionalLicense'].valid ">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Su cédula de especialidad {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showsubSpeciality" mode="ios" color="urologia-primary">
+        <ion-select #D cancelText="Cancelar" okText="Ok" label="Subespecialidad:" label-placement="floating"
+          fill="solid" formControlName="subSpeciality">
+          <ion-select-option *ngFor="let subspeciality of subspecialities" [value]="subspeciality.SubspecialityId">
+            {{subspeciality.SubspecialityName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="showsubSpeciality" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['subSpeciality'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            La Subespecialidad {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showsubSpeciality" mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Cédula de la subespecialidad:</b>
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="subSpecialityProfessionalLicense">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="showsubSpeciality" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.professionalLicense">
+          <div class="error-message" *ngIf="!profileForm.controls['subSpecialityProfessionalLicense'].valid ">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Su cédula de subespecialidad {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-select #E cancelText="Cancelar" okText="Ok" label="País:" label-placement="floating" fill="solid"
+          formControlName="Country" (ionChange)="getStateByCountry(E.value)">
+          <ion-select-option *ngFor="let country of countries" [value]="country.CountryId">
+            {{country.CountryName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['Country'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            El país {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showStates" mode="ios" color="urologia-primary">
+        <ion-select #F cancelText="Cancelar" okText="Ok" label="Estado / Departamento / Provincia:"
+          label-placement="floating" fill="solid" formControlName="State" (ionChange)="getLocationsByState(F.value)">
+          <ion-select-option *ngFor="let state of states" [value]="state.StateId">
+            {{state.StateName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="showStates" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['State'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            El Estado {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item *ngIf="showLocation" mode="ios" color="urologia-primary">
+        <ion-select #G cancelText="Cancelar" okText="Ok" label="Delegación / Municipio:" label-placement="floating"
+          fill="solid" formControlName="Location" (ionChange)="getPhoneLada(G.value)">
+          <ion-select-option *ngFor="let location of locations" [value]="location.LocationId">
+            {{location.LocationName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="showLocation" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.select ">
+          <div class="error-message" *ngIf="!profileForm.controls['Location'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            La delegación {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+
+      <ion-item mode="ios" color="urologia-primary">
+        <ion-label class="labelFormReg" mode="ios" position="floating"><b>Teléfono:</b>
+        </ion-label>
+        <ion-input type="tel" formControlName="Mobile"></ion-input>
+      </ion-item>
+      <div *ngIf="validationMessages" class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.phone ">
+          <div class="error-message" *ngIf="!profileForm.controls['Mobile'].valid">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            El teléfono {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <div *ngIf="!updateUser;">
+        <ion-item mode="ios" color="urologia-primary">
+          <ion-label class="labelFormReg" mode="ios">Acepto Términos y Condiciones</ion-label>
+          <ion-checkbox formControlName="Terms" slot="end" checked="false" color="urologia-secondary"></ion-checkbox>
+        </ion-item>
+        <ion-item slot="end" (click)="openResource('termsAndConditions.html')">
+          <h1>Ver Términos y Condiciones</h1>
+        </ion-item>
+
+        <ion-item mode="ios" color="urologia-primary">
+          <ion-label class="labelFormReg" mode="ios">Acepto Aviso de Privacidad</ion-label>
+          <ion-checkbox formControlName="Policy" slot="end" checked="false" color="urologia-secondary"></ion-checkbox>
+        </ion-item>
+        <ion-item slot="end" (click)="openResource('privacyNotice.html')">
+          <h1>Ver Aviso de Privacidad</h1>
+        </ion-item>
+      </div>
+
+      <div>
+        <ion-item color="urologia-primary"
+          *ngIf="updateUser && !profileForm.controls['Terms'].valid  && (profileForm.controls['Terms'].dirty || profileForm.controls['Terms'].touched)">
+          <h1 class="verTextosLegales" slot="end">Debe aceptar los terminos y condiciones para continuar</h1>
+        </ion-item>
+        <ion-item color="urologia-primary"
+          *ngIf="updateUser && !profileForm.controls['Policy'].valid  && (profileForm.controls['Policy'].dirty || profileForm.controls['Policy'].touched)">
+          <h1 class="verTextosLegales" slot="end">Debe aceptar las politicas de privacidad para continuar</h1>
+        </ion-item>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <ion-button *ngIf="!updateUser" [disabled]="!profileForm.valid" (click)="register()" size="small" class="w-auto"
+          color="urologia-secondary" mode="md">
+          Registrar
+        </ion-button>
+        <ion-button *ngIf="updateUser" [disabled]="!profileForm.valid" (click)="update()" size="small" class="w-auto"
+          color="urologia-secondary" mode="md">
+          Actualizar
+        </ion-button>
+      </div>
+
+    </ion-list>
+    <!--
     <ion-list class="bckgrList ion-padding-horizontal ion-padding-vertical">
       <ion-item mode="ios" color="urologia-primary">
         <ion-label class="labelFormReg" mode="ios" position="floating">Nombre: <ion-text color="danger">*
@@ -42,19 +320,19 @@
           <ion-select-option value="nameProfession">profession.ProfessionName</ion-select-option>
         </ion-select>
       </ion-item>
-      
+
       <ion-item mode="ios" color="urologia-primary">
         <ion-select label="Tipo de profesional:" label-placement="floating" fill="solid">
           <ion-select-option value="nameProfession">professionsbyparent.ProfessionName</ion-select-option>
         </ion-select>
       </ion-item>
-      
+
       <ion-item mode="ios" color="urologia-primary">
         <ion-select label="Especialidad:" label-placement="floating" fill="solid">
           <ion-select-option value="nameProfession">speciality.SpecialityName</ion-select-option>
         </ion-select>
       </ion-item>
-    
+
 
       <ion-item mode="ios" color="urologia-primary">
         <ion-label class="labelFormReg" mode="ios" position="floating">Cédula profesional: <ion-text
@@ -83,13 +361,13 @@
           <ion-select-option value="nameProfession">country.CountryName</ion-select-option>
         </ion-select>
       </ion-item>
-      
+
       <ion-item mode="ios" color="urologia-primary">
         <ion-select label="Estado / Departamento / Provincia:" label-placement="floating" fill="solid">
           <ion-select-option value="nameProfession">state.StateName</ion-select-option>
         </ion-select>
       </ion-item>
-      
+
       <ion-item mode="ios" color="urologia-primary">
         <ion-select label="Delegación / Municipio:" label-placement="floating" fill="solid">
           <ion-select-option value="nameProfession">location.LocationName</ion-select-option>
@@ -159,12 +437,9 @@
         <h1 class="alert" color="danger">Debe aceptar las políticas de privacidad para continuar</h1>
       </ion-item>
     </ion-list>
-
-
+    -->
 
   </form>
-
-
 </ion-content>
 
 <app-footer></app-footer>

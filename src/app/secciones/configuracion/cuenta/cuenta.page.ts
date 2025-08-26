@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cuenta',
@@ -16,14 +17,38 @@ export class CuentaPage implements OnInit {
   ngOnInit() {
   }
 
-  async presentAlert(){
-    const alert = await this.alertController.create({
+  async presentConfirm() {
+    const alertConfirm = await this.alertController.create({
+      mode: "ios",
+      header: environment.applicationInfo.name,
+      subHeader: "¿Está seguro que desea eliminar su cuenta?",
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            console.log('Acción cancelada');
+          }
+        },
+        {
+          text: 'Sí',
+          handler: () => {
+            this.presentAlert();
+          }
+        }
+      ]
+    });
+    await alertConfirm.present();
+  }
+
+  async presentAlert() {
+    const alertOk = await this.alertController.create({
       mode: "ios",
       header: "Lamentamos su partida",
-      subHeader: "Para confirmar la cancelación de su cuenta, hemos enviado un email al correo que tiene registrado en la aplicación.",
+      subHeader: "Para confirmar la cancelación de su cuenta, hemos enviado un mensaje al correo que tiene registrado en la aplicación.",
       buttons: ["OK"]
     });
-    await alert.present();
-    let result = await alert.onDidDismiss();
+    await alertOk.present();
+    let result = await alertOk.onDidDismiss();
   }
 }

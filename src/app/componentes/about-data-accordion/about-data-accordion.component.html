@@ -1,0 +1,18 @@
+<ng-container *ngIf="this.aboutDataItems; else Empty">
+  <ion-accordion-group mode="md">
+    <ng-container *ngFor="let item of this.aboutDataItems; let i = index">
+      <ion-accordion [value]="i">
+        <ion-item slot="header" color="mujer-secondary" detail="true">
+          <ion-label>{{ item.Title }}</ion-label>
+        </ion-item>
+        <div class="ion-padding" color="mujer-secondary" slot="content" [innerHTML]="item.ConstentSafeHtml"></div>
+      </ion-accordion>
+    </ng-container>
+  </ion-accordion-group>
+</ng-container>
+
+<ng-template #Empty>
+  <ion-item class="ion-text-center" lines="none">
+    <ion-label>No se halló la información.</ion-label>
+  </ion-item>
+</ng-template>

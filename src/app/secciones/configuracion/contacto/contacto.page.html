@@ -2,37 +2,53 @@
 <app-navigation-header titulo="Contacto"></app-navigation-header>
 
 <ion-content>
+  <ng-container *ngIf="response">
+    <ng-container *ngIf="response.getContactResult; else Empty">
 
-    <ion-card mode="ios" color="urologia-primary">
-      <ion-card-subtitle>
+      <ion-card mode="ios" color="urologia-primary">
+        <ion-card-subtitle>
           <h1 class="subtituloSeccion ion-margin-top">PLM México, S.A. de C.V.</h1>
-      </ion-card-subtitle>
-    
-      <ion-card-content>
-        <p class="textNormal"><b>Dirección:</b></p>
-        <p class="textNormal">Insurgentes Sur 1647 piso 2,</p>
-        <p class="textNormal">Col. San José Insurgentes,</p>
-        <p class="textNormal">C.P. 03920</p>
-        <p class="textNormal">México</p>
-        
-      <ion-list class="bckgrList ion-padding-horizontal ion-margin-top">
-        <ion-item mode="ios" detail color="urologia-primary">
-          <ion-thumbnail slot="start">
-            <img src="/assets/images/iconoEmailEmpresas.svg"> 
-          </ion-thumbnail>
-          <ion-label> <h2 class="textNormal">contacto.plmlatina.com</h2> </ion-label>
-        </ion-item>
+        </ion-card-subtitle>
 
-        <ion-item mode="ios" detail color="urologia-primary">
-          <ion-thumbnail slot="start">
-            <img src="/assets/images/iconoFaxEmpresas.svg"> 
-          </ion-thumbnail>
-          <ion-label> <h2 class="textNormal">551555 8369</h2> </ion-label>
-        </ion-item>
-        
-      </ion-list>
-      
-    </ion-card-content>
-    </ion-card>
+        <ion-card-content>
+          <p class="textNormal"><b>{{ response.getContactResult.Street }}</b></p>
+          <p class="textNormal">{{ response.getContactResult.Suburb }},</p>
+          <p class="textNormal">{{ response.getContactResult.ZipCode }}</p>
+          <p class="textNormal">{{ response.getContactResult.CountryName }}</p>
+
+          <ion-list class="bckgrList ion-padding-horizontal ion-margin-top" (click)="sendEmail()">
+            <ion-item mode="ios" detail color="urologia-primary">
+              <ion-thumbnail slot="start">
+                <img src="/assets/images/iconoEmailEmpresas.svg">
+              </ion-thumbnail>
+              <ion-label>
+                <h2 class="textNormal">{{ response.getContactResult.ContactEmail }}</h2>
+              </ion-label>
+            </ion-item>
+
+            <ion-item mode="ios" detail color="urologia-primary" (click)="callNumber()">
+              <ion-thumbnail slot="start">
+                <img src="/assets/images/iconoFaxEmpresas.svg">
+              </ion-thumbnail>
+              <ion-label>
+                <h2 class="textNormal">{{ response.getContactResult.Lada }}{{ response.getContactResult.PhoneOne }} </h2>
+              </ion-label>
+            </ion-item>
+
+          </ion-list>
+
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="exception | async;">
+    <p class="nota ion-text-center">Ocurrió un error!</p>
+  </ng-container>
+
+  <ng-template #Empty>
+    <p class="nota ion-text-center">No se encontraron resultados</p>
+  </ng-template>
+
 </ion-content>
 <app-footer></app-footer>

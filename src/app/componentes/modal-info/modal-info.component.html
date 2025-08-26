@@ -1,0 +1,258 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="start" src="/assets/images/interactions/icono-ver-interaccion.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label class="ion-text-wrap">
+      <ion-text color="primary" style="text-align: center;">
+        <h2>Interacciones Medicamentosas</h2>
+      </ion-text>
+    </ion-label>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="end" name="close-circle" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <div class="ion-text-center">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="dark">
+          <h3>{{interactionDetail.Brand}}</h3>
+        </ion-text>
+        <ion-text color="plmgreen">
+          <p>{{interactionDetail.PharmaForm}}</p>
+        </ion-text>
+      </ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-segment (ionChange)="segmentChanged($event)" mode="md" color="white">
+    <ion-segment-button style="margin-right:5px;" value="laboratorio" class="ion-segment-interactions ion-segment-btn"
+      mode="ios" style="background: #c16abd;">
+      <ion-label class="ion-text-wrap ion-text-left">Basadas en laboratorio</ion-label>
+    </ion-segment-button>
+    <ion-segment-button style="margin-left:5px;" value="evidencia" class="ion-segment-interactions ion-segment-btn"
+      mode="ios" style="background: #c16abd;" *ngIf="interactionByEvidency != undefined">
+      <ion-label class="ion-text-wrap">Basadas en evidencia</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <br>
+  <div [ngSwitch]="this.status">
+    <ion-grid *ngSwitchCase="'laboratorio'">
+      <!--<ion-segment (click)="showIppa()"  style="width: 80px;" class="segmentSize"  class="auto" > 
+        <ion-segment-button color="interaction" value="ippa" class="" style="background: #94278F;">-->
+      <ion-button expand="block" color="purple" size="small" class="chipFavoritosDelete" (click)="showIppa()">
+        IPPA
+      </ion-button>
+      <!--</ion-segment-button>
+      </ion-segment>-->
+      <ion-grid class="interactions-result-grid" *ngIf="interactionDetail.InteractionSubstances.length != 0">
+        <br>
+        <ion-label class="ion-text-wrap">
+          <ion-text color="primary" style="text-align: center;">
+            <h2>Sustancias de interacción</h2>
+          </ion-text>
+        </ion-label>
+        <br>
+        <ion-row class="interactions-result-row-titles" color="light">
+          <ion-col align-self-start size="6" size-lg>
+            <div class="ion-text-center">
+              <ion-label color="light">
+                Sustancia Activa
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col align-self-center size="6" size-lg>
+            <div class="ion-text-center">
+              <ion-label color="light">
+                Sustancia de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let substance of interactionDetail.InteractionSubstances"
+          class="interactions-result-row-items">
+          <ion-col col-3>
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>{{substance.ActiveSubstance}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col col-3>
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p> {{substance.SubstanceInteraction}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="interactions-result-grid" *ngIf="interactionDetail.PharmacologicalGroups.length != 0">
+        <br>
+        <ion-label class="ion-text-wrap">
+          <ion-text color="primary" style="text-align: center;">
+            <h2>Grupos interacción</h2>
+          </ion-text>
+        </ion-label>
+        <br>
+        <ion-row class="interactions-result-row-titles" color="light">
+          <ion-col class="ion-align-self-start">
+            <div class="ion-text-center">
+              <ion-label color="light">
+                Grupo de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label color="light">
+                Medicamento de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label color="light">
+                Sustancia de Interacción
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let pharmacologicalGroup of interactionDetail.PharmacologicalGroups"
+          class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>{{pharmacologicalGroup.GroupName}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p> {{pharmacologicalGroup.IBrand}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark" style="text-align: center;">
+                <p> {{pharmacologicalGroup.IActiveSubstance}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+    <ion-grid *ngSwitchCase="'evidencia'">
+      <ion-grid class="interactions-result-grid" *ngFor="let item of interactionByEvidency.InteractionSubstances">
+        <br>
+        <ion-row class="interactions-result-row-titles" color="light">
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label color="light">
+                {{item.IBrand}}
+              </ion-label>
+            </div>
+            <div class="ion-text-center">
+              <ion-label color="light">
+                {{item.IPharmaForm}}
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>Sustancia Activa</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p> {{item.ActiveSubstance}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>Sustancia de Interacción</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p> {{item.IActiveSubstance}}</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <p>Severidad</p>
+              </ion-text>
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-label class="ion-text-wrap">
+              <ion-text color="dark">
+                <div class="interaction-severity-semaphore {{getColorClassName(item.Severities[0].ColorSemaphore)}}">
+                </div>
+                {{item.Severities[0].IMDDISeverityLevel}}
+              </ion-text>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <br>
+        <ion-row class="interactions-result-row-titles" color="light"
+          *ngIf="item.Severities[0].IMDDIReferences.length != 0">
+          <ion-col class="ion-align-self-center">
+            <div class="ion-text-center">
+              <ion-label color="light">
+                Referencias
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-row class="interactions-result-row-items" *ngFor="let reference of item.Severities[0].IMDDIReferences">
+            <ion-col class="ion-align-self-center">
+              <ion-label class="ion-text-wrap">
+                <ion-text color="dark">
+                  {{reference.ClinicalReference.replace(reference.ReferenceSource, '')}}
+                  <ion-chip (click)="this.iabService.open(reference.ReferenceSource, '_system')">
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                    <ion-label>Referencia</ion-label>
+                  </ion-chip>
+                </ion-text>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+    <ion-grid *ngSwitchCase="'ippa'">
+      <ion-grid class="interactions-result-grid">
+        <ion-row class="interactions-result-row-items">
+          <ion-col class="ion-align-self-center">
+            <p [innerHTML]="interactionDetail.HTMLContent" class="global-body-ippa"></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+  </div>
+
+</ion-content>

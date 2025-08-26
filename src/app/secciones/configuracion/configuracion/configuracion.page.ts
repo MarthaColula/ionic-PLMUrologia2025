@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowserService, GlobalvarsService, ConnectionService } from '../../../services/indexServices';
 
 @Component({
   selector: 'app-configuracion',
@@ -8,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracionPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private globalVars: GlobalvarsService,
+    private connectionService: ConnectionService,
+    private inAppBrowserService: InAppBrowserService,
+  ) { }
+  
+  ngOnInit() { }
 
-  ngOnInit() {
+  async openResource(fileName: string) {
+    if (await this.connectionService.isConnected()) {
+      this.inAppBrowserService.openResource(fileName, this.globalVars.getCountryKey());
+    } else {
+      if (fileName === 'privacyNotice.html') {
+        this.connectionService.displayWarningMsg('Aviso de Privacidad');
+      }
+      if (fileName === 'termsAndConditions.html') {
+        this.connectionService.displayWarningMsg('Términos y condiciones');
+      }
+    }
   }
 
 }

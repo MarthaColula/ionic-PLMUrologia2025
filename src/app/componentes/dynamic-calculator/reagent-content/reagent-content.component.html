@@ -1,0 +1,343 @@
+<div *ngIf="flgShowReagent" class="div-content-reagent">
+  <ion-list #CntntReagent id="cntntReagent" class="ion-no-padding">
+
+    <ion-item *ngIf="flgSubtitle" class="background" color="mujer-secondary">
+      <ion-label class="bc ion-text-wrap" mode="md" position="fixed" >
+        <div *ngIf="validateContentHTML(reagent.Subtitle); else htmlSubtitleFalse">
+          <p [innerHTML]="getContentHTML(reagent.Subtitle)" ></p>
+        </div>
+        <ng-template #htmlSubtitleFalse>
+          {{ reagent.Subtitle }}
+        </ng-template>
+      </ion-label>
+    </ion-item>
+
+    <ng-container *ngIf="flgLabelHeader">
+      <ion-item color="mujer-primary">
+        <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="mujer-secondary">
+          <div *ngIf="validateContentHTML(reagent.Label); else htmlLabelFalse">
+            <p [innerHTML]="getContentHTML(reagent.Label)" class="nota-reagent"></p>
+          </div>
+          <ng-template #htmlLabelFalse>
+            <p class="nota">
+              {{ reagent.Label }}
+            </p>
+          </ng-template>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+    
+    <ion-item>
+      <div [ngSwitch]="reagent.Type" class="div-switch">
+        
+        <div *ngSwitchCase="'Input'" class="div-switch-case">
+          <ion-grid>
+            <ion-row class="align-items-center">
+              <ion-col>
+                <ion-text class="ion-text-wrap">
+                  <div *ngIf="validateContentHTML(reagent.Label); else htmlLabelFalse">
+                    <p [innerHTML]="getContentHTML(reagent.Label)" class="nota-reagent"></p>
+                  </div>
+                  <ng-template #htmlLabelFalse>
+                    <p class="nota">
+                      {{ reagent.Label }}
+                    </p>
+                  </ng-template>
+                </ion-text>
+              </ion-col>
+              <ion-col>
+                <ion-input color="medium" class="inputCalc" type="{{reagent.InputValue}}" placeholder="{{placeholder}}" 
+                (ionChange)="changeInputValue($event)" (keyup.enter)="setFocus()" [value]="inputValue" 
+                #InputFocus id="{{'ionInput'+indxRgnt+''+reagent.NoReagent}}"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <div *ngIf="strMsjError" class="validation-errors">
+                <h1 class="alert">{{ strMsjError }}</h1>
+              </div>
+            </ion-row>
+          </ion-grid>
+        </div>
+        
+        <div *ngSwitchCase="'Date'" class="div-switch-case">
+          <ion-grid>
+            <ng-container>
+              <ion-row class="align-items-center">
+                <ion-col col-6>
+                  <ion-text class="ion-text-wrap">
+                    <div *ngIf="validateContentHTML(reagent.Label); else htmlLabelFalse">
+                      <p [innerHTML]="getContentHTML(reagent.Label)" class="nota-reagent"></p>
+                    </div>
+                    <ng-template #htmlLabelFalse>
+                      <p class="nota">
+                        {{ reagent.Label }}
+                      </p>
+                    </ng-template>
+                  </ion-text>
+                </ion-col>
+                <ion-col col-6>
+                  <ion-input  color="medium" class="inputCalc" type="text" [readonly]="true" placeholder="DD-MM-YYYY" 
+                  value="{{ this.strDateValue }}" #InputDateFocus id="{{'ionDate'+indxRgnt+''+reagent.NoReagent}}"></ion-input>
+                </ion-col>
+              </ion-row>
+              <ion-row align-items-center>
+                <ion-col align-items-start col-12 class="ion-no-padding">
+                  <app-pop-element-date
+                    [utilities]="this.utilities"
+                    [triggerID]="indxRgnt+''+reagent.NoReagent"
+                    [labelDate]="reagent.Label"
+                    (changeDate)="this.changeDateValue($event)">
+                  </app-pop-element-date>
+                </ion-col>
+              </ion-row>
+            </ng-container>
+          </ion-grid>
+        </div>
+        
+        <div *ngSwitchCase="'Select'" class="div-switch-case">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-text class="ion-text-wrap">
+                  <div *ngIf="validateContentHTML(reagent.Label); else htmlLabelFalse">
+                    <p [innerHTML]="getContentHTML(reagent.Label)" class="nota-reagent"></p>
+                  </div>
+                  <ng-template #htmlLabelFalse>
+                    <p class="nota">
+                      {{ reagent.Label }}
+                    </p>
+                  </ng-template>
+                </ion-text>
+              </ion-col>
+              <ion-col>
+                <div *ngIf="!validateStringArray(reagent); else strArrayFalse" class="div-content">
+                  <ion-item (click)="showSelect()">
+                    <ion-select #C id="{{'ionSelectOne'+indxRgnt+''+reagent.NoReagent}}" [value]="selectedItemOne" 
+                    color="medium" class="selectCalc" cancelText="Cancelar" okText="Ok" mode="md" 
+                    (ionChange)="changeSelectValue(1,C.value)">
+                      <ion-select-option *ngFor="let selectItem of reagent.Items" [value]="selectItem.ItemId">
+                        {{ selectItem.Description }}
+                      </ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+                <ng-template #strArrayFalse>
+                  <ion-item (click)="showSelect()">
+                    <ion-select #D id="{{'ionSelectTwo'+indxRgnt+''+reagent.NoReagent}}" [value]="selectedItemTwo" 
+                    color="medium" class="selectCalc" cancelText="Cancelar" okText="Ok" mode="md" 
+                    (ionChange)="changeSelectValue(2,D.value)">
+                      <div *ngFor="let strItem of strArray" class="div-content">
+                        <ion-select-option [value]="strItem">
+                          {{ strItem }}
+                        </ion-select-option>
+                      </div>
+                    </ion-select>
+                  </ion-item>
+                </ng-template>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        
+        <div *ngSwitchCase="'Radio'" class="div-switch-case">
+          <div *ngIf="validateArray(reagent)" class="div-content">
+            <ion-radio-group *ngFor="let radioItem of arrayRadio; let indxR = index" id="{{'ionRadioGroup'+indxRgnt+''+reagent.NoReagent}}"
+              [(ngModel)]="selectedValue" (ionSelect)="selectRadio()" class="radio-group-content">
+              <ion-item>
+                <ion-label class="description ion-text-wrap" mode="md" position="fixed">
+                  <div *ngIf="validateContentHTML(radioItem.Description); else htmlRadioFalse">
+                    <p [innerHTML]="getContentHTML(radioItem.Description)" class="nota-reagent"></p>
+                  </div>
+                  <ng-template #htmlRadioFalse>
+                    <p class="nota-reagent">{{ radioItem.Description }}</p>
+                  </ng-template>
+                </ion-label>
+                <ion-radio class="radio text-type-radio" mode="md" slot="start" id="indxR" 
+                  value="{{radioItem.Value}}" (click)="setVariable(radioItem)" checked color="mujer-secondary">
+                </ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </div>
+        </div>
+  
+        <div *ngSwitchCase="'Check'" class="div-switch-case">
+          <div *ngIf="validateArray(reagent)" class="div-content">
+            <ng-container *ngIf="arrayCheck && arrayCheck.length > 0">
+              <ion-item *ngFor="let checkItem of arrayCheck; let indxC = index">
+                <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="mujer-tertiary">
+                  <div *ngIf="validateContentHTML(checkItem.Description); else htmlCheckFalse">
+                    <p [innerHTML]="getContentHTML(checkItem.Description)" class="nota-reagent"></p>
+                  </div>
+                  <ng-template #htmlCheckFalse>
+                    <p class="nota-reagent">{{ checkItem.Description }}</p>
+                  </ng-template>
+                </ion-label>
+                <ion-checkbox slot="start" value="{{checkItem.Value}}" id="{{'chk'+indxRgnt+''+reagent.NoReagent+''+indxC}}" 
+                  (ionChange)="checkEvent(indxC)" [checked]="checkItem.Checked" color="light">
+                </ion-checkbox>
+              </ion-item>
+            </ng-container>
+            <ng-container *ngIf="arrayCheckConditional && arrayCheckConditional.length > 0">
+              <ion-item *ngFor="let checkItemC of arrayCheckConditional; let indxC2 = index">
+                <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="mujer-secondary">
+                  <div *ngIf="validateContentHTML(checkItemC.Description); else htmlCheckFalse">
+                    <p [innerHTML]="getContentHTML(checkItemC.Description)" class="nota-reagent"></p>
+                  </div>
+                  <ng-template #htmlCheckFalse>
+                    <p class="nota-reagent">{{ checkItemC.Description }}</p>
+                  </ng-template>
+                </ion-label>
+                <ion-checkbox slot="start" value="{{checkItemC.Value}}" id="{{'chkC'+indxRgnt+''+reagent.NoReagent+''+indxC2}}" 
+                  (ionChange)="checkConditionalEvent(indxC2)" [checked]="checkItemC.Checked" color="light">
+                </ion-checkbox>
+              </ion-item>
+            </ng-container>
+          </div>
+        </div>
+        
+        <div *ngSwitchCase="'Range'" class="div-switch-case">
+
+          <ng-container *ngIf="rangeMarks && rangeMarks.length > 0">
+            <ion-grid class="grid-mark">
+              <ion-row>
+                <div class="contentEscalaMolestia">
+                  <div class="escalaNormal">
+                    <img src="assets/images/sinMolestia.svg" alt="">
+                  </div>
+                  <div class="escalaModerada">
+                    <img src="assets/images/moderadaMolestia.svg" alt="">
+                  </div>
+                  <div class="escalaExtrema">
+                    <img src="assets/images/extremaMolestia.svg" alt="">
+                  </div>
+                </div>
+                <ng-container *ngFor="let mark of rangeMarks; let indxMrk = index">
+                  <ng-container *ngIf="indxMrk == 0">
+                    <ion-col>
+                      <!-- <ng-container *ngIf="mark.Type == 'Label'">
+                        <div *ngIf="validateContentHTML(mark.Label); else htmlLabelFalse">
+                          <ion-item class="item-mark" lines="none" color="danger">
+                            <ion-label class="description-mark ion-text-wrap" mode="md">
+                              <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
+                            </ion-label>
+                          </ion-item>
+                        </div>
+                        <ng-template #htmlLabelFalse>
+                          <ion-item class="item-mark" lines="none"  color="success">
+                            <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                              <h1 class="text-center">{{ mark.Label }}</h1>
+                            </ion-label>
+                          </ion-item>
+                        </ng-template>
+                      </ng-container> -->
+                      <ng-container *ngIf="mark.Type == 'Icon'">
+                        <ion-item class="item-mark" lines="none" color="mujer-secondary">
+                          <ion-card style="float:left">
+                            <img [ngStyle]="getObjStyle(mark.Icon.Style)" src="{{mark.Icon.Src}}" float-left/>
+                          </ion-card>
+                        </ion-item>
+                      </ng-container>
+                    </ion-col>
+                  </ng-container>
+
+                  <ng-container *ngIf="indxMrk > 0 && indxMrk &lt; (rangeMarks.length-1)">
+                    <ion-col>
+                      <!-- <ng-container *ngIf="mark.Type == 'Label'">
+                        <div *ngIf="validateContentHTML(mark.Label); else htmlLabelFalse">
+                          <ion-item class="item-mark" lines="none" color="success">
+                            <ion-label class="description-mark ion-text-wrap" mode="md">
+                              <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
+                            </ion-label>
+                          </ion-item>
+                        </div>
+                        <ng-template #htmlLabelFalse>
+                          <ion-item class="item-mark" lines="none">
+                            <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                              <h1 class="text-center">{{ mark.Label }}</h1>
+                            </ion-label>
+                          </ion-item>
+                        </ng-template>
+                      </ng-container> -->
+                      <ng-container *ngIf="mark.Type == 'Icon'">
+                        <ion-item class="item-mark" lines="none">
+                          <ion-card style="float:center">
+                            <img [ngStyle]="getObjStyle(mark.Icon.Style)" src="{{mark.Icon.Src}}"/>
+                          </ion-card>
+                        </ion-item>
+                      </ng-container>
+                    </ion-col>
+                  </ng-container>
+
+                  <ng-container *ngIf="indxMrk == (rangeMarks.length-1)">
+                    <ion-col>
+                      <!-- <ng-container *ngIf="mark.Type == 'Label'">
+                        <div *ngIf="validateContentHTML(mark.Label); else htmlLabelFalse">
+                          <ion-item class="item-mark" lines="none" color="warning">
+                            <ion-label class="description-mark ion-text-wrap" mode="md">
+                              <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
+                            </ion-label>
+                          </ion-item>
+                        </div>
+                        <ng-template #htmlLabelFalse>
+                          <ion-item class="item-mark" lines="none">
+                            <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                              <h1 class="text-center">{{ mark.Label }}</h1>
+                            </ion-label>
+                          </ion-item>
+                        </ng-template>
+                      </ng-container> -->
+                      <ng-container *ngIf="mark.Type == 'Icon'">
+                        <ion-item class="item-mark" lines="none">
+                          <ion-card style="float:right">
+                            <img [ngStyle]="getObjStyle(mark.Icon.Style)" src="{{mark.Icon.Src}}" float-right/>
+                          </ion-card>
+                        </ion-item>
+                      </ng-container>
+                    </ion-col>
+                  </ng-container>
+
+                </ng-container>
+              </ion-row>
+            </ion-grid>
+          </ng-container>
+          <!--<ion-range (ionChange)="changeRange($event)">-->
+          <ng-container *ngIf="rangeMax > 0">
+            <div *ngIf="flgPinFormatter; else pinFormatterFalse" class="center">
+              <ion-range class="custome-range" [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" pin="true"
+              (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)" color="mujer-tertiary">
+                <ion-icon slot="start" pin="true" pinFormatter="pinFormatter" name="snow-outline"></ion-icon>
+              </ion-range>
+            </div>
+            <ng-template #pinFormatterFalse>
+              <div *ngIf="validateRangeArrays(); else htmlLabelFalse" class="center">
+                <ng-container *ngIf="iconsRange && iconsRange.length > 0">
+                  <!--<ion-range [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" dualknobs="{{dualknobs}}" snaps="{{snaps}}"-->
+                  <ion-range class="custome-range" [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}"
+                  (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)">
+                    <ion-icon slot="start" name="{{iconsRange[0]}}"></ion-icon>
+                    <ion-icon slot="end" name="{{iconsRange[1]}}"></ion-icon>
+                  </ion-range>
+                </ng-container>
+                <ng-container *ngIf="labelsRange && labelsRange.length > 0">
+                  <ion-range class="custome-range" [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}"
+                  (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)">
+                    <ion-label range-left>{{ labelsRange[0] }}</ion-label>
+                    <ion-label range-right>{{ labelsRange[1] }}</ion-label>
+                  </ion-range>
+                </ng-container>
+              </div>
+              <ng-template #htmlLabelFalse>
+                <div class="center">
+                  <ion-range class="custome-range" [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}"
+                    (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)">
+                  </ion-range>
+                </div>
+              </ng-template>
+            </ng-template>
+          </ng-container>
+        </div>
+  
+      </div>
+    </ion-item>
+  </ion-list>
+</div>

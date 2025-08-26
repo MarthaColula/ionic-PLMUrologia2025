@@ -1,0 +1,16 @@
+<!--<ion-footer>
+  <img class="" src="/assets/images/banner_muestra.jpg" alt="" style="width: 100%; height: auto;">
+</ion-footer>-->
+
+<div #bannerElementRef class="banner-container">
+  <ion-icon (click)="closeBanner()" class="banner-close" color="danger" name="close-circle" size="large"></ion-icon>
+  <swiper-container #swiper slides-per-view="1" pagination="true" pagination-clickable="true"
+    (swiperslidechange)="onSlideChange($event)" autoplay="true">
+
+    <swiper-slide *ngFor="let banner of bannerResult | async;" (click)="trackingClick(banner)">
+      <ng-container *ngIf="banner.BaseUrl && banner.FileName ">
+        <ion-img src="{{ banner.BaseUrl + banner.FileName }}"></ion-img>
+      </ng-container>
+    </swiper-slide>
+  </swiper-container>
+</div>

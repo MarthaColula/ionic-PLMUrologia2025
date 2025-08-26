@@ -1,0 +1,35 @@
+<ion-modal trigger="{{'ionDate'+triggerID}}">
+  <ion-content class="content-date">
+    <ng-template>
+
+      <ion-title>
+        <ion-label class="description-sub ion-text-wrap" mode="md" position="fixed">
+          <div *ngIf="labelDateHTML; else htmlLabelFalse">
+            <p [innerHTML]="labelDateHTML" class="nota-pop"></p><br>
+          </div>
+          <ng-template #htmlLabelFalse>
+            <p class="nota-pop">{{ labelDate }}</p><br>
+          </ng-template>
+        </ion-label>
+      </ion-title>
+
+
+      <ion-datetime
+        #PopDatetime
+        id="{{'date'+triggerID}}"
+        mode="md"
+        size="cover"
+        class="ion-no-padding top-padding"
+        [showDefaultButtons]="true"
+        doneText="{{doneText}}"
+        cancelText="{{cancelText}}"
+        presentation="date-month-year"
+        displayFormat="DD-MM-YYYY"
+        placeholder="DD-MM-YYYY"
+        [value]="dateValue"
+        (ionChange)="this.changeDateValue(PopDatetime.value)"
+        color="mujer-secondary">
+      </ion-datetime>
+    </ng-template>
+  </ion-content>
+</ion-modal>

@@ -2,37 +2,38 @@
 <app-navigation-header titulo="Notificaciones Push"></app-navigation-header>
 
 <ion-content class="ion-padding">
-  <ng-container>
+  <ng-container *ngIf="this.pushNotificationsService.notificationsLog | async">
 
     <div class="row">
       <ion-grid>
         <ion-row>
-          <ion-col size="12" size-sm="12">
+          <ion-col size="12" size-sm="12" *ngIf="this.pushNotificationsService.notificationsLog.getValue().length > 0; else Empty" >
 
-            <ng-container>
-              <ion-card color="urologia-primary">
-                <ion-fab>
+            <ng-container *ngFor="let item of this.pushNotificationsService.notificationsLog.getValue()">
+              <ion-card color="urologia-primary" (click)="pushClick(item)">
+                <ion-fab *ngIf="!item.Icon?.length ; else SponsorIcon">
                   <ion-fab-button color="urologia-secondary">
-                    <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                    <ion-icon name="globe-outline"></ion-icon>
+                   <ion-icon *ngIf="item.PushTypeId==1" name="chatbox-ellipses-outline"></ion-icon>
+                    <ion-icon *ngIf="item.PushTypeId==2" src="/assets/images/fabMedicamento.svg"></ion-icon>
+                    <ion-icon *ngIf="item.PushTypeId==3"name="globe-outline"></ion-icon>
                   </ion-fab-button>
                 </ion-fab>
 
                 <ng-template #SponsorIcon>
                   <ion-fab>
                     <ion-fab-button color="urologia-primary">
-                        <img style="width: 36px">
+                        <img style="width: 36px" src="{{ this.baseUrlIcon + item.Icon }}">
                     </ion-fab-button>
                   </ion-fab>
                 </ng-template>
 
                 <ion-card-header>
-                  <ion-card-subtitle class="sinRevisar">Notificación nueva</ion-card-subtitle>
-                  <ion-card-title>PushName </ion-card-title>
+                  <ion-card-subtitle  *ngIf="!item.Viewed" class="sinRevisar">Notificación nueva</ion-card-subtitle>
+                  <ion-card-title>{{ item.PushName }} </ion-card-title>
                 </ion-card-header>
 
                 <ion-card-content color="urologia-primary">
-                    CampaignDescription
+                    {{item.CampaignDescription}}
                 </ion-card-content>
               </ion-card>
             </ng-container>
@@ -45,7 +46,7 @@
   </ng-container>
 
   <ng-template #Empty>
-    <h1 class="subtituloSeccion">Aquí verás las notificaciones Push de appName. Puede modificar esta opción en la sección Configuración.</h1>
+    <h1 class="subtituloSeccion">Aquí verás las notificaciones Push de  {{ this.appName }}. Puede modificar esta opción en la sección Configuración.</h1>
   </ng-template>
 
 </ion-content>

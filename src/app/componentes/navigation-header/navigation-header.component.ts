@@ -9,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavigationHeaderComponent  implements OnInit {
 
   @Input() titulo: string | undefined;
+  @Input() changePrefix:boolean  | undefined = false;
 
   constructor() { }
 

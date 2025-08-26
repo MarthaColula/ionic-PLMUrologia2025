@@ -1,0 +1,104 @@
+
+ion-card-subtitle {
+   background: transparent ;
+   cursor: pointer;
+   position: relative;
+   font-family: var(--ion-font-family,inherit);
+   border-bottom: 0.5px solid #7b6e91;
+   margin: 0;
+   span {
+      position: absolute;
+      right: 1em;
+      // font-size: 0.95em;
+   }
+}
+
+.textNormal{
+   color: #ffffff !important;
+}
+
+ /* Here we define the actual 'menu' and its 'options' */
+.image-wrapper {
+   margin: 0 auto 2em auto;
+   width: 20%;
+   img {
+      display: block;
+      margin: auto;
+   }
+}
+
+p {
+   line-height: 1.2em;
+   margin: 0 0 1em 0;
+   font-family: Verdana;
+   font-size: 1rem;
+}
+
+div {
+   position: relative;
+   padding: 0;
+   //border-bottom: 1px solid #8a878b;
+   ion-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+   }
+}
+
+/* Following classes display/hide the 'menu'
+ // based on the state change detection in the
+ // component class */
+.active {
+   display: block;
+   color: #ffffff !important ;
+}
+
+.inactive {
+   display: none;
+   color: #ffffff !important;
+}
+
+.title-active{
+   color: #ffffff;
+}
+
+.title-inactive{
+   color: #ffffff;
+}
+ion-card {
+   margin: 5px;
+}
+
+.title-section {
+   text-align: left;
+   min-width: 95% !important;
+   max-width: 100% !important;
+   font-size: 0.11rem !important;
+   font-style: bold;
+   font-weight: normal;
+   font-family: var(--ion-font-family,inherit);;
+   //color: #2b8906 !important;
+}
+
+
+
+
+//otherSectionBackgroundWhite
+
+.active2 {
+   display: block;
+   color: #94278F !important ;
+}
+
+.inactive2 {
+   display: none;
+   color: #ffffff !important;
+}
+
+.title-active2{
+   color: #94278F;
+}
+
+.title-inactive2{
+   color: #ffffff;
+}

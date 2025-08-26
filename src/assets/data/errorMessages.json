@@ -1,0 +1,25 @@
+{
+    "validationMessages": {
+        "profile": {
+            "name": [
+                {
+                    "type": "pattern",
+                    "message": "debe contener al menos 3 letras (no se permiten números)."
+                }
+            ],
+            "professionalLicense": [
+                {"type": "minlength", "message": "debe tener al menos 5 caracteres de longitud." },
+                {"type": "maxlength", "message": "no puede tener más de 15 caracteres de longitud." },
+                { "type": "pattern", "message": " puede contener números y letras. Caracteres especiales permitidos: guion." }
+            ],
+            "select": [
+                {"type": "required", "message": "es un dato requerido."  }
+            ],
+            "phone": [
+                {"type": "minlength", "message": "debe tener al menos 7 caracteres de longitud." },
+                {"type": "maxlength", "message": "no puede tener más de 10 caracteres de longitud." },
+                {"type": "pattern", "message": "solo permite números." }
+            ]
+        }
+    }
+}

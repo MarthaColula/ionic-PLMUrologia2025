@@ -1,0 +1,23 @@
+<ng-container *ngIf="this.substances.length < 4; else PopoverListTemplate">
+  <ion-card color="ginecologia-primary">
+    <h2 class="titSustancia">Sustancia(s) activa(s)</h2>
+    <ion-card-content>
+      <p *ngFor="let item of substances" class="formaFarma ion-text-center"><em>{{item.Description}}</em></p>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+
+<ng-template #PopoverListTemplate>
+  <ion-card color="ginecologia-primary">
+    <h2 class="titSustancia">Sustancia(s) activa(s)</h2>
+    <ion-card-content >
+      <ion-fab slot="start" (click)="showPopOver();" vertical="center" horizontal="end" slot="fixed">
+        <ion-fab-button size="small" mode="ios" color="ginecologia-secondary">
+          <ion-icon name="list-sharp" color="ginecologia-tertiary"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <p *ngFor="let item of substances | slice:0:2; let i=index" class="formaFarma">
+        <em>{{item. Description}}</em></p><!--ActiveSubstanceName-->
+    </ion-card-content>
+  </ion-card>
+</ng-template>

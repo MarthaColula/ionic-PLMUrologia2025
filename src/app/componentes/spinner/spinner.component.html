@@ -1,0 +1,53 @@
+<ion-toolbar mode="ios">
+  <ion-buttons slot="start">
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <div class="mainContainer">
+    <ion-grid class="default" *ngIf="loader.default">
+      <ion-col size="3">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="text">cargando ...</div>
+      </ion-col>
+    </ion-grid>
+
+
+    <div class="loader-container" *ngIf="loader.sponsor">
+      <div class="loader-positioner">
+        <div class="loader-spinner">
+          <div class="loader-spinner-1"></div>
+          <div class="loader-spinner-2"></div>
+          <div class="loader-spinner-3"></div>
+        </div>
+        <div class="loader-header">
+          <h2>Cargando...</h2>
+        </div>
+      </div>
+    </div>
+
+<!--
+    <ion-grid class="default" *ngIf="loader.sponsor">
+      <ion-col size="3">
+        <div>
+          <ion-img src="/assets/images/plmlogo.png"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col size="3">
+        <div class="text">cargando ...</div>
+      </ion-col>
+    </ion-grid>
+-->
+
+  </div>
+</ion-content>

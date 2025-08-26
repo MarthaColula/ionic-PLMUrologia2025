@@ -8,6 +8,21 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 
+import { PopoverComponent } from './popover/popover.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { ReagentContentComponent } from './dynamic-calculator/reagent-content/reagent-content.component';
+import { PopElementDateComponent } from './dynamic-calculator/pop-element-date/pop-element-date.component';
+import { PopNoteComponent } from './dynamic-calculator/pop-note/pop-note.component';
+import { AboutDataAccordionComponent } from './about-data-accordion/about-data-accordion.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { EasyAccordionComponent } from './easy-accordion/easy-accordion.component';
+import { ActiveSubstancesComponent } from './active-substances/active-substances.component';
+import { ModalInfoComponent } from './modal-info/modal-info.component';
+import { BannerComponent } from './banner/banner.component';
+import { CollapseElementListComponent } from './collapse-element-list/collapse-element-list.component';
+
+
 
 
 @NgModule({
@@ -16,19 +31,45 @@ import { FooterComponent } from './footer/footer.component';
     NavigationHeaderComponent,
     PopmenuComponent,
     InteractionFooterComponent,
-    FooterComponent
+    FooterComponent,
+    SpinnerComponent,
+    PopoverComponent,
+    ReagentContentComponent,
+    PopElementDateComponent,
+    PopNoteComponent,
+    AboutDataAccordionComponent,
+    AutocompleteComponent,
+    EasyAccordionComponent,
+    ActiveSubstancesComponent,
+    ModalInfoComponent,
+    BannerComponent,
+    CollapseElementListComponent,
   ],
   exports: [
     HeaderComponent,
     NavigationHeaderComponent,
     PopmenuComponent,
     InteractionFooterComponent,
-    FooterComponent
+    FooterComponent,
+    SpinnerComponent,
+    PopoverComponent,
+    ReagentContentComponent,
+    PopElementDateComponent,
+    PopNoteComponent,
+    AboutDataAccordionComponent,
+    AutocompleteComponent,
+    EasyAccordionComponent,
+    ActiveSubstancesComponent,
+    ModalInfoComponent,
+    BannerComponent,
+    CollapseElementListComponent,
   ],
   imports: [
     CommonModule,
     IonicModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

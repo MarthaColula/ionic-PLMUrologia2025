@@ -56,7 +56,7 @@
         </ion-col>
       </ion-row>
       <ion-row class="rowBtnII">
-        <ion-col class="btnIzq" routerLink="/">
+        <ion-col class="btnIzq" (click)="openResource('termsAndConditions.html')">
           <div class="contenedorPS">
             
             <div class="imgPS">
@@ -68,7 +68,7 @@
           </div>
         </ion-col>
 
-        <ion-col class="btnDer" routerLink="/registro">
+        <ion-col class="btnDer" (click)="openResource('privacyNotice.html')">
           <div class="contenedorPS">
             
             <div class="imgPS">

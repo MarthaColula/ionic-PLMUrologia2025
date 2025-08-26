@@ -1,0 +1,251 @@
+
+.div-content-reagent {
+    width: 100% !important;
+    ion-list {
+        width: 100% !important;
+        ion-item {
+            width: 100% !important;
+        }
+    }
+}
+
+.div-switch {
+    width: 100% !important;
+}
+.div-switch-case {
+    width: 100% !important;
+    ion-input {
+        width: 100% !important;
+    }
+    ion-datetime {
+        width: 100% !important;
+    }
+    ion-select {
+        width: 100% !important;
+        ion-select-option {
+            width: 90% !important;
+        }
+    }
+    ng-template {
+        width: 100% !important;
+        ion-select {
+            width: 100% !important;
+            ion-select-option {
+                width: 90% !important;
+            }
+        }
+    }
+}
+
+.div-content {
+    width: 100% !important;
+    ion-item {
+        width: 100% !important;
+    }
+    ion-label {
+        width: 100% !important;
+    }
+    ion-radio-group {
+        width: 100% !important;
+        ion-item {
+            width: 100% !important;
+        }
+    }
+}
+
+.description {
+    min-width: 95% !important;
+    max-width: 100% !important;
+}
+.description-mark {
+    min-width: 95% !important;
+    max-width: 100% !important;
+    align-self: stretch;
+}
+.description-sub {
+    min-width: 95% !important;
+    max-width: 100% !important;
+    font-size: 1.5rem !important;
+    font-style: bold;
+    font-weight: normal;
+    color: #5F4E27 !important;
+}
+
+p.text-left {
+    text-align: left;
+}
+p.text-center {
+    text-align: center;
+}
+p.text-right {
+    text-align: right;
+}
+
+h1.text-left {
+    font-size: 0.55rem;
+    text-align: left;
+}
+h1.text-center {
+    font-size: 0.55rem;
+    text-align: center;
+}
+h1.text-right {
+    font-size: 0.55rem;
+    text-align: right;
+}
+
+h1.alert {
+    color: #b30808;
+    font-size: 0.75rem !important;
+    width: 90%;
+    margin: 0.5rem;
+    text-align: left;
+}
+
+.item-has-focus {
+    --highlight-background: rgba(213, 237, 108, 0.461);
+    ion-input {
+        background: #f2f2f2 !important;
+    }
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+ion-grid {
+    align-content: start;
+}
+
+.grid-mark {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100% !important;
+}
+
+ion-range {
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
+    font-family: 'FuturaStd-Heavy';
+    --bar-background:  #f2f2f2;
+    --bar-background-active: #00c96d;
+    --bar-height: 8px;
+    --bar-border-radius: 8px;
+    --knob-background: #08312A;
+    --knob-size: 40px;
+    --pin-background: #1ae789;
+    --pin-color: #08312A;
+}
+/*
+ion-range.custome-range {
+    --knob-size: 1.5rem;
+    --knob-background: #0052a1 !important;
+    //--knob-border-radius: 30;
+    --bar-background: #4d4d4d;
+    --bar-background-active: #6CC4Ed;
+    //--bar-border-radius: 50;
+    --bar-height: 0.33rem;
+}
+*/
+.item-mark {
+    display: flex !important;
+    justify-content: center !important;
+    //border-style: unset !important;
+    margin: 0rem !important;
+    width: 30%;
+}
+
+.lbl-mark {
+    font-size: 0.55rem;
+}
+
+.center {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.validation-errors {
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-message {
+    font-size: .75rem;
+    color: red;
+    text-shadow: 2px 2px 4px gray;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+.contentEscalaMolestia {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+
+.escalaNormal {
+    width: 33.3%;
+    float: left;
+    text-align: left;
+}
+
+.escalaModerada {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+
+.escalaExtrema {
+    width: 33.3%;
+    float: left;
+    text-align: right;
+}
+
+.contentEscalaMolestia div img{
+    max-height:75px;
+}
+
+p.nota{
+    color: #1a1a1a;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+p.nota-reagent {
+    width: 100% !important;
+    color: #1a1a1a !important;
+    font-size: 1rem !important;
+  
+}
+
+.background{
+   background-color: #9181B9 !important;
+    text-align: center;
+}
+
+.bc{
+  min-width: 95% !important;
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    font-style: bold;
+    font-weight: normal;
+    color: #f2f2f2 !important;
+}
+
+.inputCalc{
+    border: 1px solid #9181B9;
+    border-radius: 8px;
+    text-align: center;
+    color: #9181B9;
+}
+
+.selectCalc{
+    border: 1px solid #9181B9;
+    border-radius: 8px;
+    text-align: center;
+}

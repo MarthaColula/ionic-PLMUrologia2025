@@ -6,12 +6,12 @@
   <h1 class="ion-margin textNormal">Indique si desea activar o desactivar las notificaciones push:</h1>
 
   <div class="ion-text-center ion-margin-vertical">
-    <ion-toggle color="success" mode="ios">
+    <ion-toggle color="success" mode="ios"  (ionChange)="ionChangeionToggle()" [(ngModel)]="this.subscribed">
     </ion-toggle>
   </div>
 
   <div class="ion-text-center">
-    <ion-button class="w-auto" size="small" color="urologia-secondary">
+    <ion-button class="w-auto" size="small" color="urologia-secondary" (click)="saveStatusNotificacion()" [disabled]="!changed">
       Guardar
     </ion-button>
   </div>

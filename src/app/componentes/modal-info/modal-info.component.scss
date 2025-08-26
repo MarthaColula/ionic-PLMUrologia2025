@@ -1,0 +1,122 @@
+
+ion-segment-button::part(indicator-background) {
+    background-color: #94278F;
+  }
+  
+  
+  /* Material Design styles */
+  ion-segment-button.md::part(native) {
+    color: #707070;
+  }
+  
+  .segment-button-checked.md::part(native) {
+    color: #B80D05;
+  }
+  
+  
+  ion-segment-button.md::part(indicator-background) {
+    height: 4px;
+  }
+  
+  /* iOS styles */
+  ion-segment-button.ios::part(native) {
+    color: #B80D05;
+    --color-checked: #fff;
+  }
+  
+  .segment-button-checked.ios::part(native) {
+    color: #fff;
+    --color-checked: #fff;
+  }
+  
+  ion-segment-button.ios::part(indicator-background) {
+    border-radius: 20px;
+    --color-checked: #fff;
+  }
+  
+  ion-label {
+    font-weight: normal !important;
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+  
+  
+  .interactions-result-row-titles {
+    border-bottom: 1px solid;
+    border-color: #e2e2e2;
+    background-color: #c16abd;
+  }
+  
+  .interactions-result-row-items {
+    border-bottom: 1px solid;
+    border-color: #e2e2e2;
+    opacity: 0.95;
+    background-color: #f6f0f0;
+  
+  }
+  
+  div.interaction-severity-semaphore {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-right: 5px;
+    float: left;
+  }
+  
+  div.interaction-severity-semaphore.yellow {
+    background-color: #ffff00;
+  }
+  
+  div.interaction-severity-semaphore.white {
+    background-color: #ffffff;
+  }
+  
+  div.interaction-severity-semaphore.gray {
+    background-color: #808080;
+  }
+  
+  div.interaction-severity-semaphore.black {
+    background-color: #000000;
+  }
+  
+  div.interaction-severity-semaphore.red {
+    background-color: #ff0000;
+  }
+  
+  .ipp-detail-button {
+    position: fixed;
+    // right: 0px;
+  }
+  
+  ion-segment.segmentSize {
+    background-color: transparent !important;
+    height: 70px;
+  }
+  
+  ion-icon.btnInteracciones {
+    margin-right: -4px;
+    margin-left: 11px !important;
+    margin-top: 0px;
+    border-left: 1px solid #B80D05;
+    padding-left: 6px;
+  }
+  
+  h2 {
+    color: #B80D05;
+  }
+  
+  ion-icon.iconBtnSegmento {
+    margin: 0 0.5rem;
+  }
+  
+  ion-text h2 {
+    font-weight: normal !important;
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+  
+  ion-chip {
+    --background: rgba(0, 98, 195, 0.75);
+    color: rgb(0, 98, 195);
+  }
+  

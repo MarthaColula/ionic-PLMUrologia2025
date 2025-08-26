@@ -2,11 +2,27 @@
 <app-navigation-header titulo="Sugerencias"></app-navigation-header>
 
 <ion-content class="ion-padding">
-  <p class="formaFarma textNormal">Elija una sugerencia y agregue un comentario con respecto a su sugerencia</p>
-  <ion-card mode="ios" color="urologia-primary">
+  <ng-container *ngIf="comments">
+    <ng-container *ngIf="comments.length > 0; else Empty">
 
-    <ion-list class="bckgrList">
+      <p class="formaFarma textNormal">Elija una sugerencia y agregue un comentario con respecto a su sugerencia</p>
+      <ion-card mode="ios" color="urologia-primary">
+        <ion-list class="bckgrList">
 
+          <ion-item *ngFor="let comment of comments; let i = index" multiple="false" color="mujer-primary">
+            <ion-label>{{comment.TypeDescription}}</ion-label>
+            <ion-checkbox (click)="selectedComent(i)" color="mujer-secondary" slot="start"
+              value="servicios"></ion-checkbox>
+          </ion-item>
+
+          <ion-item color="mujer-primary">
+            <ion-textarea [(ngModel)]="myInput" maxlength=256 (ionBlur)="textComent()" required="true"
+              clearOnEdit="false" placeholder="Ingrese aquí su comentario..."></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+      <!--
       <ion-item color="urologia-primary" multiple="false">
         <ion-label><p>Dudas sobre servicios, contacto y atención especializada.</p></ion-label>
         <ion-checkbox color="urologia-secondary" slot="start" value="servicios"></ion-checkbox>
@@ -40,15 +56,22 @@
       <ion-item color="urologia-primary">
         <ion-textarea placeholder="Ingrese aquí su comentario..."></ion-textarea>
       </ion-item>
+    -->
 
-    </ion-list>
-  </ion-card>
-  
-  <div class="ion-text-center ion-padding">
-    <ion-button size="small" class="w-auto" color="urologia-secondary">
-      Enviar
-    </ion-button>
-  </div>
-    
+      <div class="ion-text-center ion-padding">
+        <ion-button size="small" class="w-auto" color="urologia-secondary" [disabled]="!isenabled" (click)="sendComment()">
+          Enviar
+        </ion-button>
+      </div>
+
+    </ng-container>
+  </ng-container>
+
+  <ng-template #Empty>
+    <p class="nota"> Por el momento, las sugerencias no se encuentran disponibles. Intente mas tarde.</p>
+  </ng-template>
+
 </ion-content>
+
+
 <app-footer></app-footer>

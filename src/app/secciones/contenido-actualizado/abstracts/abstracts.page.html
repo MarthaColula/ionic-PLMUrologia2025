@@ -3,9 +3,23 @@
 
 <ion-content class="ion-padding">
 
-  
-  <ion-list mode="ios">
-    
+  <ng-container *ngIf="successRequest | async;">
+    <ion-list class="bckgrList ion-margin-top" mode="ios" *ngIf="this.clientEngineService.getAbstracts(); else Empty;">
+      <ion-item color="pediatria-primary" detail *ngFor="let item of this.clientEngineService.abstractsResult$ | async"
+        (click)="showAbstract(item)">
+        <ion-thumbnail slot="start">
+          <img alt="" src="/assets/images/iconoAbstract.svg" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2 class="textNormal">
+            {{item.ElectronicTitle }}
+          </h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <!--<ion-list mode="ios">
     <ion-item color="urologia-primary" routerLink="/resumen-abstract">
       <ion-label>
         <h2 class="textNormal">Abstracts</h2>
@@ -16,8 +30,27 @@
         <h2 class="textNormal">Abstracts</h2>
       </ion-label>
     </ion-item>
-    
-  </ion-list>
+  </ion-list>  -->
+
+  <ng-container *ngIf="exception | async;">
+    <app-http-request-exception sectionName="Abstracts" showAlert="true" (retryNow)="this.ngOnInit()">
+    </app-http-request-exception>
+  </ng-container>
+
+  <ng-template #Empty>
+    <ion-list class="bckgrList ion-no-padding">
+      <ion-item class="listaResultadosBusqueda ion-text-center" color="pediatria-tertiary" lines="none">
+        <ion-label>Por el momento, no hay abstracts disponibles.</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
 
 </ion-content>
-<app-footer></app-footer>
+
+<ng-container *ngIf="showBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="ABSTRACTS"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !showBanner">
+  <app-footer></app-footer>
+</ng-container>

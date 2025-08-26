@@ -1,0 +1,60 @@
+{
+  "Title": "Índice de andrógenofais libres (FAI)",
+  "TimeoutFocus": 150,
+  "TimeoutFocusResult": 450,
+  "AboutCalculator": [
+    {
+      "Title": "Descripción",
+      "ContentHtmlString": "La calculadora Free Androgen Index (FAI) es un instrumento clínico utilizado para determinar la proporción del índice de andrógenos libres en humanos. Los datos del FAI se obtienen al calcular el nivel total de testosterona entre el nivel de globulina fijadora de hormonas sexuales (SHBG, por sus siglas en inglés). Los resultados del FAI ayudan a detectar si existe un estado anormal de los andrógenos en el cuerpo."
+    },
+    {
+      "Title": "Referencias",
+      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) Al Kindi MK, Al Essry FS, Al Essry FS, Mula-Abed WAS. Validity of serum testosterone, free androgen index, and calculated free testosterone in women with suspected hyperandrogenism. Oman Med J [Internet]. Noviembre de 2012 (consultado el 13 de agosto de 2025); 27(6):471–474.<br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.5001/omj.2012.112)\">https://doi.org/10.5001/omj.2012.112 </a></p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2) Nedea D. Free Androgen Index (FAI) Calculator [Internet]. MDApp; 10 de abril de 2020 (consultado el 13 de agosto de 2025). <br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://www.mdapp.co/free-androgen-index-fai-calculator-370/)\">https://www.mdapp.co/free-androgen-index-fai-calculator-370/</a></p></ion-label></ion-item>"
+    }
+  ],
+  "Definition": [
+    {
+      "Type": "Indications",
+      "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Rellene los campos solicitados para poder realizar el cálculo correspondiente.</p>"
+    }
+  ],
+  "Reagents": [
+    {
+      "NoReagent": 1,
+      "Type": "Input",
+      "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+      "Placeholder": "nmol/L",
+      "InputValue": "Number",
+      "Param": "t",
+      "Parse": "Float",
+      "Validations": "RANGE:[0,500]",
+      "LeyendaValidation": "Los valores permitidos debenmayor a 0.",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Testosterona total (nmol/L)</ion-label>",
+      "Requiered": true,
+      "Items": []
+    },
+    {
+      "NoReagent": 3,
+      "Type": "Input",
+      "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+      "Placeholder": "nmol/L",
+      "InputValue": "Number",
+      "Param": "g",
+      "Parse": "Int",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Globulina fijadora de hormonas sexuales (SHBG) (nmol/L)</ion-label>",
+      "FinalReagent": true,
+      "Requiered": true,
+      "Items": []
+    }
+  ],
+  "Results": {
+    "Title": "Resultado",
+    "Type": "",
+    "NoLegends": 0,
+    "Legends": "",
+    "ShowCalculateButton": true
+  },
+  "Function": {
+    "CalculatorCode": "fai"
+  }
+}

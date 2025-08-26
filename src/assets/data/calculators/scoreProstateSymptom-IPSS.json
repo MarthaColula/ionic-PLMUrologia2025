@@ -1,0 +1,362 @@
+{
+    "Title": "Puntaje síntomas prostáticos (IPSS)",
+    "TimeoutFocus": 150,
+    "TimeoutFocusResult": 450,
+    "AboutCalculator": [
+      {
+        "Title": "Descripción",
+        "ContentHtmlString": "Evalúa la gravedad de los síntomas urinarios causados por el agrandamiento de la próstata en la hiperplasia prostática benigna (HPB)."
+      },
+      {
+        "Title": "Referencias",
+        "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) de Jong Y, Pinckaers JH, ten Brinck RM, Lycklama à Nijeholt AA, Dekkers OM. Urinating standing versus sitting: position is of influence in men with prostate enlargement. A systematic review and meta-analysis. PLoS One. 2014;9(7):e101320.<br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1371/journal.pone.0101320)\">https://doi.org/10.1371/journal.pone.0101320</a></p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2) Jiang YH, Lin VC, Liao CH, Kuo HC. International Prostatic Symptom Score-voiding/storage subscore ratio in association with total prostatic volume and maximum flow rate is diagnostic of bladder outlet-related lower urinary tract dysfunction in men with lower urinary tract symptoms. PLoS One. 2013; 8(3):e59176.<br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1371/journal.pone.0059176)\">https://doi.org/10.1371/journal.pone.0059176</a></p></ion-label></ion-item>"
+      }
+    ],
+    "Definition": [
+      {
+        "Type": "Indications",
+        "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">A continuación, seleccione la opción que más se asemeje a la situación actual de su paciente.</p>"
+      }
+    ],
+    "Reagents": [
+      {
+        "NoReagent": 1,
+        "Type": "Radio",
+        "Param": "question1",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">1. ¿Con qué frecuencia ha tenido la sensación de no vaciar completamente la vejiga?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      },
+      {
+        "NoReagent": 2,
+        "Type": "Radio",
+        "Param": "question2",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">2. ¿Con qué frecuencia ha tenido que orinar más de una vez en menos de dos horas?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      },
+      {
+        "NoReagent": 3,
+        "Type": "Radio",
+        "Param": "question3",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">3. ¿Al orinar, con qué frecuencia para y comienza de nuevo?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      },
+      {
+        "NoReagent": 4,
+        "Type": "Radio",
+        "Param": "question4",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">4. ¿Con qué frecuencia le ha resultado difícil posponer la micción?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      },
+      {
+        "NoReagent": 5,
+        "Type": "Radio",
+        "Param": "question5",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">5. ¿Con qué frecuencia ha tenido un flujo urinario débil?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      },
+      {
+        "NoReagent": 6,
+        "Type": "Radio",
+        "Param": "question6",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">6. ¿Con qué frecuencia ha tenido que esforzarse para comenzar a orinar?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      },
+      {
+        "NoReagent": 7,
+        "Type": "Radio",
+        "Param": "question7",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">7. ¿Cuántas veces se levanta normalmente por la noche para orinar?</ion-label>",
+        "Items": [
+          {
+            "ItemId": 1,
+            "Description": "Nunca",
+            "Value": "0",
+            "Checked": false
+          },
+          {
+            "ItemId": 2,
+            "Description": "1 de cada 5 veces",
+            "Value": "1",
+            "Checked": false
+          },
+          {
+            "ItemId": 3,
+            "Description": "Menos de la mitad de las veces",
+            "Value": "2",
+            "Checked": false
+          },
+          {
+            "ItemId": 4,
+            "Description": "La mitad de las veces",
+            "Value": "3",
+            "Checked": false
+          },
+          {
+            "ItemId": 5,
+            "Description": "Más de la mitad de las veces",
+            "Value": "4",
+            "Checked": false
+          },
+          {
+            "ItemId": 6,
+            "Description": "Casi siempre",
+            "Value": "5",
+            "Checked": false
+          }
+        ]
+      }
+    ],
+    "Results": {
+      "Title": "Resultado",
+      "Type": "Legends",
+      "NoLegends": 1,
+      "Legends": "<ion-item mode=\"md\" class=\"ion-text-center\" color=\"plm-light\" lines=\"none\"><ion-label class=\"white-space-ion-label\"><p>Puntuación internacional de síntomas de próstata (IPSS) = <b>SCORE</b>. De acuerdo con el índice de síntomas de la American Urological Association, este puntaje es indicativo de sintomatología <b>LEGEND</b> causada por la hiperplasia benigna de próstata (HBP).</p></ion-label></ion-item>",
+      "ShowCalculateButton": false,
+      "Score": true
+    },
+    "TableResults": {
+      "Headers": "",
+      "Items": [
+        {
+          "Case": "<=7",
+          "TextResult": "Leve",
+          "ValueResult": "",
+          "Observation": ""
+        },
+        {
+          "Case": "[8,19]",
+          "TextResult": "Moderada",
+          "ValueResult": "",
+          "Observation": ""
+        },
+        {
+          "Case": ">19",
+          "TextResult": "Severa",
+          "ValueResult": "",
+          "Observation": ""
+        }
+      ]
+    }
+  }

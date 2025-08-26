@@ -1,36 +1,54 @@
 <app-header></app-header>
-<app-navigation-header titulo=""></app-navigation-header>
+<app-navigation-header titulo="{{this.title}}"></app-navigation-header>
 
 <ion-content>
   <ion-grid>
 
     <ion-row class="contReproductor">
-
       <div class="podcastTitulo">
-        <h1>Efectos dermatológicos de la clormadinona: Más allá de la anticoncepción</h1>
+        <h1>{{this.title}}</h1>
       </div>
       <div class="podcastDescripcion">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla consequuntur illum voluptates accusamus nobis eum dolores vero tenetur, temporibus nesciunt explicabo facilis. Sequi numquam doloribus?</h2>
+        <h2>{{this.album}}</h2>
       </div>
 
-      <div class="contRange">
-        <ion-range class="ion-padding-horizontal" max="100" color="urologia-secondary" mode="ios"></ion-range>
+      <ng-container *ngIf="podPlay === true">
+        <div class="contRange">
+          <ion-range class="ion-padding-horizontal" max="100" color="urologia-secondary" mode="ios"
+            *ngIf="currentTime != null && duration > 0" min="0" [max]="duration" [value]="currentTime"
+            (ionChange)="onRangeChange($event)"></ion-range>
 
-        <div class="indicadorTiempo">
-          <ion-label color="medium" slot="start">
-            00:00
-          </ion-label>
-          
-          <ion-label color="medium" slot="end">
-            00:00
-          </ion-label>
+          <div class="indicadorTiempo">
+            <ion-label color="medium" slot="start">
+              {{ formatTime(currentTime) }}
+            </ion-label>
+            <ion-label color="medium" slot="end">
+              {{ formatTime(duration) }}
+            </ion-label>
+          </div>
         </div>
-      </div>
+      </ng-container>
 
 
-      
+      <ng-container *ngIf="podPlay === false">
+        <div class="contRange">
+          <ion-range class="ion-padding-horizontal" max="100" color="urologia-secondary" mode="ios"></ion-range>
+
+          <div class="indicadorTiempo">
+            <ion-label color="medium" slot="start">
+              00:00
+            </ion-label>
+            <ion-label color="medium" slot="end">
+              00:00
+            </ion-label>
+          </div>
+        </div>
+      </ng-container>
+
     </ion-row>
-    
+
+
+
     <ion-row>
       <div class="contControls">
         <div class="controls">
@@ -41,23 +59,23 @@
           </div>
 
           <div>
-            <ion-button fill="clear" color="mujer-tertiary">
+            <ion-button fill="clear"  (click)="back()"  color="mujer-tertiary">
               <ion-icon name="play-back-outline"></ion-icon>
             </ion-button>
           </div>
 
           <div>
-            <ion-button class="btnPlayPause" color="mujer-tertiary">
+            <ion-button class="btnPlayPause"  *ngIf="!isPlaying" (click)="play()"    color="mujer-tertiary">
               <ion-icon class="iconPlayPause" name="play"></ion-icon>
             </ion-button>
 
-            <ion-button class="btnPlayPause" color="mujer-tertiary"  *ngIf="">
+            <ion-button class="btnPlayPause"  *ngIf="isPlaying" (click)="pause()" color="mujer-tertiary" *ngIf="">
               <ion-icon class="iconPlayPause" name="pause"></ion-icon>
             </ion-button>
           </div>
 
           <div>
-            <ion-button fill="clear" color="mujer-tertiary">
+            <ion-button fill="clear" (click)="forward()"  color="mujer-tertiary">
               <ion-icon name="play-forward-outline"></ion-icon>
             </ion-button>
           </div>
@@ -71,8 +89,8 @@
         </div>
       </div>
     </ion-row>
-
-
   </ion-grid>
 </ion-content>
+
+
 <app-footer></app-footer>

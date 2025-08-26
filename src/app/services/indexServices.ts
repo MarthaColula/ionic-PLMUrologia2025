@@ -23,6 +23,7 @@ export * from './podcast.service';
 export * from './push-notifications.service';
 export * from './deep-links.service';  
 export * from './firebase-analytics.service';
+export * from './metadata-engine.service';
 
 
 /*

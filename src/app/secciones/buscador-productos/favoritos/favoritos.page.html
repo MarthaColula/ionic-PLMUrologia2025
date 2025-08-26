@@ -1,0 +1,45 @@
+<app-header></app-header>
+<app-navigation-header titulo="Favoritos"></app-navigation-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="this.favoritesService.listFavoriteProducts.getValue().length > 0; else Empty;"
+    class="ion-margin-top">
+    <ion-item color="urologia-primary" *ngFor="let drug of this.favoritesService.listProducts$ | async"
+      (click)="detailDrug(drug)" detail >
+      <ion-label class="ion-text-wrap">
+        <h2>{{drug.brand}}</h2>
+        <p><em>{{drug.pharmaFormName}}</em></p>
+      </ion-label>
+    </ion-item>
+  </ng-container>
+
+  <ng-template #Empty>
+    <ion-item color="urologia-primary" lines="none">
+      <ion-label>Agregue productos en el Buscador de Productos {{nameApp}}</ion-label>
+    </ion-item>
+  </ng-template>
+  <!--
+    <ion-item detail routerLink="/ippa" color="genericos-primary">
+      <ion-label>
+        <h2>NOMBRE PRODUCTO</h2>
+        <p><em>Solución</em></p>
+      </ion-label>
+    </ion-item>
+    <ion-item detail routerLink="/ippa" color="genericos-primary">
+      <ion-label>
+        <h2>NOMBRE PRODUCTO</h2>
+        <p><em>Cápsulas de liberación retardada</em></p>
+      </ion-label>
+    </ion-item>
+    -->
+
+</ion-content>
+
+
+<ng-container *ngIf="showBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="FAVORITOS"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !showBanner">
+  <app-footer></app-footer>
+</ng-container> 

@@ -13,6 +13,7 @@ import { SplashScreen } from '@capacitor/splash-screen';
 import { environment } from 'src/environments/environment';
 import { Capacitor } from '@capacitor/core';
 import { NavigationExtras } from '@angular/router';
+import { FavouritesService } from './services/favourites.service';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class AppComponent {
     private userStorageService: UserStorageService,
     private navCtrl: NavController,
     private platform: Platform,
-    //private favoritesService: FavouritesService,
+    private favoritesService: FavouritesService,
     private interactionService: InteractionsService,
     private fa: FirebaseAnalyticsService,
   ) {
@@ -54,6 +55,10 @@ export class AppComponent {
           SplashScreen.hide();
         });
 
+        this.favoritesService.initService().then(() => {
+          console.warn('AppComponent', 'initFavoritesService Finish');
+        });
+        
 
         this.interactionService.initService().then(() => {
           console.warn('initService finish');

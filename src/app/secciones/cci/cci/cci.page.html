@@ -2,16 +2,14 @@
 <app-navigation-header titulo=""></app-navigation-header>
 
 <ion-content class="ion-padding-horizontal">
-
-
   <ion-row class="contentTituloSeccion">
     <ion-col size="12" class="text-center">
       <img class="iconoSeccion" src="assets/images/cenefaCci.svg" alt="">
     </ion-col>
   </ion-row>
-
   <br>
 
+<!--
   <ion-accordion-group mode="ios" class="ion-padding-top">
     <ion-accordion value="first">
       <ion-item slot="header" color="urologia-primary">
@@ -32,7 +30,6 @@
         </ion-item>
       </div>
     </ion-accordion>
-
 
     <ion-accordion value="second">
       <ion-item slot="header" color="urologia-primary">
@@ -66,8 +63,16 @@
         </ion-item>
       </div>
     </ion-accordion>
-
   </ion-accordion-group>
-
+-->
 </ion-content>
-<app-footer></app-footer>
+
+
+
+<ng-container *ngIf="showBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="ESTUDIOS_CLINICOS"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !showBanner">
+ <app-footer></app-footer>
+</ng-container>

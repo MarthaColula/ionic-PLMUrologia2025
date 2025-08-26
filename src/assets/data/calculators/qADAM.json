@@ -1,0 +1,446 @@
+{
+  "Title": "Cuestionario de deficiencia androgénica en el varón adulto (qADAM)",
+  "TimeoutFocus": 150,
+  "TimeoutFocusResult": 450,
+  "AboutCalculator": [
+    {
+      "Title": "Descripción",
+      "ContentHtmlString": "El cuestionario qADAM es una herramienta diseñada para evaluar la presencia y severidad de síntomas asociados a la deficiencia androgénica en varones adultos. A diferencia de la versión original, este nuevo formato cuantitativo permite graduar la intensidad de los síntomas, lo que facilita el seguimiento clínico y la evaluación de la respuesta al tratamiento."
+    },
+    {
+      "Title": "Referencias",
+      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) James HE. Neurologic evaluation and support in the child with an acute brain insult. Pediatr Ann. 1986 Jan;15(1):16–22.</p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2) Borgialli DA, Mahajan P, Hoyle JD, Powell EC, Nadel FM, Tunik MG, et al. Performance of the Pediatric Glasgow Coma Scale Score in the Evaluation of Children With Blunt Head Trauma. Acad Emerg Med. 2016 Aug;23(8):878–84.</p></ion-label></ion-item>"
+    }
+  ],
+  "Definition": [
+    {
+      "Type": "Indications",
+      "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Use este cuestionario para evaluar la presencia y severidad de los síntomas asociados a la deficiencia androgénica en varones adultos. Proporcione a su paciente el dispositivo para que pueda responder, o lea usted las preguntas junto a sus opciones de respuesta</p>"
+    }],
+  "Reagents": [
+    {
+      "NoReagent": 1,
+      "Type": "Radio",
+      "Param": "q1",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">1. ¿Cómo calificaría su libido (deseo sexual)?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 2,
+      "Previous": 1,
+      "Next": 3,
+      "Type": "Radio",
+      "Param": "q2",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">2. ¿Cómo calificaría su nivel de energía? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 3,
+      "Previous": 2,
+      "Next": 4,
+      "Type": "Radio",
+      "Param": "q3",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">3. ¿Cómo calificaría su fuerza/resistencia?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 4,
+      "Previous": 3,
+      "Next": 5,
+      "Type": "Radio",
+      "Param": "q4",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">4. ¿Cómo calificaría su satisfacción y disfrute de la vida?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 5,
+      "Previous": 1,
+      "Next": 6,
+      "Type": "Radio",
+      "Param": "q5",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">5. ¿Cómo calificaría su nivel de felicidad?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 6,
+      "Previous": 5,
+      "Next": 7,
+      "Type": "Radio",
+      "Param": "q6",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">6. ¿Qué tan fuertes son sus erecciones?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente débil",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Extremadamente pobre",
+          "Value": "2",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 7,
+      "Previous": 6,
+      "Next": 8,
+      "Type": "Radio",
+      "Param": "q7",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">7. ¿Cómo calificaría su desempeño laboral en las últimas 4 semanas?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 8,
+      "Previous": 7,
+      "Type": "Radio",
+      "Param": "q8",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">8. ¿Con qué frecuencia se queda dormido después de la cena?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Nunca",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "1-2/semana",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "3-4/semana",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "5-4/semana",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Todas las noches",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 9,
+      "Type": "Radio",
+      "Param": "q9",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">9. ¿Cómo calificaría su capacidad deportiva en las últimas 4 semanas?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Terrible",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Pobre",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Promedio",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Bueno",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Excelente",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 10,
+      "Type": "Radio",
+      "Param": "q10",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">10. ¿Cuánta estatura ha perdido?</ion-label>",
+      "Requiered": true,
+      "FinalReagent": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "> 5.08 cm",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "3.81 – 5.07 cm",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "2.54 – 3.80 cm",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "1.27 – 2.53 cm",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "0 – 1.26 cm",
+          "Value": "5",
+          "Checked": false
+        }
+      ]
+    }
+  ],
+   "Results": {
+      "Title": "Resultado",
+      "Type": "Legends",
+      "NoLegends": 1,
+      "Legends": "<ion-item mode=\"md\" class=\"ion-text-center\" color=\"light\" lines=\"none\"><ion-label style=\"color: #4d4d4d; font-weight: bold;\" class=\"white-space-ion-label\"><p><b>SCORE<b> <br><b>LEGEND</b></p></ion-label></ion-item>",
+      "Note": "<p>Use el resultado para evaluar el impacto del tratamiento. <br> <b>Nota:</b> Estos rangos son orientativos y deben interpretarse junto con la historia clínica, exploración física y parámetros bioquímicos (testosterona total y libre) del paciente.</p>",
+      "ShowAutoResult": false,
+      "Score": true
+    },
+    "TableResults": {
+      "Headers": "",
+      "Items": [
+        {
+          "Case": "[10,20]",
+          "TextResult": "<b>10 - 20</b> <br>Deficiencia androgénica severa: síntomas muy marcados y alta probabilidad de hipogonadismo clínico. Requiere una evaluación endocrinológica y estudios hormonales completos.",
+          "ValueResult": "",
+          "Observation": ""
+        },
+        {
+          "Case": "[21,30]",
+          "TextResult": "<b>21 - 30</b> <br> Deficiencia androgénica moderada: síntomas clínicamente significativos. Se debe indicar una evaluación diagnóstica y considerar la intervención terapéutica.",
+          "ValueResult": ".",
+          "Observation": ""
+        },
+        {
+          "Case": "[31,40]",
+          "TextResult": "<b>31 - 40</b> <br> Deficiencia androgénica leve: síntomas ocasionales o de baja intensidad. Requiere un seguimiento clínico y reevaluación periódica.",
+          "ValueResult": "",
+          "Observation": ""
+        },
+         {
+          "Case": "[41,50]",
+          "TextResult": "<b>41 - 50</b> <br>Sin evidencia significativa de deficiencia androgénica: sintomatología mínima o ausente. Se recomienda mantener un control preventivo.",
+          "ValueResult": "",
+          "Observation": ""
+        }
+      ]
+    }
+}

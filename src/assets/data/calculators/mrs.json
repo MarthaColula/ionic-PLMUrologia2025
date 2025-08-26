@@ -1,0 +1,419 @@
+{
+  "Title": "Escala de calificación de la menopausia (MRS)",
+  "Version": 2,
+  "AboutCalculator": [
+    {
+      "Title": "Descripción",
+      "ContentHtmlString": "Este instrumento es utilizado para evaluar la calidad de vida en mujeres durante la menopausia, tiene un valor diagnóstico y de seguimiento, se encuentra validada en varios idiomas y poblaciones, esta escala es autoevaluativa."
+    },
+    {
+      "Title": "Referencias",
+      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) Aedo M Sócrates, Porcile J Arnaldo, Irribarra A Cristina. Calidad de vida relacionada con el climaterio en una población chilena de mujeres saludables. Rev Chil Obstet Ginecol  [Internet]. 2006  (consultado el 12 de agosto del  2025); 71(6):402-409 <br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(http://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262006000600007&lng=es)\">http://www.scielo.cl/scielo.php?script=sci_arttext&pid=S0717-75262006000600007&lng=es </a> <br><a class=\"link\" (click)=\"inAppBrowser(http://dx.doi.org/10.4067/S0717-75262006000600007)\">http://dx.doi.org/10.4067/S0717-75262006000600007 </a></p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2) Heinemann K, Ruebig A, Potthoff P, et al. The Menopause Rating Scale (MRS) scale: a methodological review. Health Qual Life Outcomes [Internet]. 2 sep 2004 (consultado el 12 de agosto del 2025);2:45. <br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1186/1477-7525-2-45)\">https://doi.org/10.1186/1477-7525-2-45</a></p></ion-label></ion-item>"
+    }
+  ],
+  "Definition": [
+    {
+      "Type": "Indications",
+      "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Seleccione la opción que represente:</p>"
+    }
+  ],
+  "Reagents": [
+    {
+      "NoReagent": 1,
+      "Total": 11,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q1",
+      "Parse": "Int",
+      "Label": "1. Bochornos, sudoración, calores.",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Subtitle": "<p class=\"ion-text-center\">Tipo de molestia</p>",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 2,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q2",
+      "Parse": "Int",
+      "Label": "2. Molestias al corazón (siente palpitaciones, latidos u opresión en el pecho).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+       "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 3,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q3",
+      "Parse": "Int",
+      "Label": "3. Dificultades para dormir (tiene insomnio, duerme poco).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 4,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q4",
+      "Parse": "Int",
+      "Label": "4. Molestias musculares y articulares (siente dolores de huesos y articulaciones, tiene dolores reumáticos).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 5,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q5",
+      "Parse": "Int",
+      "Label": "5. Estado de ánimo depresivo (se siente deprimida, decaída, triste, a punto de llorar y/o sin ganas de vivir).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+ "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 6,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q6",
+      "Parse": "Int",
+      "Label": "6. Irritabilidad (se siente tensa, se molesta con facilidad, explota fácilmente, se siente irascible o con poca tolerancia).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 7,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q7",
+      "Parse": "Int",
+      "Label": "7. Ansiedad (se siente angustiada, temerosa, inquieta y/o con tendencia a sentir pánico).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+     "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 8,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q8",
+      "Parse": "Int",
+      "Label": "8. Cansancio físico y mental (se cansa con facilidad, siente que no rinde igual, presenta olvidos frecuentes, siente que empieza a tener problemas de memoria, tiene dificultades para concentrarse).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+       "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 9,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q9",
+      "Parse": "Int",
+      "Label": "9. Problemas sexuales (tiene menor deseo sexual, tiene relaciones sexuales con menor frecuencia, se siente menos satisfecha con el acto).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 10,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q10",
+      "Parse": "Int",
+      "Label": "10. Problemas al orinar (orina más veces al día, siente mucha urgencia de orinar, suele escaparse un chorro de orina involuntariamente)",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    },
+    {
+      "NoReagent": 11,
+      "Type": "Range",
+      "Range": "[0,0]",
+      "Param": "q11",
+      "Parse": "Int",
+      "Label": "11. Sequedad vaginal (siente sequedad en genitales, presenta ardor o malestar en la región genital, durante las relaciones sexuales tiene malestar o dolor).",
+      "Requiered": true,
+      "ScrollMarks": true,
+      "TypeMarks": "Label",
+      "Marks": [
+        {
+          "Value": 0,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
+        },
+        {
+          "Value": 1,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/2.svg\">"
+        },
+        {
+          "Value": 2,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>leve <br></b></p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"/assets/images/mrs/3.svg\">"
+        },
+        {
+          "Value": 3,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente<br>molestia <br>moderada</b> </p><img style=\"width: 50px; height: 38px;  display: block; margin: auto;\" src=\"./assets/images/mrs/4.svg\">"
+        },
+        {
+          "Value": 4,
+          "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
+        }
+       
+      ],
+      "Items": []
+    }
+  ],
+  "Results": {
+    "Title": "Resultado",
+    "Type": "",
+    "NoLegends": 0,
+    "Legends": "",
+    "ShowCalculateButton": false
+  },
+  "Function": {
+    "CalculatorCode": "mrs"
+  }
+}

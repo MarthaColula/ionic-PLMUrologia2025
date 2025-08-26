@@ -1,0 +1,94 @@
+[
+  {
+    "sectionName": "podcast",
+    "PLMId": "",
+    "podcastResources": [
+      {
+        "subSectionName": "Salud Hormonal Masculina",
+        "podcast": [
+          {
+            "Active": false,
+            "CompanyClientId":981,
+            "ElectronicDescription": "Testosterona y salud musculoesquelética: evidencia clínica y aplicaciones en el adulto mayor",
+            "ElectronicId": 10142,
+            "ElectronicTitle": "Testosterona y salud musculoesquelética: evidencia clínica y aplicaciones en el adulto mayor",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 77,
+            "Link": "",
+            "InfDescription": "Podcast",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/",
+            "Order": 2
+          },
+          {
+            "Active": false,
+            "CompanyClientId":981,
+            "ElectronicDescription": "Testosterona a largo plazo: ¿riesgos reales y cómo manejarlos?",
+            "ElectronicId": 10142,
+            "ElectronicTitle": "Testosterona a largo plazo: ¿riesgos reales y cómo manejarlos?",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 77,
+            "InfDescription": "Podcast",
+            "Link": "",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/",
+            "Order": 2
+          }
+        ]
+      },
+      {
+        "subSectionName": "Salud Urogenital Masculina",
+        "podcast": [
+          {
+            "ElectronicId": 18855,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Vejiga hiperactiva: impacto en la calidad de vida y opciones terapéuticas innovadoras",
+            "ElectronicDescription": "Vejiga hiperactiva: impacto en la calidad de vida y opciones terapéuticas innovadoras",
+            "InfDescription": "Podcast",
+            "InfoTypeId": 77,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18855,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Cuando la vejiga no espera: diagnóstico y tratamiento de la incontinencia urinaria de urgencia",
+            "ElectronicDescription": "Cuando la vejiga no espera: diagnóstico y tratamiento de la incontinencia urinaria de urgencia",
+            "InfDescription": "Podcast",
+            "InfoTypeId": 77,
+            "Link": ""
+          }
+          
+        ]
+      },
+      {
+        "subSectionName": "Salud Urogenital Femenina",
+        "podcast": [
+          {
+            "ElectronicId": 18853,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Estriol tópico para la atrofia vulvovaginal postmenopáusica: una opción segura y efectiva",
+            "ElectronicDescription": "Estriol tópico para la atrofia vulvovaginal postmenopáusica: una opción segura y efectiva",
+            "InfDescription": "Podcast",
+            "InfoTypeId": 77,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18854,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Síndrome genitourinario de la menopausia: diagnóstico integral y estrategias para reducir complicaciones",
+            "ElectronicDescription": "Síndrome genitourinario de la menopausia: diagnóstico integral y estrategias para reducir complicaciones",
+            "InfDescription": "Podcast",
+            "InfoTypeId": 77,
+            "Link": ""
+          }
+        ]
+      }
+    ]
+  }
+]

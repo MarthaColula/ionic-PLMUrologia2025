@@ -1,0 +1,86 @@
+{
+    "Title": "Densidad de antígeno prostático específico por volumen prostático ",
+    "TimeoutFocus": 150,
+    "TimeoutFocusResult": 450,
+    "AboutCalculator": [
+        {
+            "Title": "Descripción",
+            "ContentHtmlString": "Esta calculadora permite estimar la cantidad antígeno prostático específico (PSA) que se genera en la próstata según la cantidad de tejido que tenga este órgano. Se trata de una fórmula que permite tener un estimado de la actividad metabólica de la próstata, infiriendo que ésta se relaciona con la cantidad de antígeno y de tejido que exista, su uso no sólo es importante en pacientes con diagnóstico de hiperplasia prostática, sino también en aquellos con cáncer de próstata y pacientes postoperados de prostatectomías radical y/o parcial."
+        },
+        {
+            "Title": "Referencias",
+            "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1. Benson MC, Whang IS, Pantuck A, Ring K, Kaplan SA, et al. Prostate specific antigen density: a means of distinguishing benign prostatic hypertrophy and prostate cancer. J Urol [Internet]. Marzo de 1992 (consultado el 30 de abril de 2025);147(3 Pt 2):815-816. Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1016/s0022-5347(17)37393-7)\">https://doi.org/10.1016/s0022-5347(17)37393-7</a></p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2. Denijs FB, van Harten MJ, Meenderink JJL, et al. Risk calculators for the detection of prostate cancer: a systematic review.Prostate Cancer Prostatic Dis [Internet]. Septiembre de 2024 (consultado el 30 de abril de 2025);27(3):544-557. Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1038/s41391-024-00852-w)\">https://doi.org/10.1038/s41391-024-00852-w</a></p></ion-label></ion-item>"
+        }
+    ],
+    "Definition": [
+        {
+            "Type": "Indications",
+            "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Rellene los campos solicitados para poder realizar el cálculo correspondiente:</p>"
+        }
+    ],
+    "Reagents": [
+        {
+            "NoReagent": 1,
+            "Type": "Input",
+            "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+            "Placeholder": "cm",
+            "InputValue": "Number",
+            "Param": "longitudP",
+            "Parse": "float",
+            "Validations": "RANGE:[0,500]",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Longitud de la próstata (cm)</ion-label>",
+            "Requiered": true,
+            "Items": []
+        },
+        {
+            "NoReagent": 2,
+            "Type": "Input",
+            "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+            "Placeholder": "cm",
+            "InputValue": "Number",
+            "Param": "anchoP",
+            "Parse": "float",
+            "Validations": "RANGE:[0,500]",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Ancho de la próstata (cm)</ion-label>",
+            "Requiered": true,
+            "Items": []
+        },
+        {
+            "NoReagent": 3,
+            "Type": "Input",
+            "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+            "Placeholder": "cm",
+            "InputValue": "Number",
+            "Param": "alturaP",
+            "Parse": "float",
+            "Validations": "RANGE:[0,500]",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Altura de la próstata (cm)</ion-label>",
+            "Requiered": true,
+            "Items": []
+        },
+        {
+            "NoReagent": 4,
+            "Type": "Input",
+            "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+            "Placeholder": "ng/mL",
+            "InputValue": "Number",
+            "Param": "valorPSA",
+            "Parse": "Float",
+            "Validations": "RANGE:[0,500]",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Valor de PSA (ng/mL)</ion-label>",
+            "Requiered": true,
+            "Items": []
+        }
+    ],
+    "Results": {
+        "Title": "Resultado",
+        "Type": "Legends",
+        "NoLegends": "",
+        "Legends": "",
+        "ShowCalculateButton": true,
+        "Score": true
+    },
+    "Function": {
+        "CalculatorCode": "calculadoraDensidadAntigenoProstatico"
+    }
+}

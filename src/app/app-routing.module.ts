@@ -12,7 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./secciones/buscador-productos/buscador/buscador.module').then( m => m.BuscadorPageModule)
   },
   {
-    path: 'ippa',
+    path: 'favoritos',
+    loadChildren: () => import('./secciones/buscador-productos/favoritos/favoritos.module').then(m => m.FavoritosPageModule)
+  },
+  {
+    path: 'ippa/:categoryId/:divisionId/:pharmaFormId/:productId',
     loadChildren: () => import('./secciones/buscador-productos/ippa/ippa.module').then( m => m.IppaPageModule)
   },
   {
@@ -90,6 +94,10 @@ const routes: Routes = [
   {
     path: 'calculadoras',
     loadChildren: () => import('./secciones/calculadoras/calculadoras/calculadoras.module').then( m => m.CalculadorasPageModule)
+  },
+  {
+    path: 'calculator-overview',
+    loadChildren: () => import('./secciones/calculadoras/calculator-overview/calculator-overview.module').then(m => m.CalculatorOverviewPageModule)
   },
   {
     path: 'contenido-actualizado',

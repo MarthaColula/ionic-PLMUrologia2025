@@ -1,25 +1,44 @@
 <app-header></app-header>
 <app-navigation-header titulo="Sustancias"></app-navigation-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" (click)="this.autocompleteService.closeAutocomplete()">
 
-  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11" color="urologia-primary"
-    mode="md"></ion-searchbar>
-  
+  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11"
+    color="urologia-primary" mode="md" (ionChange)="this.autocompleteService.showAutoComplete(false, this.searchText)"
+    (keydown)="getResults( $event )" [(ngModel)]="searchText"></ion-searchbar>
+
+  <ng-container *ngIf="this.autocompleteService.showList | async">
+    <ion-item-group class="ion-margin-horizontal autocomplete">
+      <app-autocomplete [products]="this.autocompleteService.productsFiltered"
+        [substances]="this.autocompleteService.substancesFiltered" [icds]="this.autocompleteService.icdFiltered"
+        [labs]="this.autocompleteService.labsFiltered"
+        (searchEngine)="this.autocompleteService.searchEngine($event)"></app-autocomplete>
+    </ion-item-group>
+  </ng-container>
+
+  <h2 *ngIf="this.pharmaSearchEngine.productsSearchText" class="subTitTextBusc">
+    Texto de búsqueda: 
+    <em>
+      <span>
+        {{this.pharmaSearchEngine.productsSearchText}}
+      </span>
+    </em>
+  </h2>
+
+
   <ion-list mode="ios">
-    
-    <ion-item color="urologia-primary" routerLink="/ippa">
+    <ion-item color="urologia-primary" detail *ngFor="let substance of this.getSubstancesResult"  (click)="getDrugsBySubstance(substance.ActiveSubstanceId)">
+      <ion-label>
+        <h2 class="textNormal">{{substance.Description}}</h2>
+      </ion-label>
+    </ion-item>
+    <!-- <ion-item color="urologia-primary" routerLink="/ippa">
       <ion-label>
         <h2 class="textNormal">Sustancias</h2>
       </ion-label>
-    </ion-item>
-    <ion-item color="urologia-primary" routerLink="/ippa">
-      <ion-label>
-        <h2 class="textNormal">Sustancias</h2>
-      </ion-label>
-    </ion-item>
-    
-  </ion-list>
+    </ion-item> -->
 
+  </ion-list>
 </ion-content>
+
 <app-footer></app-footer>

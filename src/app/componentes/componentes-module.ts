@@ -21,6 +21,7 @@ import { ActiveSubstancesComponent } from './active-substances/active-substances
 import { ModalInfoComponent } from './modal-info/modal-info.component';
 import { BannerComponent } from './banner/banner.component';
 import { CollapseElementListComponent } from './collapse-element-list/collapse-element-list.component';
+import { HttpRequestExceptionComponent } from './http-request-exception/http-request-exception.component';
 
 
 
@@ -44,6 +45,7 @@ import { CollapseElementListComponent } from './collapse-element-list/collapse-e
     ModalInfoComponent,
     BannerComponent,
     CollapseElementListComponent,
+    HttpRequestExceptionComponent,
   ],
   exports: [
     HeaderComponent,
@@ -63,6 +65,7 @@ import { CollapseElementListComponent } from './collapse-element-list/collapse-e
     ModalInfoComponent,
     BannerComponent,
     CollapseElementListComponent,
+    HttpRequestExceptionComponent,
   ],
   imports: [
     CommonModule,

@@ -1,82 +1,98 @@
 [
   {
     "AtlasList": [
-      {
-        "subSectionName": "Salud reproductiva femenina",
+       {
+        "subSectionName": "Salud Hormonal  Masculina",
         "atlas": [
-          {
-            "Title": "Dismenorrea primaria",
-            "Description": "Atlas - Dismenorrea primaria",
-            "FileName": "dismenorrea_primaria.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/dismenorrea_primaria.jpg",
+         {
+            "Title": "Diferencia entre el uso terapéutico y recreativo de andrógenos",
+            "Description": "Atlas - Diferencia entre el uso terapéutico y recreativo de andrógenos",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
-            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/dismenorrea_primaria.jpg"
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/vaginosis_bacteriana.jpg"
+          },
+         {
+            "Title": "Impacto psicológico y social del uso de esteroides fuera de indicación médica",
+            "Description": "Atlas - Impacto psicológico y social del uso de esteroides fuera de indicación médica ",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/enf_pelvica_inflamatoria.jpg"
           },
           {
-            "Title": "Clasificación de los métodos anticonceptivos ",
-            "Description": "Atlas - Clasificación de los métodos anticonceptivos ",
-            "FileName": "metodos_anticonceptivos.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/metodos_anticonceptivos.jpg",
+            "Title": "Efectos adversos y beneficios de la terapia con testosterona: ¿cómo dar seguimiento para reducir riesgos?",
+            "Description": "Atlas - Efectos adversos y beneficios de la terapia con testosterona: ¿cómo dar seguimiento para reducir riesgos?",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
-            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/metodos_anticonceptivos.jpg"
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/candidiasis_vulvovaginal.jpg"
           },
           {
-            "Title": "Ciclo ovárico",
-            "Description": "Atlas - Ciclo ovárico",
-            "FileName": "ciclo_ovarico.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/ciclo_ovarico.jpg",
+            "Title": "Funciones fisiológicas del aparato reproductor masculino",
+            "Description": "Atlas - Funciones fisiológicas del aparato reproductor masculino",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
-            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/ciclo_ovarico.jpg"
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/candidiasis_vulvovaginal.jpg"
           }
         ]
       },
       {
-        "subSectionName": "Salud ósea y metabolismo mineral",
+        "subSectionName": "Salud Urogenital Masculina",
         "atlas": [
           {
-            "Title": "Osteoporosis",
-            "Description": "Atlas - Osteoporosis",
-            "FileName": "osteoporosis.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/osteoporosis.jpg",
+            "Title": "Clasificación clínica de los tipos de incontinencia urinaria: características, mecanismos y abordaje",
+            "Description": "Atlas - Clasificación clínica de los tipos de incontinencia urinaria: características, mecanismos y abordaje",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
             "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/osteoporosis.jpg"
           },
           {
-            "Title": "Fractura por fragilidad y su relación con vitamina D",
-            "Description": "Atlas - Fractura por fragilidad y su relación con vitamina D",
-            "FileName": "fractura_vitaminaD.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/fractura_vitaminaD.jpg",
+            "Title": "Abordaje dual de los síntomas del tracto urinario inferior (STUI)",
+            "Description": "Atlas - Abordaje dual de los síntomas del tracto urinario inferior (STUI)",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/fractura_vitaminaD.jpg"
+          },
+          {
+            "Title": "Guía visual comparativa de la retención urinaria: causas, hallazgos clínicos y tratamiento",
+            "Description": "Atlas - Guía visual comparativa de la retención urinaria: causas, hallazgos clínicos y tratamiento",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
             "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/fractura_vitaminaD.jpg"
           }
         ]
       },
       {
-        "subSectionName": "Infecciones ginecológicas",
+        "subSectionName": "Salud Urogenital femenina",
         "atlas": [
-         {
-            "Title": "Vaginosis bacteriana",
-            "Description": "Atlas - Vaginosis bacteriana",
-            "FileName": "vaginosis_bacteriana.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/vaginosis_bacteriana.jpg",
+          {
+            "Title": "Evolución de los cambios hormonales y su impacto en el síndrome genitourinario en la menopausia",
+            "Description": "Atlas - Evolución de los cambios hormonales y su impacto en el síndrome genitourinario en la menopausia",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
-            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/vaginosis_bacteriana.jpg"
-          },
-         {
-            "Title": "Enfermedad pélvica inflamatoria",
-            "Description": "Atlas - Enfermedad pélvica inflamatoria ",
-            "FileName": "enf_pelvica_inflamatoria.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/enf_pelvica_inflamatoria.jpg",
-            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
-            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/enf_pelvica_inflamatoria.jpg"
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/.jpg"
           },
           {
-            "Title": "Candidiasis vulvovaginal",
-            "Description": "Atlas - Candidiasis vulvovaginal",
-            "FileName": "candidiasis_vulvovaginal.jpg",
-            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/candidiasis_vulvovaginal.jpg",
+            "Title": "Mecanismos de acción de las terapias hormonales locales y sistémicas",
+            "Description": "Atlas - Mecanismos de acción de las terapias hormonales locales y sistémicas",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
             "BasePath": "/assets/images/Contenido_Editorial/atlas/",
-            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/candidiasis_vulvovaginal.jpg"
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/.jpg"
+          },
+          {
+            "Title": "Manifestaciones clínicas de la atrofia vulvovaginal y su impacto en la calidad de vida",
+            "Description": "Atlas - Manifestaciones clínicas de la atrofia vulvovaginal y su impacto en la calidad de vida",
+            "FileName": ".jpg",
+            "LogoPath": "/assets/images/Contenido_Editorial/atlas/miniaturas/.jpg",
+            "BasePath": "/assets/images/Contenido_Editorial/atlas/",
+            "Link": "https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/.jpg"
           }
         ]
       }

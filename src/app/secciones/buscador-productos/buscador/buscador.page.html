@@ -1,57 +1,89 @@
 <app-header></app-header>
 <app-navigation-header titulo=""></app-navigation-header>
 
-<ion-content class="ion-padding-horizontal">
-
+<ion-content class="ion-padding-horizontal" (click)="this.autocompleteService.closeAutocomplete()">
 
   <ion-row class="contentTituloSeccion">
     <ion-col size="12" class="text-center">
       <img class="iconoSeccion" src="assets/images/cenefaBuscador.svg" alt="">
     </ion-col>
   </ion-row>
-
   <br>
-  
-  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11" color="urologia-primary"
-    mode="md"></ion-searchbar>
-  <h2 class="subTitTextBusc"><span>Texto de búsqueda: </span> <em>Carb</em></h2>
+
+  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11"
+    color="urologia-primary" mode="md" (ionInput)="this.autocompleteService.showAutoComplete(false,this.searchText)"
+    (keydown)="getResults($event)" (ionBlur)="ShowBanner()" (ionFocus)="hideBanner()"
+    [(ngModel)]="searchText"></ion-searchbar>
+
+  <ng-container *ngIf="this.autocompleteService.showList | async">
+    <ion-item-group class="autocomplete">
+      <app-autocomplete [products]="this.autocompleteService.productsFiltered"
+        [substances]="this.autocompleteService.substancesFiltered" [icds]="this.autocompleteService.icdFiltered"
+        [labs]="this.autocompleteService.labsFiltered"
+        (searchEngine)="this.autocompleteService.searchEngine($event)"></app-autocomplete>
+    </ion-item-group>
+  </ng-container>
+
+  <h2 class="subTitTextBusc" *ngIf="this.pharmaSearchEngine.productsSearchText"><span>Texto de búsqueda: </span>
+    <em>{{this.pharmaSearchEngine.productsSearchText}}</em>
+  </h2>
 
 
-<div class="contentBtnSec">
-
+  <div class="contentBtnSec">
     <div class="row cardBtnSec">
-      <div class="BtnSec" routerLink="/lista-productos">
-       <img class="imgCardIcon" src="/assets/images/iconoBuscMedicamento.svg" />
+
+      <div class="BtnSec" (click)="getDrugs()">
+        <img class="imgCardIcon" src="/assets/images/iconoBuscMedicamento.svg" />
         <ion-card-content class="contentCardBtnSec">
-          <p class="resultadoBusqueda">47</p>
+          <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+            <p class="resultadoBusqueda">{{this.pharmaSearchEngine.getResultsv2Result.getValue().Products}}</p>
+          </ng-container>
+          <!--<p class="resultadoBusqueda">47</p>-->
           <p class="nombreSeccion"><b>Medicamentos</b></p>
         </ion-card-content>
       </div>
-      <div class="BtnSec" routerLink="/lista-sustancias">
+
+      <div class="BtnSec" (click)="getSubstances()">
         <img class="imgCardIcon" src="/assets/images/iconoBuscSustancia.svg" />
         <ion-card-content class="contentCardBtnSec">
-          <p class="resultadoBusqueda">20</p>
+          <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+            <p class="resultadoBusqueda">{{ this.pharmaSearchEngine.getResultsv2Result.getValue().Substances }} </p>
+            <!--<p class="resultadoBusqueda">20</p>-->
+          </ng-container>
           <p class="nombreSeccion"><b>Sustancias</b></p>
         </ion-card-content>
       </div>
+
       <div class="BtnSec" routerLink="/lista-cie">
         <img class="imgCardIcon" src="/assets/images/iconoBuscCIE.svg" />
         <ion-card-content class="contentCardBtnSec">
-          <p class="resultadoBusqueda">99</p>
+          <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+            <p class="resultadoBusqueda">{{ this.pharmaSearchEngine.getResultsv2Result.getValue().ICD11 }}</p>
+            <!--<p class="resultadoBusqueda">99</p>-->
+          </ng-container>
           <p class="nombreSeccion"><b>CIE-11</b></p>
         </ion-card-content>
       </div>
-      <div class="BtnSec" routerLink="/lista-laboratorios">
+
+      <div class="BtnSec" (click)="getLabs()">
         <img class="imgCardIcon" src="/assets/images/iconoBuscLaboratorio.svg" />
         <ion-card-content class="contentCardBtnSec">
-          <p class="resultadoBusqueda">88</p>
+          <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+            <p class="resultadoBusqueda">{{ this.pharmaSearchEngine.getResultsv2Result.getValue().Labs }}</p>
+            <!--<p class="resultadoBusqueda">88</p>-->
+          </ng-container>
           <p class="nombreSeccion"><b>Laboratorios</b></p>
         </ion-card-content>
       </div>
     </div>
 
   </div>
-
-
 </ion-content>
-<app-footer></app-footer>
+
+<ng-container *ngIf="showBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="BUSCADOR"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !showBanner">
+  <app-footer></app-footer>
+</ng-container>

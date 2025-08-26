@@ -4,7 +4,7 @@ h2 {
    padding: 1em 1.8em 1em 1em;
     // font-size: 1.35em;
    font-family: var(--ion-font-family,inherit);;
-   border-bottom: 1px solid #94278F;
+   //border-bottom: 1px solid #94278F;
    margin: 0;
     // color: #44AC34;
 
@@ -37,8 +37,8 @@ p {
 div {
    position: relative;
    padding: 2em;
-   border-bottom: 1px solid #94278F;
-   background-color: rgb(242, 242, 236);
+   //border-bottom: 1px solid #94278F;
+   //background-color: rgb(212, 227, 246);
    ion-button {
       position: absolute;
       bottom: 20px;
@@ -51,7 +51,7 @@ div {
  // component class */
 .active {
    display: block;
-   color: #9181B9;
+   //color: #d7000b;
 }
 
 .inactive {
@@ -59,13 +59,13 @@ div {
 }
 
 .icon-accordion {
-   color: #94278F; 
+   color: #136ab2; 
 }
 
 .title-active{
-   color: #9181B9;
+   color: #d7000b;
 }
 
 .title-inactive{
-   color: #94278F;
+   color: #136ab2;
 }

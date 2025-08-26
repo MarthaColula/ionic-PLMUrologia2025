@@ -1,0 +1,495 @@
+{
+    "Title": "Cuestionario VSQ para medir síntomas vulvovaginales en mujeres posmenopáusicas",
+    "TimeoutFocus": 150,
+    "TimeoutFocusResult": 450,
+    "AboutCalculator": [
+        {
+            "Title": "Descripción",
+            "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\"> Esta calculadora adaptará el cuestionario del mismo nombre. El VSQ fue desarrollado con el objetivo de estudiar los síntomas, emociones, impacto en la calidad de vida y sexual de los síntomas vulvovaginales en mujeres posmenopáusicas.</p></ion-label></ion-item>"
+        },
+        {
+            "Title": "Referencias",
+            "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1. Erekson EA, Yip SO, Wedderburn TS, Martin DK, Li F-Y, Choi JN, et al. The Vulvovaginal Symptoms Questionnaire: a questionnaire for measuring vulvovaginal symptoms in postmenopausal women. Menopause [Internet]. Septiembre del 2013;20(9):973-79 (consultado el 22 de abril de 2025). Disponible en: . <br>Disponible en:<br><a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1097/GME.0b013e318282600b)\">https://doi.org/10.1097/GME.0b013e318282600b</a></p></ion-label></ion-item>    <ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2. Erekson EA, Li FY, Martin DK, Fried TR. Vulvovaginal symptoms prevalence in postmenopausal women and relationship to other menopausal symptoms and pelvic floor disorders. Menopause [Internet]. Abril de 2016;23(4):368-75 (consultado el 22 de abril de 2025) <br>Disponible en:<br><a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1097/GME.0000000000000549)\">https://doi.org/10.1097/GME.0000000000000549</a></p></ion-label></ion-item>  <ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">3. Bachkangi P, Malik S. Assessment of Vulvovaginal Atrophy Symptoms in Women Attending Gynaecology Clinics: A Service Evaluation Project. Gynecol Reprod Health [Internet]. 28 de febrero de 2023;7(1):1-6 (consultado el 22 de abril de 2025).</p></ion-label></ion-item>"
+        }
+    ],
+    "Definition": [
+        {
+            "Type": "Indications",
+            "Label": "<p style=\"h1 {color: #002e6d; font-size: 1.75rem}\" class=\"ion-text-justify\">El siguiente cuestionario tiene por objetivo evaluar los síntomas en la piel que rodea la vagina, llamada vulva. Como cualquier otra parte del cuerpo, algunas veces la vulva puede sufrir irritación. Las siguientes preguntas se responden teniendo en cuenta la presencia de síntomas en la última semana. Seleccione “Sí” o “No” para evaluar cada rubro” </p>"
+        }
+    ],
+    "Reagents": [
+        {
+            "NoReagent": 1,
+            "Total": 17,
+            "Type": "Radio",
+            "Param": "q1",
+            "ClrIfValueIsEmpty": "q1|q2|q3|q4|q5|q6|q7|q8|q9|q10|q11|q12|q13|q14|q15|q16|q17|q18|q19|q20|q21",
+            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Sintomatología </ion-label>",
+            "Label": "1. ¿Le pica la vulva?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 2,
+            "Type": "Radio",
+            "Param": "q2",
+            "Label": "2. ¿Le arde la vulva? ",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 3,
+            "Type": "Radio",
+            "Param": "q3",
+            "Label": "3. ¿Le duele la vulva?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 4,
+            "Type": "Radio",
+            "Param": "q4",
+            "Label": "4. ¿Su vulva está irritada?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 5,
+            "Type": "Radio",
+            "Param": "q5",
+            "Label": "5. ¿Tiene la vulva seca?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 6,
+            "Type": "Radio",
+            "Param": "q6",
+            "Label": "6. ¿Tiene flujo vaginal o vulvar?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 7,
+            "Type": "Radio",
+            "Param": "q7",
+            "Label": "7. ¿Tiene olor en la vulva o vagina?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "1",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 8,
+            "Type": "Radio",
+            "Param": "q8",
+            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Impacto en el componente emocional </ion-label>",
+            "Label": "8. ¿Le preocupan sus síntomas vulvares? (por ejemplo, que se extiendan, empeoren, dejen cicatrices, etc.)",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 9,
+            "Type": "Radio",
+            "Param": "q9",
+            "Label": "9. ¿Le preocupa la apariencia de su vulva?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 10,
+            "Type": "Radio",
+            "Param": "q10",
+            "Label": "10. ¿Siente frustración por sus síntomas vulvares?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 11,
+            "Requiered": true,
+            "Type": "Radio",
+            "Param": "q11",
+            "Label": "11. ¿Siente vergüenza por sus síntomas vulvares?",
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 12,
+            "Requiered": true,
+            "Type": "Radio",
+            "Param": "q12",
+            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Impacto en calidad de vida</ion-label>",
+            "Label": "12. ¿Sus síntomas vulvares afectan sus interacciones con los demás?",
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 13,
+            "Type": "Radio",
+            "Param": "q13",
+            "Label": "13. ¿Sus síntomas vulvares afectan su deseo de estar con otras personas?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 14,
+            "Type": "Radio",
+            "Param": "q14",
+            "Label": "14. ¿Sus síntomas vulvares le dificultan demostrar afecto?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 15,
+            "Type": "Radio",
+            "Param": "q15",
+            "Label": "15. ¿Sus síntomas vulvares afectan sus actividades diarias?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 16,
+            "Type": "Radio",
+            "Param": "q16",
+            "Label": "16. ¿Sus síntomas vulvares afectan su deseo de tener intimidad?",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 17,
+            "Type": "Radio",
+            "Param": "q17",
+            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Impacto en el componente sexual</ion-label>",
+            "Label": "17. ¿Actualmente es sexualmente activa con alguna pareja?",
+            
+            "ConditionalOption": true,
+            "FinalReagent": true,
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "ChangeNext": 18,
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 18,
+            "IncreaseTotal": 4,
+            "Type": "Radio",
+            "Param": "q18",
+            "Previous": 17,
+            "ParamDependent": "q17|1",
+            "Label": "18. ¿Sus síntomas vulvares afectan sus relaciones sexuales?",
+            "Disabled": true,
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 19,
+            "Type": "Radio",
+            "ParamDependent": "q17|1",
+            "Param": "q19",
+            "Label": "19. ¿Sus síntomas vulvares le causan dolor durante la actividad sexual?",
+            "Disabled": true,
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 20,
+            "Type": "Radio",
+            "ParamDependent": "q17|1",
+            "Param": "q20",
+            "Label": "20. ¿Sus síntomas vulvares le provocan sequedad durante la actividad sexual?",
+            "Disabled": true,
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 21,
+            "ParamDependent": "q17|1",
+            "Type": "Radio",
+            "Param": "q21",
+            "Label": "21. ¿Sus síntomas vulvares le provocan sangrado durante la actividad sexual?",
+            "Disabled": true,
+            "Requiered": true,
+            "FinalReagent": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Sí",
+                    "Value": "1",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "No",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        }
+    ],
+    "Results": {
+        "Title": "Resultado",
+        "Type": "",
+        "NoLegends": 0,
+        "Legends": "",
+        "ShowCalculateButton": true
+    },
+    "Function": {
+        "CalculatorCode": "calcVQS"
+    }
+}

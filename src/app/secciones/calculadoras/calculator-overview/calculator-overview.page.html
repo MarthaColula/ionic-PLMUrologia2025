@@ -1,0 +1,190 @@
+<app-header></app-header>
+<app-navigation-header titulo="{{ this.mCalculatorData?.Title }}"></app-navigation-header>
+
+<ion-toolbar mode="ios">
+  <ion-segment [value]="valueSelected" mode="ios" (ionChange)="segmentChanged($event)" 
+    style="width: 94%; margin: 0 auto;">
+    <ion-segment-button value="1" color="mujer-tertiary">
+      <ion-label color="mujer-secondary">
+        Calculadora
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <ion-label color="mujer-secondary">
+        Información
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content class="ion-padding-vertical ion-content-calculator">
+
+  <ng-container *ngIf="this.exception | async;">
+    <ion-list class="bckgrList ion-padding-horizontal ion-margin-top">
+      <ion-item class="ion-text-center" lines="none"  color="mujer-primary">
+        <ion-label>
+          La calculadora, por el momento, no se encuentra disponible.
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <ng-container *ngIf="this.successRequest | async;">
+    <ng-container *ngIf="valueSelected == '1'">
+      <ion-list class="bckgrList ion-padding-horizontal ion-margin-top"  *ngIf="this.mCalculatorData" lines="full">
+
+        <ion-item class="item-hidden" text-wrap>
+          <ion-input class="input-hidden" #NoteInit id="noteInit" [readonly]="true">
+          </ion-input>
+        </ion-item>
+        
+        <ion-card *ngIf="this.mIndications" class="contentCardIndications" mode="md" color="light">
+          <ion-card-header>
+            <div *ngIf="validateContentHTML(this.mIndications); else htmlIndicationsFalse">
+              <p [innerHTML]="this.mIndications" class="body-calculator">
+              </p>
+            </div>
+            <ng-template #htmlIndicationsFalse>
+              <p  class="calculatorIndications">
+                {{ this.mIndications }}
+              </p>
+            </ng-template>
+          </ion-card-header>
+        </ion-card>
+
+        <div *ngFor="let listReagents of this.arrayListReagents; let indxA = index">
+          <ion-card mode="md" class="contentCardReagents" color="mujer-primary">
+            <ion-card-header>
+              <ion-card-content class="cardContent ion-text-justify">
+
+                <app-reagent-content #CardContent *ngFor="let reagent of listReagents; let indx = index" class="app-card-content" 
+                  id="{{'appReagent'+indxA+''+reagent.NoReagent}}"
+                  flgScore="{{flgScore}}"
+                  [reagent]="reagent"
+                  (nextFocus)="nextFocus($event)"
+                  (changeValue)="changeValue($event)"
+                  (changeOption)="changeOption($event,indxA)">
+                </app-reagent-content>
+
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+
+        <ng-container *ngIf="this.flgShowCalBttn">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div>
+                </div>
+              </ion-col>
+              <ion-col size="auto">
+                <div>
+                  <ion-button class="ion-no-margin" slot="end" size="small" [disabled]="!this.completeCalculator" 
+                  (click)="getResult()" color="mujer-secondary">
+                  Calcular
+                  </ion-button>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+
+      </ion-list>
+
+      <ng-container *ngIf="this.showResult">
+        <ion-item-group>
+
+          <ion-card mode="md" class="contentCardResult" >
+            <ion-card-header class="ion-no-padding" >
+              <ion-card-title class="titleResult title-center">
+                <h3>
+                  {{ this.titleResults }}
+                </h3>
+              </ion-card-title>
+              <ion-card-content class="title-white ion-text-wrap">
+                <ion-list color="mujer-primary" class="ion-no-padding">
+                  <ion-item class="item-hidden" text-wrap>
+                    <ion-input class="input-hidden" #NoteResult id="noteResult" [readonly]="true">
+                    </ion-input>
+                  </ion-item>
+                  <div *ngIf="this.dataResults.NoLegends >= 0">
+                    <ion-label class="contentResult ion-text-wrap">
+                      <div *ngIf="this.mHtmlResult; else htmlResultFalse">
+                        <p [innerHTML]="this.mHtmlResult" class="nota">
+                        </p>
+                      </div>
+                      <ng-template #htmlResultFalse>
+                        <div *ngIf="validateContentHTML(this.mStrResult); else strHtlmFalse">
+                          <p [innerHTML]="this.mStrResult" class="nota">
+                          </p>
+                        </div>
+                        <ng-template #strHtlmFalse>
+                          <p class="nota">
+                            {{ this.mStrResult }}
+                          </p>
+                        </ng-template>
+                      </ng-template>
+                    </ion-label>
+                  </div>
+                  <div *ngIf="this.mNoteResult">
+                    <br>
+                    <ion-label class="contentResult ion-text-wrap">
+                      <div *ngIf="validateContentHTML(this.mNoteResult); else htmlObservationFalse">
+                        <p [innerHTML]="this.mNoteResult" class="nota">
+                        </p>
+                      </div>
+                      <ng-template #htmlObservationFalse>
+                        <p class="nota">
+                          {{ this.mNoteResult }}
+                        </p>
+                      </ng-template>
+                    </ion-label>
+                  </div>
+                  <div *ngIf="this.mObservation">
+                    <br>
+                    <ion-label class="contentResult ion-text-wrap">
+                      <div *ngIf="validateContentHTML(this.mObservation); else htmlObservationFalse">
+                        <p [innerHTML]="this.mObservation" class="nota">
+                        </p>
+                      </div>
+                      <ng-template #htmlObservationFalse>
+                        <p class="nota">
+                          {{ this.mObservation }}
+                        </p>
+                      </ng-template>
+                    </ion-label>
+                  </div>
+                </ion-list>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+
+            <ion-item>
+              <ion-button (click)="resetCalculator()" mode="md" color="mujer-secondary" class="btnCalculadora" size="small">
+                Reiniciar
+              </ion-button>
+            </ion-item>
+        </ion-item-group>
+      </ng-container>
+    </ng-container>
+
+    <ion-card *ngIf="valueSelected == '2'" mode="md" class="contentCardDescription">
+      <ng-container *ngIf="this.mAboutCalculator">
+        <ion-card-header>
+          <ion-card-content>
+  
+            <app-about-data-accordion [aboutData]="this.mAboutCalculator">
+            </app-about-data-accordion>
+  
+          </ion-card-content>
+        </ion-card-header>
+      </ng-container>
+    </ion-card>
+  </ng-container>
+  
+</ion-content>

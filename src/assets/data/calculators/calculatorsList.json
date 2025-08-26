@@ -1,0 +1,132 @@
+[
+  {
+    "getInformationByPrefixByTypeResult": [
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Calculadora de relación testosterona/estradiol",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Calculadora de relación testosterona/estradiol",
+        "FileName": "testosteroneEstradiol.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Cuestionario VSQ para medir síntomas vulvovaginales en mujeres posmenopáusicas",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Cuestionario VSQ para medir síntomas vulvovaginales en mujeres posmenopáusicas",
+        "FileName": "calcVSQ.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Escala de calificación de la menopausia (MRS)",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Escala de calificación de la menopausia (MRS)",
+        "FileName": "mrs.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Cuestionario de calidad de vida y síntomas de tracto urinario inferior (ICIQ-LUTSqol)",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Cuestionario de calidad de vida y síntomas de tracto urinario inferior (ICIQ-LUTSqol)",
+        "FileName": "calcICQLUTSqol.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Cuestionario de deficiencia androgénica en el varón adulto (qADAM)",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Cuestionario de deficiencia androgénica en el varón adulto (qADAM)",
+        "FileName": "qADAM.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Densidad de antígeno prostático específico por volumen prostático",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Densidad de antígeno prostático específico por volumen prostático",
+        "FileName": "densidadantigenoprostatico.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Puntaje síntomas prostáticos (IPSS)",
+        "ElectronicId": 10163,
+        "ElectronicTitle": "Puntaje síntomas prostáticos (IPSS)",
+        "FileName": "scoreProstateSymptom-IPSS.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 29
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Índice de función sexual femenina (FSFI)",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Índice de función sexual femenina (FSFI)",
+        "FileName": "FSFI.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      },
+      {
+        "Active": false,
+        "CompanyClientId": 50,
+        "ElectronicDescription": "Índice de andrógenofais libres (FAI)",
+        "ElectronicId": 10142,
+        "ElectronicTitle": "Índice de andrógenofais libres (FAI)",
+        "FileName": "fai.json",
+        "HTMLFileName": "",
+        "InfoTypeId": 69,
+        "Link": "",
+        "PublishedDate": "\/Date(1670491604160+0000)\/",
+        "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+        "Order": 5
+      }
+    ]
+  }
+]

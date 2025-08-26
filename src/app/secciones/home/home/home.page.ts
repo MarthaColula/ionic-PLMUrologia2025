@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PushNotificationsService } from 'src/app/services/indexServices';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private pushNotService: PushNotificationsService
+  ) { }
 
   ngOnInit() {
+    console.warn('Home', '***  initPushNotifications()...');
+    this.pushNotService.initPushNotifications();
   }
 
 }

@@ -1,0 +1,84 @@
+[
+  {
+    "sectionName": "cci",
+    "PLMId": "",
+    "cciResources": [
+      {
+        "subSectionName": "Salud Hormonal Masculina",
+        "cci": [
+          {
+            "Active": false,
+            "CompanyClientId":981,
+            "ElectronicDescription": "Indicaciones actuales para la terapia de reemplazo con testosterona",
+            "ElectronicId": 10142,
+            "ElectronicTitle": "Indicaciones actuales para la terapia de reemplazo con testosterona",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 77,
+            "InfDescription": "Casos clínicos Interactivos",
+            "Link": "",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/",
+            "Order": 2
+          },
+          {
+            "Active": false,
+            "CompanyClientId":981,
+            "ElectronicDescription": "Terapia de reemplazo con testosterona y riesgo cardiovascular",
+            "ElectronicId": 10142,
+            "ElectronicTitle": "Terapia de reemplazo con testosterona y riesgo cardiovascular",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 77,
+            "InfDescription": "Casos clínicos Interactivos",
+            "Link": "",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/",
+            "Order": 2
+          }
+        ]
+      },
+      {
+        "subSectionName": "Salud Urogenital Masculina",
+        "cci": [
+          {
+            "ElectronicId": 18855,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Optimización terapéutica en paciente con incontinencia urinaria de urgencia refractaria a tratamiento conservador",
+            "ElectronicDescription": "Optimización terapéutica en paciente con incontinencia urinaria de urgencia refractaria a tratamiento conservador",
+            "InfDescription": "Casos clínicos Interactivos",
+            "InfoTypeId": 77,
+            "Link": ""
+          }
+          
+        ]
+      },
+      {
+        "subSectionName": "Salud Urogenital Femenina",
+        "cci": [
+          {
+            "ElectronicId": 18853,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Frotis cervical anormal en paciente postmenopáusica",
+            "ElectronicDescription": "Frotis cervical anormal en paciente postmenopáusica",
+            "InfDescription": "Casos clínicos Interactivos",
+            "InfoTypeId": 77,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18854,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Manejo de la atrofia vulvovaginal severa en mujer postmenopáusica",
+            "ElectronicDescription": "Manejo de la atrofia vulvovaginal severa en mujer postmenopáusica",
+            "InfDescription": "Casos clínicos Interactivos",
+            "InfoTypeId": 77,
+            "Link": ""
+          }
+        ]
+      }
+    ]
+  }
+]

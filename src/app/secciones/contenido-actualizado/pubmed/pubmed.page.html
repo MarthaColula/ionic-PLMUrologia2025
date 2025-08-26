@@ -1,22 +1,40 @@
 <app-header></app-header>
 <app-navigation-header titulo="PubMed"></app-navigation-header>
 
-<ion-content class="ion-padding">
-  <p class="formaFarma"> <em>Introduzca en la barra la sustancia activa con que desdea realizar la búsqueda de artículos relacionados</em> </p>
-    
-  <ion-searchbar class="ion-margin-bottom" placeholder="Ingrese el texto de búsqueda" color="urologia-primary"
-    mode="md"></ion-searchbar>
-  
-  <p class="formaFarma"> Texto de búsuqeda: <em><span>textSearch</span></em> </p>
-  
+<ion-content class="ion-padding" (click)="this.autocompleteService.closeAutocomplete()">
+
+  <p class="formaFarma"> <em>Introduzca en la barra la sustancia activa con que desdea realizar la búsqueda de artículos
+      relacionados</em> </p>
+
+  <ion-searchbar class="ion-margin-bottom" placeholder="Ingrese el texto de búsqueda" color="urologia-primary" mode="md"
+    (ionChange)="this.autocompleteService.showAutoComplete(true)" (keydown)="getResults($event)"
+    [(ngModel)]="this.metadataEngineService.searchText"></ion-searchbar>
+
+  <ng-container *ngIf="this.autocompleteService.showList | async;">
+    <ion-item-group class="ion-margin-horizontal autocomplete">
+      <app-autocomplete [pubMed]="this.autocompleteService.pubMedFiltered"
+        (searchEnginePubMed)="autoComplete($event)"></app-autocomplete>
+    </ion-item-group>
+  </ng-container>
+
+  <p class="formaFarma"> Texto de búsuqeda: <em><span>{{ searchText }}</span></em> </p>
   <h1 class="indicacionBusqueda">Abstracts por Sustancia</h1>
 
 
-  <ion-list>
-      
+  <ng-container *ngIf="successRequest | async;">
+    <ion-list>
+      <ion-item routerLink="/" color="urologia-primary" mode="md"
+        *ngFor="let item of this.metadataEngineService.scientificArticle$ | async" (click)="openArticle(item)">
+        <ion-label>
+          <h2 class="textNormal">{{ item.Title }}</h2>
+        </ion-label>
+        <ion-icon class="detailOrange" name="chevron-forward-outline" slot="end"></ion-icon>
+      </ion-item>
+      <!--
       <ion-item routerLink="/" color="urologia-primary" mode="md">
         <ion-label>
-          <h2 class="textNormal">Odit itaque, totam accusantium nemo eum praesentium unde quo est assumenda officia.</h2>
+          <h2 class="textNormal">Odit itaque, totam accusantium nemo eum praesentium unde quo est assumenda officia.
+          </h2>
         </ion-label>
         <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
       </ion-item>
@@ -27,6 +45,22 @@
         </ion-label>
         <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
       </ion-item>
-  </ion-list>
+    -->
+    </ion-list>
+  </ng-container>
+
+  <ng-template #Empty>
+    <ion-item class="ion-text-center" color="pediatria-tertiary" lines="none">
+      <ion-label>No se encontraron abstracts relacionados con el término de búsqueda.</ion-label>
+    </ion-item>
+  </ng-template>
+
 </ion-content>
-<app-footer></app-footer>
+
+<ng-container *ngIf="showBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="EDITORIAL"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !showBanner">
+  <app-footer></app-footer>
+</ng-container>

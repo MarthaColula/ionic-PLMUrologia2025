@@ -163,8 +163,37 @@ ion-icon.searchbar-search-icon.sc-ion-searchbar-md.md.hydrated {
 // FIN SEARCHBAR
 
 
+.chipFavoritos {
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(225, 231, 221);
+    border-radius: 4px;
+    width: 170px;
+    height: 40px;
+    background: #136ab2;
+}
 
+.chipFavoritosDelete {
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(225, 231, 221);
+    border-radius: 4px;
+    width: 170px;
+    height: 40px;
+    background: #d7000b;
+}
 
+.autocomplete {
+    width: 90%;
+    max-height: 50%;
+    min-height: 145px;
+    height: 300px;
+    overflow: scroll;
+    z-index: 10;
+    position: absolute;
+    opacity: 0.93;
+    border-radius: 0 0 10px 10px;
+}
 
 // INICIO Cards - iconos
 ion-card-content.contentCardBtnSec {
@@ -392,3 +421,456 @@ ion-popover::part(backdrop) {
 }
 
 // -- fin -- ALERTAS (Modal)
+
+
+  /*-----------------------------------IPPA----------------------------------------------------*/
+.formula {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align:justify;
+    line-height: 25px;
+    }
+    
+    .Tabla-b-sica 
+    {
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-width:1px;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    
+    .Normal {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align:justify;
+    }
+    
+    .PRESENTACION {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align:justify;
+    }
+    
+    .T-tulo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0066CC;
+    text-transform:uppercase;
+    }
+    
+    .Rubros-azules {
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    color:  #0033CC !important;
+    font-weight: bold !important;
+    text-transform:uppercase !important;
+    }
+    .rubros-azules {
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 14px !important;
+    color:  #0033CC !important;
+    font-weight: bold !important;
+    text-transform:uppercase !important;
+    }
+    
+    .attribute
+    {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color:  #0033CC;
+    font-weight: bold;
+    text-transform:uppercase;
+    }
+    
+    .Base-de-prop- {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    }
+    
+    .Forma-farmac- {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #993300;
+    font-weight: bold;
+    }
+    
+    .Ingrediente {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    }
+    
+    .Pie-de-tabla {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px; 
+    font-weight: bold;
+    text-align:justify;
+    }
+    
+    .Pie-de-tabla-2
+    {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px; 
+    font-weight: bold;
+    text-align:justify;
+    }
+    
+    .SuperIndice {
+    vertical-align:super;
+    font-size:12px;
+    }
+    
+    .Negro-Normal {
+    font-weight:bold;
+    }
+    
+    .Bandos {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-indent: 15px;
+    }
+    .Texto-de-leyendas-de-prot- {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: justify;
+    }
+    
+    
+    .leyendas {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: underline;
+    text-align: justify;
+    }
+    
+    .Pie1 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight:bold;
+    text-align:center;
+    }
+    
+    .Direcciion
+    {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style:italic;
+    text-align:center;
+    }
+    
+    .Hecho
+    {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-style:italic;
+    text-align:center;
+    }
+    
+    .Registro {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight:bold;
+    text-align:center;
+    }
+    
+    .clave {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight:bold;
+    text-align:center;
+    }
+    
+    .Marca-reg {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight:bold;
+    text-align:center;
+    }
+    
+    .Pie {
+    
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align:center;
+    color: #353535;
+    }
+    .Symbol {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    }
+    .Cursivo-Normal{
+    font-style:italic;
+    }
+    
+    .cursiva
+    {
+    font-style:italic;
+    }
+    
+    .bold
+    {
+    font-weight:bold;
+    }
+    
+    .Negro-Cursivo {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:italic;
+    font-weight:bold;
+    }
+    
+    .SymbolProp-BT {
+    font-family: "SymbolProp BT", serif;
+    font-size: 12px;
+    }
+    
+    .Tabla_prod {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center; 
+    }
+    
+    .Tabla {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    }
+    
+    .Pie-de-columna {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px; 
+    }
+    
+    .SuperIndice_Tit {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    vertical-align:super;
+    }
+    
+    .SubIndice-tit {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    vertical-align:sub;	
+    }
+    
+    .Bandos1 {                                               
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-left: 15px; 
+    }
+    
+    
+    .Subindice
+    {
+    vertical-align: sub;
+    }
+    
+    .SubIndice
+    {
+    vertical-align: sub;
+    font-size: 10px;
+    }
+    
+    .SymbolProp-BT_subIndice
+    {
+    font-family: Symbol;
+    vertical-align: sub;
+    font-size: 10px;
+    }
+    
+    .SymbolProp-BT {
+    font-family: Symbol;
+    font-size: 12px;
+    }
+    
+    
+    /*---------------------------------------GUIA SALUD------------------------------------------------*/
+    .GS_nombre-del-producto {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:32px;
+    font-style:normal;
+    font-weight:bold;
+    color:#0431B4;
+    }
+    
+    .GS_forma-farmaceutica {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:italic;
+    font-weight:bold;
+    color:#0431B4;
+    }
+    
+    .GS_base-propaganda {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;	
+    font-weight:bold;
+    }
+    
+    .GS_sustancia-del-producto {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:italic;
+    font-weight:bold;
+    color:#0431B4;
+    }
+    
+    .GS_bold {
+    font-weight:bold;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    }
+    
+    .GS_indice {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:bold;
+    color:#0431B4;
+    text-transform:uppercase;
+    }
+    
+    .indice {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:bold;
+    color:#0431B4;
+    text-transform:uppercase;
+    }
+    .padecimiento {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-style:italic;
+    font-weight:bold;
+    color:#000000;
+    }
+    
+    .GS_texto {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:normal;
+    color:#000000;
+    text-align:justify;
+    }
+    
+    .texto {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:normal;
+    color:#000000;
+    text-align:justify;
+    }
+    
+    .GS_interior-centrado {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:normal;
+    color:#000000;
+    text-align:center;
+    margin-left:10px;
+    margin-right:10px;
+    }
+    
+    .GS_interior-izquierda {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:normal;
+    color:#000000;
+    text-align:left;
+    margin-left:10px;
+    margin-right:10px;
+    }
+    
+    .GS_formula-cbp {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style:normal;
+    font-weight:normal;
+    color:#000000;
+    }
+    
+    .GS_pie {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:13px;
+    font-style:normal;	
+    color:#000000;
+    font-weight:bold;
+    text-align:center;
+    }
+    
+    .GS_leyendas-proteccion {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:13px;	
+    color:#000000;
+    font-style:italic;
+    text-align:center;
+    }
+    
+    .GG_reporte {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:13px;
+    color:#000000;
+    font-style:italic;
+    text-align:center;
+    }
+    
+    .GS_bandos {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    text-indent:15px;
+    text-align: justify;
+    }
+    
+    .Pantalla {
+    border-style:1 solid;
+    border-width:1px;
+    background:#9A9A9A;
+    color:#F3F3F3;
+    }
+    
+    .Tabla-b-sica td {
+    border-style:solid;
+    border-width:1px;
+    border-collapse:collapse;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    
+    .GS_superindice {
+     vertical-align:super;
+     font-size:11px;
+    }
+    
+    .GS_Especial-instructivo {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:12px;
+    }
+    
+    .GS_cursiva {
+    font-style:italic;
+    }
+    
+    .global-body-ippa {
+    max-height: 350px;
+    overflow: scroll;
+    }
+    
+    .ippa-content table {
+    display: block;
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
+    }
+    /*---------------------- IPPA ----------------------------*/

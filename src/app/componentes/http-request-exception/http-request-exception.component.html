@@ -1,0 +1,11 @@
+<ng-container *ngIf="showMessage">
+  <ion-item class="listaResultadosBusqueda" color="pediatria-tertiary" lines="none">
+    <ion-label class="ion-text-wrap">
+      <h3 class="ion-text-center">!Uy! Algo salió mal.</h3>
+      <h3 class="ion-text-center">Por algún motivo, no conseguimos cargar la información necesaria.</h3>
+    </ion-label>
+  </ion-item>
+  <ion-button class="button-retry ion-margin-vertical" expand="block" shape="round" color="pediatria-secondary" (click)="tryAgain()">
+    <ion-icon name="ios-sync" slot="start" size="small"></ion-icon>Haz clic para volver a intentar
+  </ion-button>
+</ng-container>

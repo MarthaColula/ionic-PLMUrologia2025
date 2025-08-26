@@ -1,0 +1,83 @@
+{
+  "Title": "Calculadora de relación testosterona/estradiol",
+  "TimeoutFocus": 150,
+  "TimeoutFocusResult": 450,
+  "AboutCalculator": [
+    {
+      "Title": "Descripción",
+      "ContentHtmlString": "El cálculo de la proporción testosterona/estradiol (T/E2), es un parámetro vinculado a un espectro de aspectos de la salud masculina, principalmente asociados a las funciones sexuales. Previo al cálculo de la proporción entre testosterona y estradiol, ambas concentraciones hormonales deben expresarse en las mismas unidades. Los parámetros normales de testosterona van de 300-1000 ng/dL, mientras que las concentraciones de estradiol van de 15-55 pg."
+    },
+    {
+      "Title": "Referencias",
+      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) Van Koeverden ID, de Bakker M, Haitjema S, van der Laan SW, de Vries JPPM, Hoefer IE, et al. Testosterone to estradiol ratio reflects systemic and plaque inflammation and predicts future cardiovascular events in men with severe atherosclerosis. Cardiovasc Res [Internet]. 1 de febrero de 2019 (consultado el 12 de agosto de 2025);115(2):453-62. Disponible en: .<br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1093/cvr/cvy188)\">https://doi.org/10.1093/cvr/cvy188 </a></p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2) Gong Y, Xiao H, Li C, Bai J, Cheng X, Jin M, et al. Elevated T/E2 Ratio Is Associated with an Increased Risk of Cerebrovascular Disease in Elderly Men. PLoS One. 24 de abril de 2013 (consultado el 12 de agosto de 2025);8(4):e61598. <br>Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1371/journal.pone.0061598)\">https://doi.org/10.1371/journal.pone.0061598</a></p></ion-label></ion-item>"
+    }
+  ],
+  "Definition": [
+    {
+      "Type": "Indications",
+      "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Rellene los campos solicitados para poder realizar el cálculo correspondiente.</p>"
+    }
+  ],
+  "Reagents": [
+    {
+      "NoReagent": 1,
+       "Total": 4,
+      "Type": "Input",
+      "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+      "Placeholder": "",
+      "InputValue": "Number",
+      "Param": "t",
+      "Parse": "Float",
+      "Validations": "RANGE:[0,500]",
+      "LeyendaValidation": "",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Testosterona</ion-label>",
+      "Requiered": true,
+      "Items": []
+    },
+    {
+      "ReagentId": 2,
+      "Type": "Select",
+      "Param": "unitT",
+      "Parse": "",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Unidad testosterona:</ion-label>",
+      "Requiered": true,
+      "ArrayId": 0,
+      "StringArray": "ng/dL|nmol/L|pmoL/L",
+      "Items": []
+    },
+    {
+      "NoReagent": 3,
+      "Type": "Input",
+      "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+      "Placeholder": "",
+      "InputValue": "Number",
+      "Param": "e",
+      "Parse": "Float",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Estradiol</ion-label>",
+      "FinalReagent": true,
+      "Requiered": true,
+      "Items": []
+    },
+    {
+      "ReagentId": 4,
+      "Type": "Select",
+      "Param": "unitE",
+      "Parse": "",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Unidad estradiol:</ion-label>",
+      "Requiered": true,
+      "ArrayId": 1,
+      "StringArray": "pg/dl|pmoL/L",
+      "Items": []
+    }
+  ],
+  "Results": {
+    "Title": "Resultado",
+    "Type": "",
+    "NoLegends": 0,
+    "Legends": "",
+    "ShowCalculateButton": true
+  },
+  "Function": {
+    "CalculatorCode": "testosteroneEstradiol"
+  }
+}

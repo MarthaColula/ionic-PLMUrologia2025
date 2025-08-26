@@ -1,0 +1,135 @@
+[
+  {
+    "sectionName": "calculators",
+    "PLMId": "",
+    "calculatorsResources": [
+      {
+        "subSectionName": "Salud Hormonal Masculina",
+        "calculators": [
+          {
+            "Active": false,
+            "CompanyClientId": 50,
+            "ElectronicDescription": "Cuestionario de deficiencia androgénica en el varón adulto (qADAM)",
+            "ElectronicId": 10142,
+            "ElectronicTitle": "Cuestionario de deficiencia androgénica en el varón adulto (qADAM)",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 69,
+            "Link": "",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+            "Order": 5
+          },
+          {
+            "Active": false,
+            "CompanyClientId": 50,
+            "ElectronicDescription": "Índice de andrógenos libres",
+            "ElectronicId": 10142,
+            "ElectronicTitle": "Índice de andrógenos libres",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 69,
+            "Link": "",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+            "Order": 5
+          },
+          {
+            "Active": false,
+            "CompanyClientId": 50,
+            "ElectronicDescription": "Calculadora de la relación testosterona/estradiol",
+            "ElectronicId": 10144,
+            "ElectronicTitle": "Calculadora de la relación testosterona/estradiol",
+            "FileName": ".json",
+            "HTMLFileName": "",
+            "InfoTypeId": 69,
+            "Link": "",
+            "PublishedDate": "\/Date(1670491604160+0000)\/",
+            "BaseUrl": "https:\/\/www.plmconnection.com\/plmservices\/Tools\/Mexico\/calculators\/",
+            "Order": 7
+          }
+        ]
+      },
+      {
+        "subSectionName": "Salud Urogenital Masculina",
+        "calculators": [
+          {
+            "ElectronicId": 18855,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Cuestionario de Salud Sexual Masculina (MSHQ) – Versión Corta",
+            "ElectronicDescription": "Cuestionario de Salud Sexual Masculina (MSHQ) – Versión Corta",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18857,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Cuestionario de calidad de vida de síntomas del Tracto Urinario Inferior (ICIQ-LUTSqol)",
+            "ElectronicDescription": "Cuestionario de calidad de vida de síntomas del Tracto Urinario Inferior (ICIQ-LUTSqol)",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18861,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Puntuación internacional de síntomas de próstata (IPSS)",
+            "ElectronicDescription": "Puntuación internacional de síntomas de próstata (IPSS)",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18861,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Densidad de antígeno prostático específico por volumen prostático",
+            "ElectronicDescription": "Densidad de antígeno prostático específico por volumen prostático",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          }
+        ]
+      },
+      {
+        "subSectionName": "Salud Urogenital Femenina",
+        "calculators": [
+          {
+            "ElectronicId": 18853,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Escala de calificación de la menopausia (MRS)",
+            "ElectronicDescription": "Escala de calificación de la menopausia (MRS)",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18854,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Índice de función sexual femenina (FSFI)",
+            "ElectronicDescription": "Índice de función sexual femenina (FSFI)",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          },
+          {
+            "ElectronicId": 18854,
+            "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
+            "FileName": ".json",
+            "ElectronicTitle": "Cuestionario VSQ para medir síntomas vulvovaginales en mujeres posmenopáusicas",
+            "ElectronicDescription": "Cuestionario VSQ para medir síntomas vulvovaginales en mujeres posmenopáusicas",
+            "InfDescription": "Calculadora",
+            "InfoTypeId": 69,
+            "Link": ""
+          }
+        ]
+      }
+    ]
+  }
+]

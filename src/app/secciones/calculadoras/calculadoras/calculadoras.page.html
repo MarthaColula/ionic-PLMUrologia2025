@@ -14,9 +14,9 @@
   <ng-container *ngIf="successRequest | async;">
     <ion-list *ngIf="this.clientEngineService.getCalculators().length > 0; else Empty;" class="bckgrList" mode="ios">
       <ion-item *ngFor="let calculadora of this.clientEngineService.getCalculators()"
-        (click)="goCalculatorView(calculadora)" mode="ios" color="mujer-tertiary" detail="false">
+        (click)="goCalculatorView(calculadora)" mode="ios" color="urologia-primary" detail="false">
         <ion-thumbnail class="imgIconoMenu" slot="start">
-          <img src="./assets/images/iconoThumbnailCalculadoras.svg">
+          <img src="./assets/images/iconoAccCalculadoras.svg" class="iconoAccordeon" alt="" slot="start">
         </ion-thumbnail>
         <ion-label class="textItemMenu">Calculadora - {{ calculadora.ElectronicTitle }}</ion-label>
       </ion-item>

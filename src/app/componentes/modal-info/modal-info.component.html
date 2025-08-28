@@ -34,11 +34,11 @@
 <ion-content class="ion-padding">
   <ion-segment (ionChange)="segmentChanged($event)" mode="md" color="white">
     <ion-segment-button style="margin-right:5px;" value="laboratorio" class="ion-segment-interactions ion-segment-btn"
-      mode="ios" style="background: #c16abd;">
+      mode="ios" style="background: #1678CA;">
       <ion-label class="ion-text-wrap ion-text-left">Basadas en laboratorio</ion-label>
     </ion-segment-button>
     <ion-segment-button style="margin-left:5px;" value="evidencia" class="ion-segment-interactions ion-segment-btn"
-      mode="ios" style="background: #c16abd;" *ngIf="interactionByEvidency != undefined">
+      mode="ios" style="background: #1678CA;" *ngIf="interactionByEvidency != undefined">
       <ion-label class="ion-text-wrap">Basadas en evidencia</ion-label>
     </ion-segment-button>
   </ion-segment>
@@ -47,7 +47,7 @@
     <ion-grid *ngSwitchCase="'laboratorio'">
       <!--<ion-segment (click)="showIppa()"  style="width: 80px;" class="segmentSize"  class="auto" > 
         <ion-segment-button color="interaction" value="ippa" class="" style="background: #94278F;">-->
-      <ion-button expand="block" color="purple" size="small" class="chipFavoritosDelete" (click)="showIppa()">
+      <ion-button expand="block" color="blue" size="small" class="chipFavoritos" (click)="showIppa()">
         IPPA
       </ion-button>
       <!--</ion-segment-button>

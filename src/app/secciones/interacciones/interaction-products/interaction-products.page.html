@@ -2,32 +2,43 @@
 <app-navigation-header titulo="Interacciones medicamentosas"></app-navigation-header>
 
 <ion-content class="ion-padding">
-  
-  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11" color="urologia-primary"
-    mode="md"></ion-searchbar>
 
-  <div>
+  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11"
+    color="urologia-primary" mode="md" #srchBarComponent (keydown)="getResults($event)"
+    [(ngModel)]="searchText"></ion-searchbar>
+
+  <h2 *ngIf="this.pharmaSearchEngine.productsSearchText" class="subTitTextBusc">
+    Texto de búsqueda:
+    <em>
+      <span>
+        {{this.pharmaSearchEngine.productsSearchText}}
+      </span>
+    </em>
+  </h2>
+
+  <div *ngIf="this.globalVars.interactionType == 'drugInteraction'">
     <ion-list class="ion-margin-top">
-      <ion-item color="urologia-primary">
-        <ion-checkbox slot="start" color="urologia-secondary"></ion-checkbox>  
+      <ion-item color="urologia-primary" *ngFor="let drug of this.pharmaSearchEngine.getDrugsResult$ | async">
+        <ion-checkbox slot="start" color="urologia-secondary" [ngModel]="validateProduct(drug)" slot="start" (ionChange)="addProductInteraction(drug, $event)"></ion-checkbox>
         <ion-label>
-          <h2 class="textNormal">drug.Brand</h2>
-          <p class="textNormal"><em>drug.PharmaForm</em></p>
+          <h2 class="textNormal">{{drug.Brand}}</h2>
+          <p class="textNormal"><em>{{drug.PharmaForm}}</em></p>
         </ion-label>
       </ion-item>
     </ion-list>
   </div>
   <br>
-  <div>
+  <div  *ngIf="this.globalVars.interactionType == 'mealInteraction'">
     <ion-list class="bckgrList ion-margin-top">
-      <ion-item detail color="urologia-primary">
-        
+      <ion-item detail color="urologia-primary" *ngFor="let drug of this.pharmaSearchEngine.getDrugsResult$ | async"
+        (click)="checkMealInteraction(drug)">
+
         <ion-label>
-          <h2 class="textNormal">drug.Brand</h2>
-          <p class="textNormal"><em>drug.PharmaForm</em></p>
+          <h2 class="textNormal">{{drug.Brand}}</h2>
+          <p class="textNormal"><em>{{drug.PharmaForm}}</em></p>
         </ion-label>
       </ion-item>
     </ion-list>
   </div>
 </ion-content>
-<app-interaction-footer> </app-interaction-footer>
+<app-interaction-footer *ngIf="this.globalVars.interactionType == 'drugInteraction'"> </app-interaction-footer>

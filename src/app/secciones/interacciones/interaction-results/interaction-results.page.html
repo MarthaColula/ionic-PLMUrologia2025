@@ -3,65 +3,110 @@
 
 <ion-content class="ion-padding">
 
-    <h1 class="nombreProducto">Medicamentos con interacción</h1>
+  <h1 class="nombreProducto">Medicamentos con interacción</h1>
 
-  
-    <ion-item color="urologia-primary">
-      <ion-button color="urologia-secondary" style="width: 50px;">
-        IM
-      </ion-button>
-      <ion-label style="padding-left: 15px;" class="ion-text-wrap">
-        <p class="textNormal">Interacciones Medicamentosas.</p>
-      </ion-label>
-    </ion-item>
-  
-    <ion-item color="urologia-primary">
-      <ion-button color="urologia-secondary" style="width: 50px;">
-        IPPA
-      </ion-button>
-      <ion-label style="padding-left: 15px;" class="ion-text-wrap">
-        <p class="textNormal">Infrormación para preescribir amplia.</p>
-      </ion-label>
-    </ion-item>
-  
-    <ion-grid class="interactions-result-grid ion-margin-top">
-      <ion-row class="interactions-result-row-titles">
-        <ion-col align-self-start size="6" size-lg>
-          <div text-center>
-            <ion-label color="urologia-primary">
-              Medicamento
-            </ion-label>
-          </div>
-        </ion-col>
-        <ion-col align-self-center size="6" size-lg>
-          <div text-center>
-              <ion-label color="urologia-primary">
+  <ion-item color="urologia-primary">
+    <ion-button color="urologia-secondary" style="width: 50px;">
+      IM
+    </ion-button>
+    <ion-label style="padding-left: 15px;" class="ion-text-wrap">
+      <p class="textNormal">Interacciones Medicamentosas.</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item color="urologia-primary">
+    <ion-button color="urologia-secondary" style="width: 50px;">
+      IPPA
+    </ion-button>
+    <ion-label style="padding-left: 15px;" class="ion-text-wrap">
+      <p class="textNormal">Infrormación para preescribir amplia.</p>
+    </ion-label>
+  </ion-item>
+
+
+  <ng-container *ngIf="successRequest | async;">
+    <ng-container *ngIf="interactionByLabResults.length > 0; else Empty; ">
+      <ion-grid class="interactions-result-grid ion-margin-top">
+        <ion-row class="interactions-result-row-titles">
+          <ion-col align-self-start size="6" size-lg>
+            <div text-center>
+              <ion-label>
+                Medicamento
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col align-self-center size="6" size-lg>
+            <div text-center>
+              <ion-label>
                 IM
               </ion-label>
-          </div>
-        </ion-col>
-      </ion-row>
-  
-  
-      <ion-row class="interactions-result-row-items">
-        <ion-col col-3>
-          
-            <ion-label>
-              <h2>item.Brand</h2>
-              <p>item.PharmaForm</p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let item of interactionByLabResults" class="interactions-result-row-items">
+          <ion-col col-3 *ngIf="item.InteractionSubstances.length != 0 || item.PharmacologicalGroups.length != 0">
+            <ion-label class="ion-text-wrap">
+              <h3>{{item.Brand}}</h3>
+              <p>{{item.PharmaForm}}</p>
             </ion-label>
-  
-        </ion-col>
-        <ion-col col-3 class="ion-text-center">
-          <div text-center>
-            <ion-button class="btnInteraction" size="small" color="urologia-secondary" >
-              IM
-            </ion-button>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  
-  </ion-content>
-  
-  <app-interaction-footer></app-interaction-footer>
+          </ion-col>
+          <ion-col col-3 *ngIf="item.InteractionSubstances.length != 0 || item.PharmacologicalGroups.length != 0">
+            <div class="ion-text-center">
+              <ion-button size="small" class="btnInteraction" color="urologia-secondary" (click)="interactionDetail(item)">
+                IM
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ng-container>
+    <ng-template #Empty>
+      <ion-item class="listaResultadosBusqueda ion-text-center" color="urologia-primary" lines="none">
+        <ion-label class="ion-text-wrap"> No se encontraron Interacciones Medicamentosas</ion-label>
+      </ion-item>
+    </ng-template>
+  </ng-container>
+
+  <!--
+  <ion-grid class="interactions-result-grid ion-margin-top">
+    <ion-row class="interactions-result-row-titles">
+      <ion-col align-self-start size="6" size-lg>
+        <div text-center>
+          <ion-label color="urologia-primary">
+            Medicamento
+          </ion-label>
+        </div>
+      </ion-col>
+      <ion-col align-self-center size="6" size-lg>
+        <div text-center>
+          <ion-label color="urologia-primary">
+            IM
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="interactions-result-row-items">
+      <ion-col col-3>
+        <ion-label>
+          <h2>item.Brand</h2>
+          <p>item.PharmaForm</p>
+        </ion-label>
+      </ion-col>
+
+      <ion-col col-3 class="ion-text-center">
+        <div text-center>
+          <ion-button class="btnInteraction" size="small" color="urologia-secondary">
+            IM
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  -->
+
+</ion-content>
+
+<app-interaction-footer></app-interaction-footer>

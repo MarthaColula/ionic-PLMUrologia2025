@@ -3,35 +3,38 @@
 
 <ion-content class="ion-padding-horizontal">
 
-
   <ion-row class="contentTituloSeccion">
     <ion-col size="12" class="text-center">
       <img class="iconoSeccion" src="assets/images/cenefaInteracciones.svg" alt="">
     </ion-col>
   </ion-row>
+  <br>
 
-<br>
-
-<div class="contentBtnSec ion-padding-top">
-
+  <div class="contentBtnSec ion-padding-top">
     <div class="row cardBtnSec">
-      <div class="BtnSec" routerLink="/interaction-search-engine">
-       <img class="imgCardIcon" src="/assets/images/iconoInteraccionesMedicamentosas.svg"/>
+      <div class="BtnSec" (click)="drugInteractions()">
+        <img class="imgCardIcon" src="/assets/images/iconoInteraccionesMedicamentosas.svg" />
         <ion-card-content class="contentCardBtnSec">
           <p class="resultadoBusqueda"></p>
           <p class="nombreSeccion"><b>Interacciones medicamentosas</b></p>
         </ion-card-content>
       </div>
-      <div class="BtnSec" routerLink="/interactions">
-        <img class="imgCardIcon" src="/assets/images/iconoInteraccionesAlimenticias.svg"/>
+      <div class="BtnSec"  (click)="mealInteractions()">
+        <img class="imgCardIcon" src="/assets/images/iconoInteraccionesAlimenticias.svg" />
         <ion-card-content class="contentCardBtnSec">
           <p class="resultadoBusqueda"></p>
           <p class="nombreSeccion"><b>Interacciones alimenticias</b></p>
         </ion-card-content>
       </div>
     </div>
-
   </div>
-
 </ion-content>
-<app-footer></app-footer>
+
+
+<ng-container *ngIf="ShowBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="INTERACCIONES"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !ShowBanner">
+ <app-footer></app-footer>
+</ng-container>

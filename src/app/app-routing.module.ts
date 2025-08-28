@@ -67,9 +67,17 @@ const routes: Routes = [
     path: 'interactions',
     loadChildren: () => import('./secciones/interacciones/interactions/interactions.module').then( m => m.InteractionsPageModule)
   },
-  {
+   {
+    path: 'interactions-meal',
+    loadChildren: () => import('./secciones/interacciones/interactions-meal/interactions-meal.module').then( m => m.InteractionsMealPageModule)
+  },
+  /*{
     path: 'modal-info',
     loadChildren: () => import('./secciones/interacciones/modal-info/modal-info.module').then( m => m.ModalInfoPageModule)
+  },*/
+   {
+    path: 'manual-interacciones',
+    loadChildren: () => import('./secciones/interacciones/manual-interacciones/manual-interacciones.module').then(m => m.ManualInteraccionesPageModule)
   },
   {
     path: 'abstracts',

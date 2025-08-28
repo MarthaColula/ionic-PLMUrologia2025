@@ -3,13 +3,24 @@
 
 <ion-content class="ion-padding">
 
-    <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11" color="urologia-primary"
-    mode="md"></ion-searchbar>
+  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11"
+    color="urologia-primary" mode="md" #srchBarComponent (keydown)="getResults($event)"
+    [(ngModel)]="searchText"></ion-searchbar>
+
+  <h2 *ngIf="this.pharmaSearchEngine.productsSearchText" class="subTitTextBusc">
+    Texto de búsqueda:
+    <em>
+      <span>
+        {{this.pharmaSearchEngine.productsSearchText}}
+      </span>
+    </em>
+  </h2>
 
   <ion-list class="ion-margin-top">
-    <ion-item color="urologia-primary" routerLink="/ippa">
+    <ion-item color="urologia-primary" *ngFor="let substance of getSubstancesResult"
+      (click)="getDrugsBySubstance(substance.ActiveSubstanceId)">
       <ion-label>
-        <h2 class="textNormal">substance.Description </h2>
+        <h2 class="textNormal">{{substance.Description}} </h2>
       </ion-label>
     </ion-item>
   </ion-list>

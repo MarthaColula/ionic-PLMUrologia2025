@@ -2,13 +2,11 @@
 <app-navigation-header titulo="Interacciones medicamentosas"></app-navigation-header>
 
 <ion-content class="ion-padding">
-
   <h1 class="nombreProducto">Medicamentos a interaccionar</h1>
 
   <ion-list>
-
-    <ion-item color="urologia-primary">
-      <ion-button color="urologia-primary">
+    <ion-item color="urologia-primary"  *ngIf="showMessage | async" >
+      <ion-button color="urologia-primary" (click)="searchDrugs()" >
         <ion-icon slot="icon-only" src="/assets/images/interactions/icono-agregar-medicamentos.svg"></ion-icon>
       </ion-button>
       <ion-label>
@@ -19,12 +17,12 @@
     </ion-item>
   </ion-list>
 
-  <ion-list class="bckgrList">
+  <ion-list class="bckgrList"  *ngFor="let drug of getInteractionList()" >
     <ion-item color="urologia-primary">
-      <ion-checkbox slot="start" color="urologia-secondary"></ion-checkbox>  
+      <ion-checkbox slot="start" color="urologia-secondary" (click)="deleteProductInteraction(drug)"></ion-checkbox>
       <ion-label>
-        <h2 class="textNormal">drug.Brand</h2>
-        <p class="textNormal"><em>drug.PharmaForm</em></p>
+        <h2 class="textNormal">{{drug.Brand}}</h2>
+        <p class="textNormal"><em>{{drug.PharmaForm}}</em></p>
       </ion-label>
     </ion-item>
   </ion-list>

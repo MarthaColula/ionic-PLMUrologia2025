@@ -4,13 +4,13 @@
 <ion-toolbar mode="ios">
   <ion-segment [value]="valueSelected" mode="ios" (ionChange)="segmentChanged($event)" 
     style="width: 94%; margin: 0 auto;">
-    <ion-segment-button value="1" color="mujer-tertiary">
-      <ion-label color="mujer-secondary">
+    <ion-segment-button value="1" color="urologia-tertiary">
+      <ion-label color="urologia-secondary">
         Calculadora
       </ion-label>
     </ion-segment-button>
     <ion-segment-button value="2">
-      <ion-label color="mujer-secondary">
+      <ion-label color="urologia-secondary">
         Información
       </ion-label>
     </ion-segment-button>
@@ -21,7 +21,7 @@
 
   <ng-container *ngIf="this.exception | async;">
     <ion-list class="bckgrList ion-padding-horizontal ion-margin-top">
-      <ion-item class="ion-text-center" lines="none"  color="mujer-primary">
+      <ion-item class="ion-text-center" lines="none"  color="urologia-primary">
         <ion-label>
           La calculadora, por el momento, no se encuentra disponible.
         </ion-label>
@@ -53,7 +53,7 @@
         </ion-card>
 
         <div *ngFor="let listReagents of this.arrayListReagents; let indxA = index">
-          <ion-card mode="md" class="contentCardReagents" color="mujer-primary">
+          <ion-card mode="md" class="contentCardReagents" color="urologia-primary">
             <ion-card-header>
               <ion-card-content class="cardContent ion-text-justify">
 
@@ -81,7 +81,7 @@
               <ion-col size="auto">
                 <div>
                   <ion-button class="ion-no-margin" slot="end" size="small" [disabled]="!this.completeCalculator" 
-                  (click)="getResult()" color="mujer-secondary">
+                  (click)="getResult()" color="urologia-secondary">
                   Calcular
                   </ion-button>
                 </div>
@@ -107,7 +107,7 @@
                 </h3>
               </ion-card-title>
               <ion-card-content class="title-white ion-text-wrap">
-                <ion-list color="mujer-primary" class="ion-no-padding">
+                <ion-list color="urologia-primary" class="ion-no-padding">
                   <ion-item class="item-hidden" text-wrap>
                     <ion-input class="input-hidden" #NoteResult id="noteResult" [readonly]="true">
                     </ion-input>
@@ -165,7 +165,7 @@
           </ion-card>
 
             <ion-item>
-              <ion-button (click)="resetCalculator()" mode="md" color="mujer-secondary" class="btnCalculadora" size="small">
+              <ion-button (click)="resetCalculator()" mode="md" color="urologia-secondary" class="btnCalculadora" size="small">
                 Reiniciar
               </ion-button>
             </ion-item>
@@ -175,14 +175,14 @@
 
     <ion-card *ngIf="valueSelected == '2'" mode="md" class="contentCardDescription">
       <ng-container *ngIf="this.mAboutCalculator">
-        <ion-card-header>
+       <ion-card-header>
           <ion-card-content>
   
             <app-about-data-accordion [aboutData]="this.mAboutCalculator">
             </app-about-data-accordion>
   
           </ion-card-content>
-        </ion-card-header>
+        </ion-card-header> 
       </ng-container>
     </ion-card>
   </ng-container>

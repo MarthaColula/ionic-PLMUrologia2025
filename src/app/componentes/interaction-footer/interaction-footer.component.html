@@ -1,32 +1,33 @@
 <ion-footer no-border mode="ios">
   <ion-toolbar color="urologia-primary" mode="ios" no-border>
     <ion-buttons slot="primary">
-      <ion-button>
+      <ion-button (click)="searchDrugs()">
         <ion-icon slot="icon-only" src="/assets/images/interactions/icono-agregar-medicamentos.svg"></ion-icon>
       </ion-button>
     </ion-buttons>
+    
     <ion-buttons slot="primary" routerLink="/interactions">
         <ion-button>
           <ion-icon slot="icon-only" src="/assets/images/interactions/icono-ver-seleccionados.svg"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <ion-buttons slot="primary">
-        <ion-button>
+    <ion-buttons slot="primary"  *ngIf="this.interactionsService.getListProduct().length !== 0">
+        <ion-button (click)="deleteInteractionProducts()">
           <ion-icon slot="icon-only" src="/assets/images/interactions/icono-remover-lista.svg"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <ion-buttons slot="primary">
-        <ion-button>
+    <ion-buttons slot="primary"  *ngIf="this.interactionsService.getListProduct().length !== 0">
+        <ion-button (click)="getInteractionResult()">
           <ion-icon slot="icon-only" src="/assets/images/interactions/icono-ver-interaccion.svg"></ion-icon>
         </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-        <ion-button>
+        <ion-button routerLink="/manual-interacciones">
           <ion-icon slot="icon-only" src="/assets/images/interactions/icono-instrucciones.svg"></ion-icon>
         </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-        <ion-button>
+        <ion-button (click)="showInformation()">
           <ion-icon slot="icon-only" src="/assets/images/interactions/icono-info.svg"></ion-icon>
         </ion-button>
     </ion-buttons>

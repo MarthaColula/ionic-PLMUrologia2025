@@ -1,0 +1,54 @@
+<app-header ></app-header>
+<app-navigation-header titulo="Interacciones Medicamento - Alimento"></app-navigation-header>
+
+<ion-content class="ion-padding-horizontal ion-padding-bottom">
+
+  <div class="contenedorSeccion">
+    <h1 class="nombreProducto">{{this.mealInteractionsResult[0].Products[0].Brand}}</h1>
+    <p class="formaFarma"> <em>{{this.mealInteractionsResult[0].Products[0].PharmaForm}}</em>
+    </p>
+
+    <ion-grid>
+
+      <ion-row class="thead">
+        <ion-col size="5" size-sm="3" size-md="3" size-lg="2" size-xl="2" class="border abstract">
+          Sustancias
+        </ion-col>
+        <ion-col size="7" size-sm="9" size-md="9" size-lg="10" size-xl="10" class="border abstract">
+          Resumen / Referencias Clínicas
+        </ion-col>
+      </ion-row>
+
+      <ng-container *ngFor="let asMealInteraction of this.mealInteractionsResult">
+        <ion-row class="ion-align-items-justify" *ngFor="let mealInteraction of asMealInteraction.MealInteractions">
+          <ion-col class="border" size="5" size-sm="3" size-md="3" size-lg="2" size-xl="2">
+            <div class="ion-text-start abstract">
+              <h1 class="titSustancia">{{asMealInteraction.Description}}, {{mealInteraction.MealElementDescription}},
+                {{mealInteraction.Severity.IMASeverity}} <br>
+                <img *ngIf="mealInteraction.Severity.IMASeverityId == 1" class="punto-alerta"
+                  src="../assets/images/punto-rojo.svg" alt="">
+                <img *ngIf="mealInteraction.Severity.IMASeverityId > 1" class="punto-alerta"
+                  src="../assets/images/punto-verde.svg" alt="">
+              </h1>
+            </div>
+          </ion-col>
+          <ion-col class="ion-justify-content-center border" size="7" size-sm="9" size-md="9" size-lg="10" size-xl="10">
+            <div class="ion-text-justify abstract">
+              <h2>{{mealInteraction.ClinicalSummary}}</h2>
+              <ng-container *ngFor="let reference of mealInteraction.ClinicalReferences">
+                <ul>
+                  <li class="ion-text-justify">{{reference.ClinicalReference}}
+                    <ion-chip (click)="this.openUrl(reference.ReferenceSource)">
+                      <ion-icon name="newspaper-outline"></ion-icon>
+                      <ion-label>Referencia</ion-label>
+                    </ion-chip>
+                  </li>
+                </ul>
+              </ng-container>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </ion-grid>
+  </div>
+</ion-content>

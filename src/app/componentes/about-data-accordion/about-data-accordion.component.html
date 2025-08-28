@@ -2,10 +2,10 @@
   <ion-accordion-group mode="md">
     <ng-container *ngFor="let item of this.aboutDataItems; let i = index">
       <ion-accordion [value]="i">
-        <ion-item slot="header" color="mujer-secondary" detail="true">
+        <ion-item slot="header" color="urologia-secondary" detail="true">
           <ion-label>{{ item.Title }}</ion-label>
         </ion-item>
-        <div class="ion-padding" color="mujer-secondary" slot="content" [innerHTML]="item.ConstentSafeHtml"></div>
+        <div class="ion-padding" color="urologia-secondary" slot="content" [innerHTML]="item.ConstentSafeHtml"></div>
       </ion-accordion>
     </ng-container>
   </ion-accordion-group>

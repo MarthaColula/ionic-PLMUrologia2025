@@ -1,56 +1,76 @@
 <app-header></app-header>
-<app-navigation-header titulo="Interacciones medicamentosas"></app-navigation-header>
+<app-navigation-header titulo="{{ title }}"></app-navigation-header>
 
 <ion-content class="ion-padding">
 
-  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11" color="urologia-primary"
-    mode="md"></ion-searchbar>
+  <ion-searchbar class="ion-margin-bottom" placeholder="Producto, Sustancia, Laboratorio, CIE-11"
+    color="urologia-primary" mode="md" #srchBarComponent (keydown)="getResults($event)"
+    [(ngModel)]="searchText"></ion-searchbar>
 
-    <ion-list class="ion-margin-top">
+ 
 
-      <ion-item color="urologia-primary" detail="false">
-        <ion-thumbnail slot="start">
-          <img src="/assets/images/searchEngine/icono-medicamentos.svg"> 
-        </ion-thumbnail>
-        <ion-label>
-          <h2 class="textNormal">Medicamentos</h2>
-        </ion-label>
-        <ion-badge slot="end" color="urologia-secondary"> 88 </ion-badge>
-      </ion-item>
+  <ion-list class="ion-margin-top">
+    <ion-item color="urologia-primary" detail="false" (click)="getDrugs()">
+      <ion-thumbnail slot="start">
+        <img src="/assets/images/searchEngine/icono-medicamentos.svg">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="textNormal">Medicamentos</h2>
+      </ion-label>
+      <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+        <ion-badge slot="end" color="urologia-secondary">
+          {{this.pharmaSearchEngine.getResultsv2Result.getValue().Products}}</ion-badge>
+      </ng-container>
+      <!-- <ion-badge slot="end" color="urologia-secondary"> 88 </ion-badge>-->
+    </ion-item>
 
-      <ion-item color="urologia-primary" detail="false">
-        <ion-thumbnail slot="start">
-          <img src="/assets/images/searchEngine/icono-sustancias.svg"> 
-        </ion-thumbnail>
-        <ion-label>
-          <h2 class="textNormal">Sustancias</h2>
-        </ion-label>
-        <ion-badge slot="end" color="urologia-secondary"> 99 </ion-badge>
-      </ion-item>
-      
-      
-      <ion-item color="urologia-primary" detail="false">
-        <ion-thumbnail slot="start">
-          <img src="/assets/images/searchEngine/icono-cie-10.svg"> 
-        </ion-thumbnail>
-        <ion-label>
-          <h2 class="textNormal">CIE-10</h2>
-        </ion-label>
-        <ion-badge slot="end" color="urologia-secondary"> 99 </ion-badge>
-      </ion-item>
+    <ion-item color="urologia-primary" detail="false" (click)="getSubstances()">
+      <ion-thumbnail slot="start">
+        <img src="/assets/images/searchEngine/icono-sustancias.svg">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="textNormal">Sustancias</h2>
+      </ion-label>
+      <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+        <ion-badge slot="end" color="urologia-secondary">
+          {{this.pharmaSearchEngine.getResultsv2Result.getValue().Substances}}</ion-badge>
+      </ng-container>
+      <!-- <ion-badge slot="end" color="urologia-secondary"> 99 </ion-badge>-->
+    </ion-item>
 
 
-      <ion-item color="urologia-primary" detail="false">
-        <ion-thumbnail slot="start">
-          <img src="/assets/images/searchEngine/icono-laboratorios.svg"> 
-        </ion-thumbnail>
-        <ion-label>
-          <h2 class="textNormal">Laboratorios</h2>
-        </ion-label>
-        <ion-badge slot="end" color="urologia-secondary"> 99 </ion-badge>
-      </ion-item>
+    <ion-item color="urologia-primary" detail="false" (click)="getICD()">
+      <ion-thumbnail slot="start">
+        <img src="/assets/images/searchEngine/icono-cie-10.svg">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="textNormal">CIE-11</h2>
+      </ion-label>
+      <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+        <ion-badge slot="end" color="urologia-secondary">
+          {{this.pharmaSearchEngine.getResultsv2Result.getValue().ICD11}}
+        </ion-badge>
+      </ng-container>
+      <!--<ion-badge slot="end" color="urologia-secondary"> 99 </ion-badge>-->
+    </ion-item>
 
-    </ion-list>
+
+    <ion-item color="urologia-primary" detail="false" (click)="getLabs()">
+      <ion-thumbnail slot="start">
+        <img src="/assets/images/searchEngine/icono-laboratorios.svg">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="textNormal">Laboratorios</h2>
+      </ion-label>
+      <ng-container *ngIf="this.pharmaSearchEngine.getResultsv2Result | async;">
+        <ion-badge slot="end" color="urologia-secondary">
+          {{this.pharmaSearchEngine.getResultsv2Result.getValue().Labs}}
+        </ion-badge>
+      </ng-container>
+      <!-- <ion-badge slot="end" color="urologia-secondary"> 99 </ion-badge>-->
+    </ion-item>
+  </ion-list>
 
 </ion-content>
+
 <app-footer></app-footer>

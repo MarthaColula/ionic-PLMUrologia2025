@@ -1,0 +1,1161 @@
+{
+    "Title": "Cuestionario de calidad de vida y síntomas de tracto urinario inferior (ICIQ-LUTSqol)",
+    "TimeoutFocus": 150,
+    "TimeoutFocusResult": 450,
+    "AboutCalculator": [
+        {
+            "Title": "Descripción",
+            "ContentHtmlString": "El ICIQ-LUTSqol es una herramienta que permite evaluar el impacto de los síntomas del tracto urinario inferior en la vida de los pacientes y puede usarse para valorar diferentes modalidades de tratamiento."
+        },
+        {
+            "Title": "Referencias",
+            "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1. International Consultation on Incontinence Questionnaire Lower Urinary Tract Symptoms Quality of Life Module (ICIQ-LUTSqol) [Internet]. (consultado el 24 de abril del 2024). Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://iciq.net/iciq-lutsqol )\">https://iciq.net/iciq-lutsqol </a></p></ion-label></ion-item>"
+        }
+    ],
+    "Definition": [
+        {
+            "Type": "Indications",
+            "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Use esta calculadora para evaluar la calidad de vida de los pacientes con síntomas en el tracto urinario inferior. Proporcione a su paciente el dispositivo para que responda o lea usted las preguntas y sus opciones.</p>"
+        }
+    ],
+    "Reagents": [
+        {
+            "NoReagent": 1,
+            "Type": "Input",
+            "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
+            "Placeholder": "años",
+            "InputValue": "Number",
+            "Param": "age",
+            "Parse": "Int",
+            "Next": 2,
+            "Validations": "RANGE:[1,100]",
+            "LeyendaValidation": "Los valores permitidos deben estar entre 1 al 100.",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Edad</ion-label>",
+            "Requiered": true,
+            "Items": []
+        },
+        {
+            "NoReagent": 2,
+            "Type": "Radio",
+            "Param": "question1",
+            "Previous": 1,
+            "Next": 3,
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">2a. ¿Hasta qué punto sus problemas urinarios le afectan en las tareas domésticas (limpiar, hacer las compras, realizar pequeñas reparaciones, etc.)?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                "ItemId": 1,
+                "Description": "Nada, en absoluto",
+                "Value": "1",
+                "Checked": false
+                },
+                {
+                "ItemId": 2,
+                "Description": "Un poco",
+                "Value": "2",
+                "Checked": false
+                },
+                {
+                "ItemId": 3,
+                "Description": "Moderadamente",
+                "Value": "3",
+                "Checked": false
+                },
+                {
+                "ItemId": 4,
+                "Description": "Mucho",
+                "Value": "4",
+                "Checked": false
+                }
+            ]
+        },
+        {
+            "NoReagent": 3,
+            "Type": "Range",
+            "Range": "[0,10]",
+             "Previous": 2,
+            "Next": 4,
+            "Attributes": "snaps|pin",
+            "Param": "item1",
+            "Parse": "",
+            "Label": "2b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 4,
+            "Type": "Radio",
+            "Param": "question2",
+             "Previous": 3,
+            "Next": 5,
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">3a. ¿Sus problemas urinarios le afectan en el trabajo o en actividades diarias fuera de casa?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 5,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item2",
+            "Parse": "",
+            "Label": "3b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 6,
+            "Type": "Radio",
+            "Param": "question3",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">4a. ¿Sus problemas urinarios le afectan en sus actividades físicas (salir de paseo, correr, hacer deporte, ir al gimnasio, etc.)?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 7,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item3",
+            "Parse": "",
+            "Label": "4b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 8,
+            "Type": "Radio",
+            "Param": "question4",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">5a. ¿Sus problemas urinarios afectan su capacidad para desplazarse en autobús, coche, tren, avión, etc.?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 9,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item4",
+            "Parse": "",
+            "Label": "5b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 10,
+            "Type": "Radio",
+            "Param": "question5",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">6a. ¿Sus problemas urinarios limitan su vida social?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 11,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item5",
+            "Parse": "",
+            "Label": "6b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 12,
+            "Type": "Radio",
+            "Param": "question6",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">7a. ¿Sus problemas urinarios limitan su capacidad de frecuentar o visitar a sus amistades?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 13,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item6",
+            "Parse": "",
+            "Label": "7b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 14,
+            "Type": "Radio",
+            "Param": "question7",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">8a. ¿Sus problemas urinarios afectan su relación de pareja?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "No procede",
+                    "Value": "8",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 5,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 15,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item7",
+            "Parse": "",
+            "Label": "8b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 16,
+            "Type": "Radio",
+            "Param": "question8",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">9a. ¿Sus problemas urinarios afectan su vida sexual?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "No procede",
+                    "Value": "8",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 5,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 17,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item8",
+            "Parse": "",
+            "Label": "9b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 18,
+            "Type": "Radio",
+            "Param": "question9",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">10a. ¿Sus problemas urinarios afectan su vida familiar?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "No procede",
+                    "Value": "8",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 5,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 19,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item9",
+            "Parse": "",
+            "Label": "10b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 20,
+            "Type": "Radio",
+            "Param": "question10",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">11a. ¿Sus problemas urinarios le hacen sentirse deprimido?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 21,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item10",
+            "Parse": "",
+            "Label": "11b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 22,
+            "Type": "Radio",
+            "Param": "question11",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">12a. ¿Sus problemas urinarios le hacen sentirse preocupado o nervioso?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 23,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item11",
+            "Parse": "",
+            "Label": "12b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 24,
+            "Type": "Radio",
+            "Param": "question12",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">13a. ¿Sus problemas urinarios le hacen sentirse mal consigo mismo?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 25,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item12",
+            "Parse": "",
+            "Label": "13b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 26,
+            "Type": "Radio",
+            "Param": "question13",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">14a. ¿Sus problemas urinarios le afectan durante el sueño?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 27,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item13",
+            "Parse": "",
+            "Label": "14b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 28,
+            "Type": "Radio",
+            "Param": "question14",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">15a. ¿Sus problemas urinarios le hacen sentirse agotado o cansado?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 29,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item14",
+            "Parse": "",
+            "Label": "15b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 30,
+            "Type": "Radio",
+            "Param": "question15",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">16a. ¿Lleva compresas o pañales para mantenerse seco?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 31,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item15",
+            "Parse": "",
+            "Label": "16b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 32,
+            "Type": "Radio",
+            "Param": "question16",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">17a. ¿Tiene usted cuidado con la cantidad de líquidos que bebe?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 33,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item16",
+            "Parse": "",
+            "Label": "17b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": true,
+            "TypeMarks": "false",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 34,
+            "Type": "Radio",
+            "Param": "question17",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">18a. ¿Tiene que cambiarse la ropa interior con frecuencia porque está mojada?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 35,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item17",
+            "Parse": "",
+            "Label": "18b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 36,
+            "Type": "Radio",
+            "Param": "question18",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">19a. ¿Le preocupa que despida algún olor y que las personas puedan percibirlo?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 37,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item18",
+            "Parse": "",
+            "Label": "19b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 38,
+            "Type": "Radio",
+            "Param": "question19",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">20a. ¿Se siente incómodo con los demás por sus problemas urinarios?</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
+                    },
+                    {
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
+                    }
+            ]
+        },
+        {
+            "NoReagent": 39,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item19",
+            "Parse": "",
+            "Label": "20b. ¿Qué tanto considera que esto le molesta? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        },
+        {
+            "NoReagent": 40,
+            "Type": "Range",
+            "Range": "[0,10]",
+            "Attributes": "snaps|pin",
+            "Param": "item20",
+            "Parse": "",
+            "Label": "21. En general, ¿qué tanto considera que los problemas urinarios interfieren en su vida diaria? Entre 0 (nada) y 10 (muchísimo)",
+            "Requiered": false,
+            "TypeMarks": "Icon",
+            "Marks": [
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                },
+                {
+                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                }
+            ],
+            "Items": []
+        }
+    ],
+    "Results": {
+        "Title": "Resultado",
+        "Type": "Legends",
+        "NoLegends": "",
+        "Legends": "",
+        "ShowCalculateButton": false,
+         "ShowAutoResult": true
+
+    },
+    "Function": {
+        "CalculatorCode": "calculadoraICIQLUTSqol"
+    }
+}

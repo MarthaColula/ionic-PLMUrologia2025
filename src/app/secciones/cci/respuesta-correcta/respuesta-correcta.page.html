@@ -1,9 +1,9 @@
 <app-header></app-header>
-<app-navigation-header titulo="Casos clínicos interactivos"></app-navigation-header>
+<app-navigation-header titulo="{{this.title}}"></app-navigation-header>
 
 <ion-content class="ion-padding">
 
-  <h1 class="copyTitulo">Tratamiento del sangrado menstrual abundante</h1>
+  <h1 class="copyTitulo">{{this.title}}</h1>
 
   <ion-item class="thumbnailCorrecto ion-padding-horizontal ion-margin-top" color="urologia-primary" lines="none">
     <ion-thumbnail slot="start">
@@ -17,26 +17,39 @@
 
   <ion-card color="urologia-primary">
     <ion-card-header>
-      <ion-card-title>Discusión</ion-card-title>
+      <ion-card-title> {{this.discussion}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p class="textDiscusion">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      <p class="textDiscusion ion-text-justify">
+        {{this.discussion}}
       </p>
-      <p class="textDiscusion">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-      </p>
-      <p class="textDiscusion">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-      </p>
-      <p class="textDiscusion">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-      </p>
-
     </ion-card-content>
   </ion-card>
 
+
+  <ion-card *ngFor="let item of this.authors">
+    <ion-card-content class="ion-no-padding">
+      <ion-grid class="cardInfoDoctor">
+        <ion-row>
+          <div class="contetnFoto">
+            <img *ngIf="item.Photo; else default" src="{{this.authorsPhoto+item.Photo}}" alt="">
+            <ng-template #default>
+              <img src="./assets/images/iconUser.svg" alt="">
+            </ng-template>
+          </div>
+          <div class="NombreDoctor">
+            <p>Doctor</p>
+            <h2>{{item.Name}}</h2>
+            <p>Especialidad: {{item.SpecialityName}}</p>
+          </div>
+        </ion-row>
+        <p class="biografiaDoc">
+          {{item.Biography}}</p>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <!--
   <ion-grid class="cardInfoDoctor">
     <ion-row>
       <div class="contetnFoto">
@@ -46,29 +59,25 @@
         <p>Doctor</p>
         <h2>
           Jorge Arturo
-        <br>
+          <br>
           Pérez Gonzáles
-      </h2>
+        </h2>
       </div>
       <p class="biografiaDoc">
         Médico egresado de la Universidad Autónoma de Querétaro.
-        Especializado en medicina interna con experiencia en investigación clínica, medicina de tercer nivel, urgencias clínicas y seguimiento de patologías crónico-degenerativas.</p>
+        Especializado en medicina interna con experiencia en investigación clínica, medicina de tercer nivel, urgencias
+        clínicas y seguimiento de patologías crónico-degenerativas.</p>
     </ion-row>
   </ion-grid>
+-->
+
 
   <h2 class="textReferencias">Referencias</h2>
   <ul>
-    <li>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-    </li>
-    <li>
-      Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-    </li>
-    <li>
-      Nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.
+    <li class="ion-text-justify">
+      {{this.reference}}
     </li>
   </ul>
-
-
 </ion-content>
+
 <app-footer></app-footer>

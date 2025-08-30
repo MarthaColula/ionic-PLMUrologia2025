@@ -2,7 +2,7 @@ import { Injectable} from "@angular/core";
 import { NgZone } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { App, URLOpenListenerEvent } from '@capacitor/app';
-import { ControllersIonicService } from "./controllers-ionic.service";
+
 
 
 @Injectable({
@@ -15,7 +15,6 @@ export class DeepLinksService {
   constructor(
     private router: Router,
     private zone: NgZone,
-    private controllersIonicService: ControllersIonicService
   ) {}
 
   //DeepLink

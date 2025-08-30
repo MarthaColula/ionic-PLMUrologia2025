@@ -91,6 +91,10 @@ const routes: Routes = [
     path: 'atlas',
     loadChildren: () => import('./secciones/atlas/atlas/atlas.module').then( m => m.AtlasPageModule)
   },
+   {
+    path: 'ver-atlas',
+    loadChildren: () => import('./secciones/atlas/ver-atlas/ver-atlas.module').then( m => m.VerAtlasPageModule)
+  },
   {
     path: 'cci',
     loadChildren: () => import('./secciones/cci/cci/cci.module').then( m => m.CciPageModule)

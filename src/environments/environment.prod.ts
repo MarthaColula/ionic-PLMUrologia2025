@@ -106,7 +106,7 @@ export const environment = {
     //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Colombia/saluddelamujer/atlas/atlasList.json
   },
   applicationInfo: {
-    name: 'PLM Salud de la mujer',
+    name: 'PLM Urología',
     version: '1.0.0',
     prefix: 'MCOLADIUSALMUJ1',
     prefixId: 1046,

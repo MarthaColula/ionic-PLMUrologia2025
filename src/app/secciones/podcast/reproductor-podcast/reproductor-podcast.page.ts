@@ -102,7 +102,7 @@ export class ReproductorPodcastPage implements OnInit {
           trackId: this.trackId,
           assetUrl: this.assetUrl,
           title: this.title,
-          artist: 'PLM Salud de la Mujer',
+          artist: 'PLM Urología',
           album: this.album,
           albumArt: 'https://www.plmconnection.com/plmservices/Tools/Mexico/podcast/thumbnails/plmmedmov5_iconoposdcast_fibrilacionliomont_20240620.png',
         };
@@ -198,7 +198,7 @@ export class ReproductorPodcastPage implements OnInit {
                 trackId: this.trackId,
                 assetUrl: this.assetUrl,
                 title: this.title,
-                artist: 'PLM Salud de la Mujer',
+                artist: 'PLM Urología',
                 album: this.album,
                 albumArt: 'https://www.plmconnection.com/plmservices/Tools/Mexico/podcast/thumbnails/plmmedmov5_iconoposdcast_fibrilacionliomont_20240620.png',
               };

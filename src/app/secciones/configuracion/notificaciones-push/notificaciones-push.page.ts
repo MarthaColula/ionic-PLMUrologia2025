@@ -67,7 +67,7 @@ export class NotificacionesPushPage implements OnInit {
   }
 
   async presentToastWithOptions(data: any) {
-    let toastHeader = 'PLM CTGINECOLOGIA';
+    let toastHeader = 'PLM UROLOGIA';
     let toastMessage = 'Tienes una nueva notificación';
     let buttonsToPresent: any;
     if (data.PushName) {

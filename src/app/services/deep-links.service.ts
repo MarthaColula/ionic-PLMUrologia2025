@@ -25,7 +25,7 @@ export class DeepLinksService {
         App.addListener('appUrlOpen', (event: URLOpenListenerEvent) => {
           console.log('Deeplink recibido(service)', event);
           this.zone.run(() => {
-            const slug = event.url.split("plmsaluddelamujercol://").pop();
+            const slug = event.url.split("plmUrologia://").pop();
             console.log('Slug deeplink', slug);
             if (slug) {
               console.log('Deeplink válido', slug);

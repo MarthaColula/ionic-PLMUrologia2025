@@ -44,7 +44,7 @@ export class InAppBrowserService {
     console.warn('InAppBrowser', '***  open  ***');
     try {
       console.warn('InAppBrowser', '**  url: ' + url);
-      if (url.startsWith('plmsaluddelamujercol://')) {
+      if (url.startsWith('plmUrologia://')) {
         if (this.plt.is('android')) {
           this.processDeepLink(url);
         } else {
@@ -79,8 +79,8 @@ export class InAppBrowserService {
     console.warn('InAppBrowser', '***  processDeepLink  ***');
     const url_push = url.toString();
     console.log('InAppBrowser', 'showNotification url_push: ' + url_push);
-    if(url_push.includes('plmsaluddelamujercol')){
-      const slug = url_push.split("plmsaluddelamujercol://").pop();
+    if(url_push.includes('plmUrologia')){
+      const slug = url_push.split("plmUrologia://").pop();
       if (slug) {
         console.log('InAppBrowser', 'Deeplink válido: ' + slug);
         const parts = slug.split("/"); // ['', 'atlas', '19872']

@@ -1,0 +1,1108 @@
+{
+  "Title": "Cuestionario de salud sexual masculina (MSHQ)",
+  "TimeoutFocus": 150,
+  "TimeoutFocusResult": 450,
+  "AboutCalculator": [
+    {
+      "Title": "Descripción",
+      "ContentHtmlString": "El cuestionario de salud sexual masculina, conocido en inglés como Male Sexual Health Questionnaire (MSHQ), es un instrumento clínico de 25 preguntas diseñado para evaluar la erección, eyaculación y satisfacción en hombres mayores. Proporciona una evaluación detallada de la función eyaculatoria, problemas de eyaculación retardada y aneyaculación."
+    },
+    {
+      "Title": "Referencias",
+      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) Pollack L, Althof S. Male Sexual Health Questionnaire (MSHQ): scale development and psychometric validation. Urology [Internet]. 1 de octubre de 2004 (consultado el 14 de agosto del 2025; 64(4):777-782. Disponible en: <a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1016/J.UROLOGY.2004.04.056)\">https://doi.org/10.1016/J.UROLOGY.2004.04.056 </a><</p></ion-label></ion-item>"
+    }
+  ],
+  "Definition": [
+    {
+      "Type": "Indications",
+      "Label": "<p style=\"h1 {color: #002e6d; text-align: center; font-size: 1.75rem}\">Las siguientes preguntas son sobre la actividad sexual que ha tenido en el último mes. Por favor, conteste las preguntas lo más honesta y claramente posible. Sus respuestas serán completamente confidenciales Definiciones: <br><b> • Actividad sexual:</b> incluye caricias, juegos sexuales, sexo oral, masturbación y coito.<br><b>• Deseo o interés sexual:</b> es la sensación que incluye el deseo de tener una experiencia sexual, sentirse receptivo a la iniciación sexual de la pareja, y pensar o fantasear sobre tener sexo.<br><b>• Estimulación sexual:</b> incluye juegos sexuales con la pareja, autoestimulación (masturbación) o fantasías sexuales.  <br><br><b>MARQUE UNA SOLA RESPUESTA POR CADA PREGUNTA: </b></p>"
+    }
+  ],
+  "Reagents": [
+    {
+      "NoReagent": 1,
+      "Total": 25,
+      "Type": "Radio",
+      "Param": "q1",
+      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 1</b> <br> <b>Erección:</b> es un fenómeno fisiológico complejo que se basa en la interacción del sistema nervioso, endocrino y vascular, caracterizado por el endurecimiento y agrandamiento del pene.</ion-label>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">1. En las últimas 4 semanas, sin usar medicamentos como el viagra, ¿con qué frecuencia ha podido tener una erección cuando lo ha deseado?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Todas las veces",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "La mayoría de las veces",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "La mitad de las veces",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Menos de la mitad de las veces",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Ninguna vez",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 6,
+          "Description": "Usé viagra o un medicamento similar en cada encuentro sexual",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 2,
+      "Previous": 1,
+      "Next": 3,
+      "Type": "Radio",
+      "Param": "q2",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">1. En las últimas 4 semanas, ¿con qué frecuencia experimentó deseo o interés sexual? </p>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">2. En las últimas 4 semanas, si ha podido tener una erección sin usar medicamentos como el viagra, ¿con qué frecuencia ha podido mantener la erección el tiempo que ha deseado?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Todas las veces",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "La mayoría de las veces",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "La mitad de las veces",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Menos de la mitad de las veces",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Ninguna vez",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 6,
+          "Description": "Usé viagra o un medicamento similar en cada encuentro sexual",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 3,
+      "Previous": 2,
+      "Next": 4,
+      "Type": "Radio",
+      "Param": "q3",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">3. En las últimas 4 semanas, si ha podido tener una erección sin usar medicamentos como el viagra, ¿cómo calificaría la dureza de sus erecciones?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Completamente duro",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Casi completamente duro",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Mayormente duro, pero se puede doblar ligeramente",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Un poco duro, pero se dobla fácilmente",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Flácido",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Usé viagra o un medicamento similar en cada encuentro sexual",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 4,
+      "Previous": 3,
+      "Next": 5,
+      "Type": "Radio",
+      "Param": "q4",
+      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 2</b> <br> <b>Molestias relacionadas con la erección:</b></p>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">4. En las últimas 4 semanas, ¿cómo calificaría su nivel de excitación sexual durante la actividad sexual o el coito vaginal?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "No me molestó en absoluto/No tuve un problema con la erección",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Me molestó un poco",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Me molestó moderadamente",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Me molestó mucho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Me molestó extremadamente",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 5,
+      "Previous": 1,
+      "Next": 6,
+      "Type": "Radio",
+      "Param": "q5",
+      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 3</b> <br> <b>Eyaculación: es la liberación de semen durante el clímax sexual:</b></p>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">5. En el último mes, ¿con qué frecuencia ha podido eyacular al tener actividad sexual?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Todas las veces",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "La mayoría de las veces",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Aproximadamente la mitad de las veces",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Menos de la mitad de las veces",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Ninguna vez/No pude eyacular",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 6,
+      "Previous": 5,
+      "Next": 7,
+      "Type": "Radio",
+      "Param": "q6",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">6. En las últimas 4 semanas, cuando ha tenido actividad sexual, ¿con qué frecuencia sintió que tardó demasiado en eyacular?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Ninguna vez",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Menos de la mitad de las veces",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Aproximadamente la mitad de las veces",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "La mayoría de las veces",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Todas las veces",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 7,
+      "Previous": 6,
+      "Next": 8,
+      "Type": "Radio",
+      "Param": "q7",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">7. En el último mes, al tener actividad sexual, ¿con qué frecuencia sintió que estaba eyaculando, pero no salía ningún fluido?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Ninguna vez",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Menos de la mitad de las veces",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Aproximadamente la mitad de las veces",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "La mayoría de las veces",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Todas las veces",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 8,
+      "Previous": 7,
+      "Type": "Radio",
+      "Param": "q8",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">8. En las últimas 4 semanas, ¿cómo calificaría la fuerza de su eyaculación?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Tan fuerte como siempre",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Un poco menos fuerte que antes",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Algo menos fuerte que antes",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Mucho menos fuerte que antes",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Muchísimo menos fuerte que antes",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 9,
+      "Type": "Radio",
+      "Param": "q9",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">9. En las últimas 4 semanas, si pudo eyacular, ¿cómo calificaría la cantidad y el volumen de su semen cuando eyaculó?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Tanto como siempre",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Un poco menos que antes",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Algo menos que antes",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Mucho menos que antes",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Muchísimo menos que antes",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 10,
+      "Type": "Radio",
+      "Param": "q10",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">10. En las últimas 4 semanas, ¿cuánta dificultad encontró para mantener la lubricación vaginal (humedad vaginal) hasta finalizar la actividad sexual o el coito vaginal?</ion-label>",
+      "Requiered": true,
+      "FinalReagent": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Aumentó mucho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Aumentó moderadamente",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni aumentó ni disminuyó",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Disminuyó moderadamente",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Disminuyó mucho",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 11,
+      "Type": "Radio",
+      "Param": "q11",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">11. En las últimas 4 semanas, ¿ha experimentado algún dolor físico o incomodidad al eyacular?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Ningún dolor en absoluto",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Una ligera cantidad de dolor o incomodidad",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Una cantidad moderada de dolor o incomodidad",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Una cantidad fuerte de dolor o incomodidad",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Una cantidad extrema de dolor o incomodidad",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 12,
+      "Previous": 11,
+      "Type": "Radio",
+      "Param": "q12",
+      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 4</b> <br> <b>Molestias relacionadas con la eyaculación:</b></p>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">12. En el último mes, si ha tenido alguna dificultad para eyacular o no ha podido hacerlo, ¿le ha molestado esta situación?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "No me molestó en absoluto",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Me molestó un poco",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Me molestó moderadamente",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Me molestó mucho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Me molestó extremadamente",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 13,
+      "Previous": 12,
+      "Next": 14,
+      "Type": "Radio",
+      "Param": "q13",
+      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 5</b> <br> <b>Satisfacción sexual: </b>es un estado de bienestar psicológico y emocional que surge de una evaluación positiva de las interacciones sexuales de una person</p>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">13. ¿Qué tan satisfecho está con la vida sexual en general que lleva con su pareja?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente satisfecho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderadamente satisfecho",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni satisfecho ni insatisfecho",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Moderadamente insatisfecho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Extremadamente insatisfecho",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 14,
+      "Previous": 13,
+      "Next": 15,
+      "Type": "Radio",
+      "Param": "q14",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">14. ¿Qué tan satisfecho está con la calidad de la vida sexual que lleva con su pareja?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente satisfecho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderadamente satisfecho",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni satisfecho ni insatisfecho",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Moderadamente insatisfecho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Extremadamente insatisfecho",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 15,
+      "Previous": 14,
+      "Next": 16,
+      "Type": "Radio",
+      "Param": "q15",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">15. ¿Qué tan satisfecho está con el número de veces que usted y su pareja han mantenido relaciones sexuales el último mes?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente satisfecho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderadamente satisfecho",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni satisfecho ni insatisfecho",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Moderadamente insatisfecho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Extremadamente insatisfecho",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 16,
+      "Previous": 15,
+      "Next": 17,
+      "Type": "Radio",
+      "Param": "q16",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">16. ¿Qué tan satisfecho está con la forma en que usted y su pareja se muestran afecto durante el sexo? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente satisfecho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderadamente satisfecho",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni satisfecho ni insatisfecho",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Moderadamente insatisfecho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Extremadamente insatisfecho",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 17,
+      "Type": "Radio",
+      "Param": "q17",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">17. ¿Qué tan satisfecho está con la forma en que usted y su pareja se comunican sobre el sexo? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente satisfecho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderadamente satisfecho",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni satisfecho ni insatisfecho",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Moderadamente insatisfecho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Extremadamente insatisfecho",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 18,
+      "Previous": 17,
+      "Type": "Radio",
+      "Param": "q18",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">18. ¿Qué tan satisfecho está con todos los demás aspectos de la relación con su pareja?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Extremadamente satisfecho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderadamente satisfecho",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni satisfecho ni insatisfecho",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Moderadamente insatisfecho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Extremadamente insatisfecho",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 19,
+      "Previous": 18,
+      "Type": "Radio",
+      "Param": "q19",
+      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 6</b> <br> <b>Actividad y deseo sexual: </b> la actividad sexual incluye caricias, juegos sexuales, sexo oral, masturbación y coito. El deseo o interés sexual corresponde al deseo de tener una experiencia sexual, sentirse receptivo a la iniciación sexual de la pareja, y pensar o fantasear sobre tener sexo.</p>",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">19. En el último mes, ¿con qué frecuencia ha tenido actividad sexual, incluyendo masturbación, coito, sexo oral o cualquier otro tipo de actividad? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "A diario o casi diario",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Más de 6 veces al mes",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "4-6 veces al mes",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "1-3 veces al mes",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "0 veces al mes",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 20,
+      "Previous": 19,
+      "Type": "Radio",
+      "Param": "q20",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">20. Comparado con el mes anterior, ¿el número de veces que ha tenido actividad sexual aumentó o disminuyó? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Aumentó mucho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Aumentó moderadamente",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni aumentó ni disminuyó",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Disminuyó moderadamente",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Disminuyó mucho",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 21,
+      "Type": "Radio",
+      "Param": "q21",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">21. En el último mes, ¿le han molestado los cambios en el número de veces que ha tenido actividad sexual? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "No me molestó en absoluto",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Me molestó un poco",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Me molestó moderadamente",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Me molestó mucho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Me molestó extremadamente",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 22,
+      "Type": "Radio",
+      "Param": "q22",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">22. En el último mes, ¿con qué frecuencia ha sentido el impulso o deseo de tener sexo con su pareja?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Todas las veces",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "La mayoría de las veces",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Aproximadamente la mitad de las veces",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Menos de la mitad de las veces",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No he sentido deseo",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 23,
+      "Type": "Radio",
+      "Param": "q23",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">23. En el último mes, ¿cómo calificaría el impulso o deseo de tener sexo con su pareja? </ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Muy alto",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Alto",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Moderados",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Bajo",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Muy bajo o nulo",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 24,
+      "Type": "Radio",
+      "Param": "q24",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">24. En el último mes, ¿le ha molestado su nivel de deseo sexual?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "No me molestó en absoluto",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 1,
+          "Description": "Me molestó un poco",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Me molestó moderadamente",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Me molestó mucho",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Me molestó extremadamente",
+          "Value": "1",
+          "Checked": false
+        }
+      ]
+    },
+    {
+      "NoReagent": 25,
+      "Type": "Radio",
+      "Param": "q25",
+      "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">25. Comparado con el mes anterior, ¿el impulso o deseo de tener sexo con su pareja aumentó o disminuyó?</ion-label>",
+      "Requiered": true,
+      "Items": [
+        {
+          "ItemId": 1,
+          "Description": "Aumentó mucho",
+          "Value": "5",
+          "Checked": false
+        },
+        {
+          "ItemId": 2,
+          "Description": "Aumentó moderadamente",
+          "Value": "4",
+          "Checked": false
+        },
+        {
+          "ItemId": 3,
+          "Description": "Ni aumentó ni disminuyó",
+          "Value": "3",
+          "Checked": false
+        },
+        {
+          "ItemId": 4,
+          "Description": "Disminuyó moderadamente",
+          "Value": "2",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "Disminuyó mucho",
+          "Value": "1",
+          "Checked": false
+        },
+        {
+          "ItemId": 5,
+          "Description": "No pude eyacular",
+          "Value": "0",
+          "Checked": false
+        }
+      ]
+    }
+  ],
+  "Results": {
+    "Title": "Resultado",
+    "Type": "",
+    "NoLegends": 0,
+    "Legends": "",
+    "ShowCalculateButton": false
+  },
+  "Function": {
+    "CalculatorCode": "mshq"
+  }
+}

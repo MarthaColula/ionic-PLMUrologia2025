@@ -22,6 +22,7 @@ import { ModalInfoComponent } from './modal-info/modal-info.component';
 import { BannerComponent } from './banner/banner.component';
 import { CollapseElementListComponent } from './collapse-element-list/collapse-element-list.component';
 import { HttpRequestExceptionComponent } from './http-request-exception/http-request-exception.component';
+import { CollapseElementComponent } from './collapse-element/collapse-element.component';
 
 
 
@@ -46,6 +47,7 @@ import { HttpRequestExceptionComponent } from './http-request-exception/http-req
     BannerComponent,
     CollapseElementListComponent,
     HttpRequestExceptionComponent,
+    CollapseElementComponent,
   ],
   exports: [
     HeaderComponent,
@@ -66,6 +68,7 @@ import { HttpRequestExceptionComponent } from './http-request-exception/http-req
     BannerComponent,
     CollapseElementListComponent,
     HttpRequestExceptionComponent,
+    CollapseElementComponent,
   ],
   imports: [
     CommonModule,

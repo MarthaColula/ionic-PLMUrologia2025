@@ -28,29 +28,6 @@ export class SponsorProductsService {
     }
   }
 
-   /*
-  getJsonData() {
-    let finalUrl: string;
-    if (this.plt.is('ios')) {
-      finalUrl = this.baseUrl + this.fileName + this.time;
-    } else {
-      finalUrl = this.baseUrl + this.fileName;
-    }
-    return new Promise((resolve, reject) => {
-      this.http.get(finalUrl, {}, {})
-        .then(result => {
-          let json: any;
-          if (result.status >= 200 && result.status < 300) {
-            json = JSON.parse(result.data);
-          }
-          resolve(json);
-        })
-        .catch(ex => {
-          reject(this.printErrorMsg(ex));
-        });
-    });
-  }*/
-
   getJsonData(): Promise<any> {
     let finalUrl: string;
     if (this.plt.is('ios')) {

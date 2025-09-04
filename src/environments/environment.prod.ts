@@ -14,7 +14,7 @@ export const environment = {
     'USA',
     'Default',
   ],
-  
+
   restPharmaUtilities: {
     protocol: 'https',
     server: 'www.plmconnection.com',
@@ -86,33 +86,33 @@ export const environment = {
   },
   sponsorProducts: {
     protocol: 'https',
-    server: 'www.plmconnection.com',
-    pathName: 'plmservices/Tools/Colombia/saluddelamujer/products',
-    json: 'adiumProducts.json'
+    server: 's3.amazonaws.com/plmconnection.tools',
+    pathName: 'plmservices/Tools/Mexico/urologia/products',
+    json: 'sponsorProducts_2025.json'
+    //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/products/sponsorProducts_2025.json
   },
-  /*atlas: {
-    protocol: 'https',
-    server: 'www.plmconnection.com',
-    pathName: 'plmservices/Tools/Colombia/saluddelamujer/atlas',
-    json: 'atlasListprod.json'
-     //https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/atlasListprod.json
-  },*/
-   atlas: {
+  atlas: {
     protocol: 'https',
     server: 's3.amazonaws.com/plmconnection.tools',
     pathName: 'plmservices/Tools/Colombia/saluddelamujer/atlas',
     json: 'atlasListprod.json'
-    
     //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Colombia/saluddelamujer/atlas/atlasList.json
+    //https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/atlas/atlasListprod.json
   },
   applicationInfo: {
     name: 'PLM Urología',
     version: '1.0.0',
+
+    /*prefix: 'MMEXASPENURO25',
+    prefixId: 1120,
+    countryId: 1,
+    countryKey: 'MEX', */
     prefix: 'MCOLADIUSALMUJ1',
     prefixId: 1046,
-    editionId: 402,
     countryId: 4,
     countryKey: 'COL',
+
+    editionId: 402,
     availableCountries: [],
     isbn: '',
     distribution: '',
@@ -140,9 +140,9 @@ export const environment = {
     protocol: 'https',
     server: 'www.plmconnection.com',
     pathName: 'plmservices/Tools',
-    folderName: 'saluddelamujer' 
+    folderName: 'saluddelamujer'
   },
- 
+
   staticBannerURL: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/staticBanner/',
   clinicalCase: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/clinicalcases/images/',
   authorsPhotos: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/clinicalcases/photos/',

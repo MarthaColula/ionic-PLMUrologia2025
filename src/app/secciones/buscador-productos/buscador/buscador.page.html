@@ -78,7 +78,30 @@
     </div>
 
   </div>
+
+
+  <!--SPONSOR PRODUCTS-->
+  <!-- <ng-container *ngIf="successRequest | async;"> -->
+  <ng-container *ngIf="sponsorProduct$; else Empty">
+    <app-collapse-element #myDiv *ngFor="let product of sponsorProduct$ | async;" [elementList]="this.data.products"
+      (selected)="navigateDetail(product)" (toggle)="closeAccordion()" color="mujer-primary">
+    </app-collapse-element>
+  </ng-container>
+
+  <ng-template #Empty>
+    <ion-item class="ion-text-center" color="mujer-primary" lines="none">
+      <ion-label>No se hallaron los Productos Patrocinadores.</ion-label>
+    </ion-item>
+  </ng-template>
+
+  <ion-item *ngIf="exception | async;" class="ion-text-center" lines="none" color="mujer-primary">
+    <ion-label>
+      Ocurrió un problema!
+    </ion-label>
+  </ion-item>
+  <!-- </ng-container> -->
 </ion-content>
+
 
 <ng-container *ngIf="showBanner">
   <app-banner (close)="bannerClose($event)" PLMId="BUSCADOR"></app-banner>

@@ -2,18 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>718131411843-aoeohms58hdqpniond8t8mvep0f4mr4t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.718131411843-aoeohms58hdqpniond8t8mvep0f4mr4t</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA162yR6I8_k12hI976xUBTXttxXSZsxCo</string>
+	<string>AIzaSyAd3grYeAuyCFxP8J8x4ER2cDSxtNm1uw4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>484209244050</string>
+	<string>718131411843</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.PLMSaludMujer</string>
+	<string>Urolo</string>
 	<key>PROJECT_ID</key>
-	<string>plmsaluddelamujer</string>
+	<string>plmurologia</string>
 	<key>STORAGE_BUCKET</key>
-	<string>plmsaluddelamujer.firebasestorage.app</string>
+	<string>plmurologia.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:484209244050:ios:f27ad29d644202ce18f34b</string>
+	<string>1:718131411843:ios:ca74cdc4b74d4c1faa94b6</string>
 </dict>
 </plist>

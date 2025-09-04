@@ -1,6 +1,14 @@
-ion-content {
-    --background: #ffffff !important;
+:host {
+  background-image: url('/assets/images/backgroundHome.jpg') !important;
+  background-position: bottom center;
+  background-repeat: no-repeat !important;
+  background-size: auto 100%;
 }
+
+ion-content {
+  --background: none !important;
+}
+
 
 ion-toolbar {
     box-shadow: 0px 3px 5px rgba(86, 86, 86, 0.15);
@@ -82,7 +90,7 @@ h3 {
 }
 
 .titleResult {
-    background-color:#94278F  ;
+    background-color:#136ab2  ;
     color: white !important;
     padding: 0.7rem 0.7rem 0.3rem 0.7rem;
     text-transform: uppercase;
@@ -97,4 +105,9 @@ h3 {
 
 .calculatorIndications {
     //color: #fff !important;
+}
+
+
+.list-ios {
+background: var(--ion-item-background, var(--ion-background-color));
 }

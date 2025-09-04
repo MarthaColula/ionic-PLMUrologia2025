@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer2, OnDestroy } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
 import {
@@ -7,9 +7,12 @@ import {
   GlobalvarsService,
   PlmPharmaSearchEngineService,
   PlmTrackingEngineService,
+  SponsorProductsService,
   UserStorageService
 } from '../../../services/indexServices';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { ISponsorProducts } from 'src/app/interfaces/sponsorProducts';
+import { CollapseElementListComponent } from 'src/app/componentes/collapse-element-list/collapse-element-list.component';
 
 @Component({
   selector: 'app-buscador',
@@ -27,6 +30,18 @@ export class BuscadorPage implements OnInit, OnDestroy {
 
   closeBanner: boolean;
 
+  sponsorProduct$: Observable<any[]>;
+  exception = new BehaviorSubject<boolean>(false);
+  data: ISponsorProducts = {
+    products: [],
+  };
+
+
+  @ViewChildren(CollapseElementListComponent)
+  accordionsQueryList: QueryList<CollapseElementListComponent>;
+  public accordions: CollapseElementListComponent[];
+  public accordionChangeSub: Subscription;
+
   constructor(
     protected router: Router,
     private render: Renderer2,
@@ -35,7 +50,8 @@ export class BuscadorPage implements OnInit, OnDestroy {
     protected pharmaSearchEngine: PlmPharmaSearchEngineService,
     private controllersIonicService: ControllersIonicService,
     private trackingEngineService: PlmTrackingEngineService,
-    private userStorageService: UserStorageService
+    private userStorageService: UserStorageService,
+    private sponsorProductService: SponsorProductsService,
   ) { }
 
   ionViewWillEnter() {
@@ -57,12 +73,28 @@ export class BuscadorPage implements OnInit, OnDestroy {
   ngOnInit() {
     const codestring = this.globalVars.getClientInfoValue().codeString;
     console.log('codestring', codestring);
+
+    //Sponsor
+    this.addTrackingSectionAndEvent()
+    if (Array.isArray(this.sponsorProductService.sponsorProduct.getValue())) {
+      this.sponsorProduct$ =
+        this.sponsorProductService.sponsorProduct.asObservable();
+    } else {
+      this.getSponsorProducts();
+    }
   }
 
   ionViewDidLeave() {
     console.warn('***   ionViewDidLeave   ***');
     this.searchText = '';
     this.showBanner = false;
+  }
+
+   ngAfterViewInit(): void {
+    this.accordions = this.accordionsQueryList.toArray();
+    this.accordionChangeSub = this.accordionsQueryList.changes.subscribe(() => {
+      this.accordions = this.accordionsQueryList.toArray();
+    });
   }
 
   ngOnDestroy() {
@@ -217,4 +249,63 @@ export class BuscadorPage implements OnInit, OnDestroy {
     this.closeBanner = event;
   }
 
+
+  //Sponsor Porducts
+  getSponsorProducts() {
+    //this.controllersIonicService.showLoader().finally(() => {
+      this.sponsorProductService
+        .getJsonData()
+        .then((result: any) => {
+          console.log('resultGetJsonData', result);
+          this.data.products = result;
+          console.log('this.data.products', this.data.products);
+        })
+        .catch((ex) => {
+          console.error(ex);
+          this.exception.next(true);
+          this.controllersIonicService.hideLoader().finally(() => {
+            this.retry();
+          });
+        })
+        .finally(() => {
+          console.log('finally');
+          //this.getproductShot();
+        });
+    //});
+  }
+
+  navigateDetail(product: any) {
+    this.router.navigate([
+      "ippa",
+      product.CategoryId,
+      product.DivisionId,
+      product.PharmaFormId,
+      product.ProductId,
+    ]);
+  }
+
+  retry() {
+    this.controllersIonicService
+      .presentAlertRetry("Productos Patrocinadores")
+      .then((values: any) => {
+        const reintentar: boolean = values.data.opcion;
+        if (reintentar) {
+          this.exception.next(false);
+          this.getSponsorProducts();
+        } else {
+          this.exception.next(true);
+          //this.ShowBanner = true;
+        }
+      });
+  }
+
+
+
+  public closeAccordion() {
+    this.accordions.forEach((item) => {
+      if (item.isMenuOpen) {
+        item.isMenuOpen = false;
+      }
+    });
+  }
 }

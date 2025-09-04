@@ -1,7 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.PLMSaludMujer',
+  appId: 'com.PLMUrologia',
+  //appId: 'Urolo',
   appName: 'App_Urologia',
   webDir: 'www',
    server: {

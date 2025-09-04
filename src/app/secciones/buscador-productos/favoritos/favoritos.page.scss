@@ -1,7 +1,10 @@
 :host {
-    background-color: #ffffff !important;
+  background-image: url('/assets/images/backgroundHome.jpg') !important;
+  background-position: bottom center;
+  background-repeat: no-repeat !important;
+  background-size: auto 100%;
 }
 
 ion-content {
-    --background: none !important;
+  --background: none !important;
 }

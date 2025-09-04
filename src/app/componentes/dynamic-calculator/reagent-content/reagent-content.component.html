@@ -1,7 +1,7 @@
 <div *ngIf="flgShowReagent" class="div-content-reagent">
   <ion-list #CntntReagent id="cntntReagent" class="ion-no-padding">
 
-    <ion-item *ngIf="flgSubtitle" class="background" color="mujer-secondary">
+    <ion-item *ngIf="flgSubtitle" class="background" color="urologia-secondary">
       <ion-label class="bc ion-text-wrap" mode="md" position="fixed" >
         <div *ngIf="validateContentHTML(reagent.Subtitle); else htmlSubtitleFalse">
           <p [innerHTML]="getContentHTML(reagent.Subtitle)" ></p>
@@ -13,8 +13,8 @@
     </ion-item>
 
     <ng-container *ngIf="flgLabelHeader">
-      <ion-item color="mujer-primary">
-        <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="mujer-secondary">
+      <ion-item color="urologia-primary">
+        <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="urologia-secondary">
           <div *ngIf="validateContentHTML(reagent.Label); else htmlLabelFalse">
             <p [innerHTML]="getContentHTML(reagent.Label)" class="nota-reagent"></p>
           </div>
@@ -153,7 +153,7 @@
                   </ng-template>
                 </ion-label>
                 <ion-radio class="radio text-type-radio" mode="md" slot="start" id="indxR" 
-                  value="{{radioItem.Value}}" (click)="setVariable(radioItem)" checked color="mujer-secondary">
+                  value="{{radioItem.Value}}" (click)="setVariable(radioItem)" checked color="urologia-secondary">
                 </ion-radio>
               </ion-item>
             </ion-radio-group>
@@ -164,7 +164,7 @@
           <div *ngIf="validateArray(reagent)" class="div-content">
             <ng-container *ngIf="arrayCheck && arrayCheck.length > 0">
               <ion-item *ngFor="let checkItem of arrayCheck; let indxC = index">
-                <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="mujer-tertiary">
+                <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="urologia-tertiary">
                   <div *ngIf="validateContentHTML(checkItem.Description); else htmlCheckFalse">
                     <p [innerHTML]="getContentHTML(checkItem.Description)" class="nota-reagent"></p>
                   </div>
@@ -179,7 +179,7 @@
             </ng-container>
             <ng-container *ngIf="arrayCheckConditional && arrayCheckConditional.length > 0">
               <ion-item *ngFor="let checkItemC of arrayCheckConditional; let indxC2 = index">
-                <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="mujer-secondary">
+                <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="urologia-secondary">
                   <div *ngIf="validateContentHTML(checkItemC.Description); else htmlCheckFalse">
                     <p [innerHTML]="getContentHTML(checkItemC.Description)" class="nota-reagent"></p>
                   </div>
@@ -231,7 +231,7 @@
                         </ng-template>
                       </ng-container> -->
                       <ng-container *ngIf="mark.Type == 'Icon'">
-                        <ion-item class="item-mark" lines="none" color="mujer-secondary">
+                        <ion-item class="item-mark" lines="none" color="urologia-secondary">
                           <ion-card style="float:left">
                             <img [ngStyle]="getObjStyle(mark.Icon.Style)" src="{{mark.Icon.Src}}" float-left/>
                           </ion-card>
@@ -304,7 +304,7 @@
           <ng-container *ngIf="rangeMax > 0">
             <div *ngIf="flgPinFormatter; else pinFormatterFalse" class="center">
               <ion-range class="custome-range" [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" pin="true"
-              (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)" color="mujer-tertiary">
+              (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)" color="urologia-tertiary">
                 <ion-icon slot="start" pin="true" pinFormatter="pinFormatter" name="snow-outline"></ion-icon>
               </ion-range>
             </div>

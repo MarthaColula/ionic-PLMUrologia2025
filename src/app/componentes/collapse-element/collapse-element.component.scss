@@ -14,24 +14,21 @@ ion-card-subtitle {
 }
 
 .textNormal{
-   color: #ffffff !important;
+   color: #454040 !important;
 }
 
  /* Here we define the actual 'menu' and its 'options' */
 .image-wrapper {
    margin: 0 auto 2em auto;
    width: 20%;
-   img {
+   /*img {
       display: block;
       margin: auto;
-   }
+   }*/
 }
 
-p {
-   line-height: 1.2em;
-   margin: 0 0 1em 0;
-   font-family: Verdana;
-   font-size: 1rem;
+img.logoPlmHead{
+   max-width: 25px;
 }
 
 div {
@@ -50,20 +47,20 @@ div {
  // component class */
 .active {
    display: block;
-   color: #ffffff !important ;
+   color: #1678CA !important ;
 }
 
 .inactive {
    display: none;
-   color: #ffffff !important;
+   color: #1678CA !important;
 }
 
 .title-active{
-   color: #ffffff;
+   color: #1678CA;
 }
 
 .title-inactive{
-   color: #ffffff;
+   color: #1678CA;
 }
 ion-card {
    margin: 5px;
@@ -73,32 +70,33 @@ ion-card {
    text-align: left;
    min-width: 95% !important;
    max-width: 100% !important;
-   font-size: 0.11rem !important;
+   font-size: 0.90rem !important;
    font-style: bold;
    font-weight: normal;
    font-family: var(--ion-font-family,inherit);;
    //color: #2b8906 !important;
 }
 
-
-
+.list-ios {
+background: var(--ion-item-background, var(--ion-background-color));
+}
 
 //otherSectionBackgroundWhite
 
 .active2 {
    display: block;
-   color: #94278F !important ;
+   color: #1678CA !important ;
 }
 
 .inactive2 {
    display: none;
-   color: #ffffff !important;
+   color: #1678CA !important;
 }
 
 .title-active2{
-   color: #94278F;
+   color: #1678CA;
 }
 
 .title-inactive2{
-   color: #ffffff;
+   color: #1678CA;
 }

@@ -223,20 +223,20 @@ export class AutocompleteService {
       .finally(() => {
         this.pharmaSearchEngine.getDrugsByICD(icdId, environment.applicationInfo.editionId).subscribe({
           next: (data: any) => {
-            if (data.getDrugsByICDResult.length > 0) {
+            if (data.getDrugsByICD11Result.length > 0) {
               this.pharmaSearchEngine.getResultsv2Result.next(null);
-              this.pharmaSearchEngine.getDrugsResult.next(data.getDrugsByICDResult);
+              this.pharmaSearchEngine.getDrugsResult.next(data.getDrugsByICD11Result);
               this.controllersIonicService.hideLoader();
               this.router.navigateByUrl('/lista-productos');
             } else {
               this.controllersIonicService.hideLoader().finally(() => {
-                this.controllersIonicService.presentToast('El CIE-10 no tiene productos asociados.');
+                this.controllersIonicService.presentToast('El CIE-11 no tiene productos asociados.');
               });
             }
           },
           error: ex => {
             this.controllersIonicService.hideLoader().finally(() => {
-              this.controllersIonicService.presentAlert('CIE-10', 'Error al recuperar los productos asociados al CIE-10');
+              this.controllersIonicService.presentAlert('CIE-11', 'Error al recuperar los productos asociados al CIE-11');
             });
           },
           complete: () => console.log('AutocompleteService', 'successful getDrugsByICD')

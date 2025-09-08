@@ -82,8 +82,8 @@
 
   <!--SPONSOR PRODUCTS-->
   <!-- <ng-container *ngIf="successRequest | async;"> -->
-  <ng-container *ngIf="sponsorProduct$; else Empty">
-    <app-collapse-element #myDiv *ngFor="let product of sponsorProduct$ | async;" [elementList]="this.data.products"
+  <ng-container *ngIf="this.data.products; else Empty">
+    <app-collapse-element #myDiv *ngFor="let product of this.data.products;" [elementList]="this.data.products"
       (selected)="navigateDetail(product)" (toggle)="closeAccordion()" color="mujer-primary">
     </app-collapse-element>
   </ng-container>

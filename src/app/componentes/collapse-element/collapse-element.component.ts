@@ -24,7 +24,7 @@ export class CollapseElementComponent implements OnInit {
 
   ngOnInit() {
     console.warn('*** elementList.length: ' + this.elementList.length);
-    console.warn('this.elementList: ' + this.elementList);
+    console.warn('this.elementList: ' + JSON.stringify( this.elementList));
   }
 
   public toggleAccordion(): void {

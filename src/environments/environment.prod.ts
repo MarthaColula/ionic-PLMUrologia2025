@@ -143,8 +143,8 @@ export const environment = {
     folderName: 'saluddelamujer'
   },
 
-  staticBannerURL: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/staticBanner/',
-  clinicalCase: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/clinicalcases/images/',
-  authorsPhotos: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/clinicalcases/photos/',
+  staticBannerURL: 'https://www.plmconnection.com/plmservices/Tools/Colombia/urologia/staticBanner/',
+  clinicalCase: 'https://www.plmconnection.com/plmservices/Tools/Colombia/urologia/clinicalcases/images/',
+  authorsPhotos: 'https://www.plmconnection.com/plmservices/Tools/Colombia/urologia/clinicalcases/photos/',
   pushNotificationSponsorIcons: 'https://www.plmconnection.com/plmservices/Tools/pushNotifications/icons/',
 };

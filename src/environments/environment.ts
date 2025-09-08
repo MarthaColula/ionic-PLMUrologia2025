@@ -108,7 +108,6 @@ export const environment = {
     prefixId: 1046,
     countryId: 4,
     countryKey: 'COL',
-
     editionId: 402,
     availableCountries: [],
     isbn: '',
@@ -119,6 +118,16 @@ export const environment = {
     interactionsEdition: 402,
     loaderSponsor: true,
     businessUnitId: 1
+  },
+  firebaseConfig: {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
   },
   commentInfo: {
     commentTypeId: 14
@@ -131,8 +140,8 @@ export const environment = {
     folderName: 'saluddelamujer'
   },
 
-  staticBannerURL: 'https://www.plmconnection.com/plmservices/Tools/Mexico/saluddelamujer/staticBanner/',
-  clinicalCase: 'https://www.plmconnection.com/plmservices/Tools/Mexico/saluddelamujer/clinicalcases/images/',
-  authorsPhotos: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/clinicalcases/photos/',
+  staticBannerURL: 'https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/staticBanner/',
+  clinicalCase: 'https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/clinicalcases/images/',
+  authorsPhotos: 'https://www.plmconnection.com/plmservices/Tools/Colombia/urologia/clinicalcases/photos/',
   pushNotificationSponsorIcons: 'https://www.plmconnection.com/plmservices/Tools/pushNotifications/icons/',
 };

@@ -90,7 +90,7 @@ export class BuscadorPage implements OnInit, OnDestroy {
     this.showBanner = false;
   }
 
-   ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     this.accordions = this.accordionsQueryList.toArray();
     this.accordionChangeSub = this.accordionsQueryList.changes.subscribe(() => {
       this.accordions = this.accordionsQueryList.toArray();
@@ -253,28 +253,28 @@ export class BuscadorPage implements OnInit, OnDestroy {
   //Sponsor Porducts
   getSponsorProducts() {
     //this.controllersIonicService.showLoader().finally(() => {
-      this.sponsorProductService
-        .getJsonData()
-        .then((result: any) => {
-          console.log('resultGetJsonData', result);
-          this.data.products = result;
-          console.log('this.data.products', this.data.products);
-        })
-        .catch((ex) => {
-          console.error(ex);
-          this.exception.next(true);
-          this.controllersIonicService.hideLoader().finally(() => {
-            this.retry();
-          });
-        })
-        .finally(() => {
-          console.log('finally');
-          //this.getproductShot();
+    this.sponsorProductService
+      .getJsonData()
+      .then((result: any) => {
+        this.data.products = result;
+        console.log('this.data.products', this.data.products);
+      })
+      .catch((ex) => {
+        console.error(ex);
+        this.exception.next(true);
+        this.controllersIonicService.hideLoader().finally(() => {
+          this.retry();
         });
+      })
+      .finally(() => {
+        console.log('finally');
+        //this.getproductShot();
+      });
     //});
   }
 
   navigateDetail(product: any) {
+    console.log('navigateDetail product', product);
     this.router.navigate([
       "ippa",
       product.CategoryId,
@@ -298,8 +298,6 @@ export class BuscadorPage implements OnInit, OnDestroy {
         }
       });
   }
-
-
 
   public closeAccordion() {
     this.accordions.forEach((item) => {

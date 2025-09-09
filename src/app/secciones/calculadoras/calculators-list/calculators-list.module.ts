@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CalculadorasPageRoutingModule } from './calculadoras-routing.module';
+import { CalculatorsListPageRoutingModule } from './calculators-list-routing.module';
 
-import { CalculadorasPage } from './calculadoras.page';
+import { CalculatorsListPage } from './calculators-list.page';
 import { ComponentesModule } from 'src/app/componentes/componentes-module';
 
 
@@ -15,9 +15,9 @@ import { ComponentesModule } from 'src/app/componentes/componentes-module';
     CommonModule,
     FormsModule,
     IonicModule,
-    CalculadorasPageRoutingModule,
+    CalculatorsListPageRoutingModule,
     ComponentesModule
   ],
-  declarations: [CalculadorasPage]
+  declarations: [CalculatorsListPage]
 })
-export class CalculadorasPageModule {}
+export class CalculatorsListPageModule {}

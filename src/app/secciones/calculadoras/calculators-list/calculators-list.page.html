@@ -1,22 +1,22 @@
 <app-header></app-header>
 <app-navigation-header titulo="Calculadoras"></app-navigation-header>
-<!--****** LOCAL ******-->
-
+<!--SERVER-->
 <ion-content class="ion-padding-vertical">
   <div class="contentCenefa">
     <img src="/assets/images/cenefaCalculadoras.svg" alt="">
   </div>
 
-  <ion-list class="ion-padding-horizontal ion-margin-top ">
-    <ng-container >
+
+  <ion-list class="ion-padding-horizontal ion-margin-top">
+    <ng-container *ngIf="avalibleCalculatorsResources | async; else Empty">
       <app-collapse-element-list #myDiv *ngFor="let item of this.calculators" title="{{item.subSectionName}}"
         [elementList]="item.calculators" (selected)="showCalculators($event)" (toggle)="closeAccordion()"
-        >
+        color="urologia-primary">
       </app-collapse-element-list>
     </ng-container>
 
     <ng-template #Empty>
-      <ion-item class="ion-text-center" lines="none">
+      <ion-item class="ion-text-center" color="urologia-primary" lines="none">
         <ion-label>No se encontraron calculadoras disponibles.</ion-label>
       </ion-item>
     </ng-template>
@@ -30,4 +30,7 @@
 
 <ng-container *ngIf="closeBanner || !showBanner">
   <app-footer></app-footer>
-</ng-container>
+</ng-container> 
+
+<!--<app-banner  *ngIf="showBanner" PLMId="CALCULADORAS"></app-banner>
+<app-footer-marcas></app-footer-marcas-->

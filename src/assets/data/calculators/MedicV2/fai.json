@@ -22,7 +22,6 @@
     {
       "NoReagent": 1,
       "Type": "Input",
-      "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
       "Placeholder": "nmol/L",
       "InputValue": "Number",
       "Param": "t",
@@ -36,7 +35,6 @@
     {
       "NoReagent": 3,
       "Type": "Input",
-      "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
       "Placeholder": "nmol/L",
       "InputValue": "Number",
       "Param": "g",

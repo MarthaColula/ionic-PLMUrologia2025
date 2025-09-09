@@ -305,7 +305,7 @@
             <div *ngIf="flgPinFormatter; else pinFormatterFalse" class="center">
               <ion-range class="custome-range" [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" pin="true"
               (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)" color="urologia-tertiary">
-                <ion-icon slot="start" pin="true" pinFormatter="pinFormatter" name="snow-outline"></ion-icon>
+                <ion-icon slot="start" pin="true" pinFormatter="pinFormatter" name="options-outline"></ion-icon>
               </ion-range>
             </div>
             <ng-template #pinFormatterFalse>

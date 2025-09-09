@@ -1,7 +1,7 @@
 <ion-list class="bckgrList ion-padding-horizontal ion-margin-top">
-  <ion-card mode="md" color="urologia-tertiary">
+  <ion-card mode="md" color="urologia-primary">
     <ion-card-header>
-      <ion-card-subtitle (click)="toggleAccordion()" color="urologia-tertiary">
+      <ion-card-subtitle (click)="toggleAccordion()" color="urologia-primary">
         <span [ngClass]="this.isMenuOpen ? 'title-active2' : 'title-inactive2'" *ngIf="isMenuOpen">&#8722;</span>
         <span [ngClass]="this.isMenuOpen ? 'title-active2' : 'title-inactive2'" *ngIf="!isMenuOpen">&#43;</span>
         <ion-label class="headerAcordeon" [ngClass]="this.isMenuOpen ? 'title-active2' : 'title-inactive2'">{{ title
@@ -10,18 +10,18 @@
     </ion-card-header>
     
     <ion-card-content #myDiv [ngClass]="this.isMenuOpen ? 'active2' : 'inactive2'">
-      <ion-item *ngFor="let element of this.elementList" (click)="selectedItem(element)" color="urologia-tertiary"
+      <ion-item *ngFor="let element of this.elementList" (click)="selectedItem(element)" color="urologia-primary"
         button="true" detail="false">
         <ion-thumbnail slot="start">
           <!--<ion-img *ngIf="element.InfDescription === 'Atlas'; else otherImg"
             src="{{ element.BaseUrl + 'miniaturas/' + element.Miniature }}"></ion-img>-->
-          <img alt="" src="/assets/images/iconoThumbnailAtlas.svg" /> 
+          <img alt="" src="/assets/images/iconoAccCalculadoras.svg" /> 
           <!--<ng-template #otherImg>
             <img alt="" [src]="img" />
           </ng-template>-->
         </ion-thumbnail>
         <ion-label class="ion-text-wrap">
-          <h2 class="textNormal">{{ element.Title }}</h2>
+          <h2 class="textNormal">{{ element.ElectronicTitle }}</h2>
         </ion-label>
         <ion-icon class="iconoArrowListado" name="arrow-forward-outline" slot="end"></ion-icon>
         <!--<ion-icon icon="../assets/images/btnForward.svg" slot="end"></ion-icon>-->

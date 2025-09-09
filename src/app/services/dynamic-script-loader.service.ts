@@ -34,8 +34,7 @@ export class DynamicScriptLoaderService {
   ) {
 
     this.time = '?t=' + new Date().getTime();
-
-
+    
     this.renderer2 = rendererFactory.createRenderer(null, null);
     //TODO: Comment 'environment.production' for local test...
     if (environment.production) {
@@ -50,14 +49,16 @@ export class DynamicScriptLoaderService {
         };
       });
       return;
-    }
+    } 
+
+
     LocalJavaScriptsAllowed.forEach((script) => {
       this.scripts[script.name] = {
         loaded: false,
         src: script.src,
         id: script.name
       };
-    });
+    }); 
   }
 
   async loadScript(name: string) {

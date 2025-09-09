@@ -11,9 +11,10 @@ export class CalculatorsDynamicService {
   private listData: string;
   */
   private time: string;
-  
+
   private calculatorsList: any = [];
   private calculatorDetail: any;
+  protected subfolder: string;
 
   constructor(
     private httpClient: HttpClient
@@ -25,7 +26,7 @@ export class CalculatorsDynamicService {
       this.time = '?t=' + new Date().getTime();
     }]*/
     this.time = '?t=' + new Date().getTime();
-    console.log('CalculatorsDynamicService', {time:this.time} );
+    console.log('CalculatorsDynamicService', { time: this.time });
   }
 
   getCalculatorListJson() {
@@ -36,7 +37,9 @@ export class CalculatorsDynamicService {
     return this.calculatorDetail;
   }
 
+  /* get list palne
   getCalculatorsFromHttpClient() {
+    //modif LOCAL
     const webMethod = '/assets/data/calculators/calculatorsList.json';
     //const webMethod = this.baseUrl + this.listData;
     console.warn('CalcDynamicService getCalculatorsFromHttpClient webMethod: ' + webMethod);
@@ -51,20 +54,43 @@ export class CalculatorsDynamicService {
         reject({ MethodFailed: 'getCalculatorsFromHttpClient', Message: this.printErrorMsg(err) });
       });
     });
+  }*/
+
+
+  //get list collapse
+
+  getCalculatorsFromHttpClient(subfolder?: string) {
+    //TODO: Test Local
+    const webMethod = '/assets/data/calculators/' + (subfolder ? subfolder + '/' : '') + 'calculatorsList.json';
+    this.subfolder = (subfolder ? subfolder + '/' : '');
+    //const webMethod = this.baseUrl + this.listData;
+    return new Promise((resolve, reject) => {
+      this.httpClient.get<any>(webMethod)
+        .subscribe(data => {
+          console.warn(data);
+          console.warn({ calculators: data });
+          this.calculatorsList = data;
+          resolve(data);
+        }, err => {
+          reject({ MethodFailed: 'getCalculatorsFromHttpClient', Message: this.printErrorMsg(err) });
+        });
+    });
   }
 
+
+
   getJsonLocalDataFromHttpClient(fileName: string) {
-    const webMethod = `/assets/data/calculators/${fileName}`;
+    const webMethod = `/assets/data/calculators/MedicV2/${fileName}`;
     console.warn('CalculatorsDynamicService', 'webMethod: ' + webMethod);
     return new Promise((resolve, reject) => {
       this.httpClient.get<any>(webMethod)
-      .subscribe(data => {
-        console.warn('CalculatorsDynamicService', {data2: data});
-        this.calculatorDetail = data;
-        resolve(data);
-      }, err => {
-        reject({ MethodFailed: 'getJsonDataFromHttpClient', Message: this.printErrorMsg(err) });
-      });
+        .subscribe(data => {
+          console.warn('CalculatorsDynamicService', { data2: data });
+          this.calculatorDetail = data;
+          resolve(data);
+        }, err => {
+          reject({ MethodFailed: 'getJsonLocalDataFromHttpClient', Message: this.printErrorMsg(err) });
+        });
     });
   }
 
@@ -74,13 +100,13 @@ export class CalculatorsDynamicService {
     console.warn('CalculatorsDynamicService', 'webMethod: ' + webMethod);
     return new Promise((resolve, reject) => {
       this.httpClient.get<any>(webMethod)
-      .subscribe(data => {
-        console.warn('CalculatorsDynamicService', {data2: data});
-        this.calculatorDetail = data;
-        resolve(data);
-      }, err => {
-        reject({ MethodFailed: 'getJsonDataFromHttpClient', Message: this.printErrorMsg(err) });
-      });
+        .subscribe(data => {
+          console.warn('CalculatorsDynamicService', { data2: data });
+          this.calculatorDetail = data;
+          resolve(data);
+        }, err => {
+          reject({ MethodFailed: 'getJsonDataFromHttpClient', Message: this.printErrorMsg(err) });
+        });
     });
   }
   /*
@@ -116,9 +142,9 @@ export class CalculatorsDynamicService {
           this.calculatorDetail = json;
           resolve(json);
         },
-        (error) =>{
-          reject({ MethodFailed: 'getJsonDataFromHTTP', Message: this.printErrorMsg(error) });
-        });
+          (error) => {
+            reject({ MethodFailed: 'getJsonDataFromHTTP', Message: this.printErrorMsg(error) });
+          });
     });
   }
 

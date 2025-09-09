@@ -9,7 +9,7 @@
     },
     {
       "Title": "Referencias",
-      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) James HE. Neurologic evaluation and support in the child with an acute brain insult. Pediatr Ann. 1986 Jan;15(1):16–22.</p></ion-label></ion-item><ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">2) Borgialli DA, Mahajan P, Hoyle JD, Powell EC, Nadel FM, Tunik MG, et al. Performance of the Pediatric Glasgow Coma Scale Score in the Evaluation of Children With Blunt Head Trauma. Acad Emerg Med. 2016 Aug;23(8):878–84.</p></ion-label></ion-item>"
+      "ContentHtmlString": "<ion-item><ion-label class=\"ion-text-justify\"><p class=\"references\">1) Mohamed O, Freundlich RE, Dakik HK, Grober ED, Najari B, Lipshultz LI, et al. The quantitative ADAM questionnaire: a new tool in quantifying the severity of hypogonadism. Int J Impot Res [Internet]. 2010; 22(1):20-4 (consultado el 12 de agosto del 2025). <br>Disponible en:<br><a class=\"link\" (click)=\"inAppBrowser(https://doi.org/10.1038/ijir.2009.35)\">https://doi.org/10.1038/ijir.2009.35</a>  </p></ion-label></ion-item>"
     }
   ],
   "Definition": [
@@ -409,7 +409,7 @@
       "Title": "Resultado",
       "Type": "Legends",
       "NoLegends": 1,
-      "Legends": "<ion-item mode=\"md\" class=\"ion-text-center\" color=\"light\" lines=\"none\"><ion-label style=\"color: #4d4d4d; font-weight: bold;\" class=\"white-space-ion-label\"><p><b>SCORE<b> <br><b>LEGEND</b></p></ion-label></ion-item>",
+      "Legends": "<ion-item mode=\"md\" class=\"ion-text-center\" color=\"light\" lines=\"none\"><ion-label style=\"color: #4d4d4d; font-weight: bold;\" class=\"white-space-ion-label\"><p>Resultado: <b>SCORE<b> <br><b>LEGEND</b></p></ion-label></ion-item>",
       "Note": "<p>Use el resultado para evaluar el impacto del tratamiento. <br> <b>Nota:</b> Estos rangos son orientativos y deben interpretarse junto con la historia clínica, exploración física y parámetros bioquímicos (testosterona total y libre) del paciente.</p>",
       "ShowAutoResult": false,
       "Score": true

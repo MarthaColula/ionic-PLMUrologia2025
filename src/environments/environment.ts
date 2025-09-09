@@ -97,6 +97,14 @@ export const environment = {
     pathName: 'plmservices/Tools/Colombia/saluddelamujer/atlas',
     json: 'atlasListprod.json'
   },
+  calculators: {
+    protocol: 'https',
+    server: 'www.plmconnection.com',
+    pathName: 'plmservices/Tools/Mexico/pediatria/calculators',
+    //json: 'calculators.json' //desarrollo 
+    json: 'calculators_prod.json'   //Produccion
+    // https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/calculators.json 
+  },
   applicationInfo: {
     name: 'PLM Urología',
     version: '1.0.0',

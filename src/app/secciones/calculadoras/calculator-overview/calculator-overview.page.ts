@@ -969,9 +969,9 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
     console.log('***  getCalculatorData item: ' + JSON.stringify(item));
     console.log('***  getCalculatorData item: ', item.FileName);
     console.log('***  getCalculatorData item: ', item.BaseUrl);    
-    await this.controllersIonicService.showLoader().finally(() => {
-    this.calculatorsDynamicService.getJsonDataFromHttpClient(item.FileName, item.BaseUrl)
-    //this.calculatorsDynamicService.getJsonLocalDataFromHttpClient(item.FileName)//LOCAL
+    //await this.controllersIonicService.showLoader().finally(() => {
+    //this.calculatorsDynamicService.getJsonDataFromHttpClient(item.FileName, item.BaseUrl)
+    this.calculatorsDynamicService.getJsonLocalDataFromHttpClient(item.FileName)//LOCAL
       .then((result: any) => {
         console.warn(' getCalculatorData RESULT',result);
         this.mCalculatorData = this.calculatorsDynamicService.getCalculatorDetail();
@@ -993,7 +993,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
           this.exception.next(true);
         }
       });
-    });
+   // });
   }
 
   updateReagent(finalOption: boolean) {

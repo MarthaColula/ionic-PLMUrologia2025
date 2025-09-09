@@ -108,6 +108,10 @@ const routes: Routes = [
     loadChildren: () => import('./secciones/calculadoras/calculadoras/calculadoras.module').then( m => m.CalculadorasPageModule)
   },
   {
+    path: 'calculators-list',
+    loadChildren: () => import('./secciones/calculadoras/calculators-list/calculators-list.module').then( m => m.CalculatorsListPageModule)
+  },
+  {
     path: 'calculator-overview',
     loadChildren: () => import('./secciones/calculadoras/calculator-overview/calculator-overview.module').then(m => m.CalculatorOverviewPageModule)
   },

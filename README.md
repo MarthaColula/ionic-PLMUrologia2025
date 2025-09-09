@@ -40,6 +40,7 @@
 >[Network](https://capacitorjs.com/docs/apis/network)  
 
     $ npm install @capacitor/network
+    $ npm install @awesome-cordova-plugins/network
 
 >[Call-number](https://www.npmjs.com/package/capacitor-call-number )
 

@@ -23,7 +23,7 @@
       "NoReagent": 1,
       "Type": "Radio",
       "Param": "q1",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 1</b> <br> <b>Deseo o interés sexual:</b> es la sensación que incluye el deseo de tener una experiencia sexual, sentirse receptiva a la iniciación sexual de la pareja, y pensar o fantasear sobre tener sexo.</ion-label>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\" ><b>Dominio 1</b> <br> <b>Deseo o interés sexual:</b> es la sensación que incluye el deseo de tener una experiencia sexual, sentirse receptiva a la iniciación sexual de la pareja, y pensar o fantasear sobre tener sexo.</ion-label>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">1. En las últimas 4 semanas, ¿con qué frecuencia experimentó deseo o interés sexual? </p>",
       "Requiered": true,
       "Items": [
@@ -106,7 +106,7 @@
       "Next": 4,
       "Type": "Radio",
       "Param": "q3",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 2</b> <br> <b>Excitación sexual:</b>  es la sensación que incluye aspectos físicos y mentales de la exaltación sexual. Puede incluir sensación de calor, latidos en los genitales, lubricación (humedad) o contracciones musculares.</p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\" ><b>Dominio 2</b> <br> <b>Excitación sexual:</b>  es la sensación que incluye aspectos físicos y mentales de la exaltación sexual. Puede incluir sensación de calor, latidos en los genitales, lubricación (humedad) o contracciones musculares.</p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">3. En las últimas 4 semanas, ¿con qué frecuencia sintió excitación sexual durante la actividad sexual o el coito vaginal?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -295,7 +295,7 @@
       "Next": 8,
       "Type": "Radio",
       "Param": "q7",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 3</b> <br> <b>Lubricación:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\" ><b>Dominio 3</b> <br> <b>Lubricación:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">7. En las últimas 4 semanas, ¿con qué frecuencia consiguió la lubricación vaginal (humedad vaginal) durante la actividad sexual o el coito vaginal?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -478,7 +478,7 @@
       "NoReagent": 11,
       "Type": "Radio",
       "Param": "q11",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 4</b> <br> <b>Orgasmo:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 4</b> <br> <b>Orgasmo:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">11. En las últimas 4 semanas, cuando tuvo una estimulación sexual o un coito vaginal, ¿con qué frecuencia consiguió el orgasmo (clímax)?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -619,7 +619,7 @@
       "Next": 15,
       "Type": "Radio",
       "Param": "q14",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 5</b> <br> <b>Satisfacción:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\" ><b>Dominio 5</b> <br> <b>Satisfacción:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">14. En las últimas 4 semanas, ¿cuánta satisfacción sintió con el acercamiento emocional con su pareja durante la actividad sexual?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -747,7 +747,7 @@
       "NoReagent": 17,
       "Type": "Radio",
       "Param": "q17",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 6</b> <br> <b>Dolor:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 6</b> <br> <b>Dolor:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">17. En las últimas 4 semanas, ¿con cuánta frecuencia sintió molestias o dolor durante el coito vaginal? </ion-label>",
       "Requiered": true,
       "Items": [

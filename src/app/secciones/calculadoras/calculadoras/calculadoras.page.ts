@@ -1,22 +1,22 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
+//import { IonContent, IonVirtualScroll, Platform } from "@ionic/angular";
 import { IonContent, Platform } from "@ionic/angular";
-import { 
-  ControllersIonicService, 
-  DynamicScriptLoaderService, 
-  GlobalvarsService, 
-  PlmClientsEngineService, 
-  PlmTrackingEngineService,
-  InAppBrowserService,
-  PlmAssetsEngineService,
-  RestPlmAssetsEngineService,
-  CalculatorsDynamicService
-} from '../../../services/indexServices';
-import { BehaviorSubject, Subscription } from 'rxjs';
-import { UtilitiesCalculator } from 'src/app/interfaces/utilities-calculator';
-import { IInfoTracking } from 'src/app/interfaces/PLMTrackingEngine';
-import { InfoEntities, InformationType, SearchType } from 'src/app/interfaces/catalogs';
+//import { GoogleAnalytics } from '@awesome-cordova-plugins/google-analytics/ngx';
+import { CalculatorsDynamicService } from '../../../services/calculators-dynamic.service';
 
+import { ConnectionService, ControllersIonicService, DynamicScriptLoaderService, FirebaseAnalyticsService, GlobalvarsService, PlmClientsEngineService, PlmTrackingEngineService } from '../../../services/indexServices';
+import { InAppBrowserService } from '../../../services/in-app-browser.service';
+import { PlmAssetsEngineService } from '../../../services/plm-assets-engine.service';
+import { RestPlmAssetsEngineService } from '../../../services/rest-plm-assets-engine.service';
+import { UtilitiesCalculator } from '../../../interfaces/utilities-calculator';
+//import { ElectronicInformationContent } from "../../../interfaces/content";
+import { IInfoTracking } from '../../../interfaces/PLMTrackingEngine';
+import { InfoEntities, SearchType } from '../../../interfaces/catalogs';
+import { InformationType } from '../../../interfaces/catalogs';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { CollapseElementListComponent } from 'src/app/componentes/collapse-element-list/collapse-element-list.component';
+import { ElectronicInfo } from 'src/app/interfaces/editorialContent';
 
 @Component({
   selector: 'app-calculadoras',
@@ -26,8 +26,13 @@ import { InfoEntities, InformationType, SearchType } from 'src/app/interfaces/ca
 })
 export class CalculadorasPage implements OnInit, AfterViewInit {
 
-  @ViewChild(IonContent) content!: IonContent ;
+  @ViewChildren(CollapseElementListComponent) accordionsQueryList: QueryList<CollapseElementListComponent>;
+  public accordions: CollapseElementListComponent[];
+  public accordionChangeSub: Subscription;
 
+
+  @ViewChild(IonContent) content: IonContent;
+  //@ViewChild("vScroll") public virtualScroll: IonVirtualScroll;
   
   public valueSelected: string = "1";
   
@@ -39,25 +44,26 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
   public data: any[] = [];
   public results = [...this.data];
 
-  public contentTop!: number;
-  public contentHeight!: number;
+  public contentTop: number;
+  public contentHeight: number;
   
   successRequest = new BehaviorSubject<boolean>(false);
   exception = new BehaviorSubject<boolean>(false);
 
-  getInformationSub!: Subscription;
+  getInformationSub: Subscription;
 
-  filterTerm!: string;
+  filterTerm: string;
 
-  searcher!: boolean;
-  showBanner!: boolean;
-  closeBanner : boolean;
-
+  searcher: boolean;
 
   public resultsCalculators = [...this.data];
 
-  mUtilities!: UtilitiesCalculator;
-   calculators: any[] = [];
+  mUtilities: UtilitiesCalculator;
+
+  calculators: any[] = [];
+  
+  showBanner: boolean;
+  closeBanner : boolean;
   
   constructor(
     private router: Router,
@@ -72,6 +78,8 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
     private restPlmAssetsEngineService: RestPlmAssetsEngineService,
     private plmAssetsEngineService: PlmAssetsEngineService,
     private trackingEngineService: PlmTrackingEngineService,
+    private connectionService: ConnectionService,
+    private fa: FirebaseAnalyticsService
   ) {
     this.alphabet.push(String.fromCharCode(35));
     for (let i = 0; i < 26; i++) {
@@ -84,8 +92,8 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
     //this.getCalculatorsList();
     this.loadCalculatorSolutionsScript();
     if (this.clientEngineService.getCalculators().length === 0) {
-      //this.getCalculatorsLocalFromHttp();  //TODO: Test Local
-      this.getInformationByPrefixByType();
+      this.getCalculatorsFromHttp();  //TODO: Test Local
+      //this.getInformationByPrefixByType();
     } else {
       //this.mergeElectronicInfo(this.plmAssetsEngineService.getCalculators());
       this.successRequest.next(true);
@@ -101,12 +109,21 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
   ionViewWillEnter() {
     this.showBanner = true;
   }
-
   ngOnDestroy() {
     if (this.getInformationSub) {
       this.getInformationSub.unsubscribe();
     }
+
+    if (this.accordionChangeSub) {
+      this.accordionChangeSub.unsubscribe();
+    }
   }
+
+  bannerClose(event){
+    console.log({close: event});
+    this.closeBanner = event;
+  }
+
 
   ngAfterViewInit() {
     this.content.getScrollElement().then((res: HTMLElement) => {
@@ -115,6 +132,13 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
       console.log('CalculadorasPage', this.contentTop);
       console.log('CalculadorasPage', this.contentHeight);
     });
+
+
+    this.accordions = this.accordionsQueryList.toArray();
+    this.accordionChangeSub =
+      this.accordionsQueryList.changes.subscribe(() => {
+        this.accordions = this.accordionsQueryList.toArray();
+      });
   }
 
   accordionGroupChange(event: any) {
@@ -136,7 +160,6 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
       this.getInformationSub =
       this.clientEngineService.getInformationByPrefixByType(InformationType.Calculadora).subscribe({
         next: (data: any) => {
-          console.log('>>>>> DATA CALCULADORAS <<<<<',data);
           if (data.getInformationByPrefixByTypeResult.length > 0) {
             this.clientEngineService.getCalculatorsResult.next(data.getInformationByPrefixByTypeResult);
           } else {
@@ -159,7 +182,7 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
   }
 
   retry() {
-    this.controllersIonicService.presentAlertRetry('Abstracts')
+    this.controllersIonicService.presentAlertRetry('Calculadoras')
       .then((values: any) => {
         const reintentar: boolean = values.data.opcion;
         if (reintentar) {
@@ -170,34 +193,34 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
         }
       });
   }
- 
- 
-  async getCalculatorsLocalFromHttp() {
+
+  async getCalculatorsFromHttp() {
     //this.controllersIonicService.showLoader();
-    this.calculatorsDynamicService.getCalculatorsFromHttpClient()
+    this.calculatorsDynamicService.getCalculatorsFromHttpClient('MedicV2')
       .then((result: any) => {
-        console.log('CalcPag getCalculatorsFromHttp() result', result);
+        console.log('result', result);
         const data = this.calculatorsDynamicService.getCalculatorListJson();
-        console.warn('CalculadorasPage  data', {dataResult: data});
+        console.warn( {dataResult: data});
         data.forEach(calculator => {
-          this.calculators = calculator.getInformationByPrefixByTypeResult;
+          this.calculators = calculator.calculatorsResources;
           console.log({calculators: this.calculators});
         });
-
-
+      
         if (data.getInformationByPrefixByTypeResult && data.getInformationByPrefixByTypeResult.length > 0) {
+          console.warn('CalculadorasPage', '***  getInformationByPrefixByTypeResult  ***');
           this.clientEngineService.getCalculatorsResult.next(data.getInformationByPrefixByTypeResult);
-          console.log('getCalculators', this.clientEngineService.getCalculators());
+        } else if (data.length && data[0].Contents && data[0].Contents.length > 0) {
+          console.warn('CalculadorasPage', '***  Contents  ***');
+          this.clientEngineService.getCalculatorsResult.next(data[0].Contents);
         } else {
+          console.warn('CalculadorasPage', '***  Empty  ***');
           this.clientEngineService.getCalculatorsResult.next([]);
         }
-        this.successRequest.next(true);
       })
       .catch(ex => {
-       console.log('CalculadorasPage', ex);
-          this.controllersIonicService.hideLoader().finally(() => {
-            this.retry();
-          });
+        //this.controllersIonicService.hideLoader();
+        console.error('CalculadorasPage', ex);
+        this.exception.next(true);
       })
       .finally(() => {
         console.warn('CalculadorasPage', 'Complete getCalculatorListJsonFromService...');
@@ -217,8 +240,7 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
         return false;
       });
   }
-
- 
+  
   cancelButton() {
     this.searcher = false;
   }
@@ -232,9 +254,11 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
     // this.searcher = false;
   }
 
-  public goCalculatorView(item: any) {
-    console.log('GOTOCALCULATORVIEW ITEM', item);
-    this.addTrackingActivity(item);
+  showCalculators(item: ElectronicInfo) {
+    //if (this.connectionService.isConnected() === true) {
+      this.addTrackingActivity(item);
+    //}
+    this.fa.trackFAEventClick('Algoritmos',item.ElectronicTitle);
     if (item.Link) {
       console.warn('CalculadorasPage', '***  data.Url_resource: ' + item.Link);
       this.iabService.open(item.Link, '_system');
@@ -256,8 +280,9 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
           break;
       }
     }
-    //this.router.navigate(['/calculator-pwa'], navigationExtras);
   }
+
+
 
   handleChange(event: any) {
     const query: string = event.target.value.toLowerCase();
@@ -282,9 +307,16 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
   segmentChanged(event: CustomEvent) {
     this.valueSelected = event.detail.value;
   }
+
+  public closeAccordion() {
+    this.accordions.forEach((item) => {
+      if (item.isMenuOpen) {
+        item.isMenuOpen = false;
+      }
+    });
+  }
   
   addTrackingActivity(item: any) {
-    console.log('addTrackingActivity - item', item);
     const today = new Date().getTime();
     let latitude = '';
     let longitude = '';
@@ -302,10 +334,10 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
       BranchId: null,
       CodeString: this.globalVars.getClientInfoValue().codeString,
       Date: '\/Date(' + today.toString() + '+0200)\/',
-      ElectronicId: item.ElectronicId,
+      ElectronicId: null,
       EntityId: InfoEntities.Calculator,
       EventId: null,
-      Label: 'Calculadora',
+      Label: 'Calculator',
       LabelValue: item.ElectronicTitle,
       SearchAddressIP: ip,
       SearchLatitude: latitude,
@@ -314,19 +346,14 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
       SearchTypeId: SearchType.parametrizado,
       SourceId: this.globalVars.getInfoTrackingSource()
     };
-    console.warn('CalculadorasPage', '**  addInfoTracking()... DATA', data);
-    this.trackingEngineService.addInfoTracking(data);
+    //TODO: Descomentar en produccion!!!
+    //console.warn('CalculadorasPage', '**  addInfoTracking()...');
+    //this.trackingEngineService.addInfoTracking(data);
   }
 
   async addTrackingSectionAndEvent(nameEvent?: string) {
     console.warn('CalculadorasPage', '**  addTrackingSectionAndEvent');
     this.trackingEngineService.addTrackingBySection('Calculadoras',nameEvent);
-  }
-
-
-   bannerClose(event){
-    console.log({close: event});
-    this.closeBanner = event;
   }
 
 }

@@ -31,7 +31,7 @@ var calculatorBusinessLogicObject = (function () {
           return this.bodymrs(answers);
 
         default:
-          throw new Error('No se encontro solución a la calculadora.');
+          throw new Error('LOCAL - No se encontro solución a la calculadora.');
       }
     },
 

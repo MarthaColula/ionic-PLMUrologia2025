@@ -15,7 +15,7 @@
     "Definition": [
         {
             "Type": "Indications",
-            "Label": "<p style=\"h1 {color: #002e6d; font-size: 1.75rem}\" class=\"ion-text-justify\">El siguiente cuestionario tiene por objetivo evaluar los síntomas en la piel que rodea la vagina, llamada vulva. Como cualquier otra parte del cuerpo, algunas veces la vulva puede sufrir irritación. Las siguientes preguntas se responden teniendo en cuenta la presencia de síntomas en la última semana. Seleccione “Sí” o “No” para evaluar cada rubro” </p>"
+            "Label": "<p style=\"h1 {color: #002e6d; font-size: 1.75rem}\" class=\"ion-text-justify\">El siguiente cuestionario tiene por objetivo evaluar los síntomas en la piel que rodea la vagina, llamada vulva. Como cualquier otra parte del cuerpo, algunas veces la vulva puede sufrir irritación. Las siguientes preguntas se responden teniendo en cuenta la presencia de síntomas en la última semana. Seleccione “Sí” o “No” para evaluar cada rubro. </p>"
         }
     ],
     "Reagents": [
@@ -25,7 +25,7 @@
             "Type": "Radio",
             "Param": "q1",
             "ClrIfValueIsEmpty": "q1|q2|q3|q4|q5|q6|q7|q8|q9|q10|q11|q12|q13|q14|q15|q16|q17|q18|q19|q20|q21",
-            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Sintomatología </ion-label>",
+            "Subtitle": "<ion-label style=\" color:#ffffff\" class=\"ion-text-center\"><b> Sintomatología </b></ion-label>",
             "Label": "1. ¿Le pica la vulva?",
             "Requiered": true,
             "Items": [
@@ -173,7 +173,7 @@
             "NoReagent": 8,
             "Type": "Radio",
             "Param": "q8",
-            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Impacto en el componente emocional </ion-label>",
+            "Subtitle": "<ion-label style=\" color:#ffffff\" class=\"ion-text-center\"><b> Impacto en el componente emocional </b></ion-label>",
             "Label": "8. ¿Le preocupan sus síntomas vulvares? (por ejemplo, que se extiendan, empeoren, dejen cicatrices, etc.)",
             "Requiered": true,
             "Items": [
@@ -259,7 +259,7 @@
             "Requiered": true,
             "Type": "Radio",
             "Param": "q12",
-            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Impacto en calidad de vida</ion-label>",
+            "Subtitle": "<ion-label style=\" color:#ffffff\" class=\"ion-text-center\"><b>Impacto en calidad de vida </b></ion-label>",
             "Label": "12. ¿Sus síntomas vulvares afectan sus interacciones con los demás?",
             "Items": [
                 {
@@ -364,7 +364,7 @@
             "NoReagent": 17,
             "Type": "Radio",
             "Param": "q17",
-            "Subtitle": "<ion-label style=\"background: #9181B9; color:#ffffff\" class=\"ion-text-center\">Impacto en el componente sexual</ion-label>",
+            "Subtitle": "<ion-label style=\" color:#ffffff\" class=\"ion-text-center\"><b>Impacto en el componente sexual</b></ion-label>",
             "Label": "17. ¿Actualmente es sexualmente activa con alguna pareja?",
             
             "ConditionalOption": true,

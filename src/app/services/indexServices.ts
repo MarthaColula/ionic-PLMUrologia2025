@@ -10,6 +10,7 @@ export * from './connection.service';
 export * from './social.service';
 export * from './plm-assets-engine.service';
 export * from './calculators-dynamic.service';
+export * from './calculators-service.service';
 export * from './dynamic-script-loader.service';
 export * from './rest-plm-assets-engine.service';
 export * from './plm-pharma-search-engine.service';

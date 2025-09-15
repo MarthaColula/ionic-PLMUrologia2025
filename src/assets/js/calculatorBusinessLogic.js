@@ -282,7 +282,7 @@ var calculatorBusinessLogicObject = (function () {
       var result = '<ion-item mode="md" class="ion-text-center" color="plm-light" lines="none">' +
         '<ion-label class="white-space-ion-label">' +
         '<b>' + 'Volumen prostático: ' + '</b>' + volumenP + 'cm<sup>3</sup>' + '<br>' +
-        '<b>' + 'Densidad de PSA: ' + '</b>' + densidadP + 'ng/mL/cm<sup>3</sup>' + '</ion-label>' + '</ion-item>';
+        '<b>' + 'Densidad de PSA: ' + '</b>' + densidadP + 'ng/mL/cm<sup>3</sup>' + '</ion-label>' + '</ion-item> <br><p><b>Recomendaciones de abordaje diagnóstico:</b> <br>El incremento de la densidad del antígeno prostático específico (DAPE) se ha vinculado con el crecimiento de próstata en procesos neoplásicos de este órgano. <br>Se ha encontrado que pacientes debajo del rango 0.10 a 0.15 ng/mL/cc con un crecimiento prostático, pueden evitar de forma segura la realización de una biopsia. Dentro de ese rango se deberá considerar el abordaje diagnóstico de cáncer de próstata. <br>En pacientes con hiperplasia prostática benigna y una DAPE<0.05 ng/mL/cc, se ha encontrado un patrón glandular disminuido y menor respuesta a medicamentos 5-alfa reductasa. </p>';
       return result;
     },
 
@@ -349,11 +349,9 @@ var calculatorBusinessLogicObject = (function () {
         '<tr class="ion-text-center " >' + '<td>' + 'Impacto en el componente emocional ' + '</td>' + '<td>' + score2 + '</td>' + '<td>' + legend2 + '</td>' + '<td>' + '</tr>' +
         '<tr class="ion-text-center " >' + '<td>' + 'Impacto en la calidad de vida' + '</td>' + '<td>' + score3 + '</td>' + '<td>' + legend3 + '</td>' + '</tr>' +
         '<tr class="ion-text-center " >' + '<td>' + 'Impacto en el componente sexual' + '</td>' + '<td>' + score4 + '</td>' + '<td>' + legend4 + '</td>' + '<td>' + '</tr>' +
-        '</table>';
+        '</table> ';
 
       return result;
     },
-
-
   }
 })(calculatorBusinessLogicObject || {})

@@ -37,7 +37,7 @@ export class DynamicScriptLoaderService {
     
     this.renderer2 = rendererFactory.createRenderer(null, null);
     //TODO: Comment 'environment.production' for local test...
-    if (environment.production) {
+   /*if (environment.production) {
 
       ExternalJavaScriptsAllowed.forEach((script) => {
         console.log(script.name);
@@ -49,7 +49,7 @@ export class DynamicScriptLoaderService {
         };
       });
       return;
-    } 
+    } */
 
 
     LocalJavaScriptsAllowed.forEach((script) => {

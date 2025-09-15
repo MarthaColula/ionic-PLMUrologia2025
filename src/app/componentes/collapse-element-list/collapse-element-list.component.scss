@@ -4,12 +4,13 @@ ion-card-subtitle {
    cursor: pointer;
    position: relative;
    font-family: var(--ion-font-family,inherit);
-   border-bottom: 0.5px solid #7b6e91;
+   border-bottom: 0.8px solid #7b6e91;
    margin: 0;
    span {
       position: absolute;
       right: 1em;
       // font-size: 0.95em;
+       color: #d7000b !important ;
    }
 }
 
@@ -50,7 +51,7 @@ div {
  // component class */
 .active {
    display: block;
-   color: #1678CA !important ;
+   color: #d7000b !important ;
 }
 
 .inactive {
@@ -87,7 +88,7 @@ ion-card {
 
 .active2 {
    display: block;
-   color: #1678CA !important ;
+   color: #d7000b !important ;
 }
 
 .inactive2 {

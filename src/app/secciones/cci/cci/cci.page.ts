@@ -1,17 +1,28 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
 import {
-  InAppBrowserService, 
-  GlobalvarsService, 
-  ControllersIonicService,
-  PlmClientsEngineService, 
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from "@angular/core";
+import {
   PlmTrackingEngineService,
-  //FirebaseAnalyticsService,
-} from '../../../services/indexServices';
-import { ElectronicInfo } from "src/app/interfaces/editorialContent";
-import { InfoEntities, SearchType, IInfoTracking, InformationType } from 
-'../../../interfaces/models';
-import { BehaviorSubject, Subscription } from 'rxjs';
+  GlobalvarsService,
+  ControllersIonicService,
+  SectionService,
+  FirebaseAnalyticsService,
+  ConnectionService,
+} from "../../../services/indexServices";
+import { NavigationExtras, Router } from "@angular/router";
+import { Platform } from "@ionic/angular";
+import {
+  IInfoTracking,
+  InfoEntities,
+  SearchType,
+} from "../../../interfaces/models";
+import { BehaviorSubject, Subscription } from "rxjs";
+import { CollapseElementListComponent } from "../../../componentes/collapse-element-list/collapse-element-list.component";
 
 @Component({
   selector: 'app-cci',
@@ -19,94 +30,160 @@ import { BehaviorSubject, Subscription } from 'rxjs';
   styleUrls: ['./cci.page.scss'],
   standalone: false,
 })
-export class CciPage implements OnInit, OnDestroy {
 
+export class CciPage implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChildren(CollapseElementListComponent)
+  accordionsQueryList: QueryList<CollapseElementListComponent>;
   successRequest = new BehaviorSubject<boolean>(false);
-  exception = new BehaviorSubject<boolean>(false);
-  infoDataInput: ElectronicInfo | undefined;
-  getInformationSub: Subscription | undefined;
+  public accordions: CollapseElementListComponent[];
+  public exception = new BehaviorSubject<boolean>(false);
+  public accordionChangeSub: Subscription;
+  getInformationSub: Subscription;
+
+  infoDataInput: any;
+  closeBanner: boolean;
+  sectionName: any;
+  img: any;
   showBanner: boolean | undefined;
-  closeBanner : boolean;
+
 
   constructor(
+    private plt: Platform,
     private router: Router,
-    private trackingEngineService: PlmTrackingEngineService,
-    public clientEngineService: PlmClientsEngineService,
     private globalVars: GlobalvarsService,
+    private fa: FirebaseAnalyticsService,
+    public articlesService: SectionService,
+    private connectionService: ConnectionService,
+    private trackingEngineService: PlmTrackingEngineService,
     private controllersIonicService: ControllersIonicService,
-    //private fa: FirebaseAnalyticsService,
+    
   ) {}
 
   ngOnInit() {
-    this.addTrackingSectionAndEvent();
-    if (this.clientEngineService.getInteractiveClinicalCase().length === 0) {
-      this.getInformationByPrefixByType();
+    this.articlesService.section.next("cci");
+
+    if (this.articlesService.getDynamicSection() === null) {
+      this.getDynamicSectionJsonFromServer();
     } else {
       this.successRequest.next(true);
+
+      console.log("choosePlatform");
+      this.choosePlatform();
     }
   }
 
-  ionViewDidLeave() {
-    this.showBanner = false;
+  ngAfterViewInit(): void {
+ 
+
+    this.accordions = this.accordionsQueryList.toArray();
+    this.accordionChangeSub = this.accordionsQueryList.changes.subscribe(() => {
+      this.accordions = this.accordionsQueryList.toArray();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.accordionChangeSub) {
+      this.accordionChangeSub.unsubscribe();
+    }
+
+    if (this.getInformationSub) {
+      this.getInformationSub.unsubscribe();
+    }
+
+    this.articlesService.dynamicSectionJsonResult.next(null);
+    console.log(
+      "dynamicSectionJsonResult",
+      this.articlesService.dynamicSectionJsonResult
+    );
+
+    this.articlesService.section.next(null);
   }
 
   ionViewWillEnter() {
     this.showBanner = true;
   }
 
-  ngOnDestroy() {
-    if (this.getInformationSub) {
-      this.getInformationSub.unsubscribe();
+  ionViewDidLeave() {
+    this.showBanner = false;
+  }
+
+  bannerClose(event) {
+    console.log({ close: event });
+    this.closeBanner = event;
+  }
+
+  public choosePlatform() {
+    this.exception.next(false);
+
+    if (this.plt.is("cordova")) {
+      console.log("getDynamicSectionJsonFromServer");
+      this.getDynamicSectionJsonFromServer();
+    } else {
+      console.log("getDynamicSectionJsonLocal");
+      this.getDynamicSectionJsonLocal();
     }
   }
 
-  getInformationByPrefixByType() {
-    if (this.getInformationSub) {
-      this.getInformationSub.unsubscribe();
-    }
+  public getDynamicSectionJsonFromServer() {
     this.controllersIonicService.showLoader().finally(() => {
-      this.getInformationSub =
-      this.clientEngineService.getInformationByPrefixByType(InformationType.Casos_clinicos_interactivos).subscribe({
-        next: (data: any) => {
-          console.log('>>>>> DATA CASOS CLINICOS INTERACTIVOS <<<<<', data);
-          if (data.getInformationByPrefixByTypeResult.length > 0) {
-            this.clientEngineService.getInteractiveClinicalCaseResult.next(data.getInformationByPrefixByTypeResult);
+      this.articlesService
+        .getDynamicSectionJsonFromServerRequest()
+        .then(() => {
+          if (this.articlesService.dynamicSectionJsonResult.getValue()) {
+            let section: any = this.articlesService.dynamicSectionJsonResult
+              .getValue()
+              .find((element) => element.sectionName === "cci");
+            console.log({ section: section });
+            this.articlesService.dynamicSectionJsonResult.next(
+              section.articulosResources
+            );
+            // console.log('dynamicSectionJsonResult', this.articlesService.dynamicSectionJsonResult.getValue());
+            this.sectionName = section.sectionName;
+            this.img = "/assets/images/iconoThumbnailArticulos.svg";
+            this.successRequest.next(true);
+            
+          } else {
+            this.articlesService.dynamicSectionJsonResult.next([]);
           }
-          this.successRequest.next(true);
-        },
-        error: ex => {
-          console.log(ex);
+        })
+        .catch(() => {
           this.controllersIonicService.hideLoader().finally(() => {
-            this.retry();
+            this.exception.next(true);
           });
-        },
-        complete: () => {
-          console.log('Complete');
+        })
+        .finally(() => {
           this.controllersIonicService.hideLoader();
-        }
-      });
+          console.log("successfull getDynamicSectionJsonLocalRequest");
+        });
     });
-
   }
 
-  retry() {
-    this.controllersIonicService.presentAlertRetry('CCI')
-      .then((values: any) => {
-        const reintentar: boolean = values.data.opcion;
-        if (reintentar) {
-          this.exception.next(false);
-          this.getInformationByPrefixByType();
-        } else {
-          this.exception.next(true);
-        }
-      });
+  public getDynamicSectionJsonLocal() {
+    this.controllersIonicService.showLoader().finally(() => {
+      this.articlesService
+        .getDynamicSectionJsonLocalRequest()
+        .then(() => {
+          //this.preparePodcastsSection();
+        })
+        .catch(() => {
+          this.controllersIonicService.hideLoader().finally(() => {
+            this.exception.next(true);
+          });
+        })
+        .finally(() => {
+          this.controllersIonicService.hideLoader();
+          console.log("successfull getDynamicSectionJsonLocalRequest");
+        });
+    });
   }
 
-  goToCCIView(elementData: any) {
-    console.warn('init goToCCIView', elementData);
+  viewPDF(elementData: any) {
+    console.warn("init goToImgView", elementData);
     this.infoDataInput = elementData;
     if (this.infoDataInput !== undefined) {
+      //if (this.connectionService.isConnected() === true) {
         this.addTrackingActivity(elementData);
+      //}
       const navigationExtras: NavigationExtras = {
         state: {
           title: this.infoDataInput.ElectronicTitle,
@@ -114,20 +191,25 @@ export class CciPage implements OnInit, OnDestroy {
           fileName: this.infoDataInput.FileName,
           link: this.infoDataInput.Link,
           electronicid: this.infoDataInput.ElectronicId,
-          allData: this.infoDataInput
-        }
+          section: this.infoDataInput.InfDescription,
+        },
       };
-      //this.fa.trackFAEventClick('CasoClinicointeractivo ', this.infoDataInput.ElectronicTitle );
-      this.router.navigate(['/ver-cci'], navigationExtras);
-      console.log('NAV EXTRAS CCI', navigationExtras);
+      this.fa.trackFAEventClick(
+        "Casos Clínicos Interactivos",
+        elementData.ElectronicTitle
+      );
+
+      this.router.navigate(["/ver-cci"], navigationExtras);
     }
   }
 
-   bannerClose(event){
-    console.log({close: event});
-    this.closeBanner = event;
+  public closeAccordion() {
+    this.accordions.forEach((item) => {
+      if (item.isMenuOpen) {
+        item.isMenuOpen = false;
+      }
+    });
   }
-
 
   addTrackingActivity(electronicInformation: any) {
     console.log('addTrackingActivity - electronicInformation', electronicInformation);

@@ -26,7 +26,7 @@
             "Param": "q1",
             "ClrIfValueIsEmpty": "q1|q2|q3|q4|q5|q6|q7|q8|q9|q10|q11|q12|q13|q14|q15|q16|q17|q18|q19|q20|q21",
             "Subtitle": "<ion-label style=\" color:#ffffff\" class=\"ion-text-center\"><b> Sintomatología </b></ion-label>",
-            "Label": "1. ¿Le pica la vulva?",
+            "Label": "1. ¿Siente comezón en la vulva?",
             "Requiered": true,
             "Items": [
                 {
@@ -365,7 +365,7 @@
             "Type": "Radio",
             "Param": "q17",
             "Subtitle": "<ion-label style=\" color:#ffffff\" class=\"ion-text-center\"><b>Impacto en el componente sexual</b></ion-label>",
-            "Label": "17. ¿Actualmente es sexualmente activa con alguna pareja?",
+            "Label": "17. ¿Actualmente es sexualmente activa con alguna pareja? (Si la respuesta a esta pregunta es “No” aquí termina el cuestionario, cuando la respuesta es “Sí” continua la evaluación)",
             
             "ConditionalOption": true,
             "FinalReagent": true,

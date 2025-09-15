@@ -23,7 +23,7 @@
         "NoReagent": 1,
         "Type": "Radio",
         "Param": "question1",
-        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">1. ¿Con qué frecuencia ha tenido la sensación de no vaciar completamente la vejiga?</ion-label>",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">1. ¿Con qué frecuencia ha tenido la sensación de no vaciar completamente la vejiga después de orinar?</ion-label>",
         "Items": [
           {
             "ItemId": 1,
@@ -111,7 +111,7 @@
         "NoReagent": 3,
         "Type": "Radio",
         "Param": "question3",
-        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">3. ¿Al orinar, con qué frecuencia para y comienza de nuevo?</ion-label>",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">3. ¿Al orinar, con qué frecuencia tiene que parar y comienza a orinar de nuevo?</ion-label>",
         "Items": [
           {
             "ItemId": 1,
@@ -243,7 +243,7 @@
         "NoReagent": 6,
         "Type": "Radio",
         "Param": "question6",
-        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">6. ¿Con qué frecuencia ha tenido que esforzarse para comenzar a orinar?</ion-label>",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">6. ¿Con qué frecuencia ha tenido que pujar para comenzar a orinar?</ion-label>",
         "Items": [
           {
             "ItemId": 1,
@@ -287,7 +287,7 @@
         "NoReagent": 7,
         "Type": "Radio",
         "Param": "question7",
-        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">7. ¿Cuántas veces se levanta normalmente por la noche para orinar?</ion-label>",
+        "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">7. ¿Cuántas veces se levanta normalmente desde que se acuesta hasta que se levanta para orinar?</ion-label>",
         "Items": [
           {
             "ItemId": 1,

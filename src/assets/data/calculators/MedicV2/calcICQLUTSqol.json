@@ -20,7 +20,7 @@
     ],
     "Reagents": [
         {
-            "NoReagent": 1,
+            "NoReagent": 0,
             "Type": "Input",
             "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
             "Placeholder": "años",
@@ -35,6 +35,27 @@
             "Items": []
         },
         {
+            "NoReagent": 1,
+            "Type": "Radio",
+            "Param": "gender",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">Sexo:</ion-label>",
+            "Requiered": true,
+            "Items": [
+                {
+                    "ItemId": 1,
+                    "Description": "Mujer",
+                    "Value": "0",
+                    "Checked": false
+                },
+                {
+                    "ItemId": 2,
+                    "Description": "Hombre",
+                    "Value": "0",
+                    "Checked": false
+                }
+            ]
+        },
+        {
             "NoReagent": 2,
             "Type": "Radio",
             "Param": "question1",
@@ -44,28 +65,28 @@
             "Requiered": true,
             "Items": [
                 {
-                "ItemId": 1,
-                "Description": "Nada, en absoluto",
-                "Value": "1",
-                "Checked": false
+                    "ItemId": 1,
+                    "Description": "Nada, en absoluto",
+                    "Value": "1",
+                    "Checked": false
                 },
                 {
-                "ItemId": 2,
-                "Description": "Un poco",
-                "Value": "2",
-                "Checked": false
+                    "ItemId": 2,
+                    "Description": "Un poco",
+                    "Value": "2",
+                    "Checked": false
                 },
                 {
-                "ItemId": 3,
-                "Description": "Moderadamente",
-                "Value": "3",
-                "Checked": false
+                    "ItemId": 3,
+                    "Description": "Moderadamente",
+                    "Value": "3",
+                    "Checked": false
                 },
                 {
-                "ItemId": 4,
-                "Description": "Mucho",
-                "Value": "4",
-                "Checked": false
+                    "ItemId": 4,
+                    "Description": "Mucho",
+                    "Value": "4",
+                    "Checked": false
                 }
             ]
         },
@@ -73,7 +94,7 @@
             "NoReagent": 3,
             "Type": "Range",
             "Range": "[0,10]",
-             "Previous": 2,
+            "Previous": 2,
             "Next": 4,
             "Attributes": "snaps|pin",
             "Param": "item1",
@@ -83,13 +104,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -98,7 +119,7 @@
             "NoReagent": 4,
             "Type": "Radio",
             "Param": "question2",
-             "Previous": 3,
+            "Previous": 3,
             "Next": 5,
             "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">3a. ¿Sus problemas urinarios le afectan en el trabajo o en actividades diarias fuera de casa?</ion-label>",
             "Requiered": true,
@@ -108,25 +129,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -141,13 +162,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -164,25 +185,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -197,13 +218,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -212,7 +233,7 @@
             "NoReagent": 8,
             "Type": "Radio",
             "Param": "question4",
-            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">5a. ¿Sus problemas urinarios afectan su capacidad para desplazarse en autobús, coche, tren, avión, etc.?</ion-label>",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">5a. ¿Sus problemas urinarios afectan su capacidad para desplazarse?</ion-label>",
             "Requiered": true,
             "Items": [
                 {
@@ -220,25 +241,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -253,13 +274,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -276,25 +297,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -309,13 +330,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -332,25 +353,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -365,13 +386,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -388,31 +409,31 @@
                     "Description": "No procede",
                     "Value": "8",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 5,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -427,13 +448,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -450,31 +471,31 @@
                     "Description": "No procede",
                     "Value": "8",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 5,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -489,13 +510,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -512,31 +533,31 @@
                     "Description": "No procede",
                     "Value": "8",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 5,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -551,13 +572,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -574,25 +595,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -607,13 +628,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -622,7 +643,7 @@
             "NoReagent": 22,
             "Type": "Radio",
             "Param": "question11",
-            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">12a. ¿Sus problemas urinarios le hacen sentirse preocupado o nervioso?</ion-label>",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">12a. ¿Sus problemas urinarios le hacen sentirse ansioso o nervioso?</ion-label>",
             "Requiered": true,
             "Items": [
                 {
@@ -630,25 +651,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -663,13 +684,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -686,25 +707,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -719,13 +740,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -742,25 +763,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -775,13 +796,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -790,7 +811,7 @@
             "NoReagent": 28,
             "Type": "Radio",
             "Param": "question14",
-            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">15a. ¿Sus problemas urinarios le hacen sentirse agotado o cansado?</ion-label>",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">15a. ¿Se siente agotado/cansado?</ion-label>",
             "Requiered": true,
             "Items": [
                 {
@@ -798,25 +819,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -831,13 +852,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -854,25 +875,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -887,13 +908,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -910,25 +931,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -943,13 +964,13 @@
             "TypeMarks": "false",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -958,7 +979,7 @@
             "NoReagent": 34,
             "Type": "Radio",
             "Param": "question17",
-            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">18a. ¿Tiene que cambiarse la ropa interior con frecuencia porque está mojada?</ion-label>",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">18a. ¿Requiere cambiarse la ropa interior cuando se moja?</ion-label>",
             "Requiered": true,
             "Items": [
                 {
@@ -966,25 +987,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -999,13 +1020,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -1022,25 +1043,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -1055,13 +1076,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -1070,7 +1091,7 @@
             "NoReagent": 38,
             "Type": "Radio",
             "Param": "question19",
-            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">20a. ¿Se siente incómodo con los demás por sus problemas urinarios?</ion-label>",
+            "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Heavy; font-weight: lighter;\">20a. ¿Se avergüenza de sus problemas urinarios?</ion-label>",
             "Requiered": true,
             "Items": [
                 {
@@ -1078,25 +1099,25 @@
                     "Description": "Nada, en absoluto",
                     "Value": "1",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 2,
                     "Description": "Un poco",
                     "Value": "2",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 3,
                     "Description": "Moderadamente",
                     "Value": "3",
                     "Checked": false
-                    },
-                    {
+                },
+                {
                     "ItemId": 4,
                     "Description": "Mucho",
                     "Value": "4",
                     "Checked": false
-                    }
+                }
             ]
         },
         {
@@ -1111,13 +1132,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -1134,13 +1155,13 @@
             "TypeMarks": "Icon",
             "Marks": [
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/No_Discomfort.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Moderately_Bothersome.png"
                 },
                 {
-                "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
+                    "Src": "https://www.plmconnection.com/plmservices/Tools/Mexico/testjs/img/Extremely_Bothersome.png"
                 }
             ],
             "Items": []
@@ -1152,8 +1173,7 @@
         "NoLegends": "",
         "Legends": "",
         "ShowCalculateButton": false,
-         "ShowAutoResult": true
-
+        "ShowAutoResult": true
     },
     "Function": {
         "CalculatorCode": "calculadoraICIQLUTSqol"

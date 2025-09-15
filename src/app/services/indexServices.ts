@@ -25,6 +25,7 @@ export * from './push-notifications.service';
 export * from './deep-links.service';  
 export * from './firebase-analytics.service';
 export * from './metadata-engine.service';
+export * from './section.service';
 
 
 /*

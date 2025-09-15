@@ -56,7 +56,7 @@
           {
             "ElectronicId": 18855,
             "BaseUrl": "https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/",
-            "FileName": ".json",
+            "FileName": "mshq.json",
             "ElectronicTitle": "Cuestionario de Salud Sexual Masculina (MSHQ) – Versión Corta",
             "ElectronicDescription": "Cuestionario de Salud Sexual Masculina (MSHQ) – Versión Corta",
             "InfDescription": "Calculadora",

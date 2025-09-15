@@ -24,7 +24,7 @@
       "Total": 25,
       "Type": "Radio",
       "Param": "q1",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 1</b> <br> <b>Erección:</b> es un fenómeno fisiológico complejo que se basa en la interacción del sistema nervioso, endocrino y vascular, caracterizado por el endurecimiento y agrandamiento del pene.</ion-label>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 1</b> <br> <b>Erección:</b> es un fenómeno fisiológico complejo que se basa en la interacción del sistema nervioso, endocrino y vascular, caracterizado por el endurecimiento y agrandamiento del pene.</ion-label>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">1. En las últimas 4 semanas, sin usar medicamentos como el viagra, ¿con qué frecuencia ha podido tener una erección cuando lo ha deseado?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -167,7 +167,7 @@
       "Next": 5,
       "Type": "Radio",
       "Param": "q4",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 2</b> <br> <b>Molestias relacionadas con la erección:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 2</b> <br> <b>Molestias relacionadas con la erección:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">4. En las últimas 4 semanas, ¿cómo calificaría su nivel de excitación sexual durante la actividad sexual o el coito vaginal?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -209,7 +209,7 @@
       "Next": 6,
       "Type": "Radio",
       "Param": "q5",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 3</b> <br> <b>Eyaculación: es la liberación de semen durante el clímax sexual:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 3</b> <br> <b>Eyaculación: es la liberación de semen durante el clímax sexual:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">5. En el último mes, ¿con qué frecuencia ha podido eyacular al tener actividad sexual?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -526,7 +526,7 @@
       "Previous": 11,
       "Type": "Radio",
       "Param": "q12",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 4</b> <br> <b>Molestias relacionadas con la eyaculación:</b></p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 4</b> <br> <b>Molestias relacionadas con la eyaculación:</b></p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">12. En el último mes, si ha tenido alguna dificultad para eyacular o no ha podido hacerlo, ¿le ha molestado esta situación?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -568,7 +568,7 @@
       "Next": 14,
       "Type": "Radio",
       "Param": "q13",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 5</b> <br> <b>Satisfacción sexual: </b>es un estado de bienestar psicológico y emocional que surge de una evaluación positiva de las interacciones sexuales de una person</p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 5</b> <br> <b>Satisfacción sexual: </b>es un estado de bienestar psicológico y emocional que surge de una evaluación positiva de las interacciones sexuales de una person</p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">13. ¿Qué tan satisfecho está con la vida sexual en general que lleva con su pareja?</ion-label>",
       "Requiered": true,
       "Items": [
@@ -811,7 +811,7 @@
       "Previous": 18,
       "Type": "Radio",
       "Param": "q19",
-      "Subtitle": "<p class=\"ion-text-center\"><b>Dominio 6</b> <br> <b>Actividad y deseo sexual: </b> la actividad sexual incluye caricias, juegos sexuales, sexo oral, masturbación y coito. El deseo o interés sexual corresponde al deseo de tener una experiencia sexual, sentirse receptivo a la iniciación sexual de la pareja, y pensar o fantasear sobre tener sexo.</p>",
+      "Subtitle": "<p class=\"ion-text-center\" style=\"color: #ffffff;\"><b>Dominio 6</b> <br> <b>Actividad y deseo sexual: </b> la actividad sexual incluye caricias, juegos sexuales, sexo oral, masturbación y coito. El deseo o interés sexual corresponde al deseo de tener una experiencia sexual, sentirse receptivo a la iniciación sexual de la pareja, y pensar o fantasear sobre tener sexo.</p>",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium; margin-left: 0.5rem;\">19. En el último mes, ¿con qué frecuencia ha tenido actividad sexual, incluyendo masturbación, coito, sexo oral o cualquier otro tipo de actividad? </ion-label>",
       "Requiered": true,
       "Items": [

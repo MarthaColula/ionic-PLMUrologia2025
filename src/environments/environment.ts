@@ -91,18 +91,26 @@ export const environment = {
     json: 'sponsorProducts_2025.json'
     //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/products/sponsorProducts_2025.json
   },
-  atlas: {
-    protocol: 'https',
-    server: 's3.amazonaws.com/plmconnection.tools',
-    pathName: 'plmservices/Tools/Colombia/saluddelamujer/atlas',
-    json: 'atlasListprod.json'
-  },
   cci: {
     protocol: 'https',
     server: 's3.amazonaws.com/plmconnection.tools',
     pathName: 'plmservices/Tools/Mexico/urologia/clinicalcases/2025',
     json: 'casosClinicosList.json'
     // https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/clinicalcases/2025/casosClinicosList.json
+  },
+  abstracts: {
+    protocol: 'https',
+    server: 'www.plmconnection.com',
+    pathName: 'plmservices/Tools/Mexico/urologia/abstracts',
+    json: 'abstracts2025.json' //desarrollo 
+    //https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/abstracts/abstracts2025.json
+  },
+  podcast: {
+    protocol: 'https',
+    server: 'www.plmconnection.com',
+    pathName: 'plmservices/Tools/Mexico/urologia/podcast/2025',
+    json: 'podcastList.json'
+    //https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/podcast/2025/podcastList.json
   },
   calculators: {
     protocol: 'https',
@@ -112,24 +120,24 @@ export const environment = {
     json: 'calculators_prod.json'   //Produccion
     // https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/calculators.json 
   },
-  podcast: {
+  atlas: {
     protocol: 'https',
-    server: 'www.plmconnection.com',
-    pathName: 'plmservices/Tools/Mexico/urologia/podcast/2025',
-    buscador: 'podcastList.json'
-    //https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/podcast/2025/podcastList.json
+    server: 's3.amazonaws.com/plmconnection.tools',
+    pathName: 'plmservices/Tools/Colombia/saluddelamujer/atlas',
+    json: 'atlasListprod.json'
   },
+
   applicationInfo: {
     name: 'PLM Urología',
     version: '1.0.0',
     prefix: 'MMEXASPENURO25',
     prefixId: 1120,
     countryId: 11,
-    countryKey: 'MEX', 
-   /* prefix: 'MCOLADIUSALMUJ1',
-    prefixId: 1046,
-    countryId: 4,
-    countryKey: 'COL',*/
+    countryKey: 'MEX',
+    /* prefix: 'MCOLADIUSALMUJ1',
+     prefixId: 1046,
+     countryId: 4,
+     countryKey: 'COL',*/
     editionId: 211,
     availableCountries: [],
     isbn: '',

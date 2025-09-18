@@ -4,12 +4,9 @@
 <ion-content class="ion-padding">
 
   <ng-container *ngIf="successRequest | async;">
-    <ion-list class="bckgrList ion-margin-top" mode="ios" *ngIf="this.clientEngineService.getAbstracts(); else Empty;">
-      <ion-item color="pediatria-primary" detail *ngFor="let item of this.clientEngineService.abstractsResult$ | async"
+    <ion-list   mode="ios" *ngIf="this.clientEngineService.getAbstracts(); else Empty;">
+      <ion-item color="urologia-primary" detail *ngFor="let item of this.clientEngineService.abstractsResult$ | async"
         (click)="showAbstract(item)">
-        <ion-thumbnail slot="start">
-          <img alt="" src="/assets/images/iconoAbstract.svg" />
-        </ion-thumbnail>
         <ion-label>
           <h2 class="textNormal">
             {{item.ElectronicTitle }}
@@ -39,7 +36,7 @@
 
   <ng-template #Empty>
     <ion-list class="bckgrList ion-no-padding">
-      <ion-item class="listaResultadosBusqueda ion-text-center" color="pediatria-tertiary" lines="none">
+      <ion-item class="listaResultadosBusqueda ion-text-center" color="urologia-tertiary" lines="none">
         <ion-label>Por el momento, no hay abstracts disponibles.</ion-label>
       </ion-item>
     </ion-list>

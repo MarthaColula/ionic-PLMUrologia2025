@@ -73,8 +73,6 @@ export class CciPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
- 
-
     this.accordions = this.accordionsQueryList.toArray();
     this.accordionChangeSub = this.accordionsQueryList.changes.subscribe(() => {
       this.accordions = this.accordionsQueryList.toArray();
@@ -125,19 +123,22 @@ export class CciPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public getDynamicSectionJsonFromServer() {
+    console.log('getDynamicSectionJsonFromServer');
     this.controllersIonicService.showLoader().finally(() => {
       this.articlesService
         .getDynamicSectionJsonFromServerRequest()
         .then(() => {
+          console.log('getDynamicSectionJsonFromServerRequest');
+          console.log('this.articlesService.dynamicSectionJsonResult.getValue()', this.articlesService.dynamicSectionJsonResult.getValue());
           if (this.articlesService.dynamicSectionJsonResult.getValue()) {
             let section: any = this.articlesService.dynamicSectionJsonResult
               .getValue()
-              .find((element) => element.sectionName === "cci");
+              .find((element) => element.sectionName === "casosClinicos");// cci
             console.log({ section: section });
             this.articlesService.dynamicSectionJsonResult.next(
-              section.articulosResources
+              section.casosClinicosResources
             );
-            // console.log('dynamicSectionJsonResult', this.articlesService.dynamicSectionJsonResult.getValue());
+            console.log('dynamicSectionJsonResult', this.articlesService.dynamicSectionJsonResult.getValue());
             this.sectionName = section.sectionName;
             this.img = "/assets/images/iconoThumbnailArticulos.svg";
             this.successRequest.next(true);

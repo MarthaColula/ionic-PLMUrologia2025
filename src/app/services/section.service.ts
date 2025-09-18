@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Platform } from "@ionic/angular";
+import { HttpFetchService } from './http-fetch-service';
 import { environment } from "../../environments/environment";
 import { BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { HttpFetchService } from './http-fetch-service';
-
 
 @Injectable({
   providedIn: "root",
@@ -20,22 +19,36 @@ export class SectionService {
   private fileName: string;
   private time: string;
   section = new BehaviorSubject<string>(null);
-  private atlasList: any = [];
 
   constructor(
-    private http: HttpFetchService,
+    private ngxHttp: HttpFetchService,
     private plt: Platform,
     private httpC: HttpClient
   ) {
     this.section.subscribe((a) => {
       let sectionValue = a;
-      console.log({ sectioName: a });
+      console.log({ sectioNameService: a });
 
-      if (sectionValue === "atlas") {
+      if (sectionValue === "cci") {
+        const { protocol, server, pathName, json } = environment.cci;
+        this.baseUrl = `${protocol}://${server}/${pathName}/`;
+        this.fileName = json;
+        console.log('URL service', this.baseUrl + this.fileName);
+      } else if (sectionValue === "atlas") {
         const { protocol, server, pathName, json } = environment.atlas;
         this.baseUrl = `${protocol}://${server}/${pathName}/`;
         this.fileName = json;
+      } else if (sectionValue === "calculators") {
+        const { protocol, server, pathName, json } = environment.calculators;
+        this.baseUrl = `${protocol}://${server}/${pathName}/`;
+        this.fileName = json;
+      } else if (sectionValue === "podcast") {
+        const { protocol, server, pathName, json } = environment.podcast;
+        this.baseUrl = `${protocol}://${server}/${pathName}/`;
+        this.fileName = json;
+        
       }
+
       if (!this.time) {
         this.time = "?t=" + new Date().getTime();
       }
@@ -56,27 +69,19 @@ export class SectionService {
 
 
     return new Promise((resolve, reject) => {   // request2
-      this.http
+      this.ngxHttp
         .get(finalUrl, {}, {})
         .then((result: any) => {
-           console.log('result', result.data);
-           this.atlasList = result.data;
-          /*for (const sub of result.data) {
-             console.log('sub', sub);
-             this.atlasList = sub.AtlasList;
-            console.log('this.atlasList', this.atlasList);
-          }*/
-          /*let json: any;
+          let json: any;
+          console.log("IF result", result);
           if (result.status >= 200 && result.status < 300) {
-            json = JSON.parse(result.data.AtlasList);
-            console.log("JSON", JSON.stringify(json)); // add
-    
-            this.dynamicSectionJsonResult.next(this.atlasList);
-          }*/
-
-          this.dynamicSectionJsonResult.next(this.atlasList);
-          
-          resolve(this.atlasList);
+            console.log("result data1", result.data);
+            json = result.data;
+            //json = JSON.parse(result.data);
+            console.log("JSON", json); // add
+            this.dynamicSectionJsonResult.next(json);
+          }
+          resolve(json);
         })
         .catch((ex: any) => {
           this.dynamicSectionJsonResult.next(null);
@@ -90,15 +95,10 @@ export class SectionService {
     return this.dynamicSectionJsonResult.getValue();
   }
 
-
-  getAtlasListJson() {
-    return this.atlasList;
-  }
-
   getDynamicSectionJsonLocalRequest() {
     console.log("LOCAL");
     return this.httpC
-      .get<any[]>("assets/data/discusiones.json")
+      .get<any[]>("assets/data/cciList.json")
       .toPromise()
       .then((result) => {
         this.dynamicSectionJsonResult.next(result);

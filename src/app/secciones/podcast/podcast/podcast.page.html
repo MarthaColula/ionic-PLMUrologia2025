@@ -3,15 +3,35 @@
 
 <ion-content class="ion-padding-horizontal">
 
-
   <ion-row class="contentTituloSeccion">
     <ion-col size="12" class="text-center">
       <img class="iconoSeccion" src="assets/images/cenefaPodcast.svg" alt="">
     </ion-col>
   </ion-row>
-
   <br>
 
+  <ng-container *ngIf="successRequest | async;">
+    <ng-container *ngIf="this.articlesService.getDynamicSection(); else Empty;">
+      <app-collapse-element-list #myDiv *ngFor="let item of this.articlesService.sectionJsonResult$ | async"
+        title="{{item.subSectionName}}" [elementList]="item.casosClinicos" [section]="sectionName" [img]="img"
+        (selected)="viewPDF($event)" (toggle)="closeAccordion()">
+      </app-collapse-element-list>
+    </ng-container>
+
+    <ng-template #Empty>
+      <ion-item class="ion-text-center" color="urologia-primary" lines="none">
+        <ion-label>Podcast no disponibles.</ion-label>
+      </ion-item>
+    </ng-template>
+
+    <ion-item *ngIf="exception | async;" class="ion-text-center" lines="none" color="urologia-primary">
+      <ion-label>
+        Ocurrió un problema!
+      </ion-label>
+    </ion-item>
+  </ng-container>
+
+  <!--
   <ion-accordion-group mode="ios">
     <ion-accordion value="first">
       <ion-item slot="header" color="urologia-primary">
@@ -25,7 +45,8 @@
             <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
           </ion-thumbnail>
           <ion-label>
-            <h2 class="textNormal">Testosterona y salud musculoesquelética: evidencia clínica y aplicaciones en el adulto mayor</h2>
+            <h2 class="textNormal">Testosterona y salud musculoesquelética: evidencia clínica y aplicaciones en el
+              adulto mayor</h2>
           </ion-label>
         </ion-item>
         <ion-item color="urologia-primary" detail routerLink="/reproductor-podcast">
@@ -51,7 +72,8 @@
             <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
           </ion-thumbnail>
           <ion-label>
-            <h2 class="textNormal">Vejiga hiperactiva: impacto en la calidad de vida y opciones terapéuticas innovadoras</h2>
+            <h2 class="textNormal">Vejiga hiperactiva: impacto en la calidad de vida y opciones terapéuticas innovadoras
+            </h2>
           </ion-label>
         </ion-item>
         <ion-item color="urologia-primary" detail routerLink="/reproductor-podcast">
@@ -59,7 +81,8 @@
             <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
           </ion-thumbnail>
           <ion-label>
-            <h2 class="textNormal">Cuando la vejiga no espera: diagnóstico y tratamiento de la incontinencia urinaria de urgencia</h2>
+            <h2 class="textNormal">Cuando la vejiga no espera: diagnóstico y tratamiento de la incontinencia urinaria de
+              urgencia</h2>
           </ion-label>
         </ion-item>
       </div>
@@ -76,7 +99,8 @@
             <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
           </ion-thumbnail>
           <ion-label>
-            <h2 class="textNormal">Estriol tópico para la atrofia vulvovaginal postmenopáusica: una opción segura y efectiva</h2>
+            <h2 class="textNormal">Estriol tópico para la atrofia vulvovaginal postmenopáusica: una opción segura y
+              efectiva</h2>
           </ion-label>
         </ion-item>
         <ion-item color="urologia-primary" detail routerLink="/reproductor-podcast">
@@ -84,17 +108,19 @@
             <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
           </ion-thumbnail>
           <ion-label>
-            <h2 class="textNormal">Síndrome genitourinario de la menopausia: diagnóstico integral y estrategias para reducir complicaciones</h2>
+            <h2 class="textNormal">Síndrome genitourinario de la menopausia: diagnóstico integral y estrategias para
+              reducir complicaciones</h2>
           </ion-label>
         </ion-item>
       </div>
     </ion-accordion>
 
   </ion-accordion-group>
-
+  -->
 </ion-content>
 
-<!--
+
+
 <ng-container *ngIf="showBanner">
   <app-banner (close)="bannerClose($event)" PLMId="PODCAST"></app-banner>
 </ng-container>
@@ -103,4 +129,3 @@
  <app-footer></app-footer>
 </ng-container> 
 
--->

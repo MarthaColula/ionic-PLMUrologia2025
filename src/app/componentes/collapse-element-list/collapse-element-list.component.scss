@@ -4,18 +4,19 @@ ion-card-subtitle {
    cursor: pointer;
    position: relative;
    font-family: var(--ion-font-family,inherit);
-   border-bottom: 0.8px solid #7b6e91;
+   //border-bottom: 0.8px solid #7b6e91;
    margin: 0;
+   font-size: 1.14em;
    span {
       position: absolute;
       right: 1em;
-      // font-size: 0.95em;
-       color: #d7000b !important ;
+      font-size: 1em;
+      color: #d7000b !important ;
    }
 }
 
 .textNormal{
-   color: #1678CA !important;
+   color: #4c4f52 !important;
 }
 
  /* Here we define the actual 'menu' and its 'options' */
@@ -28,12 +29,6 @@ ion-card-subtitle {
    }
 }
 
-p {
-   line-height: 1.2em;
-   margin: 0 0 1em 0;
-   font-family: Verdana;
-   font-size: 1rem;
-}
 
 div {
    position: relative;
@@ -68,6 +63,9 @@ div {
 }
 ion-card {
    margin: 5px;
+    margin-bottom: 1rem;
+    border-radius: 19px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .title-section {

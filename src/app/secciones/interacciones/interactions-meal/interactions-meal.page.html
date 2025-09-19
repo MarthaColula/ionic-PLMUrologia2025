@@ -4,8 +4,8 @@
 <ion-content class="ion-padding-horizontal ion-padding-bottom">
 
   <div class="contenedorSeccion">
-    <h1 class="nombreProducto">{{this.mealInteractionsResult[0].Products[0].Brand}}</h1>
-    <p class="formaFarma"> <em>{{this.mealInteractionsResult[0].Products[0].PharmaForm}}</em>
+    <h1 class="nombreProducto">{{this.interactionsEngineService.MealInteractionsResult[0].Products[0].Brand}}</h1>
+    <p class="formaFarma"> <em>{{this.interactionsEngineService.MealInteractionsResult[0].Products[0].PharmaForm}}</em>
     </p>
 
     <ion-grid>
@@ -19,7 +19,7 @@
         </ion-col>
       </ion-row>
 
-      <ng-container *ngFor="let asMealInteraction of this.mealInteractionsResult">
+      <ng-container *ngFor="let asMealInteraction of this.interactionsEngineService.MealInteractionsResult">
         <ion-row class="ion-align-items-justify" *ngFor="let mealInteraction of asMealInteraction.MealInteractions">
           <ion-col class="border" size="5" size-sm="3" size-md="3" size-lg="2" size-xl="2">
             <div class="ion-text-start abstract">

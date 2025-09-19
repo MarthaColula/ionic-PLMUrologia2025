@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { 
   InAppBrowserService, 
   PlmTrackingEngineService, 
-  InteractionSearchEngineService 
+  InteractionSearchEngineService, 
+  InteractionsEngineService
 } from '../../../services/indexServices';
 
 @Component({
@@ -12,26 +13,15 @@ import {
   standalone: false,
 })
 export class InteractionsMealPage implements OnInit {
-
-  mealInteractionsResult: any;
   title: string = '';
 
   constructor(
     private _inAppBrowserService: InAppBrowserService,
-    private _interactionSearchEngineService: InteractionSearchEngineService,
-    private _trackingEngineService: PlmTrackingEngineService
+    private _trackingEngineService: PlmTrackingEngineService,
+    public interactionsEngineService: InteractionsEngineService
   ) {
-      this.getMealInteractionsResult();
-      this.getPageTitle();
   }
 
-  private getPageTitle() {
-    this.title = this._interactionSearchEngineService.getInteractionsPagesTitle();
-  }
-
-  private getMealInteractionsResult(){
-    this.mealInteractionsResult = this._interactionSearchEngineService.getMealInteractionsResult();
-  }
 
   ngOnInit() {
     this.addTrackingSectionAndEvent(this.title);

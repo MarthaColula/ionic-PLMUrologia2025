@@ -44,7 +44,8 @@ export class SectionService {
         this.fileName = json;
       } else if (sectionValue === "podcast") {
         const { protocol, server, pathName, json } = environment.podcast;
-        this.baseUrl = `${protocol}://${server}/${pathName}/`;
+        const cors = 'https://cors-anywhere.herokuapp.com';
+        this.baseUrl = `${cors}/${protocol}://${server}/${pathName}/`;
         this.fileName = json;
         
       }
@@ -74,13 +75,13 @@ export class SectionService {
         .then((result: any) => {
           let json: any;
           console.log("IF result", result);
-          if (result.status >= 200 && result.status < 300) {
+          //if (result.status >= 200 && result.status < 300) {
             console.log("result data1", result.data);
             json = result.data;
             //json = JSON.parse(result.data);
             console.log("JSON", json); // add
             this.dynamicSectionJsonResult.next(json);
-          }
+         // }
           resolve(json);
         })
         .catch((ex: any) => {

@@ -9,6 +9,7 @@ const config: CapacitorConfig = {
     androidScheme: 'https',
     iosScheme: 'capacitor',
     hostname: 'localhost',
+    allowNavigation: ['https://www.plmconnection.com'],
   },
   plugins: {
     SplashScreen: {

@@ -9,7 +9,7 @@ import { VerAtlasPageRoutingModule } from './ver-atlas-routing.module';
 import { VerAtlasPage } from './ver-atlas.page';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-//import { PinchZoomModule } from 'ngx-pinch-zoom-13';
+import { PinchZoomModule } from 'ngx-pinch-zoom-13';
 import { ComponentesModule } from 'src/app/componentes/componentes-module';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { ComponentesModule } from 'src/app/componentes/componentes-module';
     VerAtlasPageRoutingModule,
     ComponentesModule,
     PdfViewerModule,
-    //PinchZoomModule,
+    PinchZoomModule,
   ],
   declarations: [VerAtlasPage]
 })

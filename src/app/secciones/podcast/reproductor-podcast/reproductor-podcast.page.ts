@@ -91,9 +91,10 @@ export class ReproductorPodcastPage implements OnInit {
         this.getPodcastByIdDeepLink(id);
       } else if (params && params['podcast']) {
         this.podcastData = params['podcast'];
-        this.album = this.podcastData.ElectronicDescription;
+        this.album = this.podcastData.Description; // ElectronicDescription;
         this.assetUrl = this.podcastData.BaseUrl + this.podcastData.FileName;
-        this.title = this.podcastData.ElectronicTitle;
+        this.title = this.podcastData.Title; // ElectronicTitle;
+
         this.trackId = this.podcastData.ElectronicId.toString();
         //this.albumArt = this.podcastData.AlbumArt;
         //this.artist = this.podcastData.Artist;

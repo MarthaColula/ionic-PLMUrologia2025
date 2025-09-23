@@ -179,29 +179,18 @@ export class PodcastPage implements OnInit , AfterViewInit, OnDestroy {
     });
   }
 
-  viewPDF(elementData: any) {
-    console.warn("init goToImgView", elementData);
-    this.infoDataInput = elementData;
-    if (this.infoDataInput !== undefined) {
-      //if (this.connectionService.isConnected() === true) {
-        this.addTrackingActivity(elementData);
-      //}
+  playPodcast(elementData: any) {
+    console.warn('***  playPodcast  ***');
+    if (elementData !== undefined) {
+      this.addTrackingActivity(elementData);
+      console.log('*** elementData: ', elementData);
       const navigationExtras: NavigationExtras = {
         state: {
-          title: this.infoDataInput.ElectronicTitle,
-          baseUrl: this.infoDataInput.BaseUrl,
-          fileName: this.infoDataInput.FileName,
-          link: this.infoDataInput.Link,
-          electronicid: this.infoDataInput.ElectronicId,
-          section: this.infoDataInput.InfDescription,
+          podcast: elementData
         },
       };
-      this.fa.trackFAEventClick(
-        "Casos Clínicos Interactivos",
-        elementData.ElectronicTitle
-      );
-
-      this.router.navigate(["/ver-cci"], navigationExtras);
+      console.warn('*** navigate(reproductor-podcast)...');
+      this.router.navigate(["/reproductor-podcast"], navigationExtras);
     }
   }
 

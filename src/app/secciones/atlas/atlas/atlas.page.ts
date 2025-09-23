@@ -133,10 +133,10 @@ export class AtlasPage implements OnInit , AfterViewInit, OnDestroy {
           if (this.articlesService.dynamicSectionJsonResult.getValue()) {
             let section: any = this.articlesService.dynamicSectionJsonResult
               .getValue()
-              .find((element) => element.sectionName === "casosClinicos");// cci
+              .find((element) => element.sectionName === "atlas");// cci
             console.log({ section: section });
             this.articlesService.dynamicSectionJsonResult.next(
-              section.casosClinicosResources
+              section.atlasResources
             );
             console.log('dynamicSectionJsonResult', this.articlesService.dynamicSectionJsonResult.getValue());
             this.sectionName = section.sectionName;
@@ -178,29 +178,21 @@ export class AtlasPage implements OnInit , AfterViewInit, OnDestroy {
     });
   }
 
-  viewPDF(elementData: any) {
-    console.warn("init goToImgView", elementData);
-    this.infoDataInput = elementData;
-    if (this.infoDataInput !== undefined) {
-      //if (this.connectionService.isConnected() === true) {
-        this.addTrackingActivity(elementData);
-      //}
+   viewPDF(elementData: any) {
+    console.warn('init goToImgView');
+    //this.infoDataInput = elementData;
+    if (elementData !== undefined) {
+      this.addTrackingActivity(elementData);
       const navigationExtras: NavigationExtras = {
         state: {
-          title: this.infoDataInput.ElectronicTitle,
-          baseUrl: this.infoDataInput.BaseUrl,
-          fileName: this.infoDataInput.FileName,
-          link: this.infoDataInput.Link,
-          electronicid: this.infoDataInput.ElectronicId,
-          section: this.infoDataInput.InfDescription,
-        },
+          electronicId: elementData.ElectronicId,
+          title: elementData.Title,
+          fileName: elementData.FileName,
+          baseUrl: elementData.BaseUrl,
+          link: (elementData.Link ? elementData.Link : elementData.BaseUrl + 'portrait/' + elementData.FileName)
+        }
       };
-      this.fa.trackFAEventClick(
-        "Casos Clínicos Interactivos",
-        elementData.ElectronicTitle
-      );
-
-      this.router.navigate(["/ver-cci"], navigationExtras);
+      this.router.navigate(['/ver-atlas'], navigationExtras);
     }
   }
 
@@ -232,9 +224,9 @@ export class AtlasPage implements OnInit , AfterViewInit, OnDestroy {
       CodeString: this.globalVars.getClientInfoValue().codeString,
       Date: '\/Date(' + today.toString() + '+0200)\/',
       ElectronicId: electronicInformation.ElectronicId,
-      EntityId: InfoEntities.CasosClinicosInteractivos,
+      EntityId: InfoEntities.Atlas,
       EventId: null,
-      Label: 'Casos Clínicos Interactivos',
+      Label: 'Atlas',
       LabelValue: electronicInformation.ElectronicTitle,
       SearchAddressIP: null,
       SearchLatitude: latitude,
@@ -248,7 +240,7 @@ export class AtlasPage implements OnInit , AfterViewInit, OnDestroy {
   }
 
   async addTrackingSectionAndEvent(nameEvent?: string) {
-    this.trackingEngineService.addTrackingBySection('Casos Clínicos Interactivos',nameEvent);
+    this.trackingEngineService.addTrackingBySection('Atlas',nameEvent);
   }
  
 }

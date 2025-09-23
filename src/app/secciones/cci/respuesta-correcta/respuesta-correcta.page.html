@@ -1,7 +1,13 @@
 <app-header></app-header>
-<app-navigation-header titulo="{{this.title}}"></app-navigation-header>
+<app-navigation-header titulo="Casos clínicos interactivos"></app-navigation-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding-horizontal">
+
+  <div class="espacioLogoPatrocinio d-flex justify-content-center">
+    <h3>Por cortesía de:</h3>
+    <br>
+    <img [src]="this.logoImage" alt="" class="marcaPatrocinadora">
+  </div>
 
   <h1 class="copyTitulo">{{this.title}}</h1>
 
@@ -16,14 +22,14 @@
   </ion-item>
 
   <ion-card color="urologia-primary">
-    <ion-card-header>
-      <ion-card-title> {{this.discussion}}</ion-card-title>
-    </ion-card-header>
-
+    <h1 class="tituloPregunta">Discusión</h1>
     <ion-card-content>
       <p class="textDiscusion ion-text-justify">
         {{this.discussion}}
       </p>
+       <div *ngIf="this.showDiscussionFile !== false" class="ion-padding" slot="content">
+        <img [src]="this.discussionImage" alt="">
+      </div>
     </ion-card-content>
   </ion-card>
 

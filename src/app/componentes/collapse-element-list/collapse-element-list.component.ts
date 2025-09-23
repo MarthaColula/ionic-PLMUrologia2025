@@ -32,7 +32,8 @@ export class CollapseElementListComponent implements OnInit {
 
   ngOnInit() {
     //console.warn('*** elementList.length: ' + this.elementList.length);
-    //console.warn(' section: ' + this.section);
+     console.warn('*** elementList: ' + this.elementList);
+    console.warn(' section: ' + this.section);
     //console.warn(' img: ' + this.img);
   }
 

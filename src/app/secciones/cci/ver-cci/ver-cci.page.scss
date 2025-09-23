@@ -1,22 +1,88 @@
 :host {
-  background-image: url('/assets/images/backgroundHome.jpg') !important;
-  background-position: bottom center;
-  background-repeat: no-repeat !important;
-  background-size: auto 100%;
+    background-image: url('/assets/images/backgroundHome.jpg') !important;
+    background-position: bottom center;
+    background-repeat: no-repeat !important;
+    background-size: auto 100%;
 }
 
 ion-content {
-  --background: none !important;
+    --background: none !important;
 }
 
 
-ion-card-title b {
-  color: #1678CA;
+
+h1.nombreCasoClinico {
+    font-family: 'BR Sonoma' !important;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem;
+    color: #136ab2;
 }
+
+ion-card {
+    --background: rgba(255, 255, 255, 0.5) !important;
+    --ion-color-base: rgba(255, 255, 255, 0.5) !important;
+}
+
+ion-accordion .ion-padding {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+ion-accordion .ion-padding p {
+    font-size: 0.9rem;
+}
+
+ion-chip ion-label {
+    min-height: 1rem !important;
+}
+
+p.textAccordion {
+    font-size: 0.8rem !important;
+    font-family: 'BR Sonoma' !important;
+    color: #6C6C60;
+    text-align: justify;
+}
+
+h2.textNormal {
+    font-size: 0.8rem;
+    font-family: 'BR Sonoma' !important;
+    color: #136ab2;
+    font-weight: bold;
+}
+
+ion-card-title {
+    color: #136ab2;
+    font-family: 'BR Sonoma' !important;
+    font-size: 1rem;
+    text-align: center;
+}
+
+ion-card-subtitle {
+    color: #136ab2;
+    font-family: 'BR Sonoma' !important;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+ion-checkbox {
+    --border-width: 1px !important;
+    --border-color: #2d86cf !important;
+}
+
 
 .wrap {
-    white-space: normal !important;
+    font-family: 'BR Sonoma' !important;
+    white-space: normal;
+    font-size: 0.8rem;
+    line-height: 1rem;
 }
+
+.contentBtnOpcion {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+}
+
 
 
 // Modal respuestas
@@ -41,7 +107,6 @@ ion-badge {
 }
 
 h2.opcionPreguntas {
-    font-family: 'Graphik';
     font-size: 0.8rem;
     color: #4d4d4d !important;
     text-align: left;
@@ -76,6 +141,46 @@ h2.opcionPreguntas {
     background-color: #fffb00;
 }
 
+
+
+
+//OTROS
+h3{
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+img.marcaPatrocinadora{
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.espacioLogoPatrocinio{
+    flex-direction: column;    
+}
+.imgReferenciaCasoClinico{
+    flex-direction: column;
+}
+
+.imgReferenciaCasoClinico div{
+    background-color: rgba(0, 0, 0, 0.03);
+    // margin-top: -50px;
+}
+
+.imgReferenciaCasoClinico div p{
+    font-size: 10px;
+    color: #4d4d4d;
+    font-style: italic;
+}
+
+
+///fin otros
+
+
+
 /* -->  RESPONSIVE  <-- */
 
 /* Mobile Portrait */
@@ -85,7 +190,11 @@ h2.opcionPreguntas {
 @media (max-width: 568px) and (min-width: 560px) {}
 
 /* iPhone 6/7/8 Landscape */
-@media (max-width: 667px) and (min-width: 569px) and (orientation: landscape) {}
+@media (max-width: 667px) and (min-width: 569px) and (orientation: landscape) {
+    :host {
+        background-size: 100% 100%;
+    }
+}
 
 /* iPhone 6/7/8 Plus Landscape */
 @media (max-width: 736px) and (min-width: 415px) and (orientation: landscape) {}
@@ -103,49 +212,26 @@ h2.opcionPreguntas {
 
 
 /* iPhone 12 Pro Max Portrait */
-@media only screen and (min-width: 428px) and (orientation: portrait) {}
+@media only screen and (min-width: 393px) and (orientation: portrait) {}
 
 /* iPad portrait */
-@media (min-width: 768px) and (orientation: portrait) {
-  :host {
-    background-image: url('/assets/images/backgroundH.jpg') !important;
-    background-position: bottom center;
-    background-repeat: no-repeat !important;
-    background-size: auto 100%;
-  }
-
-  ion-content {
-    --background: none !important;
-    --padding-bottom: 1rem;
-    --padding-end: 1rem;
-    --padding-start: 1rem;
-    --padding-top: 1rem;
-  }
-}
+@media (min-width: 768px) and (orientation: portrait) {}
 
 /* iPad Landscape */
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
-  :host {
-    background-image: url('/assets/images/backgroundH.jpg') !important;
-    background-position: bottom center;
-    background-repeat: no-repeat !important;
-    background-size: auto 100%;
-  }
-
-  ion-content {
-    --background: none !important;
-    --padding-bottom: 1rem;
-    --padding-end: 1rem;
-    --padding-start: 1rem;
-    --padding-top: 1rem;
-  }
-
+    :host {
+        background-size: 100% 100%;
+    }
 }
 
 /* iPad Pro portrait */
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {}
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    :host {
+        background-size: 100% 100%;
+    }
+}
 
 @media only screen and (min-device-width: 938px) and (max-device-width: 938px) and (orientation: landscape) {}
 

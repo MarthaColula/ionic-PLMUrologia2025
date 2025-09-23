@@ -1,11 +1,18 @@
 <app-header></app-header>
-<app-navigation-header titulo="{{ this.title }}"></app-navigation-header>
+<app-navigation-header titulo="Casos clínicos interactivos"></app-navigation-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding-horizontal">
+
+  <div *ngIf="this.logoFile !== false" class="espacioLogoPatrocinio d-flex justify-content-center">
+    <h3>Por cortesía de:</h3>
+    <br>
+    <img [src]="this.logoImage" alt="" class="marcaPatrocinadora">
+  </div>
+
   <h1 class="copyTitulo">{{ this.title }}</h1>
 
   <ion-accordion-group class="ion-padding-vertical" value="['first']">
-    <ion-accordion value="first" mode="ios">
+    <ion-accordion value="first" class="bckgrList"   mode="ios">
       <ion-item slot="header" color="urologia-primary">
         <ion-label>
           <h2>Presentación del caso y motivo de consulta</h2>
@@ -68,7 +75,7 @@
       <ion-list>
         <ion-item color="urologia-primary" *ngFor="let item of this.answers; let i = index">
           <p class="wrap">{{item.AnswerDes}}.</p>
-          <ion-checkbox color="urologia-secondary" labelPlacement="start" checked=false allow-empty-selection="true"
+          <ion-checkbox justify="end" color="urologia-secondary" labelPlacement="start" checked=false allow-empty-selection="true"
             (ionChange)="answerHandler($event, item)" value="{{item.AnswerId}}" (click)="selectedComent(i)">
           </ion-checkbox>
         </ion-item>

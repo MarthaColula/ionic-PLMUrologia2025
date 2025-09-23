@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnInit, OnDestroy, ViewChildren, QueryList } from "@angular/core";
 import { BehaviorSubject, Subject, Subscription } from "rxjs";
 import { AlertController, Platform, IonCheckbox } from '@ionic/angular';
-import { ActivatedRoute, Router, NavigationExtras, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { 
   ControllersIonicService, 
@@ -105,7 +105,7 @@ export class VerCciPage implements OnInit, AfterViewInit, OnDestroy {
     });
     await alert.present();
     const alertElement: any = document.querySelector('ion-alert');
-    alertElement.querySelector('.alert-message').innerHTML = '<img src="/assets/images/iconoMedallaGris.svg" class="imgInsignia mx-auto">';
+    alertElement.querySelector('.alert-message').innerHTML = '<img src="/assets/images/iconoMedalla.svg" class="imgInsignia mx-auto">';
   }
 
   ngOnInit() {

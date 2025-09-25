@@ -1,12 +1,22 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { PlmTrackingEngineService, GlobalvarsService, ControllersIonicService, CalculatorsServiceService, FirebaseAnalyticsService } from '../../../services/indexServices';
+import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { Platform } from '@ionic/angular';
-import { ElectronicInfo, IInfoTracking, InfoEntities, SearchType } from '../../../interfaces/models';
+//import { IonContent, IonVirtualScroll, Platform } from "@ionic/angular";
+import { IonContent, Platform } from "@ionic/angular";
+//import { GoogleAnalytics } from '@awesome-cordova-plugins/google-analytics/ngx';
+import { CalculatorsDynamicService } from '../../../services/calculators-dynamic.service';
+
+import { ConnectionService, ControllersIonicService, DynamicScriptLoaderService, FirebaseAnalyticsService, GlobalvarsService, PlmClientsEngineService, PlmTrackingEngineService, SectionService } from '../../../services/indexServices';
+import { InAppBrowserService } from '../../../services/in-app-browser.service';
+import { PlmAssetsEngineService } from '../../../services/plm-assets-engine.service';
+import { RestPlmAssetsEngineService } from '../../../services/rest-plm-assets-engine.service';
+import { UtilitiesCalculator } from '../../../interfaces/utilities-calculator';
+//import { ElectronicInformationContent } from "../../../interfaces/content";
+import { IInfoTracking } from '../../../interfaces/PLMTrackingEngine';
+import { InfoEntities, SearchType } from '../../../interfaces/catalogs';
+import { InformationType } from '../../../interfaces/catalogs';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { CollapseElementListComponent } from '../../../componentes/collapse-element-list/collapse-element-list.component';
-import { InAppBrowserService } from 'src/app/services/in-app-browser.service';
-import { ConnectionService } from "../../../services/connection.service";
+import { CollapseElementListComponent } from 'src/app/componentes/collapse-element-list/collapse-element-list.component';
+import { ElectronicInfo } from 'src/app/interfaces/editorialContent';
 
 @Component({
   selector: 'app-calculators-list',
@@ -15,193 +25,242 @@ import { ConnectionService } from "../../../services/connection.service";
   standalone: false,
 })
 
-export class CalculatorsListPage implements OnInit ,AfterViewInit, OnDestroy {
+export class CalculatorsListPage implements OnInit, AfterViewInit {
 
   @ViewChildren(CollapseElementListComponent) accordionsQueryList: QueryList<CollapseElementListComponent>;
   public accordions: CollapseElementListComponent[];
   public accordionChangeSub: Subscription;
-  public avalibleCalculatorsResources = new BehaviorSubject<boolean>(true);
-  public exception = new BehaviorSubject<boolean>(false);
+
+
+  @ViewChild(IonContent) content: IonContent;
+  //@ViewChild("vScroll") public virtualScroll: IonVirtualScroll;
+ 
   calculators: any[] = [];
-  PLMId: string;
+  successRequest = new BehaviorSubject<boolean>(false);
+  exception = new BehaviorSubject<boolean>(false);
+  getInformationSub: Subscription;
   showBanner: boolean;
+  closeBanner: boolean;
+  img: any;
+  sectionName: any;
   infoDataInput: any;
-  closeBanner : boolean;
+
 
   constructor(
-    private connectionService: ConnectionService,
-    private plt: Platform,
     private router: Router,
+    private plt: Platform,
     private globalVars: GlobalvarsService,
+    protected clientEngineService: PlmClientsEngineService,
+    private calculatorsDynamicService: CalculatorsDynamicService,
     private iabService: InAppBrowserService,
-    private fa: FirebaseAnalyticsService,
-    private calculatorsService: CalculatorsServiceService,
+    private dynamicScriptLoaderServiceService: DynamicScriptLoaderService,
+    private controllersIonicService: ControllersIonicService,
+    private restPlmAssetsEngineService: RestPlmAssetsEngineService,
+    private plmAssetsEngineService: PlmAssetsEngineService,
     private trackingEngineService: PlmTrackingEngineService,
-    private controllersIonicService: ControllersIonicService,) { }
+    private connectionService: ConnectionService,
+    private fa: FirebaseAnalyticsService,
+    public articlesService: SectionService,
+  ) {
+   
+  }
 
   ngOnInit() {
+    this.articlesService.section.next("calculators");
+
     this.addTrackingSectionAndEvent();
-    
-    const resultDynamicSection = this.calculatorsService.getDynamicSection();
-    if (Array.isArray(resultDynamicSection)) {
-      console.log({resultDynamicSection: resultDynamicSection});
-      this.prepareCalculatorsSection();
+    this.loadCalculatorSolutionsScript();
+
+    if (this.articlesService.getDynamicSection() === null) {
+      this.getDynamicSectionJsonFromServer();
+      //this.getCalculatorsFromHttp();  //TODO: Test Local
     } else {
-      console.log('choosePlatform');
+      this.successRequest.next(true);
+
+      console.log("choosePlatform");
       this.choosePlatform();
     }
-  }
-
-  ngAfterViewInit(): void {
-    this.accordions = this.accordionsQueryList.toArray();
-    this.accordionChangeSub =
-      this.accordionsQueryList.changes.subscribe(() => {
-        this.accordions = this.accordionsQueryList.toArray();
-      });
-  }
-
-  ngOnDestroy(): void {
-    if (this.accordionChangeSub) {
-      this.accordionChangeSub.unsubscribe();
-    }
-  }
-
-  ionViewWillEnter() {
-    if (!this.calculatorsService.PLMIdMainSection) {
-      return;
-    }
-    /*this.PLMId = this.calculatorsService.PLMIdMainSection;
-    if (this.calculatorsService.PLMIdMainSection.length > 3) {
-      this.showBanner = true;
-    } else {
-      this.showBanner = false;
-    }*/
-
-    this.showBanner = true;
+   
   }
 
   ionViewDidLeave() {
     this.showBanner = false;
   }
 
-  bannerClose(event){
-    console.log({close: event});
+  ionViewWillEnter() {
+    this.showBanner = true;
+  }
+
+  ngAfterViewInit(): void {
+    this.accordions = this.accordionsQueryList.toArray();
+    this.accordionChangeSub = this.accordionsQueryList.changes.subscribe(() => {
+      this.accordions = this.accordionsQueryList.toArray();
+    });
+  }
+
+
+  ngOnDestroy() {
+    if (this.accordionChangeSub) {
+      this.accordionChangeSub.unsubscribe();
+    }
+
+    if (this.getInformationSub) {
+      this.getInformationSub.unsubscribe();
+    }
+
+    this.articlesService.dynamicSectionJsonResult.next(null);
+    console.log(
+      "dynamicSectionJsonResult",
+      this.articlesService.dynamicSectionJsonResult
+    );
+
+    this.articlesService.section.next(null);
+  }
+
+  bannerClose(event) {
+    console.log({ close: event });
     this.closeBanner = event;
   }
 
+
   public choosePlatform() {
     this.exception.next(false);
-    
-      if (this.plt.is('cordova')) {
-        this.getDynamicSectionJsonFromServer();
-      } else {
-        this.getDynamicSectionJsonLocal();
-      } 
+
+    if (this.plt.is("cordova")) {
+      console.log("getDynamicSectionJsonFromServer");
+      this.getDynamicSectionJsonFromServer();
+    } else {
+      console.log("getDynamicSectionJsonLocal");
+      this.getDynamicSectionJsonLocal();
+    }
   }
 
   public getDynamicSectionJsonFromServer() {
+    console.log('getDynamicSectionJsonFromServer');
     this.controllersIonicService.showLoader().finally(() => {
-      this.calculatorsService.getDynamicSectionJsonFromServerRequest()
+      this.articlesService
+        .getDynamicSectionJsonFromServerRequest()
         .then(() => {
-          this.prepareCalculatorsSection();
+          console.log('getDynamicSectionJsonFromServerRequest');
+          console.log('this.articlesService.dynamicSectionJsonResult.getValue()', this.articlesService.dynamicSectionJsonResult.getValue());
+          if (this.articlesService.dynamicSectionJsonResult.getValue()) {
+            let section: any = this.articlesService.dynamicSectionJsonResult
+              .getValue()
+              .find((element) => element.sectionName === "calculators");// cci
+            console.log({ section: section });
+            this.articlesService.dynamicSectionJsonResult.next(
+              section.calculatorsResources
+            );
+            console.log('dynamicSectionJsonResult', this.articlesService.dynamicSectionJsonResult.getValue());
+            this.sectionName = section.sectionName;
+            this.img = "/assets/images/iconoThumbnailArticulos.svg";
+            this.successRequest.next(true);
+
+          } else {
+            this.articlesService.dynamicSectionJsonResult.next([]);
+          }
         })
         .catch(() => {
           this.controllersIonicService.hideLoader().finally(() => {
             this.exception.next(true);
+             this.retry();
           });
-        }).finally(() => {
+        })
+        .finally(() => {
           this.controllersIonicService.hideLoader();
+          console.log("successfull getDynamicSectionJsonFromServer");
         });
     });
   }
 
   public getDynamicSectionJsonLocal() {
     this.controllersIonicService.showLoader().finally(() => {
-      this.calculatorsService.getDynamicSectionJsonLocalRequest()
+      this.articlesService
+        .getDynamicSectionJsonLocalRequest()
         .then(() => {
-          this.prepareCalculatorsSection();
+          //this.preparePodcastsSection();
         })
         .catch(() => {
           this.controllersIonicService.hideLoader().finally(() => {
             this.exception.next(true);
+           
           });
         })
         .finally(() => {
           this.controllersIonicService.hideLoader();
-          console.log('successfull getDynamicSectionJsonLocalRequest');
+          console.log("successfull getDynamicSectionJsonLocalRequest");
         });
     });
   }
 
-  prepareCalculatorsSection() {
-    const found = this.calculatorsService.sectionExist('calculators');
-    if (found === true) {
-     /* if (this.calculatorsService.PLMIdMainSection.length > 3) {
-        this.PLMId = this.calculatorsService.PLMIdMainSection;
-        this.showBanner = true;
-      }*/
-        this.showBanner = true;
-      this.calculators = this.calculatorsService.mainSection.getValue().calculatorsResources;
-      console.error({calculators:this.calculators});
-      this.avalibleCalculatorsResources.next(true);
-    } else {
-      this.avalibleCalculatorsResources.next(false);
-    }
+
+
+  retry() {
+    this.controllersIonicService.presentAlertRetry('Calculadoras')
+      .then((values: any) => {
+        const reintentar: boolean = values.data.opcion;
+        if (reintentar) {
+          this.exception.next(false);
+          this.getDynamicSectionJsonFromServer();
+        } else {
+          this.exception.next(true);
+        }
+      });
   }
 
-  public openExternalLink(event: any) {
-    this.infoDataInput = event;
-    this.addTrackingActivity(event);
-    this.iabService.open(event.Link, '_system');
+  async getCalculatorsFromHttp() { // LOCAL
+    //this.controllersIonicService.showLoader();
+    this.calculatorsDynamicService.getCalculatorsFromHttpClient('MedicV2')
+      .then((result: any) => {
+        console.log('result', result);
+        const data = this.calculatorsDynamicService.getCalculatorListJson();
+        console.warn({ dataResult: data });
+        data.forEach(calculator => {
+          this.calculators = calculator.calculatorsResources;
+          console.log({ calculators: this.calculators });
+        });
+
+        if (data.getInformationByPrefixByTypeResult && data.getInformationByPrefixByTypeResult.length > 0) {
+          console.warn('CalculadorasPage', '***  getInformationByPrefixByTypeResult  ***');
+          this.clientEngineService.getCalculatorsResult.next(data.getInformationByPrefixByTypeResult);
+        } else if (data.length && data[0].Contents && data[0].Contents.length > 0) {
+          console.warn('CalculadorasPage', '***  Contents  ***');
+          this.clientEngineService.getCalculatorsResult.next(data[0].Contents);
+        } else {
+          console.warn('CalculadorasPage', '***  Empty  ***');
+          this.clientEngineService.getCalculatorsResult.next([]);
+        }
+      })
+      .catch(ex => {
+        //this.controllersIonicService.hideLoader();
+        console.error('CalculadorasPage', ex);
+        this.exception.next(true);
+      })
+      .finally(() => {
+        console.warn('CalculadorasPage', 'Complete getCalculatorListJsonFromService...');
+        //this.controllersIonicService.hideLoader();
+      });
   }
 
-  public closeAccordion() {
-    this.accordions.forEach((item) => {
-      if (item.isMenuOpen) {
-        item.isMenuOpen = false;
-      }
-    });
+  async loadCalculatorSolutionsScript() {
+    console.warn('CalculadorasPage', 'called loadCalculatorSolutionsScript method from CalculadorasPage');
+    return await this.dynamicScriptLoaderServiceService
+      .loadScript('calculatorBusinessLogic')
+      .then(result => {
+        console.warn('CalculadorasPage', result);
+        return true;
+      })
+      .catch(result => {
+        return false;
+      });
   }
 
-  addTrackingActivity(electronicInformation: any) {
-    const today = new Date().getTime();
-    let latitude = '';
-    let longitude = '';
-    let ip= '';
-    const clientPosition = this.globalVars.getGeolocationClient();
-    const clientAddress = this.globalVars.getClientAddressIp();
-    if (clientPosition) {
-      latitude = clientPosition.latitude.toString();
-      longitude = clientPosition.longitude.toString();
-    }
-    if (clientAddress) {
-      ip = clientAddress.ip;
-    }
-    const data: IInfoTracking = {
-      BranchId: null,
-      CodeString: this.globalVars.getClientInfoValue()?.codeString,
-      Date: '\/Date(' + today.toString() + '+0200)\/',
-      ElectronicId: electronicInformation.ElectronicId,
-      EntityId: InfoEntities.Calculator,
-      EventId: null,
-      Label: 'Calculadoras',
-      LabelValue: electronicInformation.ElectronicTitle,
-      SearchAddressIP: ip,
-      SearchLatitude: latitude,
-      SearchLongitude: longitude,
-      SearchText: '',
-      SearchTypeId: SearchType.parametrizado,
-      SourceId: this.globalVars.getInfoTrackingSource()
-    };
-    console.log({trackdata: data});
-    this.trackingEngineService.addInfoTracking(data);
-  }
 
   showCalculators(item: ElectronicInfo) {
     //if (this.connectionService.isConnected() === true) {
-      this.addTrackingActivity(item);
+    this.addTrackingActivity(item);
     //}
-    this.fa.trackFAEventClick('Algoritmos',item.ElectronicTitle);
+    this.fa.trackFAEventClick('calculator', item.ElectronicTitle);
     if (item.Link) {
       console.warn('CalculadorasPage', '***  data.Url_resource: ' + item.Link);
       this.iabService.open(item.Link, '_system');
@@ -225,32 +284,54 @@ export class CalculatorsListPage implements OnInit ,AfterViewInit, OnDestroy {
     }
   }
 
-    public goCalculatorView(item: any) {
-    //if (this.connectionService.isConnected() === true) {
-      this.addTrackingActivity(item);
-    //}
-    let navigationExtras: NavigationExtras = {
-      state: {
-        calculator: item
+
+
+  public closeAccordion() {
+    this.accordions.forEach((item) => {
+      if (item.isMenuOpen) {
+        item.isMenuOpen = false;
       }
-    };
-    let caseItem = (item.FileName ? 'Dynamic' : 'Informative');
-    switch (caseItem) {
-      case 'Dynamic':
-        this.fa.trackFAEventClick("Calculadora", item.ElectronicTitle);
-        this.router.navigate(['/calculator-overview'], navigationExtras);
-        break;
-      case 'Informative':
-        //TODO: Implementar...
-        break;
-      default:
-        break;
-    }
+    });
   }
 
-  addTrackingSectionAndEvent(nameEvent?: string) {
-    console.log('addTrackingSectionAndEvent Calculadoras');
-    this.trackingEngineService.addTrackingBySection("Calculadoras", nameEvent, this.globalVars);
+  addTrackingActivity(item: any) {
+    const today = new Date().getTime();
+    let latitude = '';
+    let longitude = '';
+    let ip = '';
+    const clientPosition = this.globalVars.getGeolocationClient();
+    const clientAddress = this.globalVars.getClientAddressIp();
+    if (clientPosition) {
+      latitude = clientPosition.latitude.toString();
+      longitude = clientPosition.longitude.toString();
+    }
+    if (clientAddress) {
+      ip = clientAddress.ip;
+    }
+    const data: IInfoTracking = {
+      BranchId: null,
+      CodeString: this.globalVars.getClientInfoValue().codeString,
+      Date: '\/Date(' + today.toString() + '+0200)\/',
+      ElectronicId: null,
+      EntityId: InfoEntities.Calculator,
+      EventId: null,
+      Label: 'Calculadora',
+      LabelValue: item.ElectronicTitle,
+      SearchAddressIP: ip,
+      SearchLatitude: latitude,
+      SearchLongitude: longitude,
+      SearchText: '',
+      SearchTypeId: SearchType.parametrizado,
+      SourceId: this.globalVars.getInfoTrackingSource()
+    };
+    //TODO: Descomentar en produccion!!!
+    //console.warn('CalculadorasPage', '**  addInfoTracking()...');
+    //this.trackingEngineService.addInfoTracking(data);
+  }
+
+  async addTrackingSectionAndEvent(nameEvent?: string) {
+    console.warn('CalculadorasPage', '**  addTrackingSectionAndEvent');
+    this.trackingEngineService.addTrackingBySection('Calculadoras', nameEvent);
   }
 
 

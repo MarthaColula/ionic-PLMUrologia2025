@@ -112,13 +112,13 @@ export const environment = {
     json: 'podcastList.json'
     //https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/podcast/2025/podcastList.json
   },
-  calculators: {
-    protocol: 'https',
-    server: 'www.plmconnection.com',
-    pathName: 'plmservices/Tools/Mexico/pediatria/calculators',
-    //json: 'calculators.json' //desarrollo 
-    json: 'calculators_prod.json'   //Produccion
-    // https://www.plmconnection.com/plmservices/Tools/Mexico/pediatria/calculators/calculators.json 
+   calculators: {
+   protocol: 'https',
+    server: 's3.amazonaws.com/plmconnection.tools',
+    pathName: 'plmservices/Tools/Mexico/urologia/calculators/2025',
+    //json: 'calculators.json' //Produccion 
+    json: 'calculatorsLis.json'   //desarrollo 
+    //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/calculators/2025/calculatorsLis.json
   },
   atlas: {
     protocol: 'https',

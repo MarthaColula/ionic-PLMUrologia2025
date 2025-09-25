@@ -42,6 +42,8 @@
 
       <div  *ngIf="this.section === 'atlas'"> <!-- -->
         <ion-label class="ion-text-wrap">
+          <!--<ion-img *ngIf="element.InfDescription === 'Atlas'; else otherImg"
+            src="{{ element.BaseUrl + 'miniaturas/' + element.Miniature }}"></ion-img>-->
           <h2 class="textNormal">{{ element.Title }}</h2>
         </ion-label>
       </div>

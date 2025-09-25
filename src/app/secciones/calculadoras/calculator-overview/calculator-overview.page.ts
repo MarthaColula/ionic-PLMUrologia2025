@@ -251,7 +251,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
         this.getInfomationByTypeDeeplink(id);
       } else {
         let itemCal = params.calculator;
-        console.log({ item: itemCal });
+        console.log({ item1: itemCal });
         this.getCalculatorData(itemCal);
         //this.fa.trackingFATitle('Calculadora ' + itemCal.ElectronicTitle );
         //this.fa.trackFAEventClick('Calculadora', itemCal.ElectronicTitle);
@@ -335,7 +335,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
   getArryRgntsItems(arrayReagents: any) {
     let arryRgntsItems: Array<Array<any>> = [];
     arrayReagents.forEach((itemR1:any) => {
-      console.log({ item: itemR1 });
+      console.log({ item2: itemR1 });
       if (itemR1.Type == 'Items') {
         arryRgntsItems.push(itemR1);
       }
@@ -498,7 +498,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
   /*****  CATCH EVENTS INIT *****/
   nextFocus(itemNext:any) {
     console.warn('***  nextFocus ***');
-    console.log({ item: itemNext });
+    console.log({ item3: itemNext });
     let nxtReagent: any;
     let nxtRgnt = itemNext.page.next;
     if (!this.mReagent || (this.mReagent && this.mReagent.NoReagent != nxtRgnt)) {
@@ -516,7 +516,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
 
   changeValue(itemValue:any) {
     console.warn('***  changeValue ***');
-    console.log({ item: itemValue });
+    console.log({ item4: itemValue });
     this.flgShow = false;
     this.flgDecrease = false;
     this.flgClnNxtCndtn = false;
@@ -654,7 +654,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
 
   changeOption(itemOption:any, indx:any) {
     console.warn('***  changeOption ***');
-    console.log({ item: itemOption });
+    console.log({ item5: itemOption });
     console.log('***  indx: ' + indx);
     this.flgShow = false;
     this.flgClnNxtCndtn = false;
@@ -970,8 +970,8 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
     console.log('***  getCalculatorData item: ', item.FileName);
     console.log('***  getCalculatorData item: ', item.BaseUrl);    
     //await this.controllersIonicService.showLoader().finally(() => {
-    //this.calculatorsDynamicService.getJsonDataFromHttpClient(item.FileName, item.BaseUrl)
-    this.calculatorsDynamicService.getJsonLocalDataFromHttpClient(item.FileName)//LOCAL
+    this.calculatorsDynamicService.getJsonDataFromHttpClient(item.FileName, item.BaseUrl)
+    //this.calculatorsDynamicService.getJsonLocalDataFromHttpClient(item.FileName)//LOCAL
       .then((result: any) => {
         console.warn(' getCalculatorData RESULT',result);
         this.mCalculatorData = this.calculatorsDynamicService.getCalculatorDetail();
@@ -1405,7 +1405,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
             if (calculator) {
               console.log({ calculator: calculator });
               let itemCal = calculator;
-              console.log({ item: itemCal });
+              console.log({ item6: itemCal });
               this.getCalculatorData(itemCal);
               this.addTrackingActivity(itemCal);
               this.trackingFATitle(itemCal.ElectronicTitle);

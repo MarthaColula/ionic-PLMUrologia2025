@@ -23,7 +23,7 @@ export const ExternalJavaScriptsAllowed: Scripts[] = [
 export class DynamicScriptLoaderService {
 
   private time: string;
-  
+
   private renderer2: Renderer2
   private scripts: any = {};
 
@@ -34,14 +34,14 @@ export class DynamicScriptLoaderService {
   ) {
 
     this.time = '?t=' + new Date().getTime();
-    
+
     this.renderer2 = rendererFactory.createRenderer(null, null);
     //TODO: Comment 'environment.production' for local test...
-   /*if (environment.production) {
+    if (environment.production) {
 
       ExternalJavaScriptsAllowed.forEach((script) => {
         console.log(script.name);
-        console.log(script.src+this.time);
+        console.log(script.src + this.time);
         this.scripts[script.name] = {
           loaded: false,
           src: script.src + this.time,
@@ -49,7 +49,7 @@ export class DynamicScriptLoaderService {
         };
       });
       return;
-    } */
+    }
 
 
     LocalJavaScriptsAllowed.forEach((script) => {
@@ -58,7 +58,7 @@ export class DynamicScriptLoaderService {
         src: script.src,
         id: script.name
       };
-    }); 
+    });
   }
 
   async loadScript(name: string) {

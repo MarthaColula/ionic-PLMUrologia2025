@@ -6,23 +6,31 @@
     <img src="/assets/images/cenefaCalculadoras.svg" alt="">
   </div>
 
-
-  <ion-list class="ion-padding-horizontal ion-margin-top">
-    <ng-container *ngIf="avalibleCalculatorsResources | async; else Empty">
-      <app-collapse-element-list #myDiv *ngFor="let item of this.calculators" title="{{item.subSectionName}}"
-        [elementList]="item.calculators" (selected)="showCalculators($event)" (toggle)="closeAccordion()"
-        color="urologia-primary">
+   <!--
+  <ion-list class="ion-padding-horizontal ion-margin-top">-->
+   <ng-container *ngIf="successRequest | async;">
+    <ng-container *ngIf="this.articlesService.getDynamicSection(); else Empty;">
+      <app-collapse-element-list #myDiv *ngFor="let item of this.articlesService.sectionJsonResult$ | async"
+        title="{{item.subSectionName}}" [elementList]="item.calculators" [section]="sectionName" [img]="img"
+        (selected)="showCalculators($event)" (toggle)="closeAccordion()">
       </app-collapse-element-list>
     </ng-container>
 
     <ng-template #Empty>
       <ion-item class="ion-text-center" color="urologia-primary" lines="none">
-        <ion-label>No se encontraron calculadoras disponibles.</ion-label>
+        <ion-label>Calculadoras no disponibles.</ion-label>
       </ion-item>
     </ng-template>
 
-  </ion-list>
+    <ion-item *ngIf="exception | async;" class="ion-text-center" lines="none" color="urologia-primary">
+      <ion-label>
+        Ocurrió un problema!
+      </ion-label>
+    </ion-item>
+  </ng-container>
 </ion-content>
+
+
 
 <ng-container *ngIf="showBanner">
   <app-banner (close)="bannerClose($event)" PLMId="CALCULADORAS"></app-banner>
@@ -31,6 +39,3 @@
 <ng-container *ngIf="closeBanner || !showBanner">
   <app-footer></app-footer>
 </ng-container> 
-
-<!--<app-banner  *ngIf="showBanner" PLMId="CALCULADORAS"></app-banner>
-<app-footer-marcas></app-footer-marcas-->

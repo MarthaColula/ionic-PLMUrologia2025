@@ -258,7 +258,7 @@ export class CalculadorasPage implements OnInit, AfterViewInit {
     //if (this.connectionService.isConnected() === true) {
       this.addTrackingActivity(item);
     //}
-    this.fa.trackFAEventClick('Algoritmos',item.ElectronicTitle);
+    this.fa.trackFAEventClick('calculator',item.ElectronicTitle);
     if (item.Link) {
       console.warn('CalculadorasPage', '***  data.Url_resource: ' + item.Link);
       this.iabService.open(item.Link, '_system');

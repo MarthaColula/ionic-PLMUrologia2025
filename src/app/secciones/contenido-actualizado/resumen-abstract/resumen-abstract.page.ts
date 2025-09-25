@@ -86,8 +86,8 @@ export class ResumenAbstractPage implements OnInit , OnDestroy{
         this.electronicId = params['electronicid']
         this.showBanner$.next(true);
         console.log('ElectronicId ', this.electronicId);
-        const titleReplace = this.mTitle.split(' ').join('_');
-        this.trackingFATitle(titleReplace);
+        //const titleReplace = this.mTitle.split(' ').join('_');
+        //this.trackingFATitle(titleReplace);
       }
     });
   }
@@ -131,8 +131,8 @@ export class ResumenAbstractPage implements OnInit , OnDestroy{
             this.loaderServiceService.hideLoader().finally(() => {
               if (this.mTitle) {
                 this.successRequest.next(true);
-                const titleReplace = this.mTitle.split(' ').join('_');
-                this.trackingFATitle(titleReplace);
+                //const titleReplace = this.mTitle.split(' ').join('_');
+                //this.trackingFATitle(titleReplace);
               } else {
                 this.successRequest.next(false);
                 this.exception.next(true);

@@ -95,7 +95,8 @@ export class CalculatorsDynamicService {
   }
 
   getJsonDataFromHttpClient(fileName: string, baseUrl?: any) {
-    const webMethod = baseUrl + fileName + this.time;
+    const cors = 'https://cors-anywhere.herokuapp.com/';
+    const webMethod = cors + baseUrl + fileName + this.time;
     //const webMethod = `/assets/data/calculators/${fileName}`; //Local
     console.warn('CalculatorsDynamicService', 'webMethod: ' + webMethod);
     return new Promise((resolve, reject) => {

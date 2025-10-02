@@ -23,6 +23,8 @@ import { BannerComponent } from './banner/banner.component';
 import { CollapseElementListComponent } from './collapse-element-list/collapse-element-list.component';
 import { HttpRequestExceptionComponent } from './http-request-exception/http-request-exception.component';
 import { CollapseElementComponent } from './collapse-element/collapse-element.component';
+import { RangeFieldComponent } from './dynamic-calculator/range-field/range-field.component';
+
 
 
 
@@ -48,6 +50,7 @@ import { CollapseElementComponent } from './collapse-element/collapse-element.co
     CollapseElementListComponent,
     HttpRequestExceptionComponent,
     CollapseElementComponent,
+    RangeFieldComponent
   ],
   exports: [
     HeaderComponent,
@@ -69,6 +72,7 @@ import { CollapseElementComponent } from './collapse-element/collapse-element.co
     CollapseElementListComponent,
     HttpRequestExceptionComponent,
     CollapseElementComponent,
+    RangeFieldComponent
   ],
   imports: [
     CommonModule,

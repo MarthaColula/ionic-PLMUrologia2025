@@ -249,3 +249,143 @@ p.nota-reagent {
     border-radius: 8px;
     text-align: center;
 }
+
+
+
+////RANGE
+.m-swiper-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    height:auto;
+}
+
+.ms-container {
+    //display: block;
+    //position: fixed;
+    width: 100% !important;
+    height: auto;
+}
+
+.m-wiper {
+    width: 100%;
+    height: auto;
+    //bottom: 45pt;
+    .swiper-container {
+        width: 33%;
+        height: auto;
+    }
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-slide-prev {
+        height: 75% !important;
+    }
+    .swiper-slide-next {
+        height: 75% !important;
+    }
+    .swiper-wrapper {
+        align-items: center;
+    }
+}
+
+.btn-mark {
+    display: flex !important;
+    justify-content: center !important;
+    //--background: transparent;
+    color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 33%;
+    height: auto;
+}
+
+.btn-ms {
+    justify-content: center !important;
+    //--background: transparent;
+    color: transparent;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 95%;
+}
+
+.swiperScale {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+.swiperItemScale {
+    width: 33.3%;
+    float: left;
+}
+
+.m-range-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 95%;
+    height:auto;
+    margin-bottom: 10pt !important;
+}
+.m-swiper-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    height:auto;
+}
+
+
+.custome-range-swipe-icon {
+    margin-left: 0.2rem !important;
+    margin-right: 0.4rem !important;
+}
+.custome-range-swipe-grid {
+    margin-left: -0.1rem !important;
+    margin-right: -0.2rem !important;
+}
+
+p.text-range {
+    font-size: 0.75rem !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+p.spaces {
+    width: 100% !important;
+    margin: 0.35rem;
+}
+
+
+.scaleInit {
+    width: 33.3%;
+    float: left;
+    text-align: left;
+}
+.scaleCenter {
+    width: 33.3%;
+    float: right;
+    text-align: center;
+}
+.scaleEnd {
+    width: 33.3%;
+    float: right;
+    text-align: right;
+}
+.item-mark-col {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0rem !important;
+    width: 95%;
+}
+
+
+.custome-range-icon {
+    margin-left: 0.25rem !important;
+    margin-right: 0.45rem !important;
+}
+.custome-range-grid {
+    margin-left: -0.1rem !important;
+    margin-right: -0.2rem !important;
+}

@@ -13,7 +13,7 @@ export const LocalJavaScriptsAllowed: Scripts[] = [
 ];
 
 export const ExternalJavaScriptsAllowed: Scripts[] = [
-  { name: 'calculatorBusinessLogic', src: 'https://www.plmconnection.com/plmservices/Tools/Colombia/saluddelamujer/calculators/js/calculatorBusinessLogic.js' }
+  { name: 'calculatorBusinessLogic', src: 'https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/calculators/2025/calculatorBusinessLogic.js'} 
 ];
 
 
@@ -62,6 +62,7 @@ export class DynamicScriptLoaderService {
   }
 
   async loadScript(name: string) {
+     console.log('src JS', this.scripts[name].src);
     return await new Promise(async (resolve, reject) => {
       if (!this.scripts[name].loaded) {
         let htmlHead = this.document.head;
@@ -70,6 +71,7 @@ export class DynamicScriptLoaderService {
         script.src = this.scripts[name].src;
         script.id = this.scripts[name].id;
         this.renderer2.appendChild(htmlHead, script);
+       
         script.onload = () => {
           this.scripts[name].loaded = true;
           return resolve({ script: name, loaded: true, status: 'Loaded' });

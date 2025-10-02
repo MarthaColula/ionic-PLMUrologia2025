@@ -50,7 +50,7 @@
                 {
                     "ItemId": 2,
                     "Description": "Hombre",
-                    "Value": "0",
+                    "Value": "0.0",
                     "Checked": false
                 }
             ]
@@ -93,7 +93,7 @@
         {
             "NoReagent": 3,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Previous": 2,
             "Next": 4,
             "Attributes": "snaps|pin",
@@ -153,7 +153,7 @@
         {
             "NoReagent": 5,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item2",
             "Parse": "",
@@ -209,7 +209,7 @@
         {
             "NoReagent": 7,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item3",
             "Parse": "",
@@ -265,7 +265,7 @@
         {
             "NoReagent": 9,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item4",
             "Parse": "",
@@ -321,7 +321,7 @@
         {
             "NoReagent": 11,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item5",
             "Parse": "",
@@ -377,7 +377,7 @@
         {
             "NoReagent": 13,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item6",
             "Parse": "",
@@ -439,7 +439,7 @@
         {
             "NoReagent": 15,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item7",
             "Parse": "",
@@ -501,7 +501,7 @@
         {
             "NoReagent": 17,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item8",
             "Parse": "",
@@ -563,7 +563,7 @@
         {
             "NoReagent": 19,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item9",
             "Parse": "",
@@ -619,7 +619,7 @@
         {
             "NoReagent": 21,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item10",
             "Parse": "",
@@ -675,7 +675,7 @@
         {
             "NoReagent": 23,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item11",
             "Parse": "",
@@ -731,7 +731,7 @@
         {
             "NoReagent": 25,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item12",
             "Parse": "",
@@ -787,7 +787,7 @@
         {
             "NoReagent": 27,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item13",
             "Parse": "",
@@ -843,7 +843,7 @@
         {
             "NoReagent": 29,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item14",
             "Parse": "",
@@ -899,7 +899,7 @@
         {
             "NoReagent": 31,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item15",
             "Parse": "",
@@ -955,7 +955,7 @@
         {
             "NoReagent": 33,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item16",
             "Parse": "",
@@ -1011,7 +1011,7 @@
         {
             "NoReagent": 35,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item17",
             "Parse": "",
@@ -1067,7 +1067,7 @@
         {
             "NoReagent": 37,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item18",
             "Parse": "",
@@ -1123,7 +1123,7 @@
         {
             "NoReagent": 39,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item19",
             "Parse": "",
@@ -1146,7 +1146,7 @@
         {
             "NoReagent": 40,
             "Type": "Range",
-            "Range": "[0,10]",
+            "Range": "[-1,10]",
             "Attributes": "snaps|pin",
             "Param": "item20",
             "Parse": "",

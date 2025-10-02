@@ -23,14 +23,14 @@ ion-card-subtitle {
 .image-wrapper {
    margin: 0 auto 2em auto;
    width: 20%;
-   img {
+   /*img {
       display: block;
       margin: auto;
-   }
+   }*/
 }
 
 
-div {
+/*div {
    position: relative;
    padding: 0;
    //border-bottom: 1px solid #8a878b;
@@ -39,7 +39,7 @@ div {
       bottom: 20px;
       right: 20px;
    }
-}
+}*/
 
 /* Following classes display/hide the 'menu'
  // based on the state change detection in the
@@ -79,7 +79,9 @@ ion-card {
    //color: #2b8906 !important;
 }
 
-
+item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+  display: inline;
+}
 
 
 //otherSectionBackgroundWhite

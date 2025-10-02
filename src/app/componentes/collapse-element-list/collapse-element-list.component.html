@@ -2,30 +2,27 @@
   <ion-card-header>
     <img src="./assets/images/iconoAccCci.svg" class="iconoAccordeon" alt="" slot="start">
     <ion-card-subtitle (click)="toggleAccordion()" color="urologia-primary">
-
       <span [ngClass]="this.isMenuOpen ? 'title-active2' : 'title-inactive2'" *ngIf="isMenuOpen">&#8722;</span>
       <span [ngClass]="this.isMenuOpen ? 'title-active2' : 'title-inactive2'" *ngIf="!isMenuOpen">&#43;</span>
       <ion-label [ngClass]="this.isMenuOpen ? 'title-active2' : 'title-inactive2'">{{ title
         }}</ion-label>
-
     </ion-card-subtitle>
   </ion-card-header>
 
   <ion-card-content #myDiv [ngClass]="this.isMenuOpen ? 'active2' : 'inactive2'">
-    <ion-item *ngFor="let element of this.elementList" (click)="selectedItem(element)" color="urologia-primary"
-      button="true" detail>
+    <ion-item *ngFor="let element of this.elementList" (click)="selectedItem(element)" color="urologia-primary" button="true" detail>
 
       <div *ngIf="element.InfDescription === 'Calculadora'">
-        <ion-thumbnail slot="start">
-          <!--<ion-img *ngIf="element.InfDescription === 'Atlas'; else otherImg"
+        <!-- <ion-thumbnail slot="start">-->
+        <!--<ion-img *ngIf="element.InfDescription === 'Atlas'; else otherImg"
             src="{{ element.BaseUrl + 'miniaturas/' + element.Miniature }}"></ion-img>-->
-          <img alt="" src="/assets/images/iconoAccCalculadoras.svg" />
-          <!--<ng-template #otherImg><img alt="" [src]="img" /></ng-template>-->
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <h2 class="textNormal">{{ element.ElectronicTitle }}</h2>
+        <img src="/assets/images/iconoAccCalculadoras.svg" class="iconoAccordeon" alt="" slot="start" />
+        <!--<ng-template #otherImg><img alt="" [src]="img" /></ng-template>-->
+        <!-- </ion-thumbnail> -->
+        <ion-label >
+          {{ element.ElectronicTitle }}
         </ion-label>
-        <ion-icon class="iconoArrowListado" name="arrow-forward-outline" slot="end"></ion-icon>
+        <!--<ion-icon class="iconoArrowListado" name="arrow-forward-outline" slot="end"></ion-icon>-->
       </div>
 
       <div *ngIf="element.InfDescription === 'Casos clínicos Interactivos'">
@@ -40,15 +37,12 @@
         </ion-label>
       </div>
 
-      <div  *ngIf="this.section === 'atlas'"> <!-- -->
+      <div *ngIf="this.section === 'atlas'"> <!-- -->
         <ion-label class="ion-text-wrap">
-          <!--<ion-img *ngIf="element.InfDescription === 'Atlas'; else otherImg"
-            src="{{ element.BaseUrl + 'miniaturas/' + element.Miniature }}"></ion-img>-->
+          <!--<ion-img src="{{ element.BaseUrl + 'miniaturas/' + element.Miniature }}"></ion-img>-->
           <h2 class="textNormal">{{ element.Title }}</h2>
         </ion-label>
       </div>
-
-      
     </ion-item>
   </ion-card-content>
 </ion-card>

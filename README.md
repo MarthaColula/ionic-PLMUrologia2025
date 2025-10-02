@@ -58,8 +58,10 @@
    $ npm install @capacitor/share
     
  
- # Banner  - Swiper
+ 
+ # Banner/Calculadora  - Swiper
   $ npm i swiper 
+
 
 
 # PDF - Atlas

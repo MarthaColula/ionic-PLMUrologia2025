@@ -256,7 +256,7 @@ export class CalculatorsListPage implements OnInit, AfterViewInit {
   }
 
 
-  showCalculators(item: ElectronicInfo) {
+  showCalculators(item: any) {
     //if (this.connectionService.isConnected() === true) {
     this.addTrackingActivity(item);
     //}

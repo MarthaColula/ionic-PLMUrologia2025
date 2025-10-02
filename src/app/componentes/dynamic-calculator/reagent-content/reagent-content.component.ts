@@ -42,6 +42,7 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
   protected flgFinalOption = false;
   protected flgFocusResult = true;
   protected startClnFinalOption = false;
+  protected scrollMarks = false;
   protected indxRgnt = 0;
   protected increase = 0;
   public arrayCheck: Array<any>;
@@ -58,6 +59,7 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
   protected dualknobs = false;
   protected snaps = false;
   public rangeMarks: Array<any>;
+   protected selectMrk = false;
   public rangeDivisor = 1;
   public rangeMin: any;
   public rangeMax: any;
@@ -66,6 +68,7 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
   public labelsRange: Array<any>;
   public iconsRange: Array<any>;
   protected strValue: string = '';
+   protected ticks = false;
   protected strSize = 0;
   protected strDateValue: string = '';
   protected currentIndx = '0';
@@ -80,6 +83,11 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
   protected valMajor: any;
   protected valMaxEqual: any;
   protected utilities: UtilitiesCalculator;
+  protected rangeColors: Array<any>;
+  protected rangeStyles: Array<any>;
+  protected rngColor = '';
+  protected rngStyle = '{}';
+  
 
   constructor(private sanitizer: DomSanitizer) {
     console.log('***  constructor ***');
@@ -160,17 +168,17 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
       if (this.utilities.existInJSON(this.reagent,'"Range"')) {
         let strRange = this.reagent.Range;
         let arrayRange = strRange.split(',');
-        //console.warn({range: arrayRange});
+        //console.warn('ReagentContent', {range: arrayRange});
         if (arrayRange && arrayRange.length > 0) {
           const strMin = arrayRange[0].replace('[','');
-          console.log('***  strMin: ' + strMin);
+          console.log('ReagentContent', '***  strMin: ' + strMin);
           this.rangeMin = parseInt(strMin);
           if (strMin.includes('.')) {
             this.rangeMin = parseFloat(strMin);
             let arryMin = strMin.split('.');
             let str = arryMin[1]+'';
             let divCase = str.length;
-            console.log('***  divCase: ' + divCase);
+            console.log('ReagentContent', '***  divCase: ' + divCase);
             switch (divCase) {
               case 1:
                 this.rangeDivisor = 10;
@@ -185,40 +193,102 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
                 break;
             }
           }
-          console.warn('***  rangeMin: ' + this.rangeMin);
-          console.warn('***  rangeDivisor: ' + this.rangeDivisor);
+          console.warn('ReagentContent', '***  rangeMin: ' + this.rangeMin);
+          console.warn('ReagentContent', '***  rangeDivisor: ' + this.rangeDivisor);
           const strMax = arrayRange[1].replace(']','');
-          console.log('***  strMax: ' + strMax);
+          console.log('ReagentContent', '***  strMax: ' + strMax);
           this.rangeMax = (parseInt(strMax) * this.rangeDivisor);
-          console.warn('***  rangeMax: ' + this.rangeMax);
+          console.warn('ReagentContent', '***  rangeMax: ' + this.rangeMax);
         }
+      }
+      if (this.utilities.existInJSON(this.reagent,'"SelectMark"')) {
+        this.selectMrk = this.reagent.SelectMark;
+      }
+      if (this.utilities.existInJSON(this.reagent,'"ScrollMarks"')) {
+        this.scrollMarks = this.reagent.ScrollMarks;
       }
       this.rangeMarks = [];
       if (this.utilities.existInJSON(this.reagent,'"Marks"')) {
         this.rangeMarks = this.reagent.Marks;
+        console.warn('ReagentContent', {rngMarks: this.rangeMarks});
       }
+      console.warn('ReagentContent', '***  rangeMarks-length: ' + this.rangeMarks.length);
+      this.rangeColors = [];
+      if (this.utilities.existInJSON(this.reagent,'"RangeColors"')) {
+        const strRngColors = this.reagent.RangeColors;
+        const arryRngColors = strRngColors.split('|');
+        if (arryRngColors.length > 0) {
+          this.rangeColors = arryRngColors;
+          this.rngColor = this.rangeColors[0];
+        }
+      }
+      console.warn('ReagentContent', '***  rangeColors-length: ' + this.rangeColors.length);
+      this.rangeStyles = [];
+      if (this.utilities.existInJSON(this.reagent,'"RangeStyles"')) {
+        const strRngStyles = this.reagent.RangeStyles;
+        const arryRngStyles = strRngStyles.split('|');
+        if (arryRngStyles.length > 0) {
+          this.rangeStyles = arryRngStyles;
+          this.rngStyle = this.rangeStyles[0];
+          console.warn('ReagentContent', '***  rngStyle: ' + JSON.stringify(this.rngStyle));
+        }
+      }
+      console.warn('ReagentContent', '***  rangeStyles-length: ' + this.rangeStyles.length);
+      this.iconsRange = [];
+      if (this.utilities.existInJSON(this.reagent,'"IconsRange"')) {
+        const strIcnsRange = this.reagent.IconsRange;
+        if (strIcnsRange.includes('|')) {
+          this.iconsRange = strIcnsRange.split('|');
+        }
+      }
+      console.warn('ReagentContent', '***  iconsRange-length: ' + this.iconsRange.length);
+      this.labelsRange = [];
+      if (this.utilities.existInJSON(this.reagent,'"LabelsRange"')) {
+        const strLblsRange = this.reagent.LabelsRange;
+        if (strLblsRange.includes('|')) {
+          this.labelsRange = strLblsRange.split('|');
+          console.warn('ReagentContent', '***  labelsRange: ' + JSON.stringify(this.labelsRange));
+        }
+      }
+      console.warn('ReagentContent', '***  labelsRange-length: ' + this.labelsRange.length);
       if (this.utilities.existInJSON(this.reagent,'"Attributes"')) {
         let strAttributes = this.reagent.Attributes;
+        console.warn('ReagentContent', '***  strAttributes: ' + strAttributes);
         if (strAttributes.includes('|')) {
           this.dualknobs = strAttributes.includes('dualknobs');
           this.snaps = strAttributes.includes('snaps');
+          this.ticks = strAttributes.includes('ticks');
           this.flgPinFormatter = strAttributes.includes('pin');
         } else {
-          if (strAttributes === 'snaps') {
-            this.snaps = true;
-            this.dualknobs = false;
-            this.flgPinFormatter = false;
-          } else if (strAttributes === 'dualknobs') {
-            this.dualknobs = true;
-            this.snaps = false;
-            this.flgPinFormatter = false;
-          } else if (strAttributes === 'pin') {
-            this.flgPinFormatter = true;
-            this.dualknobs = false;
-            this.snaps = false;
+          switch(strAttributes) {
+            case 'dualknobs':
+              this.dualknobs = true;
+              this.snaps = false;
+              this.ticks = false;
+              this.flgPinFormatter = false;
+              break;
+            case 'snaps':
+              this.snaps = true;
+              this.dualknobs = false;
+              this.ticks = false;
+              this.flgPinFormatter = false;
+              break;
+            case 'ticks':
+              this.ticks = true;
+              this.snaps = false;
+              this.dualknobs = false;
+              this.flgPinFormatter = false;
+              break;
+            case 'pin':
+              this.flgPinFormatter = true;
+              this.dualknobs = false;
+              this.snaps = false;
+              this.ticks = false;
+              break;
           }
         }
       }
+     
     } else if (this.reagent.Type === 'Input' || this.reagent.Type === 'Date') {
       if (this.utilities.existInJSON(this.reagent,'"Placeholder"') && this.reagent.Placeholder) {
         this.placeholder = this.reagent.Placeholder;
@@ -246,6 +316,75 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
       } else {
         console.warn('***  Validations is UNDEFINDED!!');
       }
+    }
+  }
+  
+   onSlideChange(event: any) {
+    console.warn('ReagentContent', '***  onSlideChange  ***');
+  }
+  
+  changeRange(eventRange: any) {
+    console.warn('ReagentContent', '***  changeRange  ***');
+    console.log('ReagentContent', {event: eventRange});
+    const detail = eventRange['detail'];
+    console.warn('ReagentContent', '***  detail: ' + JSON.stringify(detail));
+    if (detail && detail.value) {
+      const indRngClr = detail.value-1;
+      console.warn('ReagentContent', '***  indRngClr: '+ indRngClr +', rangeDivisor: '+ this.rangeDivisor);
+      this.rngColor = this.rangeColors[(indRngClr/this.rangeDivisor)];
+      this.rngStyle = this.rangeStyles[(indRngClr/this.rangeDivisor)];
+    }
+    console.warn('ReagentContent', '***  rngColor: ' + this.rngColor);
+  }
+
+   selectMark(index: number, mark: any) {
+    console.warn('ReagentContent', '***  selectMark  ***');
+    console.log('ReagentContent', {mark: mark});
+    if (mark && this.utilities.existInJSON(mark,'"Value"')) {
+      this.rangeValue = mark.Value;
+    } else {
+      console.warn('ReagentContent', '***  index: ' + index);
+      if (this.rangeStyles.length > 0 || this.rangeColors.length > 0) {
+        let arryRngSC: Array<any> = [];
+        console.warn('ReagentContent', '***  rngStyles-Lgth: '+ this.rangeStyles.length +', rngColors-Lgth: '+ this.rangeColors.length);
+        if (this.rangeStyles.length > 0) {
+          arryRngSC = this.rangeStyles;
+        } else if (this.rangeColors.length > 0) {
+          arryRngSC = this.rangeColors;
+        }
+        const aryRngLng = arryRngSC.length;
+        const rngMrksLng = this.rangeMarks.length;
+        console.warn('ReagentContent', '***  aryRngLng: '+ aryRngLng +', rngMrksLng: '+ rngMrksLng);
+        //const mult = Math.trunc(arryRngSC.length/(this.rangeMarks.length-1));
+        const mult = (rngMrksLng === aryRngLng ? 1 : (rngMrksLng > aryRngLng ? Math.trunc(rngMrksLng/(aryRngLng-1)) : Math.trunc(aryRngLng/(rngMrksLng-1))));
+        const value = mult * index;
+        console.warn('ReagentContent', '***  mult: '+ mult +', value: '+ value);
+        console.warn('ReagentContent', '***  rangeDivisor: ' + this.rangeDivisor);
+        const difOne = Math.trunc(this.rangeMax - this.rangeMin);
+        if (this.rangeDivisor === 1) {
+          const multAOne = (difOne/aryRngLng);
+          console.warn('ReagentContent', '***  difOne: '+ difOne +', multAOne: '+ multAOne);
+          this.rangeValue = Math.trunc(value*multAOne);
+        } else {
+          //TODO: Validar!!!
+          const multBOne = (difOne > rngMrksLng ? difOne/(rngMrksLng+1) : (rngMrksLng+1)/difOne);
+          console.warn('ReagentContent', '***  difOne: '+ difOne +', multBOne: '+ multBOne);
+          this.rangeValue = Math.trunc((index === 0 ? 0 : (index === (rngMrksLng-1) ? (rngMrksLng+1)*multBOne : (index+1)*multBOne)));
+        }
+      } else if (this.selectMrk) {
+        const rngMrksLng = this.rangeMarks.length;
+        console.warn('ReagentContent', '***  rngMrksLng: '+ rngMrksLng +', rangeDivisor: '+ this.rangeDivisor);
+        const difTwo = Math.trunc(this.rangeMax - this.rangeMin);
+        const multTwo = (difTwo > rngMrksLng ? difTwo/(rngMrksLng+1) : (rngMrksLng+1)/difTwo);
+        console.warn('ReagentContent', '***  difTwo: '+ difTwo +', multTwo: '+ multTwo);
+        this.rangeValue = Math.trunc((index === 0 ? 0 : (index === (rngMrksLng-1) ? (rngMrksLng+1)*multTwo : (index+1)*multTwo)));
+      }
+    }
+    console.warn('ReagentContent', '***  rangeValue: ' + this.rangeValue);
+    if (this.selectMrk || this.rangeStyles.length > 0 || this.rangeColors.length > 0) {
+      let bndShow: any;
+      console.log('ReagentContent', '***  setResponseValue()...');
+      this.setResponseValue(bndShow);
     }
   }
   

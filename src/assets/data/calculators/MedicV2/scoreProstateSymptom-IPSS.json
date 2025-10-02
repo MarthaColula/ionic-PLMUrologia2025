@@ -332,7 +332,7 @@
       "Title": "Resultado",
       "Type": "Legends",
       "NoLegends": 1,
-      "Legends": "<ion-item mode=\"md\" class=\"ion-text-center\" color=\"plm-light\" lines=\"none\"><ion-label class=\"white-space-ion-label\"><p>Puntuación internacional de síntomas de próstata (IPSS) = <b>SCORE</b>. De acuerdo con el índice de síntomas de la American Urological Association, este puntaje es indicativo de sintomatología <b>LEGEND</b> causada por la hiperplasia benigna de próstata (HBP).</p></ion-label></ion-item>",
+      "Legends": "<ion-item mode=\"md\" class=\"ion-text-center\" color=\"plm-light\" lines=\"none\"><ion-label class=\"white-space-ion-label\"><p>Puntuación internacional de síntomas de próstata (IPSS) = <b>SCORE</b>. De acuerdo con el índice de síntomas de la American Urological Association, este puntaje es indicativo de sintomatología <b>LEGEND</b> causada por la hiperplasia benigna de próstata (HBP). <br> Puntaje de calidad de vida: VALUE</p></ion-label></ion-item>",
       "ShowCalculateButton": false,
       "Score": true
     },
@@ -342,19 +342,19 @@
         {
           "Case": "<=7",
           "TextResult": "Leve",
-          "ValueResult": "",
+          "ValueResult": "Evitar cafeína y alcohol",
           "Observation": ""
         },
         {
           "Case": "[8,19]",
           "TextResult": "Moderada",
-          "ValueResult": "",
+          "ValueResult": "Considere iniciar tratamiento y solicitar antígeno prostático específico ",
           "Observation": ""
         },
         {
           "Case": ">19",
           "TextResult": "Severa",
-          "ValueResult": "",
+          "ValueResult": "Considere iniciar tratamiento y solicitar antígeno prostático específico ",
           "Observation": ""
         }
       ]

@@ -80,20 +80,21 @@ export const environment = {
   },
   autoComplete: {
     protocol: 'https',
-    server: 'www.plmconnection.com',
-    pathName: 'plmservices/Tools/Colombia/saluddelamujer/autocomplete',
-    buscador: 'autocomplete.json'
+    server: 's3.us-east-1.amazonaws.com/plmconnection.tools',
+    pathName: 'plmservices/Tools/Mexico/urologia/autocomplete',
+    buscador: 'autocomplete25.json'
+    //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/autocomplete/autocomplete25.json
   },
   sponsorProducts: {
     protocol: 'https',
-    server: 's3.amazonaws.com/plmconnection.tools',
+    server: 's3.us-east-1.amazonaws.com/plmconnection.tools',
     pathName: 'plmservices/Tools/Mexico/urologia/products',
     json: 'sponsorProducts_2025.json'
     //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/products/sponsorProducts_2025.json
   },
   cci: {
     protocol: 'https',
-    server: 's3.amazonaws.com/plmconnection.tools',
+    server: 's3.us-east-1.amazonaws.com/plmconnection.tools',
     pathName: 'plmservices/Tools/Mexico/urologia/clinicalcases/2025',
     json: 'casosClinicosList.json'
     // https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/clinicalcases/2025/casosClinicosList.json
@@ -114,7 +115,7 @@ export const environment = {
   },
    calculators: {
    protocol: 'https',
-    server: 's3.amazonaws.com/plmconnection.tools',
+    server: 's3.us-east-1.amazonaws.com/plmconnection.tools',
     pathName: 'plmservices/Tools/Mexico/urologia/calculators/2025',
     //json: 'calculators.json' //Produccion 
     json: 'calculatorsLis.json'   //desarrollo 

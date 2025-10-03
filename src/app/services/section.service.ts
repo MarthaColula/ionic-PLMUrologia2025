@@ -43,18 +43,11 @@ export class SectionService {
         this.baseUrl = `${protocol}://${server}/${pathName}/`;
         this.fileName = json;
       } else if (sectionValue === "podcast") {
+        const url = environment.podcast;
         const { protocol, server, pathName, json } = environment.podcast;
-         /**
-        const proxies = [
-          'https://api.allorigins.win/raw?url=',
-          'https://corsproxy.io/?',
-          'https://thingproxy.freeboard.io/fetch/'
-        ];
-         */
         const cors = 'https://cors-anywhere.herokuapp.com';
         this.baseUrl = `${cors}/${protocol}://${server}/${pathName}/`;
         this.fileName = json;
-
       }
 
       if (!this.time) {

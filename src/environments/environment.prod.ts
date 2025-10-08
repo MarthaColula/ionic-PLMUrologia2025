@@ -163,7 +163,7 @@ export const environment = {
     protocol: 'https',
     server: 'www.plmconnection.com',
     pathName: 'plmservices/Tools',
-    folderName: 'saluddelamujer'
+    folderName: 'urologia'
   },
 
   staticBannerURL: 'https://www.plmconnection.com/plmservices/Tools/Mexico/urologia/staticBanner/',

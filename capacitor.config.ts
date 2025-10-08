@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.PLMUrologia',
-  //appId: 'Urolo',
+appId: 'com.PLMUrologia',
+//  appId: 'Urolo',
   appName: 'PLM Urología',
   webDir: 'www',
    server: {
@@ -10,6 +10,7 @@ const config: CapacitorConfig = {
     iosScheme: 'capacitor',
     hostname: 'localhost',
     allowNavigation: ['https://www.plmconnection.com'],
+    cleartext: true
   },
   plugins: {
     SplashScreen: {

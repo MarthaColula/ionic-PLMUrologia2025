@@ -28,12 +28,20 @@
         <!--<ion-icon class="iconoArrowListado" name="arrow-forward-outline" slot="end"></ion-icon>-->
       </div>
 
-      <div *ngIf="element.InfDescription !== 'Calculadora'">
+      <div *ngIf="element.InfDescription === 'atlas'">
+        <ion-thumbnail slot="start">
+          <img src="{{ element.LogoPath }}">
+        </ion-thumbnail>
         <ion-label class="ion-text-wrap">
           <h2 class="textNormal">{{ element.Title }}</h2>
         </ion-label>
       </div>
 
+      <div *ngIf="element.InfDescription !== 'Calculadora'">
+        <ion-label class="ion-text-wrap">
+          <h2 class="textNormal">{{ element.Title }}</h2>
+        </ion-label>
+      </div>
 
     </ion-item>
   </ion-card-content>

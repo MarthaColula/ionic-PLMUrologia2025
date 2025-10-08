@@ -192,6 +192,7 @@ export class AtlasPage implements OnInit , AfterViewInit, OnDestroy {
           link: (elementData.Link ? elementData.Link : elementData.BaseUrl + 'portrait/' + elementData.FileName)
         }
       };
+      console.log({navigationExtrasAtlas : navigationExtras});
       this.router.navigate(['/ver-atlas'], navigationExtras);
     }
   }

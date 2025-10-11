@@ -248,6 +248,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
     this.subQueryParams = this.route.queryParams.subscribe(() => {
       if (params.deeplinkId !== undefined) {
         let id = params.deeplinkId;
+        console.log('params[deeplinkId]', params['deeplinkId']);
         this.getInfomationByTypeDeeplink(id);
       } else {
         let itemCal = params.calculator;
@@ -1396,6 +1397,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
 
 
   getInfomationByTypeDeeplink(id: any) {
+     console.log('getInfomationByTypeDeeplink', id);
     this.exception.next(false);
     this.controllersIonicService.showLoader().finally(() => {
       this.getInformationSub = this.plmAssetsEngineService

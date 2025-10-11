@@ -13,7 +13,7 @@
   <ng-container *ngIf="successRequest | async;">
     <ng-container *ngIf="this.articlesService.getDynamicSection(); else Empty;">
       <app-collapse-element-list #myDiv *ngFor="let item of this.articlesService.sectionJsonResult$ | async"
-        title="{{item.subSectionName}}" [elementList]="item.podcast" [section]="sectionName" [img]="img"
+        title="{{item.subSectionName}}" [elementList]="item.podcast" [icon]="item.icon" [section]="sectionName" [img]="img"
         (selected)="playPodcast($event)" (toggle)="closeAccordion()">
       </app-collapse-element-list>
     </ng-container>

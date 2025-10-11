@@ -93,7 +93,7 @@ export class ReproductorPodcastPage implements OnInit {
         this.podcastData = params['podcast'];
         this.album = this.podcastData.Description; // ElectronicDescription;
         this.assetUrl = this.podcastData.BaseUrl + this.podcastData.FileName;
-        this.title = this.podcastData.Title; // ElectronicTitle;
+        this.title = this.podcastData.ElectronicTitle; // ElectronicTitle;
 
         this.trackId = this.podcastData.ElectronicId.toString();
         //this.albumArt = this.podcastData.AlbumArt;

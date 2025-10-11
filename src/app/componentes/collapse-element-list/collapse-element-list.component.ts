@@ -10,6 +10,9 @@ export class CollapseElementListComponent implements OnInit {
 
   @Input()
   title: string;
+  
+  @Input()
+  icon: any;
 
   @Input()
   elementList: any[];
@@ -34,7 +37,7 @@ export class CollapseElementListComponent implements OnInit {
     //console.warn('*** elementList.length: ' + this.elementList.length);
      console.warn('*** elementList: ' + this.elementList);
     console.warn(' section: ' + this.section);
-    //console.warn(' img: ' + this.img);
+    console.warn(' icon: ' + this.icon);
   }
 
   public toggleAccordion(): void {

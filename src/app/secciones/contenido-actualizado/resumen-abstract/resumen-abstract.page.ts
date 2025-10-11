@@ -43,9 +43,9 @@ export class ResumenAbstractPage implements OnInit , OnDestroy{
     private globalVars: GlobalvarsService,
     private fa: FirebaseAnalyticsService
   ) {
-    route.params.subscribe(val => {
+    /*route.params.subscribe(val => {
       console.log('VAL: ', val)
-    });
+    });*/
     this.getParams();
   }
 
@@ -69,13 +69,13 @@ export class ResumenAbstractPage implements OnInit , OnDestroy{
   
   }
 
-  getParams() {
+  async getParams() {
     const params = this.router.getCurrentNavigation()?.extras.state;
     console.log('>>> Params', params);
     this.subQueryParams = this.route.queryParams.subscribe(() => {
-      if (params && params['deeplink'] !== undefined) {
-        let id = params['deeplink'].id;
-        console.warn('***  getInfomationByTypeDeeplink('+ id +')...');
+      if (params && params['deeplinkId'] !== undefined) {
+        console.log('params[deeplinkId]', params['deeplinkId']);
+        let id = params['deeplinkId'];
         this.getInfomationByTypeDeeplink(id);
       } else if (params) {
         this.mUrl = params['link'];
@@ -112,7 +112,7 @@ export class ResumenAbstractPage implements OnInit , OnDestroy{
               this.mDescription = cases.ElectronicDescription;
               this.electronicId= cases.ElectronicId;
               this.showBanner$.next(true);
-              console.log('ElectronicId ', this.electronicId);
+              console.log('ElectronicId.gIBTDL ', this.electronicId);
               this.trackingFATitle(this.mTitle);
             }
             this.addTrackingActivity();

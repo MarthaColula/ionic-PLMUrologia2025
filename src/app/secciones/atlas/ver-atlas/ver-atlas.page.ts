@@ -126,8 +126,8 @@ export class VerAtlasPage implements OnInit, OnDestroy {
               this.addTrackingActivity(data);
               //this.pdfSrc = this.baseUrl + this.name;
               //this.pdfSrc = this.link;
-              const srcPDF = (this.link ? this.link : this.baseUrl  + this.name);
-              //(this.link ? this.link : this.baseUrl + 'portrait/' + this.name);
+              //const srcPDF = (this.link ? this.link : this.baseUrl  + this.name);
+              const srcPDF = ( this.baseUrl + 'portrait/' + this.name);
               const strPDFSrc = (srcPDF.includes('https:') ? srcPDF : srcPDF.replace('http:','https:'));
               //this.securityPDF = this.sanitizer.bypassSecurityTrustResourceUrl(this.link);
               this.pdfSrc = strPDFSrc;

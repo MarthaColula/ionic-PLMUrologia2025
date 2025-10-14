@@ -8,7 +8,7 @@ var calculatorBusinessLogicObject = (function () {
     getCalculatorResult: function (PLMCalculatorSolutionMethodId, answers) {
       switch (PLMCalculatorSolutionMethodId) {
 
-         case 'calculadoraICIQLUTSqol':
+        case 'calculadoraICIQLUTSqol':
           console.warn('solución Encontrada ejecutando...');
           return this.bodyICIQLUTSqol(answers);
         case 'testosteroneEstradiol':
@@ -36,7 +36,7 @@ var calculatorBusinessLogicObject = (function () {
     },
 
 
-     bodymshq(answers) {
+    bodymshq(answers) {
       console.warn("init bodymshq", answers);
       var sum = 0;
       var domain1 = 0, domain2 = 0, domain3 = 0, domain4 = 0, domain5 = 0;
@@ -48,7 +48,7 @@ var calculatorBusinessLogicObject = (function () {
         domain2 = answers.q4;
       }
       if (answers.q5 && answers.q6 && answers.q7 && answers.q8 && answers.q9 && answers.q10 && answers.q11) {
-        domain3 =  answers.q5 + answers.q6 + answers.q7 + answers.q8 + answers.q9 + answers.q10 + answers.q11;
+        domain3 = answers.q5 + answers.q6 + answers.q7 + answers.q8 + answers.q9 + answers.q10 + answers.q11;
       }
       if (answers.q12) {
         domain4 = answers.q12;
@@ -56,7 +56,7 @@ var calculatorBusinessLogicObject = (function () {
       if (answers.q13 && answers.q14 && answers.q15 && answers.q16 + answers.q17 && answers.q18) {
         domain5 = answers.q13 + answers.q14 + answers.q15 + answers.q16 + answers.q17 + answers.q18;
       }
-     
+
       console.log('DOMAINS: ', domain1 + ' - ' + domain2 + ' - ' + domain3 + ' - ' + domain4 + ' - ' + domain5);
 
       var domain = (Number(domain1) + Number(domain2) + Number(domain3) + Number(domain4) + Number(domain5));
@@ -143,42 +143,61 @@ var calculatorBusinessLogicObject = (function () {
       var conversionT = 0, conversionE = 0;
 
       if (answers.unitT === 'ng/dL') {
-        /*if (answers.unitE === 'pg/mL') {
+        if (answers.unitE === 'pg/mL') {
           conversionT = (answers.t * 34.66).toFixed(1);
           console.log({ conversionT: conversionT });
           conversionE = (answers.e / 0.2724).toFixed(2);
           console.log({ conversionE: conversionE });
           ratio = (conversionT / conversionE).toFixed(2);
           console.log({ ratio: ratio });
-        } else*/
-        if (answers.unitE === 'ng/dL') { //
+
+        } else if (answers.unitE === 'ng/dL') {
           ratio = (answers.t / answers.e).toFixed(2);
           console.log({ ratio: ratio });
 
-        } else if (answers.unitE === 'pmoL/L') { //
+        } else if (answers.unitE === 'pmoL/L') {
+          conversionT = (answers.t * 34.66).toFixed(1);
+          console.log({ conversionT: conversionT });
+          ratio = (conversionT / answers.e).toFixed(2);
+          console.log({ ratio: ratio });
 
         }
 
       } else if (answers.unitT === 'pmoL/L') {
-        if (answers.unitE === 'pmoL/L') {   //
+        if (answers.unitE === 'pmoL/L') {
           ratio = (answers.t / answers.e).toFixed(2);
           console.log({ ratio: ratio });
 
-        } if (answers.unitE === 'ng/dL') { //
+        } if (answers.unitE === 'ng/mL') {
+          conversionE = (answers.e * 3671.3).toFixed(1);
+          console.log({ conversionT: conversionT });
+          ratio = (answers.t / conversionE).toFixed(2);
+          console.log({ ratio: ratio });
+
+        } if (answers.unitE === 'pg/mL') {
+          conversionE = (answers.e * 3671.3).toFixed(1);
+          console.log({ conversionT: conversionT });
+          ratio = (answers.t / conversionE).toFixed(2);
+          console.log({ ratio: ratio });
+
         }
 
       } else if (answers.unitT === 'nmol/L') {
-        if (answers.unitE === 'pmoL/L') { //
+        if (answers.unitE === 'pmoL/L') {
           conversionT = (answers.t * 1000).toFixed(1);
           console.log({ conversionT: conversionT });
           ratio = (conversionT / answers.e).toFixed(2);
           console.log({ ratio: ratio });
 
-        } if (answers.unitE === 'nmol/L') {   //
+        } if (answers.unitE === 'pg/mL') {
           ratio = (answers.t / answers.e).toFixed(2);
           console.log({ ratio: ratio });
 
-        } if (answers.unitE === 'ng/dL') { //
+        } if (answers.unitE === 'ng/mL') {
+          conversionT = (answers.t * 1000).toFixed(1);
+          console.log({ conversionT: conversionT });
+          ratio = (conversionT / answers.e).toFixed(2);
+          console.log({ ratio: ratio });
         }
       }
 

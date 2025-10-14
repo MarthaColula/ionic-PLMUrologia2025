@@ -83,9 +83,27 @@
   <!--SPONSOR PRODUCTS-->
   <!-- <ng-container *ngIf="successRequest | async;"> -->
   <ng-container *ngIf="this.data.products; else Empty">
-    <app-collapse-element #myDiv *ngFor="let product of this.data.products;" [elementList]="this.data.products"
+    <!--<app-collapse-element #myDiv *ngFor="let product of this.data.products;" [elementList]="this.data.products"
       (selected)="navigateDetail(product)" (toggle)="closeAccordion()" color="mujer-primary">
-    </app-collapse-element>
+    </app-collapse-element>-->
+
+    <ion-accordion-group mode="ios" class="ion-padding-top">
+      <ion-accordion>
+        <ion-item slot="header" color="urologia-primary">
+          <img src="./assets/images/iconoAspenPP.svg" class="iconoAccordeon" alt="" slot="start">
+          <ion-label class="title-section">Productos patrocinadores</ion-label>
+        </ion-item>
+
+        <div class="ion-padding" slot="content" *ngFor="let product of this.data.products;">
+          <ion-item color="urologia-primary" (click)="navigateDetail(product)">
+            <ion-label class="ion-text-wrap">
+              <h2 class="textNormal">{{ product.Brand}}</h2>
+            </ion-label>
+          </ion-item>
+        </div>
+
+      </ion-accordion>
+    </ion-accordion-group>
   </ng-container>
 
   <ng-template #Empty>

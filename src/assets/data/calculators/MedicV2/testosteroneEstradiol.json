@@ -21,24 +21,23 @@
   "Reagents": [
     {
       "NoReagent": 1,
-       "Total": 4,
+      "Total": 4,
       "Type": "Input",
       "Style": "{\"background-color\":\"rgba(0, 0, 0, 0.15)\"}",
       "Placeholder": "",
       "InputValue": "Number",
       "Param": "t",
       "Parse": "Float",
-      "Validations": "RANGE:[0,500]",
-      "LeyendaValidation": "",
+      "Validations": "RANGE:[0,50000]",
+      "LeyendaValidation": "El valor debe ser mayora 0",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Testosterona</ion-label>",
       "Requiered": true,
       "Items": []
     },
     {
-      "ReagentId": 2,
+      "NoReagent": 2,
       "Type": "Select",
       "Param": "unitT",
-      "Parse": "",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Unidad testosterona:</ion-label>",
       "Requiered": true,
       "ArrayId": 0,
@@ -53,19 +52,19 @@
       "InputValue": "Number",
       "Param": "e",
       "Parse": "Float",
+      "Validations": "RANGE:[0,50000]",
+      "LeyendaValidation": "El valor debe ser mayora 0",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Estradiol</ion-label>",
       "FinalReagent": true,
       "Requiered": true,
       "Items": []
     },
     {
-      "ReagentId": 4,
+      "NoReagent": 4,
       "Type": "Select",
       "Param": "unitE",
-      "Parse": "",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Unidad estradiol:</ion-label>",
       "Requiered": true,
-      "ArrayId": 1,
       "StringArray": "pg/dl|pmoL/L",
       "Items": []
     }

@@ -118,7 +118,7 @@ export const environment = {
     server: 's3.us-east-1.amazonaws.com/plmconnection.tools',
     pathName: 'plmservices/Tools/Mexico/urologia/calculators/2025',
     //json: 'calculators.json' //Produccion 
-    json: 'calculatorsLis.json'   //desarrollo 
+    json: 'calculatorsList.json'   //desarrollo 
     //https://s3.us-east-1.amazonaws.com/plmconnection.tools/plmservices/Tools/Mexico/urologia/calculators/2025/calculatorsLis.json
   },
    atlas: {

@@ -205,7 +205,7 @@ export class PubmedPage implements OnInit , OnDestroy {
       SourceId: this.globalVars.getInfoTrackingSource()
     };
     this.trackingEngineService.addInfoTracking(data);
-    console.log({ trackdataPub: data });
+    console.log({ trackingPubMed: data });
   }
 
   addTrackingSectionAndEvent(nameEvent?: string) {

@@ -52,6 +52,9 @@ export class ReproductorPodcastPage implements OnInit {
   exception = new BehaviorSubject<boolean>(false);
   getInformationSub: Subscription;
 
+  showBanner: boolean | undefined;
+   closeBanner: boolean;
+
   constructor(
     public controllersIonicService: ControllersIonicService,
     public plmAssetsEngineService: PlmAssetsEngineService,
@@ -117,6 +120,19 @@ export class ReproductorPodcastPage implements OnInit {
       }
 
     });
+  }
+
+   ionViewWillEnter() {
+    this.showBanner = true;
+  }
+
+   ionViewDidLeave() {
+    this.showBanner = false;
+  }
+  
+   bannerClose(event) {
+    console.log({ close: event });
+    this.closeBanner = event;
   }
 
   formatTime(time: number): string {
@@ -273,7 +289,7 @@ export class ReproductorPodcastPage implements OnInit {
       SourceId: this.globalVarsService.getInfoTrackingSource(),
     };
     this.plmTrackingEngineService.addInfoTracking(data);
-    console.log('>>>>> DATA REP. POD. DL <<<<<', data);
+    console.log('Tracking PodcastDL ', data);
   }
 
   trackingFATitle(title: string) {

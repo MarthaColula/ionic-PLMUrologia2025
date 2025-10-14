@@ -324,9 +324,8 @@ export class CalculatorsListPage implements OnInit, AfterViewInit {
       SearchTypeId: SearchType.parametrizado,
       SourceId: this.globalVars.getInfoTrackingSource()
     };
-    //TODO: Descomentar en produccion!!!
-    //console.warn('CalculadorasPage', '**  addInfoTracking()...');
-    //this.trackingEngineService.addInfoTracking(data);
+    this.trackingEngineService.addInfoTracking(data);
+    console.warn('addTrackingActivity',data );
   }
 
   async addTrackingSectionAndEvent(nameEvent?: string) {

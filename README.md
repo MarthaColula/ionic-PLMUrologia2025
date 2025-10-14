@@ -8,6 +8,7 @@
    npm install @capacitor/splash-screen
 
 
+
 # SERVICE -  GeolocationService:
 
 >[Plugin Geolocation](https://capacitorjs.com/docs/apis/geolocation)
@@ -30,6 +31,10 @@
     $ npm install @capacitor/preferences
 
 
+# HTTP -  http:
+    $ npm install @capacitor/http
+
+    
 
 # Config:
 

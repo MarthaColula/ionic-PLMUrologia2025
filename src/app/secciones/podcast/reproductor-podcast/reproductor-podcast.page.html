@@ -92,4 +92,11 @@
   </ion-grid>
 </ion-content>
 
-<app-footer></app-footer>
+
+<ng-container *ngIf="showBanner">
+  <app-banner (close)="bannerClose($event)" PLMId="BANNERS"></app-banner>
+</ng-container>
+
+<ng-container *ngIf="closeBanner || !showBanner">
+ <app-footer></app-footer>
+</ng-container> 

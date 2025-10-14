@@ -239,7 +239,7 @@ export class AtlasPage implements OnInit , AfterViewInit, OnDestroy {
       SourceId: this.globalVars.getInfoTrackingSource()
     };
     this.trackingEngineService.addInfoTracking(data);
-    console.log('addTrackingActivity CCI - DATA', data);
+    console.log('addTrackingActivity Atlas', data);
   }
 
   async addTrackingSectionAndEvent(nameEvent?: string) {

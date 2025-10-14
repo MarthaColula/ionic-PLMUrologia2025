@@ -1468,7 +1468,7 @@ export class CalculatorOverviewPage implements OnInit, AfterViewInit, OnDestroy 
         SourceId: this.globalVarsService.getInfoTrackingSource()
       };
       this.plmTrackingEngineService.addInfoTracking(data);
-      console.log('>>>>> DATA CALCULATOR DL <<<<<', data);
+      console.log('addInfoTracking Calc-DL <<<<<', data);
   }
 
   trackingFATitle(title:any ) {

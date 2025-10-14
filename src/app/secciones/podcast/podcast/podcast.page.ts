@@ -203,7 +203,7 @@ export class PodcastPage implements OnInit , AfterViewInit, OnDestroy {
   }
 
   addTrackingActivity(electronicInformation: any) {
-    console.log('addTrackingActivity - electronicInformation', electronicInformation);
+    
     const today = new Date().getTime();
     let latitude = '';
     let longitude = '';
@@ -234,7 +234,7 @@ export class PodcastPage implements OnInit , AfterViewInit, OnDestroy {
       SourceId: this.globalVars.getInfoTrackingSource()
     };
     this.trackingEngineService.addInfoTracking(data);
-    console.log('addTrackingActivity Podcast - DATA', data);
+    console.log('addTrackingActivity Podcast ', data);
   }
 
   async addTrackingSectionAndEvent(nameEvent?: string) {

@@ -29,6 +29,9 @@ var calculatorBusinessLogicObject = (function () {
         case 'mrs':
           console.warn('solución Encontrada ejecutando... mrs');
           return this.bodymrs(answers);
+        case 'calcVQS':
+          console.warn('solución Encontrada ejecutando... calcVQS');
+          return this.bodycalcVQS(answers);
 
         default:
           throw new Error('LOCAL - No se encontro solución a la calculadora.');

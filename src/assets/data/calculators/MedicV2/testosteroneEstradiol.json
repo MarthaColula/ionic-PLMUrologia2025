@@ -41,7 +41,7 @@
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Unidad testosterona:</ion-label>",
       "Requiered": true,
       "ArrayId": 0,
-      "StringArray": "ng/dL|nmol/L|pmoL/L",
+      "StringArray": "ng/dL|nmol/L|pg/mL|pmoL/L",
       "Items": []
     },
     {
@@ -65,7 +65,7 @@
       "Param": "unitE",
       "Label": "<ion-label style=\"color: #0052a1; font-family: FuturaStd-Medium;\">Unidad estradiol:</ion-label>",
       "Requiered": true,
-      "StringArray": "pg/dl|pmoL/L",
+      "StringArray": "pg/mL|ng/mL|pmoL/L",
       "Items": []
     }
   ],

@@ -11,30 +11,21 @@
   <ion-card-content #myDiv [ngClass]="this.isMenuOpen ? 'active2' : 'inactive2'">
     <ion-item *ngFor="let element of this.elementList" (click)="selectedItem(element)" color="urologia-primary"
       button="true" detail>
-      <div *ngIf="element.InfDescription !== 'Atlas'">
+      <div>
+        <ion-thumbnail slot="start" *ngIf="element.InfDescription === 'Atlas'">
+          <img alt="" src="{{ element.LogoPath }}">
+        </ion-thumbnail>
+        <!--
+         <ion-thumbnail slot="start" *ngIf="element.InfDescription === 'Podcast'">
+          <img src="{{ element.LogoPath }}">
+        </ion-thumbnail>
+        -->
+
         <ion-label>
           {{ element.ElectronicTitle }}
         </ion-label>
       </div>
-
-      <!-- <div *ngIf="element.InfDescription === 'Podcast'">
-        <ion-thumbnail slot="start">
-          <img src="{{ element.LogoPath }}">
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <h2 class="textNormal">{{ element.ElectronicTitle }}</h2>
-        </ion-label>
-      </div> -->
-
-      <div *ngIf="element.InfDescription === 'Atlas'">
-        <ion-thumbnail slot="start">
-          <img alt="" src="{{ element.LogoPath }}">
-        </ion-thumbnail>
-        <ion-label class="ion-text-wrap">
-          <h2 class="textNormal">{{ element.Title }}</h2>
-        </ion-label>
-      </div>
-
+      
     </ion-item>
   </ion-card-content>
 </ion-card>

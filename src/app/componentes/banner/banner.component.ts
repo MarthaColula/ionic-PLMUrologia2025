@@ -190,7 +190,8 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log('BANNER LINK', banner.Link);
     if (banner.Link) {
       const data = this.DataPreparation('Click', banner.ElectronicId);
-      this.openInAppBrowser(banner.Link);
+      console.log({bannerLink:banner.Link});
+      this.iabService.open(banner.Link);
       this.trackingEngine.addInfoTracking(data);
     }
   }
@@ -241,8 +242,6 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
     this.ngOnDestroy();
   }
 
-  openInAppBrowser(url: string) {
-    this.iabService.open(url);
-  }
+
 
 }

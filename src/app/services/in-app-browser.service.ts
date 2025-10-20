@@ -5,6 +5,7 @@ import { AppLauncher } from '@capacitor/app-launcher';
 import { Browser } from '@capacitor/browser';
 import { environment } from '../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +18,7 @@ export class InAppBrowserService {
     private plt: Platform
   ) {
     if (this.plt.is('capacitor')) {
-      this.isCapacitor = true; 
+      this.isCapacitor = true;
     }
   }
 
@@ -60,10 +61,10 @@ export class InAppBrowserService {
         toolbarColor: '#000000',
       };
       if (target === '_blank') {
-        console.warn('InAppBrowser', '**  Browser.open('+ url +','+ target +')...');
+        console.warn('InAppBrowser', '**  Browser.open(' + url + ',' + target + ')...');
         await Browser.open({ url, windowName: target });
       } else {
-        console.warn('InAppBrowser', '**  Browser.open('+ url +')...');
+        console.warn('InAppBrowser', '**  Browser.open(' + url + ')...');
         await Browser.open({ url });
       }
     } catch (error) {
@@ -74,17 +75,17 @@ export class InAppBrowserService {
     }
   }
 
-  
+
   private processDeepLink(url: string) {
     console.warn('InAppBrowser', '***  processDeepLink  ***');
     const url_push = url.toString();
     console.log('InAppBrowser', 'showNotification url_push: ' + url_push);
-    if(url_push.includes('plmUrologia')){
+    if (url_push.includes('plmUrologia')) {
       const slug = url_push.split("plmUrologia://").pop();
       if (slug) {
         console.log('InAppBrowser', 'Deeplink válido: ' + slug);
         const parts = slug.split("/"); // ['', 'atlas', '19872']
-        if (parts.length === 2){
+        if (parts.length === 2) {
           //Si el deeplink se dirige a un ID
           console.log('InAppBrowser', 'deeplink - ID');
           const path = `/${parts[0]}`;
@@ -97,7 +98,7 @@ export class InAppBrowserService {
           //this.deeplinkMatch = true;
           console.warn('InAppBrowser', 'router.navigateByUrl()...');
           this.router.navigateByUrl(path, navigationExtras);
-        } else if( parts.length > 2){
+        } else if (parts.length > 2) {
           //Si el deepLink es a IPPA
           console.warn('InAppBrowser', 'deeplink - IPPA');
           const path = `/${parts[0]}`;
@@ -115,7 +116,7 @@ export class InAppBrowserService {
           };
           //this.deeplinkMatch = true;
           console.warn('InAppBrowser', 'router.navigateByUrl(IPPA)...');
-          this.router.navigateByUrl(slug, );
+          this.router.navigateByUrl(slug,);
         } else {
           // Si el deeplink se dirige a una seccion general
           console.log('InAppBrowser', 'deeplink - SECCIÓN');
@@ -133,30 +134,30 @@ export class InAppBrowserService {
   private getRegionNameByCountryKey(countryKey: string) {
     let regionName = '';
     switch (countryKey) {
-      case 'CAD': 
-      regionName = 'Centroamerica'; 
-      break;
-      case 'CHI': 
-      regionName = 'Chile'; 
-      break;
-      case 'COL': 
-      regionName = 'Colombia'; 
-      break;
-      case 'ECU': 
-      regionName = 'Ecuador';
-      break;
-      case 'MEX': 
-      regionName = 'Mexico'; 
-      break;
-      case 'PER': 
-      regionName = 'Peru'; 
-      break;
-      case 'WTI': 
-      regionName = 'West Indies'; 
-      break;
-      default: 
-      regionName = 'Mexico'; 
-      break;
+      case 'CAD':
+        regionName = 'Centroamerica';
+        break;
+      case 'CHI':
+        regionName = 'Chile';
+        break;
+      case 'COL':
+        regionName = 'Colombia';
+        break;
+      case 'ECU':
+        regionName = 'Ecuador';
+        break;
+      case 'MEX':
+        regionName = 'Mexico';
+        break;
+      case 'PER':
+        regionName = 'Peru';
+        break;
+      case 'WTI':
+        regionName = 'West Indies';
+        break;
+      default:
+        regionName = 'Mexico';
+        break;
     }
     return regionName;
   }
@@ -168,4 +169,6 @@ export class InAppBrowserService {
       window.open('file:///android_asset/www/assets/resources/MEX/termsAndConditions.html', '_blank');
     }
   }
+
+
 }

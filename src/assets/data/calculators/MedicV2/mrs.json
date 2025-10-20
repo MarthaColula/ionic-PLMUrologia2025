@@ -28,7 +28,7 @@
       "Label": "1. Bochornos, sudoración, calores.",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Subtitle": "<p class=\"ion-text-center\">Tipo de molestia</p>",
       "Marks": [
         {
@@ -64,7 +64,7 @@
       "Label": "2. Molestias al corazón (siente palpitaciones, latidos u opresión en el pecho).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
        "Marks": [
         {
           "Value": 0,
@@ -99,7 +99,7 @@
       "Label": "3. Dificultades para dormir (tiene insomnio, duerme poco).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Marks": [
         {
           "Value": 0,
@@ -134,7 +134,7 @@
       "Label": "4. Molestias musculares y articulares (siente dolores de huesos y articulaciones, tiene dolores reumáticos).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Marks": [
         {
           "Value": 0,
@@ -169,7 +169,7 @@
       "Label": "5. Estado de ánimo depresivo (se siente deprimida, decaída, triste, a punto de llorar y/o sin ganas de vivir).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
  "Marks": [
         {
           "Value": 0,
@@ -204,7 +204,7 @@
       "Label": "6. Irritabilidad (se siente tensa, se molesta con facilidad, explota fácilmente, se siente irascible o con poca tolerancia).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Marks": [
         {
           "Value": 0,
@@ -239,7 +239,7 @@
       "Label": "7. Ansiedad (se siente angustiada, temerosa, inquieta y/o con tendencia a sentir pánico).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
      "Marks": [
         {
           "Value": 0,
@@ -274,7 +274,7 @@
       "Label": "8. Cansancio físico y mental (se cansa con facilidad, siente que no rinde igual, presenta olvidos frecuentes, siente que empieza a tener problemas de memoria, tiene dificultades para concentrarse).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
        "Marks": [
         {
           "Value": 0,
@@ -309,7 +309,7 @@
       "Label": "9. Problemas sexuales (tiene menor deseo sexual, tiene relaciones sexuales con menor frecuencia, se siente menos satisfecha con el acto).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Marks": [
         {
           "Value": 0,
@@ -344,7 +344,7 @@
       "Label": "10. Problemas al orinar (orina más veces al día, siente mucha urgencia de orinar, suele escaparse un chorro de orina involuntariamente)",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Marks": [
         {
           "Value": 0,
@@ -379,7 +379,7 @@
       "Label": "11. Sequedad vaginal (siente sequedad en genitales, presenta ardor o malestar en la región genital, durante las relaciones sexuales tiene malestar o dolor).",
       "Requiered": true,
       "ScrollMarks": true,
-      "TypeMarks": "Label",
+      "TypeMarks": "Icon-Label",
       "Marks": [
         {
           "Value": 0,

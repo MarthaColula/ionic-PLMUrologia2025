@@ -51,7 +51,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -65,7 +64,7 @@
       "Requiered": true,
       "ScrollMarks": true,
       "TypeMarks": "Icon-Label",
-       "Marks": [
+      "Marks": [
         {
           "Value": 0,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
@@ -86,7 +85,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -121,7 +119,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -156,7 +153,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -170,7 +166,7 @@
       "Requiered": true,
       "ScrollMarks": true,
       "TypeMarks": "Icon-Label",
- "Marks": [
+      "Marks": [
         {
           "Value": 0,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
@@ -191,7 +187,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -226,7 +221,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -240,7 +234,7 @@
       "Requiered": true,
       "ScrollMarks": true,
       "TypeMarks": "Icon-Label",
-     "Marks": [
+      "Marks": [
         {
           "Value": 0,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
@@ -261,7 +255,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -275,7 +268,7 @@
       "Requiered": true,
       "ScrollMarks": true,
       "TypeMarks": "Icon-Label",
-       "Marks": [
+      "Marks": [
         {
           "Value": 0,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>No<br>siente <br>molestia <br></b></p><img style=\"width: 50px; height: 38px; display: block; margin: auto;\" src=\"assets/images/mrs/1.svg\">"
@@ -296,7 +289,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -331,7 +323,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -366,7 +357,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     },
@@ -401,7 +391,6 @@
           "Value": 4,
           "Label": "<p class=\"ion-text-center\" style=\"color: #002e6d; font-size: .7rem\"><br><b>Siente <br>molestia <br>importante</b></p><img style=\"width: 50px; height: 38px\" src=\"./assets/images/mrs/5.svg\">"
         }
-       
       ],
       "Items": []
     }

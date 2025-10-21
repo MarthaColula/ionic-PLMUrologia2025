@@ -2,9 +2,9 @@
   <ion-list #CntntReagent id="cntntReagent" class="ion-no-padding">
 
     <ion-item *ngIf="flgSubtitle" class="background" color="urologia-secondary">
-      <ion-label class="bc ion-text-wrap" mode="md" position="fixed" >
+      <ion-label class="bc ion-text-wrap" mode="md" position="fixed">
         <div *ngIf="validateContentHTML(reagent.Subtitle); else htmlSubtitleFalse">
-          <p [innerHTML]="getContentHTML(reagent.Subtitle)" ></p>
+          <p [innerHTML]="getContentHTML(reagent.Subtitle)"></p>
         </div>
         <ng-template #htmlSubtitleFalse>
           {{ reagent.Subtitle }}
@@ -26,10 +26,10 @@
         </ion-label>
       </ion-item>
     </ng-container>
-    
+
     <ion-item>
       <div [ngSwitch]="reagent.Type" class="div-switch">
-        
+
         <div *ngSwitchCase="'Input'" class="div-switch-case">
           <ion-grid>
             <ion-row class="align-items-center">
@@ -46,9 +46,9 @@
                 </ion-text>
               </ion-col>
               <ion-col>
-                <ion-input color="medium" class="inputCalc" type="{{reagent.InputValue}}" placeholder="{{placeholder}}" 
-                (ionChange)="changeInputValue($event)" (keyup.enter)="setFocus()" [value]="inputValue" 
-                #InputFocus id="{{'ionInput'+indxRgnt+''+reagent.NoReagent}}"></ion-input>
+                <ion-input color="medium" class="inputCalc" type="{{reagent.InputValue}}" placeholder="{{placeholder}}"
+                  (ionChange)="changeInputValue($event)" (keyup.enter)="setFocus()" [value]="inputValue" #InputFocus
+                  id="{{'ionInput'+indxRgnt+''+reagent.NoReagent}}"></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -58,7 +58,7 @@
             </ion-row>
           </ion-grid>
         </div>
-        
+
         <div *ngSwitchCase="'Date'" class="div-switch-case">
           <ion-grid>
             <ng-container>
@@ -76,24 +76,22 @@
                   </ion-text>
                 </ion-col>
                 <ion-col col-6>
-                  <ion-input  color="medium" class="inputCalc" type="text" [readonly]="true" placeholder="DD-MM-YYYY" 
-                  value="{{ this.strDateValue }}" #InputDateFocus id="{{'ionDate'+indxRgnt+''+reagent.NoReagent}}"></ion-input>
+                  <ion-input color="medium" class="inputCalc" type="text" [readonly]="true" placeholder="DD-MM-YYYY"
+                    value="{{ this.strDateValue }}" #InputDateFocus
+                    id="{{'ionDate'+indxRgnt+''+reagent.NoReagent}}"></ion-input>
                 </ion-col>
               </ion-row>
               <ion-row align-items-center>
                 <ion-col align-items-start col-12 class="ion-no-padding">
-                  <app-pop-element-date
-                    [utilities]="this.utilities"
-                    [triggerID]="indxRgnt+''+reagent.NoReagent"
-                    [labelDate]="reagent.Label"
-                    (changeDate)="this.changeDateValue($event)">
+                  <app-pop-element-date [utilities]="this.utilities" [triggerID]="indxRgnt+''+reagent.NoReagent"
+                    [labelDate]="reagent.Label" (changeDate)="this.changeDateValue($event)">
                   </app-pop-element-date>
                 </ion-col>
               </ion-row>
             </ng-container>
           </ion-grid>
         </div>
-        
+
         <div *ngSwitchCase="'Select'" class="div-switch-case">
           <ion-grid>
             <ion-row>
@@ -112,9 +110,9 @@
               <ion-col>
                 <div *ngIf="!validateStringArray(reagent); else strArrayFalse" class="div-content">
                   <ion-item (click)="showSelect()">
-                    <ion-select #C id="{{'ionSelectOne'+indxRgnt+''+reagent.NoReagent}}" [value]="selectedItemOne" 
-                    color="medium" class="selectCalc" cancelText="Cancelar" okText="Ok" mode="md" 
-                    (ionChange)="changeSelectValue(1,C.value)">
+                    <ion-select #C id="{{'ionSelectOne'+indxRgnt+''+reagent.NoReagent}}" [value]="selectedItemOne"
+                      color="medium" class="selectCalc" cancelText="Cancelar" okText="Ok" mode="md"
+                      (ionChange)="changeSelectValue(1,C.value)">
                       <ion-select-option *ngFor="let selectItem of reagent.Items" [value]="selectItem.ItemId">
                         {{ selectItem.Description }}
                       </ion-select-option>
@@ -123,9 +121,9 @@
                 </div>
                 <ng-template #strArrayFalse>
                   <ion-item (click)="showSelect()">
-                    <ion-select #D id="{{'ionSelectTwo'+indxRgnt+''+reagent.NoReagent}}" [value]="selectedItemTwo" 
-                    color="medium" class="selectCalc" cancelText="Cancelar" okText="Ok" mode="md" 
-                    (ionChange)="changeSelectValue(2,D.value)">
+                    <ion-select #D id="{{'ionSelectTwo'+indxRgnt+''+reagent.NoReagent}}" [value]="selectedItemTwo"
+                      color="medium" class="selectCalc" cancelText="Cancelar" okText="Ok" mode="md"
+                      (ionChange)="changeSelectValue(2,D.value)">
                       <div *ngFor="let strItem of strArray" class="div-content">
                         <ion-select-option [value]="strItem">
                           {{ strItem }}
@@ -138,11 +136,12 @@
             </ion-row>
           </ion-grid>
         </div>
-        
+
         <div *ngSwitchCase="'Radio'" class="div-switch-case">
           <div *ngIf="validateArray(reagent)" class="div-content">
-            <ion-radio-group *ngFor="let radioItem of arrayRadio; let indxR = index" id="{{'ionRadioGroup'+indxRgnt+''+reagent.NoReagent}}"
-              [(ngModel)]="selectedValue" (ionSelect)="selectRadio()" class="radio-group-content">
+            <ion-radio-group *ngFor="let radioItem of arrayRadio; let indxR = index"
+              id="{{'ionRadioGroup'+indxRgnt+''+reagent.NoReagent}}" [(ngModel)]="selectedValue"
+              (ionSelect)="selectRadio()" class="radio-group-content">
               <ion-item>
                 <ion-label class="description ion-text-wrap" mode="md" position="fixed">
                   <div *ngIf="validateContentHTML(radioItem.Description); else htmlRadioFalse">
@@ -152,14 +151,14 @@
                     <p class="nota-reagent">{{ radioItem.Description }}</p>
                   </ng-template>
                 </ion-label>
-                <ion-radio class="radio text-type-radio" mode="md" slot="start" id="indxR" 
-                  value="{{radioItem.Value}}" (click)="setVariable(radioItem)" checked color="urologia-secondary">
+                <ion-radio class="radio text-type-radio" mode="md" slot="start" id="indxR" value="{{radioItem.Value}}"
+                  (click)="setVariable(radioItem)" checked color="urologia-secondary">
                 </ion-radio>
               </ion-item>
             </ion-radio-group>
           </div>
         </div>
-  
+
         <div *ngSwitchCase="'Check'" class="div-switch-case">
           <div *ngIf="validateArray(reagent)" class="div-content">
             <ng-container *ngIf="arrayCheck && arrayCheck.length > 0">
@@ -172,8 +171,9 @@
                     <p class="nota-reagent">{{ checkItem.Description }}</p>
                   </ng-template>
                 </ion-label>
-                <ion-checkbox slot="start" value="{{checkItem.Value}}" id="{{'chk'+indxRgnt+''+reagent.NoReagent+''+indxC}}" 
-                  (ionChange)="checkEvent(indxC)" [checked]="checkItem.Checked" color="light">
+                <ion-checkbox slot="start" value="{{checkItem.Value}}"
+                  id="{{'chk'+indxRgnt+''+reagent.NoReagent+''+indxC}}" (ionChange)="checkEvent(indxC)"
+                  [checked]="checkItem.Checked" color="light">
                 </ion-checkbox>
               </ion-item>
             </ng-container>
@@ -187,15 +187,16 @@
                     <p class="nota-reagent">{{ checkItemC.Description }}</p>
                   </ng-template>
                 </ion-label>
-                <ion-checkbox slot="start" value="{{checkItemC.Value}}" id="{{'chkC'+indxRgnt+''+reagent.NoReagent+''+indxC2}}" 
-                  (ionChange)="checkConditionalEvent(indxC2)" [checked]="checkItemC.Checked" color="light">
+                <ion-checkbox slot="start" value="{{checkItemC.Value}}"
+                  id="{{'chkC'+indxRgnt+''+reagent.NoReagent+''+indxC2}}" (ionChange)="checkConditionalEvent(indxC2)"
+                  [checked]="checkItemC.Checked" color="light">
                 </ion-checkbox>
               </ion-item>
             </ng-container>
           </div>
         </div>
-        
-       <!-- START RANGE -->
+
+        <!-- START RANGE -->
         <div *ngSwitchCase="'Range'" class="div-switch-case">
           <ng-container *ngIf="rangeMarks && rangeMarks.length > 0">
             <!-- Grid Mark Scroll -->
@@ -204,104 +205,103 @@
                 <ion-grid class="grid-mark">
                   <ion-row>
                     <div class="ms-container ion-padding-horizontal">
-                      <swiper class="m-wiper ion-margin-top" #swiper [slidesPerView]="3.4" [spaceBetween]="10" [navigation]="true" (slideChange)="onSlideChange($event)">
-                        
+                      <!--<swiper class="m-wiper ion-margin-top" #swiper [slidesPerView]="3.4" [spaceBetween]="10" [navigation]="true" (slideChange)="onSlideChange($event)">-->
+                      <swiper-container #swiper slides-per-view="5" pagination="false"
+                        (swiperslidechange)="onSlideChange($event)" mousewheel-force-to-axis="true">
                         <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks === 'Icon'">
                           <ng-template swiperSlide *ngFor="let mark of rangeMarks; let indxMrkSIL = index">
                             <ng-container *ngIf="indxMrkSIL === 0">
                               <div class="btn-mark slide-container">
-                                <ion-item class="swiperScale btn-ms" (click)="selectMark(indxMrkSIL,mark)" lines="none">
-                                  <img src="{{mark.Src}}" alt=""/>
+                                <ion-item class="swiperScale btn-ms" (click)="selectMark(indxMrkSIL,mark,$event)"
+                                  lines="none">
+
+                                  <img src="{{mark.Src}}" alt="" />
                                 </ion-item>
                               </div>
                             </ng-container>
                             <ng-container *ngIf="indxMrkSIL > 0 && indxMrkSIL < (rangeMarks.length-1)">
                               <div class="btn-mark slide-container">
-                                <ion-item class="swiperScale btn-ms" (click)="selectMark(indxMrkSIL,mark)" lines="none">
-                                  <img src="{{mark.Src}}" alt=""/>
+                                <ion-item class="swiperScale btn-ms" (click)="selectMark(indxMrkSIL,mark, $event)"
+                                  lines="none">
+                                  <img src="{{mark.Src}}" alt="" />
                                 </ion-item>
                               </div>
                             </ng-container>
                             <ng-container *ngIf="indxMrkSIL === (rangeMarks.length-1)">
                               <div class="btn-mark slide-container">
-                                <ion-item class="swiperScale btn-ms" (click)="selectMark(indxMrkSIL,mark)" lines="none">
-                                  <img src="{{mark.Src}}" alt=""/>
+                                <ion-item class="swiperScale btn-ms" (click)="selectMark(indxMrkSIL,mark, $event)"
+                                  lines="none">
+                                  <img src="{{mark.Src}}" alt="" />
                                 </ion-item>
                               </div>
                             </ng-container>
                           </ng-template>
                         </ng-container>
-                       
+
                         <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks === 'Label'">
-                          <ng-template swiperSlide *ngFor="let mark of rangeMarks; let indxMrkSL = index">
-                            <ng-container *ngIf="indxMrkSL === 0">
-                              <div class="slide-container">
-                              
-                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSL,mark)">
-                                  <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelInitSFalse">
-                                    <ion-label class="description-mark ion-text-wrap" mode="md">
+
+                          <swiper-slide *ngFor="let mark of rangeMarks; let indxMrkSL = index;"
+                            (click)="selectMark(indxMrkSL,mark, $event)">
+                            <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelInitSFalse">
+                              <ng-container *ngIf="rangeMarks.length === 3; else maxMarksSL">
+                                <ng-container *ngIf="indxMrkSL === 0">
+                                  <ion-item class="item-icon-left" color="plm-tertiary" swiper-slide="left" lines="none"
+                                    item-start>
+                                    <ion-label class="description-markL ion-text-start">
                                       <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                                     </ion-label>
-                                  </ng-container>
-                                  <ng-template #htmlLabelInitSFalse>
-                                    <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
-                                      <h1 class="text-center">{{ mark.Label }}</h1>
-                                    </ion-label>
-                                  </ng-template>
-                                </ion-item>
-                              
-                              </div>
-                            </ng-container>
-                            <ng-container *ngIf="indxMrkSL > 0 && indxMrkSL < (rangeMarks.length-1)">
-                              <div class="slide-container">
-                              
-                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSL,mark)">
-                                  <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelCenterSFalse">
-                                    <ion-label class="description-mark ion-text-wrap" mode="md">
+                                  </ion-item>
+                                </ng-container>
+                                <ng-container *ngIf="indxMrkSL > 0 && indxMrkSL < (rangeMarks.length-1)">
+                                  <ion-item class="item-icon-center" color="plm-tertiary" swiper-slide="center"
+                                    lines="none">
+                                    <ion-label class="description-markC ion-text-wrap">
                                       <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                                     </ion-label>
-                                  </ng-container>
-                                  <ng-template #htmlLabelCenterSFalse>
-                                    <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
-                                      <h1 class="text-center">{{ mark.Label }}</h1>
-                                    </ion-label>
-                                  </ng-template>
-                                </ion-item>
-                              <!--</ion-col>-->
-                              </div>
-                            </ng-container>
-                            <ng-container *ngIf="indxMrkSL === (rangeMarks.length-1)">
-                              <div class="slide-container">
-                              <!--<ion-col size="4">-->
-                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSL,mark)">
-                                  <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelEndSFalse">
-                                    <ion-label class="description-mark ion-text-wrap" mode="md">
+                                  </ion-item>
+                                </ng-container>
+                                <ng-container *ngIf="indxMrkSL === (rangeMarks.length-1)">
+                                  <ion-item class="item-icon-right" color="plm-tertiary" swiper-slide="right"
+                                    lines="none" item-end>
+                                    <ion-label class="description-markR ion-text-end">
                                       <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                                     </ion-label>
-                                  </ng-container>
-                                  <ng-template #htmlLabelEndSFalse>
-                                    <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
-                                      <h1 class="text-center">{{ mark.Label }}</h1>
-                                    </ion-label>
-                                  </ng-template>
-                                </ion-item>
-                              <!--</ion-col>-->
-                              </div>
+                                  </ion-item>
+                                </ng-container>
+                              </ng-container>
+                              <ng-template #maxMarksSL>
+
+                                <ion-label class="description-mark ion-text-wrap" position="fixed">
+                                  <div [innerHTML]="getContentHTML(mark.Label)"></div>
+                                </ion-label>
+
+                              </ng-template>
                             </ng-container>
-                          </ng-template>
+                            <ng-template #htmlLabelInitSFalse>
+                              <ion-item color="plm-tertiary">
+                                <ion-label class="description ion-text-wrap" position="fixed" color="plm-secondary"
+                                  lines="none">
+                                  <h1 class="lbl-mark text-center">{{ mark.Label }}</h1>
+                                </ion-label>
+                              </ion-item>
+                            </ng-template>
+                          </swiper-slide>
                         </ng-container>
-                        
+
                         <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks === 'Icon-Label'">
+
+                          <!--Verificar código-->
+
                           <!--<swiper-slide *ngFor="let mark of rangeMarks; let indxMrkSI = index"></swiper-slide>-->
                           <ng-template swiperSlide *ngFor="let mark of rangeMarks; let indxMrkSIL = index">
                             <ng-container *ngIf="indxMrkSIL === 0">
                               <div class="btn-mark slide-container">
-                              <!--<ion-col size="4">-->
-                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSIL,mark)" lines="none">
+                                <!--<ion-col size="4">-->
+                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSIL,mark, $event)" lines="none">
                                   <ion-list class="ion-no-padding">
                                     <ion-item class="swiperScale" lines="none">
-                                      <label for=""> PRUEBA {{mark.Src}}</label>
-                                      <img src="{{mark.Src}}" alt=""/>
+                                      <label for=""> {{mark.Src}}</label>
+                                      <img src="{{mark.Src}}" alt="" />
                                     </ion-item>
                                     <ion-item class="swiperItemScale" lines="none">
                                       <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelInitILSFalse">
@@ -310,48 +310,51 @@
                                         </ion-label>
                                       </ng-container>
                                       <ng-template #htmlLabelInitILSFalse>
-                                        <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                                        <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                          color="plm-secondary">
                                           <h1 class="text-center">{{ mark.Label }}</h1>
                                         </ion-label>
                                       </ng-template>
                                     </ion-item>
                                   </ion-list>
                                 </ion-item>
-                              <!--</ion-col>-->
+                                <!--</ion-col>-->
                               </div>
                             </ng-container>
                             <ng-container *ngIf="indxMrkSIL > 0 && indxMrkSIL < (rangeMarks.length-1)">
                               <div class="btn-mark slide-container">
-                              <!--<ion-col size="4">-->
-                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSIL,mark)" lines="none">
+                                <!--<ion-col size="4">-->
+                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSIL,mark, $event)" lines="none">
                                   <ion-list class="ion-no-padding">
                                     <ion-item class="swiperScale" lines="none">
-                                      <img src="{{mark.Src}}" alt=""/>
+                                      <img src="{{mark.Src}}" alt="" />
                                     </ion-item>
                                     <ion-item class="swiperItemScale" lines="none">
-                                      <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelCenterILSFalse">
+                                      <ng-container
+                                        *ngIf="validateContentHTML(mark.Label); else htmlLabelCenterILSFalse">
                                         <ion-label class="description-mark ion-text-wrap" mode="md">
                                           <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                                         </ion-label>
                                       </ng-container>
                                       <ng-template #htmlLabelCenterILSFalse>
-                                        <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                                        <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                          color="plm-secondary">
                                           <h1 class="text-center">{{ mark.Label }}</h1>
                                         </ion-label>
                                       </ng-template>
                                     </ion-item>
                                   </ion-list>
                                 </ion-item>
-                              <!--</ion-col>-->
+                                <!--</ion-col>-->
                               </div>
                             </ng-container>
                             <ng-container *ngIf="indxMrkSIL === (rangeMarks.length-1)">
                               <div class="btn-mark slide-container">
-                              <!--<ion-col size="4">-->
-                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSIL,mark)" lines="none">
+                                <!--<ion-col size="4">-->
+                                <ion-item class="btn-ms" (click)="selectMark(indxMrkSIL,mark, $event)" lines="none">
                                   <ion-list class="ion-no-padding">
                                     <ion-item class="swiperScale" lines="none">
-                                      <img src="{{mark.Src}}" alt=""/>
+                                      <img src="{{mark.Src}}" alt="" />
                                     </ion-item>
                                     <ion-item class="swiperItemScale" lines="none">
                                       <ng-container *ngIf="validateContentHTML(mark.Label); else htmlLabelEndILSFalse">
@@ -360,41 +363,46 @@
                                         </ion-label>
                                       </ng-container>
                                       <ng-template #htmlLabelEndILSFalse>
-                                        <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                                        <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                          color="plm-secondary">
                                           <h1 class="text-center">{{ mark.Label }}</h1>
                                         </ion-label>
                                       </ng-template>
                                     </ion-item>
                                   </ion-list>
                                 </ion-item>
-                              <!--</ion-col>-->
+                                <!--</ion-col>-->
                               </div>
                             </ng-container>
                           </ng-template>
-                         
-                        </ng-container>
 
-                      </swiper>
+                        </ng-container>
+                      </swiper-container>
+                      <!--</swiper>-->
                     </div>
                   </ion-row>
                 </ion-grid>
                 <!--  RANGE ELEMENT -->
                 <ng-container *ngIf="rangeMax > 0">
                   <div class="m-range-container center">
-                    <ng-container *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0); else aryRILSFalse">
+                    <ng-container
+                      *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0); else aryRILSFalse">
                       <ng-container *ngIf="iconsRange && iconsRange.length > 0; else iconsRSFalse">
                         <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor" class="custome-range-swipe-icon"
-                        [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
-                        (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
-                        (ionChange)="changeRange($event)" color="plm-tertiary">
-                        <ng-container *ngIf="flgPinFormatter; else pinFormatterSFalse">
-                          <ion-icon slot="start" pin="true" pinFormatter="pinFormatter" name="{{iconsRange[0]}}"></ion-icon>
-                          <ion-icon slot="end" pin="true" pinFormatter="pinFormatter" name="{{iconsRange[1]}}"></ion-icon>
-                        </ng-container>
-                        <ng-template #pinFormatterSFalse>
-                          <ion-icon slot="start" name="{{iconsRange[0]}}"></ion-icon>
-                          <ion-icon slot="end" name="{{iconsRange[1]}}"></ion-icon>
-                        </ng-template>
+                          [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps"
+                          [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
+                          (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
+                          (ionChange)="changeRange($event)" color="plm-tertiary">
+                          <ng-container *ngIf="flgPinFormatter; else pinFormatterSFalse">
+                            <ion-icon slot="start" pin="true" pinFormatter="pinFormatter"
+                              name="{{iconsRange[0]}}"></ion-icon>
+                            <ion-icon slot="end" pin="true" pinFormatter="pinFormatter"
+                              name="{{iconsRange[1]}}"></ion-icon>
+                          </ng-container>
+                          <ng-template #pinFormatterSFalse>
+                            <ion-icon slot="start" name="{{iconsRange[0]}}"></ion-icon>
+                            <ion-icon slot="end" name="{{iconsRange[1]}}"></ion-icon>
+                          </ng-template>
                         </ion-range>
                       </ng-container>
                       <ng-template #iconsRSFalse>
@@ -411,10 +419,12 @@
                               </ion-label>
                             </ion-col>
                             <ion-col class="ion-no-padding" size="8">
-                              <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor" class="custome-range-swipe-grid"
-                                [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
-                                (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
-                                (ionChange)="changeRange($event)" color="plm-tertiary">
+                              <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor"
+                                class="custome-range-swipe-grid" [value]="rangeValue" min="{{rangeMin}}"
+                                max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter"
+                                [pinFormatter]="pinFormatter" (ionKnobMoveStart)="onKnobMoveStart($event)"
+                                (ionKnobMoveEnd)="onKnobMoveEnd($event)" (ionChange)="changeRange($event)"
+                                color="plm-tertiary">
                               </ion-range>
                             </ion-col>
                             <ion-col class="ion-no-padding" size="2">
@@ -433,7 +443,8 @@
                     </ng-container>
                     <ng-template #aryRILSFalse>
                       <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor" class="custome-range-swipe"
-                        [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
+                        [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps"
+                        [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
                         (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
                         (ionChange)="changeRange($event)" color="plm-tertiary">
                       </ion-range>
@@ -448,9 +459,12 @@
             <ng-template #htmlMarkTypeFalse>
               <ion-grid class="grid-mark">
                 <ion-row>
-                  <ng-container *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0)">
+                  <ng-container
+                    *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0)">
                     <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks != 'Icon'">
-                      <ion-col no-padding><p class="spaces">&nbsp;</p></ion-col>
+                      <ion-col no-padding>
+                        <p class="spaces">&nbsp;</p>
+                      </ion-col>
                     </ng-container>
                   </ng-container>
 
@@ -458,78 +472,84 @@
                     <ng-container *ngFor="let mark of rangeMarks; let indxMrkI = index">
                       <ng-container *ngIf="indxMrkI === 0">
                         <ion-col>
-                          <ion-item class="scaleInit btn-mark-col" (click)="selectMark(indxMrkI,mark)" lines="none">
-                            <img src="{{mark.Src}}" alt=""/>
+                          <ion-item class="scaleInit btn-mark-col" (click)="selectMark(indxMrkI,mark, $event)"
+                            lines="none">
+                            <img src="{{mark.Src}}" alt="" />
                           </ion-item>
                         </ion-col>
                       </ng-container>
-    
+
                       <ng-container *ngIf="indxMrkI > 0 && indxMrkI < (rangeMarks.length-1)">
                         <ion-col>
-                          <ion-item class="scaleCenter btn-mark-col" (click)="selectMark(indxMrkI,mark)" lines="none">
-                            <img src="{{mark.Src}}" alt=""/>
+                          <ion-item class="scaleCenter btn-mark-col" (click)="selectMark(indxMrkI,mark, $event)"
+                            lines="none">
+                            <img src="{{mark.Src}}" alt="" />
                           </ion-item>
                         </ion-col>
                       </ng-container>
-    
+
                       <ng-container *ngIf="indxMrkI === (rangeMarks.length-1)">
                         <ion-col>
-                          <ion-item class="scaleEnd btn-mark-col" (click)="selectMark(indxMrkI,mark)" lines="none">
-                            <img src="{{mark.Src}}" alt=""/>
+                          <ion-item class="scaleEnd btn-mark-col" (click)="selectMark(indxMrkI,mark,$event)"
+                            lines="none">
+                            <img src="{{mark.Src}}" alt="" />
                           </ion-item>
                         </ion-col>
                       </ng-container>
                     </ng-container>
                   </ng-container>
-                 
-                  
+
+
                   <!--- TODO: REVISAR -->
                   <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks === 'Label'">
                     <ng-container *ngFor="let mark of rangeMarks; let indxMrkL = index">
                       <ng-container *ngIf="indxMrkL === 0">
                         <ion-col>
-                          <ion-item class="item-mark-col" (click)="selectMark(indxMrkL,mark)" lines="none">
+                          <ion-item class="item-mark-col" (click)="selectMark(indxMrkL,mark, $event)" lines="none">
                             <div *ngIf="validateContentHTML(mark.Label); else htmlLabelInitFalse">
                               <ion-label class="description-mark ion-text-wrap" mode="md">
                                 <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                               </ion-label>
                             </div>
                             <ng-template #htmlLabelInitFalse>
-                              <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                              <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                color="plm-secondary">
                                 <h1 class="text-center">{{ mark.Label }}</h1>
                               </ion-label>
                             </ng-template>
                           </ion-item>
                         </ion-col>
                       </ng-container>
-    
+
                       <ng-container *ngIf="indxMrkL > 0 && indxMrkL < (rangeMarks.length-1)">
                         <ion-col>
-                          <ion-item class="item-mark-col" (click)="selectMark(indxMrkL,mark)" lines="none">
+                          <ion-item class="item-mark-col" (click)="selectMark(indxMrkL,mark, $event)" lines="none">
                             <div *ngIf="validateContentHTML(mark.Label); else htmlLabelCenterFalse">
                               <ion-label class="description-mark ion-text-wrap" mode="md">
                                 <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                               </ion-label>
                             </div>
                             <ng-template #htmlLabelCenterFalse>
-                              <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                              <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                color="plm-secondary">
                                 <h1 class="text-center">{{ mark.Label }}</h1>
                               </ion-label>
                             </ng-template>
                           </ion-item>
                         </ion-col>
                       </ng-container>
-    
+
                       <ng-container *ngIf="indxMrkL === (rangeMarks.length-1)">
                         <ion-col>
-                          <ion-item class="item-mark-col" (click)="selectMark(indxMrkL,mark)" lines="none">
+                          <ion-item class="item-mark-col" (click)="selectMark(indxMrkL,mark, $event)" lines="none">
                             <div *ngIf="validateContentHTML(mark.Label); else htmlLabelEndFalse">
                               <ion-label class="description-mark ion-text-wrap" mode="md">
                                 <p [innerHTML]="getContentHTML(mark.Label)" class="lbl-mark nota"></p>
                               </ion-label>
                             </div>
                             <ng-template #htmlLabelEndFalse>
-                              <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                              <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                color="plm-secondary">
                                 <h1 class="text-center">{{ mark.Label }}</h1>
                               </ion-label>
                             </ng-template>
@@ -539,15 +559,16 @@
                     </ng-container>
 
                   </ng-container>
-                  
+
                   <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks === 'Icon-Label'">
                     <ng-container *ngFor="let mark of rangeMarks; let indxMrkIL = index">
                       <ng-container *ngIf="indxMrkIL === 0">
                         <ion-col>
-                          <ion-item class="btn-mark-col" (click)="selectMark(indxMrkIL,mark)" lines="none">
+                          <ion-item class="btn-mark-col" (click)="selectMark(indxMrkIL,mark,$event)" lines="none">
                             <ion-list class="ion-no-padding">
+
                               <ion-item class="scaleInit" lines="none">
-                                <img src="{{mark.Src}}" alt=""/>
+                                <img src="{{mark.Src}}" alt="" />
                               </ion-item>
                               <ion-item class="scaleInit" lines="none">
                                 <div *ngIf="validateContentHTML(mark.Label); else htmlLabelInitFalse">
@@ -556,7 +577,8 @@
                                   </ion-label>
                                 </div>
                                 <ng-template #htmlLabelInitFalse>
-                                  <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                                  <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                    color="plm-secondary">
                                     <h1 class="text-center">{{ mark.Label }}</h1>
                                   </ion-label>
                                 </ng-template>
@@ -565,13 +587,14 @@
                           </ion-item>
                         </ion-col>
                       </ng-container>
-    
+
                       <ng-container *ngIf="indxMrkIL > 0 && indxMrkIL < (rangeMarks.length-1)">
                         <ion-col>
-                          <ion-item class="btn-mark-col" (click)="selectMark(indxMrkIL,mark)" lines="none">
+                          <ion-item class="btn-mark-col" (click)="selectMark(indxMrkIL,mark, $event)" lines="none">
                             <ion-list class="ion-no-padding">
+                              IMAGEN Icon-Label-2
                               <ion-item class="scaleCenter" lines="none">
-                                <img src="{{mark.Src}}" alt=""/>
+                                <img src="{{mark.Src}}" alt="" />
                               </ion-item>
                               <ion-item class="scaleCenter" lines="none">
                                 <div *ngIf="validateContentHTML(mark.Label); else htmlLabelCenterFalse">
@@ -580,7 +603,8 @@
                                   </ion-label>
                                 </div>
                                 <ng-template #htmlLabelCenterFalse>
-                                  <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                                  <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                    color="plm-secondary">
                                     <h1 class="text-center">{{ mark.Label }}</h1>
                                   </ion-label>
                                 </ng-template>
@@ -589,13 +613,14 @@
                           </ion-item>
                         </ion-col>
                       </ng-container>
-    
+
                       <ng-container *ngIf="indxMrkIL === (rangeMarks.length-1)">
                         <ion-col>
-                          <ion-item class="btn-mark-col" (click)="selectMark(indxMrkIL,mark)" lines="none">
+                          <ion-item class="btn-mark-col" (click)="selectMark(indxMrkIL,mark, $event)" lines="none">
                             <ion-list class="ion-no-padding">
+                              IMAGEN Icon-Label-3
                               <ion-item class="scaleEnd" lines="none">
-                                <img src="{{mark.Src}}" alt=""/>
+                                <img src="{{mark.Src}}" alt="" />
                               </ion-item>
                               <ion-item class="scaleEnd" lines="none">
                                 <div *ngIf="validateContentHTML(mark.Label); else htmlLabelEndFalse">
@@ -604,7 +629,8 @@
                                   </ion-label>
                                 </div>
                                 <ng-template #htmlLabelEndFalse>
-                                  <ion-label class="description ion-text-wrap" mode="md" position="fixed" color="plm-secondary">
+                                  <ion-label class="description ion-text-wrap" mode="md" position="fixed"
+                                    color="plm-secondary">
                                     <h1 class="text-center">{{ mark.Label }}</h1>
                                   </ion-label>
                                 </ng-template>
@@ -617,23 +643,28 @@
 
                   </ng-container>
 
-                  <ng-container *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0)">
+                  <ng-container
+                    *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0)">
                     <ng-container *ngIf="reagent.TypeMarks != undefined && reagent.TypeMarks != 'Icon'">
-                      <ion-col no-padding><p class="spaces">&nbsp;</p></ion-col>
+                      <ion-col no-padding>
+                        <p class="spaces">&nbsp;</p>
+                      </ion-col>
                     </ng-container>
                   </ng-container>
                 </ion-row>
               </ion-grid>
               <!--  RANGE ELEMENT -->
               <ng-container *ngIf="rangeMax > 0">
-                <ng-container *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0); else aryRILFalse">
+                <ng-container
+                  *ngIf="(iconsRange && iconsRange.length > 0) || (labelsRange && labelsRange.length > 0); else aryRILFalse">
                   <ng-container *ngIf="iconsRange && iconsRange.length > 0; else iconsRFalse">
                     <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor" class="custome-range-icon"
-                    [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
-                    (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
-                    (ionChange)="changeRange($event)" color="plm-tertiary">
+                      [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps"
+                      [pin]="flgPinFormatter" [pinFormatter]="pinFormatter" (ionKnobMoveStart)="onKnobMoveStart($event)"
+                      (ionKnobMoveEnd)="onKnobMoveEnd($event)" (ionChange)="changeRange($event)" color="plm-tertiary">
                       <ng-container *ngIf="flgPinFormatter; else pinFormatterFalse">
-                        <ion-icon slot="start" pin="true" pinFormatter="pinFormatter" name="{{iconsRange[0]}}"></ion-icon>
+                        <ion-icon slot="start" pin="true" pinFormatter="pinFormatter"
+                          name="{{iconsRange[0]}}"></ion-icon>
                         <ion-icon slot="end" pin="true" pinFormatter="pinFormatter" name="{{iconsRange[1]}}"></ion-icon>
                       </ng-container>
                       <ng-template #pinFormatterFalse>
@@ -657,7 +688,8 @@
                         </ion-col>
                         <ion-col class="ion-no-padding" size="8">
                           <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor" class="custome-range-grid"
-                            [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
+                            [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps"
+                            [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
                             (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
                             (ionChange)="changeRange($event)" color="plm-tertiary">
                           </ion-range>
@@ -679,9 +711,9 @@
                 <ng-template #aryRILFalse>
                   <div class="center">
                     <ion-range [ngStyle]="getObjStyle(rngStyle)" [color]="rngColor" class="custome-range"
-                      [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps" [pin]="flgPinFormatter" [pinFormatter]="pinFormatter"
-                      (ionKnobMoveStart)="onKnobMoveStart($event)" (ionKnobMoveEnd)="onKnobMoveEnd($event)"
-                      (ionChange)="changeRange($event)" color="plm-tertiary">
+                      [value]="rangeValue" min="{{rangeMin}}" max="{{rangeMax}}" [ticks]="ticks" [snaps]="snaps"
+                      [pin]="flgPinFormatter" [pinFormatter]="pinFormatter" (ionKnobMoveStart)="onKnobMoveStart($event)"
+                      (ionKnobMoveEnd)="onKnobMoveEnd($event)" (ionChange)="changeRange($event)" color="plm-tertiary">
                     </ion-range>
                   </div>
                 </ng-template>
@@ -692,7 +724,7 @@
           </ng-container>
         </div>
         <!-- END RANGE -->
-  
+
       </div>
     </ion-item>
   </ion-list>

@@ -1,8 +1,9 @@
-
 .div-content-reagent {
     width: 100% !important;
+
     ion-list {
         width: 100% !important;
+
         ion-item {
             width: 100% !important;
         }
@@ -12,24 +13,32 @@
 .div-switch {
     width: 100% !important;
 }
+
 .div-switch-case {
     width: 100% !important;
+
     ion-input {
         width: 100% !important;
     }
+
     ion-datetime {
         width: 100% !important;
     }
+
     ion-select {
         width: 100% !important;
+
         ion-select-option {
             width: 90% !important;
         }
     }
+
     ng-template {
         width: 100% !important;
+
         ion-select {
             width: 100% !important;
+
             ion-select-option {
                 width: 90% !important;
             }
@@ -39,29 +48,41 @@
 
 .div-content {
     width: 100% !important;
+
     ion-item {
         width: 100% !important;
     }
+
     ion-label {
         width: 100% !important;
     }
+
     ion-radio-group {
         width: 100% !important;
+
         ion-item {
             width: 100% !important;
         }
     }
 }
 
+.description-markL {
+    width: 100% !important;
+    align-self: stretch;
+}
+
+
 .description {
     min-width: 95% !important;
     max-width: 100% !important;
 }
+
 .description-mark {
     min-width: 95% !important;
     max-width: 100% !important;
     align-self: stretch;
 }
+
 .description-sub {
     min-width: 95% !important;
     max-width: 100% !important;
@@ -74,9 +95,11 @@
 p.text-left {
     text-align: left;
 }
+
 p.text-center {
     text-align: center;
 }
+
 p.text-right {
     text-align: right;
 }
@@ -85,10 +108,12 @@ h1.text-left {
     font-size: 0.55rem;
     text-align: left;
 }
+
 h1.text-center {
     font-size: 0.55rem;
     text-align: center;
 }
+
 h1.text-right {
     font-size: 0.55rem;
     text-align: right;
@@ -104,6 +129,7 @@ h1.alert {
 
 .item-has-focus {
     --highlight-background: rgba(213, 237, 108, 0.461);
+
     ion-input {
         background: #f2f2f2 !important;
     }
@@ -130,7 +156,7 @@ ion-range {
     margin-left: 0.75rem !important;
     margin-right: 0.75rem !important;
     font-family: 'FuturaStd-Heavy';
-    --bar-background:  #f2f2f2;
+    --bar-background: #f2f2f2;
     --bar-background-active: #00c96d;
     --bar-height: 8px;
     --bar-border-radius: 8px;
@@ -139,6 +165,7 @@ ion-range {
     --pin-background: #1ae789;
     --pin-color: #08312A;
 }
+
 /*
 ion-range.custome-range {
     --knob-size: 1.5rem;
@@ -207,29 +234,32 @@ ion-range.custome-range {
     text-align: right;
 }
 
-.contentEscalaMolestia div img{
-    max-height:75px;
+.contentEscalaMolestia div img {
+    max-height: 75px;
 }
 
-p.nota{
+p.nota {
     color: #1a1a1a;
     font-size: 1rem;
     margin-left: 0.5rem;
 }
+
 p.nota-reagent {
     width: 100% !important;
     color: #1a1a1a !important;
     font-size: 1rem !important;
-  
+
 }
 
-.background{
-   background-color: #1678CA !important;
+
+
+.background {
+    background-color: #1678CA !important;
     text-align: center;
 }
 
-.bc{
-  min-width: 95% !important;
+.bc {
+    min-width: 95% !important;
     max-width: 100% !important;
     font-size: 1rem !important;
     font-style: bold;
@@ -237,14 +267,14 @@ p.nota-reagent {
     color: #f2f2f2 !important;
 }
 
-.inputCalc{
+.inputCalc {
     border: 1px solid #1678CA;
     border-radius: 8px;
     text-align: center;
     color: #1678CA;
 }
 
-.selectCalc{
+.selectCalc {
     border: 1px solid #1678CA;
     border-radius: 8px;
     text-align: center;
@@ -257,7 +287,7 @@ p.nota-reagent {
     padding: 0 !important;
     margin: 0 !important;
     width: 100%;
-    height:auto;
+    height: auto;
 }
 
 .ms-container {
@@ -270,46 +300,50 @@ p.nota-reagent {
 .m-wiper {
     width: 100%;
     height: auto;
+
     //bottom: 45pt;
     .swiper-container {
         width: 33%;
         height: auto;
     }
+
     .swiper-slide {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
+
     .swiper-slide-prev {
         height: 75% !important;
     }
+
     .swiper-slide-next {
         height: 75% !important;
     }
+
     .swiper-wrapper {
         align-items: center;
     }
 }
 
 .btn-mark {
-    display: flex !important;
-    justify-content: center !important;
+    //display: flex !important;
+    //justify-content: center !important;
     //--background: transparent;
     color: transparent;
     padding: 0;
     margin: 0;
-    width: 33%;
+    width: 100%;
     height: auto;
 }
 
 .btn-ms {
-    justify-content: center !important;
+    //justify-content: center !important;
     //--background: transparent;
     color: transparent;
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 95%;
+    padding-top: 0.5rem !important;
+    width: 100% !important;
 }
 
 .swiperScale {
@@ -317,6 +351,7 @@ p.nota-reagent {
     float: left;
     text-align: center;
 }
+
 .swiperItemScale {
     width: 33.3%;
     float: left;
@@ -326,14 +361,15 @@ p.nota-reagent {
     padding: 0 !important;
     margin: 0 !important;
     width: 95%;
-    height:auto;
+    height: auto;
     margin-bottom: 10pt !important;
 }
+
 .m-swiper-container {
     padding: 0 !important;
     margin: 0 !important;
     width: 100%;
-    height:auto;
+    height: auto;
 }
 
 
@@ -341,6 +377,7 @@ p.nota-reagent {
     margin-left: 0.2rem !important;
     margin-right: 0.4rem !important;
 }
+
 .custome-range-swipe-grid {
     margin-left: -0.1rem !important;
     margin-right: -0.2rem !important;
@@ -363,16 +400,19 @@ p.spaces {
     float: left;
     text-align: left;
 }
+
 .scaleCenter {
     width: 33.3%;
     float: right;
     text-align: center;
 }
+
 .scaleEnd {
     width: 33.3%;
     float: right;
     text-align: right;
 }
+
 .item-mark-col {
     display: flex !important;
     justify-content: center !important;
@@ -385,7 +425,15 @@ p.spaces {
     margin-left: 0.25rem !important;
     margin-right: 0.45rem !important;
 }
+
 .custome-range-grid {
     margin-left: -0.1rem !important;
     margin-right: -0.2rem !important;
+}
+
+
+///add
+/// 
+slide-container {
+    width: 100% !important;
 }

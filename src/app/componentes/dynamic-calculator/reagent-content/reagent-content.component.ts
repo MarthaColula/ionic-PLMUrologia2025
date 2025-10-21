@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, AfterViewInit, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, AfterViewInit, OnInit, Output, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RangeCustomEvent } from '@ionic/angular';
 import { UtilitiesCalculator } from '../../../interfaces/utilities-calculator';
+import { SwiperContainer } from 'swiper/element';
 
 @Component({
   selector: 'app-reagent-content',
@@ -10,6 +11,7 @@ import { UtilitiesCalculator } from '../../../interfaces/utilities-calculator';
   standalone: false,
 })
 export class ReagentContentComponent implements OnInit, AfterViewInit {
+   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
   
   @Input()
   flgScore: any;
@@ -88,12 +90,14 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
   protected rngColor = '';
   protected rngStyle = '{}';
   
+  selectedSlide: number | null = null;
 
   constructor(private sanitizer: DomSanitizer) {
     console.log('***  constructor ***');
   }
 
   ngOnInit() {
+    console.log('>>> reagent', this.reagent);
     console.log('***  ngOnInit()  ***');
     this.utilities = new UtilitiesCalculator();
     this.getParams();
@@ -337,7 +341,7 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
     console.warn('ReagentContent', '***  rngColor: ' + this.rngColor);
   }
 
-   selectMark(index: number, mark: any) {
+   /*selectMark(index: number, mark: any)  {
     console.warn('ReagentContent', '***  selectMark  ***');
     console.log('ReagentContent', {mark: mark});
     if (mark && this.utilities.existInJSON(mark,'"Value"')) {
@@ -386,8 +390,70 @@ export class ReagentContentComponent implements OnInit, AfterViewInit {
       console.log('ReagentContent', '***  setResponseValue()...');
       this.setResponseValue(bndShow);
     }
-  }
+  } */
   
+    selectMark(index: number, mark: any, event: MouseEvent ) {
+ 
+    this.selectedSlide = index;
+    const target = event.target as HTMLElement;
+    const slide = target.closest('swiper-slide') as HTMLElement;
+ 
+    if (slide) {
+      const index = slide.getAttribute('data-index');
+      this.selectedSlide = index ? parseInt(index, 10) : null;
+      // Removemos la clase 'selected' de todos los slides
+      const allSlides = this.swiper.nativeElement.querySelectorAll('swiper-slide');
+      allSlides.forEach((s: HTMLElement) => s.classList.remove('selected'));
+      // Agregamos la clase 'selected' al slide clickeado
+      slide.classList.add('selected');
+    }
+
+    if (mark && this.utilities.existInJSON(mark,'"Value"')) {
+      this.rangeValue = mark.Value;
+    } else {
+      console.warn('RangeField', '**  index: ' + index);
+      if (this.rangeStyles.length > 0 || this.rangeColors.length > 0) {
+        let arryRngSC: Array<any> = [];
+        console.warn('RangeField', '**  rngStyles-Lgth: '+ this.rangeStyles.length +', rngColors-Lgth: '+ this.rangeColors.length);
+        if (this.rangeStyles.length > 0) {
+          arryRngSC = this.rangeStyles;
+        } else if (this.rangeColors.length > 0) {
+          arryRngSC = this.rangeColors;
+        }
+        const aryRngLng = arryRngSC.length;
+        const rngMrksLng = this.rangeMarks.length;
+        console.warn('RangeField', '**  aryRngLng: '+ aryRngLng +', rngMrksLng: '+ rngMrksLng);
+        //const mult = Math.trunc(arryRngSC.length/(this.rangeMarks.length-1));
+        const mult = (rngMrksLng === aryRngLng ? 1 : (rngMrksLng > aryRngLng ? Math.trunc(rngMrksLng/(aryRngLng-1)) : Math.trunc(aryRngLng/(rngMrksLng-1))));
+        const value = mult * index;
+        console.warn('RangeField', '**  mult: '+ mult +', value: '+ value);
+        console.warn('RangeField', '**  rangeDivisor: ' + this.rangeDivisor);
+        const difOne = Math.trunc(this.rangeMax - this.rangeMin);
+        if (this.rangeDivisor === 1) {
+          const multAOne = (difOne/aryRngLng);
+          console.warn('RangeField', '**  difOne: '+ difOne +', multAOne: '+ multAOne);
+          this.rangeValue = Math.trunc(value*multAOne);
+        } else {
+          //TODO: Validar!!!
+          const multBOne = (difOne > rngMrksLng ? difOne/(rngMrksLng+1) : (rngMrksLng+1)/difOne);
+          console.warn('RangeField', '**  difOne: '+ difOne +', multBOne: '+ multBOne);
+          this.rangeValue = Math.trunc((index === 0 ? 0 : (index === (rngMrksLng-1) ? (rngMrksLng+1)*multBOne : (index+1)*multBOne)));
+        }
+      } else if (this.selectMrk) {
+        const rngMrksLng = this.rangeMarks.length;
+        console.warn('RangeField', '**  rngMrksLng: '+ rngMrksLng +', rangeDivisor: '+ this.rangeDivisor);
+        const difTwo = Math.trunc(this.rangeMax - this.rangeMin);
+        const multTwo = (difTwo > rngMrksLng ? difTwo/(rngMrksLng+1) : (rngMrksLng+1)/difTwo);
+        console.warn('RangeField', '**  difTwo: '+ difTwo +', multTwo: '+ multTwo);
+        this.rangeValue = Math.trunc((index === 0 ? 0 : (index === (rngMrksLng-1) ? (rngMrksLng+1)*multTwo : (index+1)*multTwo)));
+      }
+    }
+    if (this.rangeValue != undefined) {
+      console.warn('RangeField', '**  rangeValue: '+ this.rangeValue +', rangeDivisor: ' + this.rangeDivisor);
+      this.changeValue.emit({value: (this.rangeValue/this.rangeDivisor)});
+    }
+  }
+
   async loadData() {
     //console.log('***  loadData()  ***');
     switch (this.reagent.Type) {
